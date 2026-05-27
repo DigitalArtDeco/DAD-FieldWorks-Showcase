@@ -1,22 +1,33 @@
 # DAD FieldWorks Showcase
 
 <p align="center">
-  <img src="assets/hero/dad_fieldworks_field_pulse_hero.gif" alt="DAD FieldWorks generated field pulse hero animation" width="100%">
+  <img src="assets/hero/dad_fieldworks_field_scattering_hero.gif" alt="DAD FieldWorks generated field scattering hero animation" width="100%">
 </p>
 
-DAD FieldWorks is a private research and development project. This repository contains public showcase and whitepaper material only.
+DAD FieldWorks is a private research and development project. This repository contains public showcase, website, whitepaper, and companion documentation material only.
 
-The hero animation is a procedurally generated diagnostic style visualization of a scalar field pulse in a rectangular boundary. It is not validation evidence, it is not a production readiness claim, and it does not contain private solver source code.
+Website: <https://www.dadlabs.de>
+
+The hero animation is a procedurally generated diagnostic style visualization of a scalar wave interacting with a PEC-like rectangular object. It is not validation evidence, it is not a production readiness claim, and it does not contain private solver source code.
 
 ## Public Materials
 
-- [Whitepaper](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_4_public.pdf)
-- [Documentation overview](docs/README.md)
+- [Website entry page](index.html)
+- [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_4_public.pdf)
+- [Evidence contract architecture notes](docs/evidence_contract_architecture.md)
+- [Current public status](docs/current_public_status.md)
+- [Claim boundaries](docs/claim_boundaries.md)
+- [Public roadmap](docs/roadmap.md)
+- [Publication notes](docs/publication_notes.md)
 - [Asset manifest](assets/asset_manifest.md)
+
+## Publication Status
+
+The static website files are present for root-level GitHub Pages deployment. Final public publication is blocked until legal page data and legal review are complete. See [PUBLICATION_BLOCKERS.md](PUBLICATION_BLOCKERS.md).
 
 ## Claim Boundary
 
-The files in this repository describe public concepts, claim boundaries, and showcase material. They do not publish solver implementation details or certify numerical performance.
+The public material describes selected architecture, status, and showcase assets. It does not publish private implementation details, make an external validation claim, make a production readiness claim, or make a commercial solver equivalence claim.
 
 ## Copyright
 

@@ -1,17 +1,21 @@
 # Evidence Contract Architecture
 
-The evidence contract architecture is a public description of how numerical claims can be paired with scoped evidence, assumptions, and review boundaries.
+The evidence contract architecture is a public description of how numerical execution can be separated from claim status.
 
-For this release, the repository communicates the shape of that idea without publishing private solver implementation details. Examples and diagrams in the public materials are diagnostic style showcase assets unless a file states a narrower claim.
+An evidence contract records the intended scope of a computation, the assumptions that frame it, the result category, the claim boundary, and the stop conditions that prevent overstatement.
 
-## Boundary
+## Public Companion Summary
 
-Public material may describe:
+The current private project state remains research and development. Internal work includes solver experiments, diagnostic runs, grid and boundary audits, and evidence status checks. This public site does not release private implementation details or internal result files.
 
-- claim scope
-- assumptions
-- evidence categories
-- review notes
-- limitations
+The public architecture idea is conservative:
 
-Public material does not certify performance, publish private source code, or make production readiness claims.
+- numerical execution should produce structured evidence records
+- claim status should be explicit and separate from the raw computation
+- negative claim flags are as important as positive result flags
+- diagnostic visuals should be identified as diagnostic visuals
+- blocked claims should remain blocked until a public evidence basis exists
+
+## Claim Boundary
+
+These notes describe an architecture pattern. They do not create an external validation claim, a production readiness claim, or a commercial solver equivalence claim.

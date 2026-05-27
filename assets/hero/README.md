@@ -1,7 +1,9 @@
 # Hero Assets
 
-The hero animation and poster are procedurally generated from a simple numerical field visualization.
+The scattering hero animation and poster are procedurally generated from numerical field data. They visualize a scalar wave interaction with a PEC-like rectangular obstacle.
 
-They are public safe visual assets. They do not contain external images, screenshots, or private source code. They are not validation evidence and are not production readiness claims.
+These assets are public-safe diagnostic style visuals. They use no external images, no screenshots, and no AI image generation. They do not contain private solver source code.
+
+They are not validation evidence and are not production readiness claims.
 
 Copyright © 2026 Harun Aktas. All rights reserved.
