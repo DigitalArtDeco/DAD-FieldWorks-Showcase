@@ -10,4 +10,4 @@ This repository does not claim:
 - release of private solver source code
 - release of internal test suites or internal result artifacts
 
-Visual assets are diagnostic style communication aids only. They are not certified evidence, not benchmark reports, and not external solver equivalence claims.
+Visual assets are diagnostic style communication aids only. They are not validation evidence, not benchmark reports, and not external solver equivalence claims.
