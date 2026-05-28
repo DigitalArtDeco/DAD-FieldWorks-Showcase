@@ -8,7 +8,7 @@ The project uses evidence contracts to separate numerical execution from claim s
 
 Internal research may include solver experiments, diagnostics, grid and evidence audits, boundary policy work, and claim-status checks. The public site summarizes only public-safe status boundaries.
 
-The public visualization material demonstrates field diagnostic rendering from numerical data. It includes solver generated field diagnostics, a PCB side-view current and field visualization, a scalar Helmholtz PEC cavity field-slice diagnostic, and a PCB discontinuity reflection diagnostic from numerical time-domain line data. These visuals do not establish validation, external agreement, or production readiness.
+The public visualization material demonstrates field diagnostic rendering from numerical data. It includes solver generated field diagnostics, a PCB side-view current and field visualization, a scalar Helmholtz PEC cavity field-slice diagnostic, a PCB discontinuity reflection diagnostic from numerical time-domain line data, a microstrip quasi TEM cross-section diagnostic, and a thin-wire dipole diagnostic with current, far-field, and Smith chart views. These visuals do not establish validation, external agreement, or production readiness.
 
 Current public boundaries:
 

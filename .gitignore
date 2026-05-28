@@ -10,6 +10,10 @@ animations/
 !assets/animations/pec_cavity/**
 !assets/animations/pcb_discontinuity/
 !assets/animations/pcb_discontinuity/**
+!assets/animations/microstrip_quasi_tem/
+!assets/animations/microstrip_quasi_tem/**
+!assets/animations/dipole_diagnostics/
+!assets/animations/dipole_diagnostics/**
 notebooks/
 src/
 cpp/

@@ -34,6 +34,22 @@ This solver generated diagnostic visualization is generated from scalar Helmholt
 
 This solver generated diagnostic visualization is generated from numerical time-domain line data. It shows an incident pulse travelling along a PCB trace, partial reflection at an impedance discontinuity, and partial transmission beyond the discontinuity. It is not validation evidence and not a production readiness claim.
 
+## Microstrip Quasi TEM Cross Section
+
+<p align="center">
+  <img src="assets/animations/microstrip_quasi_tem/microstrip_quasi_tem_cross_section.gif" alt="DAD FieldWorks microstrip quasi TEM cross-section diagnostic animation" width="100%">
+</p>
+
+This solver generated diagnostic visualization is generated from numerical quasi-static cross-section field data. It shows a top conductor trace, dielectric substrate, lower ground plane, electric field lines, and energy density growth during a voltage ramp. It is not validation evidence, not a production readiness claim, and not a full wave solver claim.
+
+## Dipole Current, Far Field, And Smith Chart
+
+<p align="center">
+  <img src="assets/animations/dipole_diagnostics/dipole_current_farfield_smith.gif" alt="DAD FieldWorks dipole current far field and Smith chart diagnostic animation" width="100%">
+</p>
+
+This solver generated diagnostic visualization is generated from numerical antenna diagnostic data. It shows thin-wire dipole current distribution, normalized far-field pattern, and a generated Smith chart impedance locus. It is not validation evidence, not a production readiness claim, and no commercial solver equivalence is claimed.
+
 ## Public Materials
 
 - [Website entry page](index.html)
@@ -50,6 +66,10 @@ This solver generated diagnostic visualization is generated from numerical time-
 - [PEC cavity animation notes](assets/animations/pec_cavity/README.md)
 - [PCB discontinuity reflection provenance](docs/pcb_discontinuity_reflection_provenance.md)
 - [PCB discontinuity animation notes](assets/animations/pcb_discontinuity/README.md)
+- [Microstrip quasi TEM provenance](docs/microstrip_quasi_tem_provenance.md)
+- [Microstrip quasi TEM animation notes](assets/animations/microstrip_quasi_tem/README.md)
+- [Dipole diagnostics provenance](docs/dipole_diagnostics_provenance.md)
+- [Dipole diagnostics animation notes](assets/animations/dipole_diagnostics/README.md)
 - [Asset manifest](assets/asset_manifest.md)
 
 ## Publication Status
