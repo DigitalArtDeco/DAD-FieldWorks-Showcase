@@ -1,15 +1,18 @@
 # PCB Visualization Provenance
 
-The PCB trace animation is generated from numerical field data for a public-safe diagnostic visualization.
+The PCB side view animation is generated from numerical field data for a public-safe diagnostic visualization.
 
 ## Numerical Family
 
-- Solver family: 2D FDTD TMz.
-- Rendered quantity: signed Ez.
-- Geometry type: PCB trace with open stub.
-- Conductors: PEC mask applied to the trace and stub.
-- Source type: Gaussian-modulated sine soft point source.
-- Boundary handling: graded loss layer with simple absorbing edge copy.
+- Modeling family: quasi-TEM microstrip transmission-line time-domain update with cross-sectional field rendering.
+- Rendered quantities: top-trace current magnitude, electric field lines between trace and ground, and energy flow in the substrate region.
+- Geometry type: longitudinal side view of a microstrip-like PCB structure.
+- Conductors: upper signal trace and lower ground plane.
+- Dielectric: uniform effective substrate region.
+- Excitation type: smooth input voltage rise from near 0 V toward about 1 V.
+- Boundary handling: matched outgoing line approximation at the far end.
+- Numerical duration: 3200 internal time steps.
+- Rendered frames: 180 frames at 15 frames per second.
 
 ## Public Boundary
 

@@ -15,36 +15,6 @@
 - Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
-## assets/animations/pcb_trace/pcb_trace_field_animation.gif
-
-- Asset type: animated GIF
-- Creation method: solver generated numerical field visualization
-- Solver family used: 2D FDTD TMz
-- Rendered quantity: signed Ez
-- Geometry summary: PCB trace with open stub represented as a PEC mask in a uniform effective dielectric substrate.
-- External source images: none
-- Screenshots: none
-- AI image generation: none
-- Private source code copied: no
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
-- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
-
-## assets/animations/pcb_trace/pcb_trace_field_poster.png
-
-- Asset type: static PNG poster
-- Creation method: solver generated numerical field visualization
-- Solver family used: 2D FDTD TMz
-- Rendered quantity: signed Ez
-- Geometry summary: PCB trace with open stub represented as a PEC mask in a uniform effective dielectric substrate.
-- External source images: none
-- Screenshots: none
-- AI image generation: none
-- Private source code copied: no
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
-- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
-
 ## assets/hero/dad_fieldworks_solver_scattering_hero_poster.png
 
 - Asset type: static PNG poster
@@ -55,6 +25,38 @@
 - External source images: none
 - Screenshots: none
 - AI image generation: none
+- Private source code copied: no
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+
+## assets/animations/pcb_trace/pcb_trace_sideview_energy_flow.gif
+
+- Asset type: animated GIF
+- Creation method: solver generated numerical PCB visualization
+- Solver family used: quasi-TEM microstrip transmission-line time-domain update with cross-sectional field rendering.
+- Rendered quantity: current magnitude on top conductor, electric field lines between trace and ground, and energy flow in the dielectric region.
+- Geometry summary: top trace, dielectric substrate, and lower ground plane.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+
+## assets/animations/pcb_trace/pcb_trace_sideview_energy_flow_poster.png
+
+- Asset type: static PNG poster
+- Creation method: solver generated numerical PCB visualization
+- Solver family used: quasi-TEM microstrip transmission-line time-domain update with cross-sectional field rendering.
+- Rendered quantity: current magnitude on top conductor, electric field lines between trace and ground, and energy flow in the dielectric region.
+- Geometry summary: top trace, dielectric substrate, and lower ground plane.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.

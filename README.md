@@ -10,13 +10,13 @@ Website: <https://www.dadlabs.de>
 
 The hero animation is a solver generated diagnostic visualization produced from numerical field data. It shows a 2D FDTD TMz-style Ez field interacting with a PEC-like rectangular object. It is not validation evidence, it is not a production readiness claim, and it does not contain private solver source code.
 
-## PCB Trace Field Visualization
+## PCB Trace Current And Field Visualization
 
 <p align="center">
-  <img src="assets/animations/pcb_trace/pcb_trace_field_animation.gif" alt="DAD FieldWorks solver generated PCB trace field animation" width="100%">
+  <img src="assets/animations/pcb_trace/pcb_trace_sideview_energy_flow.gif" alt="DAD FieldWorks solver generated PCB side view current and field animation" width="100%">
 </p>
 
-This solver generated diagnostic visualization is generated from numerical field data for a 2D FDTD TMz PCB trace and open-stub geometry. It shows signed Ez field behavior around a conductor trace. It is not validation evidence and not a production readiness claim.
+This solver generated diagnostic visualization is generated from numerical field data for a microstrip-like PCB side view. It shows current magnitude on the top trace, field lines between the signal trace and ground plane, and energy flow in the dielectric substrate. It is not validation evidence and not a production readiness claim.
 
 ## Public Materials
 
