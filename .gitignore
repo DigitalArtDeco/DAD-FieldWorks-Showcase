@@ -8,6 +8,8 @@ animations/
 !assets/animations/pcb_trace/**
 !assets/animations/pec_cavity/
 !assets/animations/pec_cavity/**
+!assets/animations/pcb_discontinuity/
+!assets/animations/pcb_discontinuity/**
 notebooks/
 src/
 cpp/

@@ -99,3 +99,37 @@
 - Scalar boundary: not a full vector Maxwell eigenmode claim.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pcb_discontinuity/pcb_discontinuity_reflection.gif
+
+- Asset type: animated GIF
+- Creation method: solver generated numerical PCB discontinuity reflection visualization
+- Solver family or modeling family used: lossless characteristic-wave transmission-line time-domain update derived from an ideal line model.
+- Rendered quantity: signed voltage along the line, current magnitude along the line, and a space-time voltage diagnostic.
+- Geometry summary: PCB trace with impedance discontinuity.
+- Discontinuity summary: `Z1 = 50 ohm` to `Z2 = 30 ohm`, with diagnostic reflection coefficient `Gamma = -0.25`.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pcb_discontinuity/pcb_discontinuity_reflection_poster.png
+
+- Asset type: static PNG poster
+- Creation method: solver generated numerical PCB discontinuity reflection visualization
+- Solver family or modeling family used: lossless characteristic-wave transmission-line time-domain update derived from an ideal line model.
+- Rendered quantity: signed voltage along the line, current magnitude along the line, and a space-time voltage diagnostic.
+- Geometry summary: PCB trace with impedance discontinuity.
+- Discontinuity summary: `Z1 = 50 ohm` to `Z2 = 30 ohm`, with diagnostic reflection coefficient `Gamma = -0.25`.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.

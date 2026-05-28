@@ -26,6 +26,14 @@ This solver generated diagnostic visualization is generated from numerical field
 
 This solver generated diagnostic visualization is generated from scalar Helmholtz eigenmode field data for a rectangular PEC cavity. It shows standing-wave phase evolution on three orthogonal field slices. It is not validation evidence, not a production readiness claim, and not a full vector Maxwell eigenmode claim.
 
+## PCB Discontinuity Reflection
+
+<p align="center">
+  <img src="assets/animations/pcb_discontinuity/pcb_discontinuity_reflection.gif" alt="DAD FieldWorks PCB discontinuity reflection diagnostic animation" width="100%">
+</p>
+
+This solver generated diagnostic visualization is generated from numerical time-domain line data. It shows an incident pulse travelling along a PCB trace, partial reflection at an impedance discontinuity, and partial transmission beyond the discontinuity. It is not validation evidence and not a production readiness claim.
+
 ## Public Materials
 
 - [Website entry page](index.html)
@@ -40,6 +48,8 @@ This solver generated diagnostic visualization is generated from scalar Helmholt
 - [PCB trace animation notes](assets/animations/pcb_trace/README.md)
 - [PEC cavity visualization provenance](docs/pec_cavity_visualization_provenance.md)
 - [PEC cavity animation notes](assets/animations/pec_cavity/README.md)
+- [PCB discontinuity reflection provenance](docs/pcb_discontinuity_reflection_provenance.md)
+- [PCB discontinuity animation notes](assets/animations/pcb_discontinuity/README.md)
 - [Asset manifest](assets/asset_manifest.md)
 
 ## Publication Status
