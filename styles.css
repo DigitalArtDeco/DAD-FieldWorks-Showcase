@@ -122,7 +122,7 @@ h2 {
 .intro,
 .links-section,
 .showcase-block,
-.publication-block {
+.legal-page {
   margin: 0 auto;
   max-width: 1180px;
   padding: 72px 28px;
@@ -135,7 +135,7 @@ h2 {
 }
 
 .intro p,
-.publication-block p {
+.legal-page p {
   color: var(--muted);
   font-size: 1.05rem;
   margin: 18px 0 0;
@@ -180,42 +180,54 @@ h2 {
   width: 100%;
 }
 
-.link-grid {
+.material-grid {
   display: grid;
-  gap: 14px;
+  gap: 16px;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   margin-top: 28px;
 }
 
-.link-grid a {
+.material-card {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  min-height: 138px;
-  padding: 20px;
+  gap: 10px;
+  min-height: 132px;
+  padding: 22px;
   text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
 }
 
-.link-grid a:hover {
+.material-card:hover {
   background: var(--panel-strong);
   border-color: var(--accent);
+  transform: translateY(-2px);
 }
 
-.link-grid span {
+.material-card-title {
   color: var(--text);
   font-weight: 700;
 }
 
-.link-grid small {
+.material-card-description {
   color: var(--muted);
   font-size: 0.92rem;
+  line-height: 1.45;
 }
 
-.publication-block {
-  border-top: 1px solid var(--line);
+.legal-page {
+  min-height: 62vh;
+}
+
+.legal-panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 28px;
+  max-width: 820px;
+  padding: 28px;
 }
 
 footer {
@@ -249,7 +261,7 @@ footer p {
 
   .intro,
   .showcase-block,
-  .link-grid {
+  .material-grid {
     grid-template-columns: 1fr;
   }
 }

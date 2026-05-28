@@ -8,7 +8,9 @@ DAD FieldWorks is a private research and development project. This repository co
 
 Website: <https://www.dadlabs.de>
 
-The hero animation is a solver generated diagnostic visualization produced from numerical field data. It shows a 2D FDTD TMz-style Ez field interacting with a PEC-like rectangular object. It is not validation evidence, it is not a production readiness claim, and it does not contain private solver source code.
+Public claim boundary: This repository presents selected public architecture notes and solver-generated diagnostic visualizations from a private research and development project. The public material is not validation evidence, not a production readiness claim, and not a commercial solver equivalence claim.
+
+The hero animation is a solver generated diagnostic visualization produced from numerical field data. It shows a 2D FDTD TMz-style Ez field interacting with a PEC-like rectangular object.
 
 ## PCB Trace Current And Field Visualization
 
@@ -16,7 +18,7 @@ The hero animation is a solver generated diagnostic visualization produced from 
   <img src="assets/animations/pcb_trace/pcb_trace_sideview_energy_flow.gif" alt="DAD FieldWorks solver generated PCB side view current and field animation" width="100%">
 </p>
 
-This solver generated diagnostic visualization is generated from numerical field data for a microstrip-like PCB side view. It shows current magnitude on the top trace, field lines between the signal trace and ground plane, and energy flow in the dielectric substrate. It is not validation evidence and not a production readiness claim.
+This solver generated diagnostic visualization is generated from numerical field data for a microstrip-like PCB side view. It shows current magnitude on the top trace, field lines between the signal trace and ground plane, and energy flow in the dielectric substrate.
 
 ## PEC Cavity Eigenmode Field Slice
 
@@ -24,7 +26,7 @@ This solver generated diagnostic visualization is generated from numerical field
   <img src="assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif" alt="DAD FieldWorks scalar Helmholtz PEC cavity field-slice animation" width="100%">
 </p>
 
-This solver generated diagnostic visualization is generated from scalar Helmholtz eigenmode field data for a rectangular PEC cavity. It shows standing-wave phase evolution on three orthogonal field slices. It is not validation evidence, not a production readiness claim, and not a full vector Maxwell eigenmode claim.
+This solver generated diagnostic visualization is generated from scalar Helmholtz eigenmode field data for a rectangular PEC cavity. It shows standing-wave phase evolution on three orthogonal field slices.
 
 ## PCB Discontinuity Reflection
 
@@ -32,7 +34,7 @@ This solver generated diagnostic visualization is generated from scalar Helmholt
   <img src="assets/animations/pcb_discontinuity/pcb_discontinuity_reflection.gif" alt="DAD FieldWorks PCB discontinuity reflection diagnostic animation" width="100%">
 </p>
 
-This solver generated diagnostic visualization is generated from numerical time-domain line data. It shows an incident pulse travelling along a PCB trace, partial reflection at an impedance discontinuity, and partial transmission beyond the discontinuity. It is not validation evidence and not a production readiness claim.
+This solver generated diagnostic visualization is generated from numerical time-domain line data. It shows an incident pulse travelling along a PCB trace, partial reflection at an impedance discontinuity, and partial transmission beyond the discontinuity.
 
 ## Microstrip Quasi TEM Cross Section
 
@@ -40,7 +42,7 @@ This solver generated diagnostic visualization is generated from numerical time-
   <img src="assets/animations/microstrip_quasi_tem/microstrip_quasi_tem_cross_section.gif" alt="DAD FieldWorks microstrip quasi TEM cross-section diagnostic animation" width="100%">
 </p>
 
-This solver generated diagnostic visualization is generated from numerical quasi-static cross-section field data. It shows a top conductor trace, dielectric substrate, lower ground plane, electric field lines, and energy density growth during a voltage ramp. It is not validation evidence, not a production readiness claim, and not a full wave solver claim.
+This solver generated diagnostic visualization is generated from numerical quasi-static cross-section field data. It shows a top conductor trace, dielectric substrate, lower ground plane, electric field lines, and energy density growth during a voltage ramp.
 
 ## Dipole Current, Far Field, And Smith Chart
 
@@ -48,12 +50,13 @@ This solver generated diagnostic visualization is generated from numerical quasi
   <img src="assets/animations/dipole_diagnostics/dipole_current_farfield_smith.gif" alt="DAD FieldWorks dipole current far field and Smith chart diagnostic animation" width="100%">
 </p>
 
-This solver generated diagnostic visualization is generated from numerical antenna diagnostic data. It shows thin-wire dipole current distribution, normalized far-field pattern, and a generated Smith chart impedance locus. It is not validation evidence, not a production readiness claim, and no commercial solver equivalence is claimed.
+This solver generated diagnostic visualization is generated from numerical antenna diagnostic data. It shows thin-wire dipole current distribution, normalized far-field pattern, and a generated Smith chart impedance locus.
 
 ## Public Materials
 
 - [Website entry page](index.html)
 - [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_5_public.pdf)
+- [Public whitepaper LaTeX source draft](paper/source/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_5_public.tex)
 - [Evidence contract architecture notes](docs/evidence_contract_architecture.md)
 - [Current public status](docs/current_public_status.md)
 - [Claim boundaries](docs/claim_boundaries.md)
@@ -71,14 +74,12 @@ This solver generated diagnostic visualization is generated from numerical anten
 - [Dipole diagnostics provenance](docs/dipole_diagnostics_provenance.md)
 - [Dipole diagnostics animation notes](assets/animations/dipole_diagnostics/README.md)
 - [Asset manifest](assets/asset_manifest.md)
-
-## Publication Status
-
-The static website files are present for root-level GitHub Pages deployment. Final public publication is blocked until legal page data and legal review are complete. See [PUBLICATION_BLOCKERS.md](PUBLICATION_BLOCKERS.md).
+- [Impressum](impressum.html)
+- [Datenschutz](datenschutz.html)
 
 ## Claim Boundary
 
-The public material describes selected architecture, status, and showcase assets. It does not publish private implementation details, make an external validation claim, make a production readiness claim, or make a commercial solver equivalence claim.
+The central claim boundary above applies to the public material in this repository. Private implementation details are not published here.
 
 ## Copyright
 
