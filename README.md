@@ -1,14 +1,14 @@
 # DAD FieldWorks Showcase
 
 <p align="center">
-  <img src="assets/hero/dad_fieldworks_field_scattering_hero.gif" alt="DAD FieldWorks generated field scattering hero animation" width="100%">
+  <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero animation" width="100%">
 </p>
 
 DAD FieldWorks is a private research and development project. This repository contains public showcase, website, whitepaper, and companion documentation material only.
 
 Website: <https://www.dadlabs.de>
 
-The hero animation is a procedurally generated diagnostic style visualization of a scalar wave interacting with a PEC-like rectangular object. It is not validation evidence, it is not a production readiness claim, and it does not contain private solver source code.
+The hero animation is a solver generated diagnostic visualization produced from numerical field data. It shows a 2D FDTD TMz-style Ez field interacting with a PEC-like rectangular object. It is not validation evidence, it is not a production readiness claim, and it does not contain private solver source code.
 
 ## Public Materials
 
@@ -19,6 +19,7 @@ The hero animation is a procedurally generated diagnostic style visualization of
 - [Claim boundaries](docs/claim_boundaries.md)
 - [Public roadmap](docs/roadmap.md)
 - [Publication notes](docs/publication_notes.md)
+- [Visualization provenance](docs/visualization_provenance.md)
 - [Asset manifest](assets/asset_manifest.md)
 
 ## Publication Status

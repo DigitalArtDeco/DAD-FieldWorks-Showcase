@@ -1,10 +1,12 @@
 # Hero Assets
 
-The active scattering hero animation is `assets/hero/dad_fieldworks_field_scattering_hero.gif`. The matching poster is `assets/hero/dad_fieldworks_field_scattering_hero_poster.png`.
+The active solver diagnostic hero animation is `assets/hero/dad_fieldworks_solver_scattering_hero.gif`. The matching poster is `assets/hero/dad_fieldworks_solver_scattering_hero_poster.png`.
 
-The scattering hero animation and poster are procedurally generated from numerical field data. They visualize a scalar wave interaction with a PEC-like rectangular obstacle.
+The hero animation and poster are generated from numerical field data. The generation path follows the DAD FieldWorks 2D FDTD TMz update structure in a public-safe temporary execution path.
 
-These assets are public-safe diagnostic style visuals. They use no external images, no screenshots, and no AI image generation. They do not contain private solver source code.
+The visualization shows a 2D FDTD TMz style PEC scattering diagnostic. The PEC object is rendered from the simulation mask, and the rendered field quantity is Ez.
+
+These assets are public-safe diagnostic visuals. They use no external images, no screenshots, and no AI image generation. They do not contain published private solver source code.
 
 They are not validation evidence and are not production readiness claims.
 

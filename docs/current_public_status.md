@@ -2,11 +2,13 @@
 
 DAD FieldWorks is a private research and development project.
 
-This public site contains selected architecture and showcase material only. It does not release private solver source code, notebooks, tests, internal project control files, or internal result artifacts.
+This public site contains selected architecture, public status notes, and solver generated diagnostic visualization material only. It does not release private solver source code, notebooks, tests, internal project control files, or internal result artifacts.
 
 The project uses evidence contracts to separate numerical execution from claim status. Current public status remains research and development.
 
 Internal research may include solver experiments, diagnostics, grid and evidence audits, boundary policy work, and claim-status checks. The public site summarizes only public-safe status boundaries.
+
+The public visualization demonstrates field diagnostic rendering from numerical data. It does not establish validation, external agreement, or production readiness.
 
 Current public boundaries:
 
