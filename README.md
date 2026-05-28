@@ -40,7 +40,6 @@ This solver generated diagnostic visualization is generated from numerical time-
 
 - [Website entry page](index.html)
 - [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_5_public.pdf)
-- [Public whitepaper LaTeX source draft](paper/source/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_5_public.tex)
 - [Evidence contract architecture notes](docs/evidence_contract_architecture.md)
 - [Current public status](docs/current_public_status.md)
 - [Claim boundaries](docs/claim_boundaries.md)
