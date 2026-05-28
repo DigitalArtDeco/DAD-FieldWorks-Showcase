@@ -61,3 +61,41 @@
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+
+## assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif
+
+- Asset type: animated GIF
+- Creation method: solver generated numerical PEC cavity eigenmode visualization
+- Solver or model family used: scalar Helmholtz finite-difference eigenmode with homogeneous Dirichlet boundary conditions.
+- Rendered quantity: signed scalar eigenmode amplitude with standing-wave phase factor.
+- Slice planes: xy at `z = d/2`, xz at `y = b/2`, and yz at `x = a/2`.
+- Geometry summary: rectangular PEC cavity with dimensions `0.08 m x 0.084 m x 0.084 m`.
+- Mode indices: `{1, 1, 1}`.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+- Scalar boundary: not a full vector Maxwell eigenmode claim.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice_poster.png
+
+- Asset type: static PNG poster
+- Creation method: solver generated numerical PEC cavity eigenmode visualization
+- Solver or model family used: scalar Helmholtz finite-difference eigenmode with homogeneous Dirichlet boundary conditions.
+- Rendered quantity: signed scalar eigenmode amplitude with standing-wave phase factor.
+- Slice planes: xy at `z = d/2`, xz at `y = b/2`, and yz at `x = a/2`.
+- Geometry summary: rectangular PEC cavity with dimensions `0.08 m x 0.084 m x 0.084 m`.
+- Mode indices: `{1, 1, 1}`.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+- Scalar boundary: not a full vector Maxwell eigenmode claim.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.

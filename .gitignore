@@ -6,6 +6,8 @@ animations/
 !assets/animations/
 !assets/animations/pcb_trace/
 !assets/animations/pcb_trace/**
+!assets/animations/pec_cavity/
+!assets/animations/pec_cavity/**
 notebooks/
 src/
 cpp/

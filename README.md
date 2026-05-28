@@ -18,6 +18,14 @@ The hero animation is a solver generated diagnostic visualization produced from 
 
 This solver generated diagnostic visualization is generated from numerical field data for a microstrip-like PCB side view. It shows current magnitude on the top trace, field lines between the signal trace and ground plane, and energy flow in the dielectric substrate. It is not validation evidence and not a production readiness claim.
 
+## PEC Cavity Eigenmode Field Slice
+
+<p align="center">
+  <img src="assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif" alt="DAD FieldWorks scalar Helmholtz PEC cavity field-slice animation" width="100%">
+</p>
+
+This solver generated diagnostic visualization is generated from scalar Helmholtz eigenmode field data for a rectangular PEC cavity. It shows standing-wave phase evolution on three orthogonal field slices. It is not validation evidence, not a production readiness claim, and not a full vector Maxwell eigenmode claim.
+
 ## Public Materials
 
 - [Website entry page](index.html)
@@ -30,6 +38,8 @@ This solver generated diagnostic visualization is generated from numerical field
 - [Visualization provenance](docs/visualization_provenance.md)
 - [PCB visualization provenance](docs/pcb_visualization_provenance.md)
 - [PCB trace animation notes](assets/animations/pcb_trace/README.md)
+- [PEC cavity visualization provenance](docs/pec_cavity_visualization_provenance.md)
+- [PEC cavity animation notes](assets/animations/pec_cavity/README.md)
 - [Asset manifest](assets/asset_manifest.md)
 
 ## Publication Status
