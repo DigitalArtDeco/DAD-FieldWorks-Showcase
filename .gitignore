@@ -3,6 +3,9 @@
 gallery/
 images/
 animations/
+!assets/animations/
+!assets/animations/pcb_trace/
+!assets/animations/pcb_trace/**
 notebooks/
 src/
 cpp/

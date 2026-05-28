@@ -15,6 +15,36 @@
 - Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
+## assets/animations/pcb_trace/pcb_trace_field_animation.gif
+
+- Asset type: animated GIF
+- Creation method: solver generated numerical field visualization
+- Solver family used: 2D FDTD TMz
+- Rendered quantity: signed Ez
+- Geometry summary: PCB trace with open stub represented as a PEC mask in a uniform effective dielectric substrate.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+
+## assets/animations/pcb_trace/pcb_trace_field_poster.png
+
+- Asset type: static PNG poster
+- Creation method: solver generated numerical field visualization
+- Solver family used: 2D FDTD TMz
+- Rendered quantity: signed Ez
+- Geometry summary: PCB trace with open stub represented as a PEC mask in a uniform effective dielectric substrate.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
+
 ## assets/hero/dad_fieldworks_solver_scattering_hero_poster.png
 
 - Asset type: static PNG poster

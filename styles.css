@@ -121,6 +121,7 @@ h2 {
 
 .intro,
 .links-section,
+.showcase-block,
 .publication-block {
   margin: 0 auto;
   max-width: 1180px;
@@ -155,6 +156,28 @@ h2 {
 
 .links-section {
   border-top: 1px solid var(--line);
+}
+
+.showcase-block {
+  align-items: center;
+  border-top: 1px solid var(--line);
+  display: grid;
+  gap: 32px;
+  grid-template-columns: minmax(0, 0.82fr) minmax(320px, 1.18fr);
+}
+
+.showcase-block p {
+  color: var(--muted);
+  font-size: 1.05rem;
+  margin: 18px 0 0;
+}
+
+.showcase-block img {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  display: block;
+  height: auto;
+  width: 100%;
 }
 
 .link-grid {
@@ -225,6 +248,7 @@ footer p {
   }
 
   .intro,
+  .showcase-block,
   .link-grid {
     grid-template-columns: 1fr;
   }
