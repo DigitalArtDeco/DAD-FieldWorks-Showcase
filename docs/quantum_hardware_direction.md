@@ -8,6 +8,8 @@ The quantum hardware orientation is currently expressed through RF and microwave
 
 The FDTD resonator ringdown visual is a public-safe diagnostic of pulse-driven field build-up and decay in a line-coupled microwave resonator geometry. It is relevant to RF resonator workflows around quantum hardware, but it does not model qubit states, Josephson junctions, Hamiltonians, decoherence, or cryogenic device behavior.
 
+The diagnostic helps communicate why classical microwave structure understanding matters before more specialized device models are meaningful. Feed lines, resonators, cavities, coupling regions, and field concentration areas define the electromagnetic environment that later device-level work must account for.
+
 The core idea is that every computed result should carry its evidence level, limitations, and claim boundary. This applies equally to RF PCB workflows, microwave resonator diagnostics, and any future quantum-hardware-oriented workflow.
 
 Current public boundaries:

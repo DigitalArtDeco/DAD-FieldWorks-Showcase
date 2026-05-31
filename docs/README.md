@@ -10,6 +10,7 @@ This directory contains public companion notes for the DAD FieldWorks showcase.
 - [Publication notes](publication_notes.md)
 - [Visualization provenance](visualization_provenance.md)
 - [Quantum hardware visualization provenance](quantum_hardware_visualization_provenance.md)
+- [FDTD microwave resonator explanation](fdtd_microwave_resonator_explanation.md)
 - [FDTD microwave resonator provenance](fdtd_quantum_hardware_resonator_provenance.md)
 
 The public notes summarize selected architecture and status boundaries. They are not validation evidence, not production readiness claims, and not a release of private implementation.

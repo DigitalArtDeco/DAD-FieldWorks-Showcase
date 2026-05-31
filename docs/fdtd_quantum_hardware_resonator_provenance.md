@@ -2,6 +2,8 @@
 
 This public diagnostic visualization was generated from numerical FDTD field data for a microwave resonator geometry relevant to RF and quantum hardware workflow direction.
 
+Companion explanation: [FDTD microwave resonator explanation](fdtd_microwave_resonator_explanation.md).
+
 ## Numerical Model
 
 - Solver or model family: 2D FDTD TMz diagnostic.

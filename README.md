@@ -54,6 +54,10 @@ This solver generated diagnostic visualization is generated from numerical cavit
 
 This solver generated diagnostic visualization is generated from 2D FDTD TMz field data. It shows pulse-driven field build-up and ringdown in a line-coupled microwave resonator geometry relevant to RF and quantum hardware design workflows. It is not a qubit simulation.
 
+The resonator animation shows a pulse-fed microwave structure in a 2D FDTD TMz diagnostic. The field panel shows the Ez field in the resonator geometry, the probe trace shows the local time-domain response, and the energy trace shows build-up and decay of stored field energy. This kind of diagnostic is relevant to RF and quantum-hardware-oriented work because resonators, feed lines, cavities, and coupling regions form the classical microwave environment around many quantum devices.
+
+See [FDTD resonator explanation](docs/fdtd_microwave_resonator_explanation.md).
+
 ## Public Materials
 
 - [Website entry page](index.html)
@@ -72,6 +76,7 @@ This solver generated diagnostic visualization is generated from 2D FDTD TMz fie
 - [PCB discontinuity reflection provenance](docs/pcb_discontinuity_reflection_provenance.md)
 - [PCB discontinuity animation notes](assets/animations/pcb_discontinuity/README.md)
 - [Quantum hardware visualization provenance](docs/quantum_hardware_visualization_provenance.md)
+- [FDTD microwave resonator explanation](docs/fdtd_microwave_resonator_explanation.md)
 - [FDTD microwave resonator provenance](docs/fdtd_quantum_hardware_resonator_provenance.md)
 - [Quantum hardware animation notes](assets/animations/quantum_hardware/README.md)
 - [Asset manifest](assets/asset_manifest.md)

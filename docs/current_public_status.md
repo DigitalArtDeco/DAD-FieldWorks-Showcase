@@ -10,6 +10,8 @@ Internal research may include electromagnetic modeling, RF PCB workflows, microw
 
 The public visualization material demonstrates field diagnostic rendering from numerical data. It includes solver generated field diagnostics, a PCB side-view current and field visualization, a scalar Helmholtz PEC cavity field-slice diagnostic, a PCB discontinuity reflection diagnostic from numerical time-domain line data, a microwave resonator field-mode diagnostic, and a 2D FDTD microwave resonator ringdown diagnostic for RF and quantum hardware workflow direction. These visuals do not establish validation, external agreement, or production readiness.
 
+The FDTD microwave resonator explanation page describes how to read the field panel, probe trace, cavity field energy trace, and ringdown behavior in the public visualization.
+
 Current public boundaries:
 
 - No external validation claim.
