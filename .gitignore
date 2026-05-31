@@ -42,3 +42,8 @@ __pycache__/
 *.toc
 *.out
 *.synctex.gz
+.venv/
+venv/
+site-packages/
+*.egg-info/
+*.dist-info/
