@@ -10,6 +10,8 @@ animations/
 !assets/animations/pec_cavity/**
 !assets/animations/pcb_discontinuity/
 !assets/animations/pcb_discontinuity/**
+!assets/animations/quantum_hardware/
+!assets/animations/quantum_hardware/**
 notebooks/
 src/
 cpp/

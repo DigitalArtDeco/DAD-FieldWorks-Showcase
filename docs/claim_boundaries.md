@@ -7,6 +7,10 @@ This repository does not claim:
 - external validation
 - production readiness
 - commercial solver equivalence
+- complete quantum hardware solver status
+- qubit simulation
+- quantum processor modeling
+- cryogenic device modeling
 - release of private solver source code
 - release of internal test suites or internal result artifacts
 

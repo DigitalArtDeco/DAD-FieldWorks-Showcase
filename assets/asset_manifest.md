@@ -133,3 +133,35 @@
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic.gif
+
+- Asset type: animated GIF
+- Creation method: solver generated numerical RF or microwave resonator diagnostic
+- Solver or model family used: scalar Helmholtz finite-difference eigenmode diagnostic.
+- Rendered quantities: signed scalar field-mode amplitude on orthogonal slices and standing-wave phase evolution.
+- Structure type: rectangular microwave cavity resonator.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not a complete quantum hardware solver claim.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic_poster.png
+
+- Asset type: static PNG poster
+- Creation method: solver generated numerical RF or microwave resonator diagnostic
+- Solver or model family used: scalar Helmholtz finite-difference eigenmode diagnostic.
+- Rendered quantities: signed scalar field-mode amplitude on orthogonal slices and standing-wave phase evolution.
+- Structure type: rectangular microwave cavity resonator.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not a complete quantum hardware solver claim.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.

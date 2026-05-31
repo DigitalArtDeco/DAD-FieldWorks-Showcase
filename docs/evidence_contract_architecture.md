@@ -16,6 +16,8 @@ The public architecture idea is conservative:
 - diagnostic visuals should be identified as diagnostic visuals
 - blocked claims should remain blocked until a public evidence basis exists
 
+This pattern is also the intended public direction for validation-aware RF and quantum hardware design workflows: computed RF, microwave, cavity, resonator, or future quantum-hardware-oriented results should carry evidence level, limitations, and claim boundary.
+
 ## Claim Boundary
 
 These notes describe an architecture pattern. They do not create an external validation claim, a production readiness claim, or a commercial solver equivalence claim.
