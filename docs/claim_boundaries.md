@@ -9,6 +9,9 @@ This repository does not claim:
 - commercial solver equivalence
 - complete quantum hardware solver status
 - qubit simulation
+- Josephson junction modeling
+- Hamiltonian extraction
+- coherence-time prediction
 - quantum processor modeling
 - cryogenic device modeling
 - release of private solver source code

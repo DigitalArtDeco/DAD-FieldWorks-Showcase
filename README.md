@@ -46,6 +46,14 @@ This solver generated diagnostic visualization is generated from numerical time-
 
 This solver generated diagnostic visualization is generated from numerical cavity mode data. It shows standing-wave phase evolution in a microwave resonator diagnostic relevant to RF and quantum hardware design workflows. It is not a qubit simulation.
 
+## FDTD Microwave Resonator Ringdown Diagnostic
+
+<p align="center">
+  <img src="assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown.gif" alt="DAD FieldWorks FDTD microwave resonator ringdown diagnostic animation" width="100%">
+</p>
+
+This solver generated diagnostic visualization is generated from 2D FDTD TMz field data. It shows pulse-driven field build-up and ringdown in a line-coupled microwave resonator geometry relevant to RF and quantum hardware design workflows. It is not a qubit simulation.
+
 ## Public Materials
 
 - [Website entry page](index.html)
@@ -64,6 +72,7 @@ This solver generated diagnostic visualization is generated from numerical cavit
 - [PCB discontinuity reflection provenance](docs/pcb_discontinuity_reflection_provenance.md)
 - [PCB discontinuity animation notes](assets/animations/pcb_discontinuity/README.md)
 - [Quantum hardware visualization provenance](docs/quantum_hardware_visualization_provenance.md)
+- [FDTD microwave resonator provenance](docs/fdtd_quantum_hardware_resonator_provenance.md)
 - [Quantum hardware animation notes](assets/animations/quantum_hardware/README.md)
 - [Asset manifest](assets/asset_manifest.md)
 - [Impressum](impressum.html)

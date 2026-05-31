@@ -12,7 +12,7 @@
 - AI image generation: none
 - Private source code copied: no
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/hero/dad_fieldworks_solver_scattering_hero_poster.png
@@ -27,7 +27,7 @@
 - AI image generation: none
 - Private source code copied: no
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/animations/pcb_trace/pcb_trace_sideview_energy_flow.gif
@@ -43,7 +43,7 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/animations/pcb_trace/pcb_trace_sideview_energy_flow_poster.png
@@ -59,7 +59,7 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif
@@ -79,7 +79,7 @@
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Scalar boundary: not a full vector Maxwell eigenmode claim.
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice_poster.png
 
@@ -98,7 +98,7 @@
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Scalar boundary: not a full vector Maxwell eigenmode claim.
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/animations/pcb_discontinuity/pcb_discontinuity_reflection.gif
 
@@ -115,7 +115,7 @@
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/animations/pcb_discontinuity/pcb_discontinuity_reflection_poster.png
 
@@ -132,7 +132,7 @@
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic.gif
 
@@ -148,7 +148,7 @@
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not a complete quantum hardware solver claim.
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic_poster.png
 
@@ -164,4 +164,40 @@
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not a complete quantum hardware solver claim.
 - Copyright holder: Harun Aktas
-- Copyright notice: Copyright © 2026 Harun Aktas. All rights reserved.
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown.gif
+
+- Asset type: animated GIF
+- Creation method: solver generated FDTD microwave resonator diagnostic
+- Solver or model family used: 2D FDTD TMz diagnostic.
+- Rendered quantities: signed Ez field, probe Ez trace, and cavity field energy.
+- Geometry summary: line-coupled rectangular microwave resonator with PEC-like walls, feed region, coupling slot, and central post.
+- Source type: Gaussian-windowed sinusoidal pulse from the feed side.
+- Boundary handling: graded-loss edge absorber.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown_poster.png
+
+- Asset type: static PNG poster
+- Creation method: solver generated FDTD microwave resonator diagnostic
+- Solver or model family used: 2D FDTD TMz diagnostic.
+- Rendered quantities: signed Ez field, probe Ez trace, and cavity field energy.
+- Geometry summary: line-coupled rectangular microwave resonator with PEC-like walls, feed region, coupling slot, and central post.
+- Source type: Gaussian-windowed sinusoidal pulse from the feed side.
+- Boundary handling: graded-loss edge absorber.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
