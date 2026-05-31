@@ -8,7 +8,9 @@ The project uses evidence contracts to separate numerical execution from claim s
 
 Internal research may include electromagnetic modeling, RF PCB workflows, microwave structures, resonator and cavity analysis, solver experiments, diagnostics, grid and evidence audits, boundary policy work, and claim-status checks. The public site summarizes only public-safe status boundaries.
 
-The public visualization material demonstrates field diagnostic rendering from numerical data. It includes solver generated field diagnostics, a PCB side-view current and field visualization, a scalar Helmholtz PEC cavity field-slice diagnostic, a PCB discontinuity reflection diagnostic from numerical time-domain line data, a microwave resonator field-mode diagnostic, and a 2D FDTD microwave resonator ringdown diagnostic for RF and quantum hardware workflow direction. These visuals do not establish validation, external agreement, or production readiness.
+Current internal project state is records-only for the active PEC cavity residual metric, generalized mass, and divergence or gauge bridge direction. The relevant bridge construction records are internally consistent and claim safe, while residual metric policy, generalized mass policy, divergence or gauge policy, incidence compatibility closure, numerical consistency closure, and native Yee eigenmode prototype readiness remain unresolved or not ready.
+
+The public visualization material demonstrates field diagnostic rendering from numerical data. The landing page currently features a solver generated field diagnostic hero, a scalar Helmholtz PEC cavity field-slice diagnostic, a microwave resonator field-mode diagnostic, and a 2D FDTD microwave resonator ringdown diagnostic for RF and quantum hardware workflow direction. Retained PCB visual assets remain in the repository for possible later use, but they are not featured on the homepage.
 
 The FDTD microwave resonator explanation page describes how to read the field panel, probe trace, cavity field energy trace, and ringdown behavior in the public visualization.
 
@@ -21,7 +23,11 @@ Current public boundaries:
 - No Josephson junction modeling claim.
 - No Hamiltonian extraction claim.
 - No coherence-time prediction claim.
+- No CPML support claim.
+- No open boundary support claim.
+- No GUI availability claim.
+- No production C++ EM solver claim.
 - No private implementation release.
 - No public claim that diagnostic visuals are validation evidence.
 
-The public whitepaper PDF remains the public whitepaper version. These Markdown pages provide current public companion notes.
+The public whitepaper PDF is version 0.6. These Markdown pages provide current public companion notes.

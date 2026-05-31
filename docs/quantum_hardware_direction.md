@@ -10,6 +10,8 @@ The FDTD resonator ringdown visual is a public-safe diagnostic of pulse-driven f
 
 The diagnostic helps communicate why classical microwave structure understanding matters before more specialized device models are meaningful. Feed lines, resonators, cavities, coupling regions, and field concentration areas define the electromagnetic environment that later device-level work must account for.
 
+The current project state keeps core solver closure, CPML support, open boundary support, GUI availability, and production C++ EM solver status blocked. The public direction is therefore limited to validation-aware RF and microwave diagnostics, evidence records, and claim-boundary discipline.
+
 The core idea is that every computed result should carry its evidence level, limitations, and claim boundary. This applies equally to RF PCB workflows, microwave resonator diagnostics, and any future quantum-hardware-oriented workflow.
 
 Current public boundaries:
@@ -21,6 +23,10 @@ Current public boundaries:
 - No coherence-time prediction claim.
 - No quantum processor modeling claim.
 - No cryogenic device model claim.
+- No CPML support claim.
+- No open boundary support claim.
+- No GUI availability claim.
+- No production C++ EM solver claim.
 - No external validation claim.
 - No production readiness claim.
 - No commercial solver equivalence claim.

@@ -7,6 +7,7 @@ This repository does not claim:
 - external validation
 - production readiness
 - commercial solver equivalence
+- finished quantum hardware design tool status
 - complete quantum hardware solver status
 - qubit simulation
 - Josephson junction modeling
@@ -14,6 +15,10 @@ This repository does not claim:
 - coherence-time prediction
 - quantum processor modeling
 - cryogenic device modeling
+- CPML support
+- absorbing or open boundary support
+- GUI availability
+- production C++ EM solver release
 - release of private solver source code
 - release of internal test suites or internal result artifacts
 

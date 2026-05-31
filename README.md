@@ -14,14 +14,6 @@ The project explores electromagnetic modeling, RF PCB workflows, microwave struc
 
 The hero animation is a solver generated diagnostic visualization produced from numerical field data. It shows a 2D FDTD TMz-style Ez field interacting with a PEC-like rectangular object.
 
-## PCB Trace Current And Field Visualization
-
-<p align="center">
-  <img src="assets/animations/pcb_trace/pcb_trace_sideview_energy_flow.gif" alt="DAD FieldWorks solver generated PCB side view current and field animation" width="100%">
-</p>
-
-This solver generated diagnostic visualization is generated from numerical field data for a microstrip-like PCB side view. It shows current magnitude on the top trace, field lines between the signal trace and ground plane, and energy flow in the dielectric substrate.
-
 ## PEC Cavity Eigenmode Field Slice
 
 <p align="center">
@@ -29,14 +21,6 @@ This solver generated diagnostic visualization is generated from numerical field
 </p>
 
 This solver generated diagnostic visualization is generated from scalar Helmholtz eigenmode field data for a rectangular PEC cavity. It shows standing-wave phase evolution on three orthogonal field slices.
-
-## PCB Discontinuity Reflection
-
-<p align="center">
-  <img src="assets/animations/pcb_discontinuity/pcb_discontinuity_reflection.gif" alt="DAD FieldWorks PCB discontinuity reflection diagnostic animation" width="100%">
-</p>
-
-This solver generated diagnostic visualization is generated from numerical time-domain line data. It shows an incident pulse travelling along a PCB trace, partial reflection at an impedance discontinuity, and partial transmission beyond the discontinuity.
 
 ## Quantum Hardware Oriented Resonator Diagnostic
 
@@ -61,7 +45,7 @@ See [FDTD resonator explanation](docs/fdtd_microwave_resonator_explanation.md).
 ## Public Materials
 
 - [Website entry page](index.html)
-- [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_5_public.pdf)
+- [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_6_public.pdf)
 - [Evidence contract architecture notes](docs/evidence_contract_architecture.md)
 - [Current public status](docs/current_public_status.md)
 - [Quantum hardware direction](docs/quantum_hardware_direction.md)
@@ -69,12 +53,8 @@ See [FDTD resonator explanation](docs/fdtd_microwave_resonator_explanation.md).
 - [Public roadmap](docs/roadmap.md)
 - [Publication notes](docs/publication_notes.md)
 - [Visualization provenance](docs/visualization_provenance.md)
-- [PCB visualization provenance](docs/pcb_visualization_provenance.md)
-- [PCB trace animation notes](assets/animations/pcb_trace/README.md)
 - [PEC cavity visualization provenance](docs/pec_cavity_visualization_provenance.md)
 - [PEC cavity animation notes](assets/animations/pec_cavity/README.md)
-- [PCB discontinuity reflection provenance](docs/pcb_discontinuity_reflection_provenance.md)
-- [PCB discontinuity animation notes](assets/animations/pcb_discontinuity/README.md)
 - [Quantum hardware visualization provenance](docs/quantum_hardware_visualization_provenance.md)
 - [FDTD microwave resonator explanation](docs/fdtd_microwave_resonator_explanation.md)
 - [FDTD microwave resonator provenance](docs/fdtd_quantum_hardware_resonator_provenance.md)
