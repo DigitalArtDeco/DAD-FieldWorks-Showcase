@@ -42,6 +42,34 @@ The resonator animation shows a pulse-fed microwave structure in a 2D FDTD TMz d
 
 See [FDTD resonator explanation](docs/fdtd_microwave_resonator_explanation.md).
 
+## Yee Curl Incidence Microprototype
+
+<p align="center">
+  <img src="assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif" alt="DAD FieldWorks Yee curl incidence microprototype diagnostic animation" width="100%">
+</p>
+
+This public-safe diagnostic visualization shows the bounded step from oriented
+Yee E unknowns to signed curl incidence rows. It is an operator-near
+microprototype visualization only. It is not curl-curl assembly, not a
+production incidence matrix, not an eigensolve, not validation evidence, and
+not a production readiness claim.
+
+See [Yee curl incidence provenance](docs/yee_curl_incidence_microprototype_provenance.md).
+
+## FDTD Resonator Ringdown with FFT Spectrum
+
+<p align="center">
+  <img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="DAD FieldWorks FDTD resonator ringdown with FFT spectrum diagnostic animation" width="100%">
+</p>
+
+This Python-rendered diagnostic visualization is created from 2D FDTD TMz
+field data. It shows resonator field build-up, late-time ringdown, a local Ez
+probe trace, cavity energy, and an FFT spectrum derived from the time-domain
+probe signal. It is not a qubit simulation, not validation evidence, and not a
+production readiness claim.
+
+See [FDTD resonator FFT provenance](docs/fdtd_resonator_fft_provenance.md).
+
 ## Public Materials
 
 - [Website entry page](index.html)
@@ -58,6 +86,10 @@ See [FDTD resonator explanation](docs/fdtd_microwave_resonator_explanation.md).
 - [Quantum hardware visualization provenance](docs/quantum_hardware_visualization_provenance.md)
 - [FDTD microwave resonator explanation](docs/fdtd_microwave_resonator_explanation.md)
 - [FDTD microwave resonator provenance](docs/fdtd_quantum_hardware_resonator_provenance.md)
+- [Yee curl incidence microprototype provenance](docs/yee_curl_incidence_microprototype_provenance.md)
+- [Yee curl incidence animation notes](assets/animations/yee_incidence/README.md)
+- [FDTD resonator FFT provenance](docs/fdtd_resonator_fft_provenance.md)
+- [FDTD resonator FFT animation notes](assets/animations/fdtd_resonator_fft/README.md)
 - [Quantum hardware animation notes](assets/animations/quantum_hardware/README.md)
 - [Asset manifest](assets/asset_manifest.md)
 - [Impressum](impressum.html)

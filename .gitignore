@@ -12,10 +12,13 @@ animations/
 !assets/animations/pcb_discontinuity/**
 !assets/animations/quantum_hardware/
 !assets/animations/quantum_hardware/**
+!assets/animations/yee_incidence/
+!assets/animations/yee_incidence/**
+!assets/animations/fdtd_resonator_fft/
+!assets/animations/fdtd_resonator_fft/**
 notebooks/
 src/
 cpp/
-mathematica/
 validation/
 references/
 private/

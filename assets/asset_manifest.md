@@ -201,3 +201,69 @@
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif
+
+- Asset type: animated GIF
+- Creation method: Python-rendered public-safe schematic visualization.
+- Solver or model family used: bounded native Yee curl incidence microprototype concept.
+- Rendered quantities or concepts: oriented Yee E unknowns, local curl orientation, signed incidence row entries, bounded row record, and claim boundary.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not curl-curl assembly, not a production incidence matrix, not an eigensolve, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/yee_incidence/yee_curl_incidence_microprototype_poster.png
+
+- Asset type: static PNG poster
+- Creation method: Python-rendered public-safe schematic visualization.
+- Solver or model family used: bounded native Yee curl incidence microprototype concept.
+- Rendered quantities or concepts: oriented Yee E unknowns, local curl orientation, signed incidence row entries, bounded row record, and claim boundary.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not curl-curl assembly, not a production incidence matrix, not an eigensolve, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif
+
+- Asset type: animated GIF
+- Creation method: Python-rendered 2D FDTD TMz numerical diagnostic with FFT derived from the recorded probe signal.
+- Solver or model family used: 2D FDTD TMz diagnostic.
+- Rendered quantities or concepts: signed Ez field, probe Ez time trace, cavity field energy, and normalized FFT spectrum.
+- Geometry summary: line-coupled resonator-like cavity with PEC-like walls, coupling slot, feed region, and central post.
+- Source type: Gaussian-windowed sinusoidal pulse.
+- Boundary handling: graded-loss edge absorber. No CPML claim is made.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation, not a Josephson junction model.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft_poster.png
+
+- Asset type: static PNG poster
+- Creation method: Python-rendered 2D FDTD TMz numerical diagnostic with FFT derived from the recorded probe signal.
+- Solver or model family used: 2D FDTD TMz diagnostic.
+- Rendered quantities or concepts: signed Ez field, probe Ez time trace, cavity field energy, and normalized FFT spectrum.
+- Geometry summary: line-coupled resonator-like cavity with PEC-like walls, coupling slot, feed region, and central post.
+- Source type: Gaussian-windowed sinusoidal pulse.
+- Boundary handling: graded-loss edge absorber. No CPML claim is made.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation, not a Josephson junction model.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

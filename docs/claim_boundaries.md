@@ -17,6 +17,10 @@ This repository does not claim:
 - cryogenic device modeling
 - CPML support
 - absorbing or open boundary support
+- no production curl operator claim
+- curl-curl assembly from the microprototype visualization
+- no production incidence matrix claim
+- eigensolve status from the microprototype visualization
 - GUI availability
 - production C++ EM solver release
 - release of private solver source code
