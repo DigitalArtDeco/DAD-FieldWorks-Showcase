@@ -92,7 +92,7 @@ See [FDTD resonator FFT provenance](docs/fdtd_resonator_fft_provenance.md).
 ## Public Materials
 
 - [Website entry page](index.html)
-- [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_6_public.pdf)
+- [Public whitepaper PDF](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_7_public.pdf)
 - [Evidence contract architecture notes](docs/evidence_contract_architecture.md)
 - [Current public status](docs/current_public_status.md)
 - [Quantum hardware direction](docs/quantum_hardware_direction.md)
