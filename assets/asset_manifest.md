@@ -267,3 +267,45 @@
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation, not a Josephson junction model.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/microwave_cavity_eigenmode_birth.gif
+
+- Asset type: animated GIF
+- Creation method: deterministic Python numerical visualization
+- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; bounded curl-curl structure; standing PEC cavity eigenmode slice; residual and analytical reference status.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/microwave_cavity_eigenmode_birth_poster.png
+
+- Asset type: static PNG poster
+- Creation method: deterministic Python numerical visualization
+- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; bounded curl-curl structure; standing PEC cavity eigenmode slice; residual and analytical reference status.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/microwave_cavity_eigenmode_birth_summary.json
+
+- Asset type: JSON summary
+- Creation method: deterministic Python numerical visualization
+- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; bounded curl-curl structure; standing PEC cavity eigenmode slice; residual and analytical reference status.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Internal named toolchains used in public asset generation: none
+- Private source code copied: no
+- Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

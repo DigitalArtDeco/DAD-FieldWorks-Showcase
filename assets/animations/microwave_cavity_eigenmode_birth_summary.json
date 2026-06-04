@@ -1,0 +1,27 @@
+{
+  "title": "Microwave Cavity Eigenmode Birth",
+  "created_by_script": "scripts/generate_microwave_cavity_eigenmode_birth.py",
+  "claim_boundary": "bounded internal prototype visualization only; not external validation, not production readiness, not a qubit simulation",
+  "mode_formula_used": "Ez(x,y,t) = sin(pi x / Lx) sin(pi y / Ly) cos(omega t)",
+  "grid_size": {
+    "nx": 72,
+    "ny": 48
+  },
+  "frames": 118,
+  "gif_dimensions": {
+    "width": 1280,
+    "height": 720
+  },
+  "duration_seconds": 11.8,
+  "optional_summary_csv_supplied_at_generation_time": true,
+  "optional_summary_csv_used_at_generation_time": true,
+  "mp4_created": false,
+  "external_validation_claim": false,
+  "production_claim": false,
+  "cpml_claim": false,
+  "quantum_device_claim": false,
+  "external_images_used": false,
+  "screenshots_used": false,
+  "ai_image_generation_used": false,
+  "private_source_code_copied": false
+}

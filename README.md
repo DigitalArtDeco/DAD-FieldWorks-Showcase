@@ -56,6 +56,25 @@ not a production readiness claim.
 
 See [Yee curl incidence provenance](docs/yee_curl_incidence_microprototype_provenance.md).
 
+## Microwave Cavity Eigenmode Birth
+
+<p align="center">
+  <img src="assets/animations/microwave_cavity_eigenmode_birth.gif" alt="DAD FieldWorks microwave cavity eigenmode birth bounded prototype animation" width="100%">
+</p>
+
+This deterministic Python visualization shows a bounded PEC cavity eigenmode
+prototype path: Yee electric unknowns, oriented curl incidence, bounded
+curl-curl structure, a minimal eigenmode path, residual check, and analytical
+reference comparison. It is not validation evidence, not a production
+readiness claim, not a qubit simulation, and not a commercial solver
+equivalence claim.
+
+- [Microwave cavity eigenmode birth GIF](assets/animations/microwave_cavity_eigenmode_birth.gif)
+- [Microwave cavity eigenmode birth poster](assets/animations/microwave_cavity_eigenmode_birth_poster.png)
+- [Microwave cavity eigenmode birth summary JSON](assets/animations/microwave_cavity_eigenmode_birth_summary.json)
+- [Microwave cavity eigenmode birth provenance](docs/microwave_cavity_eigenmode_birth_provenance.md)
+- [Microwave cavity eigenmode birth animation notes](assets/animations/microwave_cavity_eigenmode_birth/README.md)
+
 ## FDTD Resonator Ringdown with FFT Spectrum
 
 <p align="center">
@@ -88,6 +107,8 @@ See [FDTD resonator FFT provenance](docs/fdtd_resonator_fft_provenance.md).
 - [FDTD microwave resonator provenance](docs/fdtd_quantum_hardware_resonator_provenance.md)
 - [Yee curl incidence microprototype provenance](docs/yee_curl_incidence_microprototype_provenance.md)
 - [Yee curl incidence animation notes](assets/animations/yee_incidence/README.md)
+- [Microwave cavity eigenmode birth provenance](docs/microwave_cavity_eigenmode_birth_provenance.md)
+- [Microwave cavity eigenmode birth animation notes](assets/animations/microwave_cavity_eigenmode_birth/README.md)
 - [FDTD resonator FFT provenance](docs/fdtd_resonator_fft_provenance.md)
 - [FDTD resonator FFT animation notes](assets/animations/fdtd_resonator_fft/README.md)
 - [Quantum hardware animation notes](assets/animations/quantum_hardware/README.md)

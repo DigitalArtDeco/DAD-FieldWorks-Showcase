@@ -16,6 +16,10 @@ animations/
 !assets/animations/yee_incidence/**
 !assets/animations/fdtd_resonator_fft/
 !assets/animations/fdtd_resonator_fft/**
+!assets/animations/microwave_cavity_eigenmode_birth/
+!assets/animations/microwave_cavity_eigenmode_birth/**
+!scripts/
+!scripts/generate_microwave_cavity_eigenmode_birth.py
 notebooks/
 src/
 cpp/
@@ -32,6 +36,8 @@ desktop.ini
 __pycache__/
 *.pyc
 *.py
+!scripts/
+!scripts/generate_microwave_cavity_eigenmode_birth.py
 *.ipynb
 *.log
 *.wl
