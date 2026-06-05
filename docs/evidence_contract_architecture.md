@@ -20,6 +20,10 @@ The public architecture idea is conservative:
 
 This pattern is also the intended public direction for validation-aware RF and quantum hardware design workflows: computed RF, microwave, cavity, resonator, or future quantum-hardware-oriented results should carry evidence level, limitations, and claim boundary.
 
+The same architecture is intended to generalize across backend routes. Classical solver outputs, future DGTD outputs, and future PINN or neural-operator outputs should all remain candidates until evidence rows, residual checks, boundary-condition checks, finite-value sanity checks, reference comparisons where available, and claim gates permit a stronger classification.
+
+See [Evidence contract platform roadmap](evidence_contract_platform_roadmap.md).
+
 ## Claim Boundary
 
 These notes describe an architecture pattern. They do not create an external validation claim, a production readiness claim, or a commercial solver equivalence claim.

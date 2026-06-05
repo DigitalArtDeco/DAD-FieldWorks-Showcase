@@ -14,6 +14,8 @@ The current project state keeps core solver closure, CPML support, open boundary
 
 The core idea is that every computed result should carry its evidence level, limitations, and claim boundary. This applies equally to RF PCB workflows, microwave resonator diagnostics, and any future quantum-hardware-oriented workflow.
 
+The evidence-contract platform roadmap extends this discipline to future backend routes. A future DGTD route, PINN route, or neural-operator route would be used only as a candidate field or mode generator until its output passes residual, boundary-condition, finite-value, reference and claim-boundary gates. Neural output is not trusted because it is neural; it is trusted only when its electromagnetic evidence record is strong enough.
+
 Current public boundaries:
 
 - No complete quantum hardware solver claim.
@@ -30,5 +32,6 @@ Current public boundaries:
 - No external validation claim.
 - No production readiness claim.
 - No commercial solver equivalence claim.
+- No future-backend validation claim.
 
 Copyright &copy; 2026 Harun Aktas. All rights reserved.

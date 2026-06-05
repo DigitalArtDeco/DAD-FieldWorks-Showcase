@@ -1,5 +1,18 @@
 # Asset Manifest
 
+## assets/diagrams/evidence_contract_layer.svg
+
+- Asset type: SVG diagram
+- Creation method: hand-authored simple public-safe SVG with text and basic shapes.
+- Rendered concept: solver or backend candidates passing through an evidence contract layer before claim gates.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: roadmap diagram only, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
 ## assets/hero/dad_fieldworks_solver_scattering_hero.gif
 
 - Asset type: animated GIF

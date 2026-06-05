@@ -2,7 +2,7 @@
 
 This directory contains the public whitepaper PDF.
 
-[DAD FieldWorks Evidence Contract Architecture Whitepaper v0.7 public](DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_7_public.pdf)
+[DAD FieldWorks Evidence Contract Architecture Whitepaper v0.8 public](DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_8_public.pdf)
 
 The previous public PDF version remains available in this folder for history.
 

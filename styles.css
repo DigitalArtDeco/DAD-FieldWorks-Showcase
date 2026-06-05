@@ -231,6 +231,31 @@ h2 {
   padding: 18px 20px;
 }
 
+.roadmap-table {
+  border-collapse: collapse;
+  color: var(--muted);
+  font-size: 0.98rem;
+  margin-top: 28px;
+  width: 100%;
+}
+
+.roadmap-table th,
+.roadmap-table td {
+  border: 1px solid var(--line);
+  padding: 14px 16px;
+  text-align: left;
+  vertical-align: top;
+}
+
+.roadmap-table th {
+  background: var(--panel-strong);
+  color: var(--text);
+}
+
+.roadmap-table td {
+  background: var(--panel);
+}
+
 .material-grid {
   display: grid;
   gap: 16px;

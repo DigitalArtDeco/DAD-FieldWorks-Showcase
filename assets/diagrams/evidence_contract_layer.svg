@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence Contract Layer Roadmap</title>
+  <desc id="desc">A simple public-safe diagram showing solver or backend candidates passing through evidence contract checks before claim gates.</desc>
+  <rect width="1200" height="760" fill="#03070d"/>
+  <style>
+    .box { fill: #0b1420; stroke: #25384a; stroke-width: 2; rx: 10; }
+    .gate { fill: #101c2a; stroke: #26b5df; stroke-width: 2; rx: 10; }
+    .warn { fill: #1a1410; stroke: #f28b2f; stroke-width: 2; rx: 10; }
+    .title { fill: #e7edf2; font: 700 34px Arial, Helvetica, sans-serif; }
+    .label { fill: #e7edf2; font: 700 24px Arial, Helvetica, sans-serif; }
+    .text { fill: #a6b5c2; font: 20px Arial, Helvetica, sans-serif; }
+    .small { fill: #a6b5c2; font: 18px Arial, Helvetica, sans-serif; }
+    .arrow { stroke: #26b5df; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M 0 0 L 12 6 L 0 12 z" fill="#26b5df"/>
+    </marker>
+  </defs>
+
+  <text x="60" y="70" class="title">Evidence Contract Layer for Trustworthy CEM</text>
+  <text x="60" y="108" class="text">Every backend remains untrusted until its candidate output passes evidence gates.</text>
+
+  <rect x="90" y="160" width="300" height="120" class="box"/>
+  <text x="125" y="205" class="label">Solver or Backend</text>
+  <text x="125" y="238" class="text">Classical, DGTD route,</text>
+  <text x="125" y="266" class="text">PINN or neural operator</text>
+
+  <path d="M 390 220 L 510 220" class="arrow"/>
+
+  <rect x="520" y="160" width="280" height="120" class="box"/>
+  <text x="555" y="205" class="label">Candidate Output</text>
+  <text x="555" y="238" class="text">Field, mode, trace,</text>
+  <text x="555" y="266" class="text">spectrum or report row</text>
+
+  <path d="M 660 280 L 660 350" class="arrow"/>
+
+  <rect x="350" y="360" width="620" height="220" class="gate"/>
+  <text x="390" y="408" class="label">Evidence Contract Layer</text>
+  <text x="390" y="448" class="text">Maxwell residual checks</text>
+  <text x="390" y="480" class="text">Boundary-condition checks</text>
+  <text x="390" y="512" class="text">Finite-value sanity and reproducibility metadata</text>
+  <text x="390" y="544" class="text">Analytical reference comparison when available</text>
+
+  <path d="M 970 470 L 1070 470 L 1070 628 L 940 628" class="arrow"/>
+
+  <rect x="610" y="620" width="330" height="90" class="warn"/>
+  <text x="642" y="660" class="label">Claim Gate</text>
+  <text x="642" y="690" class="small">Bounded evidence only unless gates pass.</text>
+</svg>

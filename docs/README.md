@@ -3,6 +3,7 @@
 This directory contains public companion notes for the DAD FieldWorks showcase.
 
 - [Evidence contract architecture](evidence_contract_architecture.md)
+- [Evidence contract platform roadmap](evidence_contract_platform_roadmap.md)
 - [Current public status](current_public_status.md)
 - [Quantum hardware direction](quantum_hardware_direction.md)
 - [Claim boundaries](claim_boundaries.md)
