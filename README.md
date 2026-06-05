@@ -53,7 +53,7 @@ Standing scalar eigenmode field-slice diagnostic for a bounded PEC cavity refere
 <br>
 <strong>Microwave Cavity Eigenmode Birth</strong>
 <br>
-Public-safe visualization from Yee electric unknowns toward a bounded PEC cavity eigenmode residual check. Diagnostic only.
+Microwave Cavity Eigenmode Birth visualizes the bounded path from Yee electric unknowns through signed incidence entries and prototype operator structure toward a PEC cavity eigenmode residual check. Diagnostic only.
 </td>
 <td width="50%">
 <img src="assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif" alt="Yee curl incidence microprototype" width="100%">
