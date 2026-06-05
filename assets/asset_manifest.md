@@ -285,7 +285,7 @@
 
 - Asset type: animated GIF
 - Creation method: deterministic Python numerical visualization
-- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; bounded curl-curl structure; standing PEC cavity eigenmode slice; residual and analytical reference status.
+- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; sparse matrix style signed incidence entries; bounded curl-curl structure marked as prototype only; standing PEC cavity eigenmode slice; residual and analytical reference status.
 - External source images: none
 - Screenshots: none
 - AI image generation: none
@@ -299,7 +299,7 @@
 
 - Asset type: static PNG poster
 - Creation method: deterministic Python numerical visualization
-- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; bounded curl-curl structure; standing PEC cavity eigenmode slice; residual and analytical reference status.
+- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; sparse matrix style signed incidence entries; bounded curl-curl structure marked as prototype only; standing PEC cavity eigenmode slice; residual and analytical reference status.
 - External source images: none
 - Screenshots: none
 - AI image generation: none
@@ -313,7 +313,7 @@
 
 - Asset type: JSON summary
 - Creation method: deterministic Python numerical visualization
-- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; bounded curl-curl structure; standing PEC cavity eigenmode slice; residual and analytical reference status.
+- Rendered quantities or concepts: Yee electric unknowns; oriented curl incidence; sparse matrix style signed incidence entries; bounded curl-curl structure marked as prototype only; standing PEC cavity eigenmode slice; residual and analytical reference status.
 - External source images: none
 - Screenshots: none
 - AI image generation: none

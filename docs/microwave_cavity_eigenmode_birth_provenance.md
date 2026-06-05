@@ -7,9 +7,11 @@ The animation uses a rectangular PEC cavity surrogate and visualizes:
 
 1. Yee electric unknowns.
 2. Oriented curl incidence.
-3. Bounded curl-curl structure.
-4. Standing eigenmode field slice.
-5. Residual and analytical reference comparison panel.
+3. Sparse matrix style signed incidence entries with cyan `+1` cells,
+   orange `-1` cells, and faint gray empty cells.
+4. Bounded curl-curl structure, marked as prototype only.
+5. Standing eigenmode field slice.
+6. Residual and analytical reference comparison panel.
 
 The generator can optionally consume public-safe summary values supplied at
 generation time, read only, for the residual and reference status labels. It

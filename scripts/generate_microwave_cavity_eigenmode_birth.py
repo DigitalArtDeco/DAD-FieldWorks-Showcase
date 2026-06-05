@@ -56,9 +56,9 @@ def read_public_safe_summary(summary_csv: Path | None) -> dict[str, str | bool]:
     summary = {
         "summary_csv_supplied": False,
         "summary_csv_used": False,
-        "residual_label": "canonical residual: bounded demo row",
-        "reference_label": "analytic PEC reference: canonical rectangular mode",
-        "comparison_label": "status: public-safe visualization only",
+        "residual_label": "bounded diagnostic row",
+        "reference_label": "rectangular PEC mode",
+        "comparison_label": "public-safe visualization only",
     }
     if summary_csv is None or not summary_csv.exists():
         return summary
@@ -128,27 +128,46 @@ def smoothstep(edge0: float, edge1: float, x: float) -> float:
     return t * t * (3.0 - 2.0 * t)
 
 
-def build_sparse_pattern(nx_edges: int = 26, ny_edges: int = 16) -> tuple[np.ndarray, np.ndarray, np.ndarray]:
-    rows: list[int] = []
-    cols: list[int] = []
-    signs: list[int] = []
-    width = nx_edges + 1
-    for j in range(ny_edges):
-        for i in range(nx_edges):
-            row = j * nx_edges + i
-            bottom = j * width + i
-            right = j * width + i + 1
-            top = (j + 1) * width + i
-            left = j * width + i
-            for col, sign in ((bottom, 1), (right, 1), (top, -1), (left, -1)):
-                rows.append(row)
-                cols.append(col)
-                signs.append(sign)
-    rows_array = np.asarray(rows)
-    cols_array = np.asarray(cols)
-    signs_array = np.asarray(signs)
-    order = np.argsort(rows_array * 10_000 + cols_array)
-    return rows_array[order], cols_array[order], signs_array[order]
+def build_sparse_pattern() -> list[tuple[int, int, int]]:
+    """Return a public-safe toy signed incidence pattern for the operator panel.
+
+    The entries are intentionally small and schematic. They communicate signed
+    incidence structure without representing a production matrix assembly.
+    """
+    return [
+        (0, 1, 1),
+        (0, 2, -1),
+        (0, 5, 1),
+        (0, 6, -1),
+        (1, 0, -1),
+        (1, 3, 1),
+        (1, 4, -1),
+        (1, 8, 1),
+        (2, 2, 1),
+        (2, 5, -1),
+        (2, 7, 1),
+        (2, 9, -1),
+        (3, 1, -1),
+        (3, 4, 1),
+        (3, 6, -1),
+        (3, 8, 1),
+        (4, 0, 1),
+        (4, 3, -1),
+        (4, 5, 1),
+        (4, 7, -1),
+        (5, 2, -1),
+        (5, 4, 1),
+        (5, 6, -1),
+        (5, 9, 1),
+        (6, 1, 1),
+        (6, 3, -1),
+        (6, 5, 1),
+        (6, 8, -1),
+        (7, 0, -1),
+        (7, 2, 1),
+        (7, 6, -1),
+        (7, 9, 1),
+    ]
 
 
 def add_text(ax: plt.Axes, x: float, y: float, text: str, size: int = 11, color: str = "#d9e7ff", **kwargs) -> None:
@@ -205,23 +224,87 @@ def draw_curl_loops(ax: plt.Axes, alpha: float, phase: float) -> None:
             add_text(ax, sx, sy, sign, size=10, color=color, ha="center", alpha=alpha * (0.7 + 0.3 * pulse), zorder=8)
 
 
-def draw_sparse_panel(ax: plt.Axes, alpha: float, growth: float, rows: np.ndarray, cols: np.ndarray, signs: np.ndarray) -> None:
-    panel = plt.Rectangle((0.755, 0.21), 0.21, 0.55, fill=False, ec="#40546b", lw=1.0, alpha=0.8)
-    ax.add_patch(panel)
-    add_text(ax, 0.765, 0.79, "bounded prototype structure", size=9, color="#cbd8e8", alpha=alpha)
-    count = max(1, int(len(rows) * growth))
-    rr = rows[:count]
-    cc = cols[:count]
-    ss = signs[:count]
-    if len(rr):
-        x = 0.765 + (cc / max(cols.max(), 1)) * 0.19
-        y = 0.235 + (1 - rr / max(rows.max(), 1)) * 0.49
-        colors = np.where(ss > 0, "#82f4bd", "#ff9c86")
-        ax.scatter(x, y, s=7, c=colors, alpha=0.82 * alpha, linewidths=0, zorder=6)
-    for gx in np.linspace(0.765, 0.955, 5):
-        ax.plot([gx, gx], [0.235, 0.725], color="#263445", lw=0.4, alpha=0.45 * alpha)
-    for gy in np.linspace(0.235, 0.725, 5):
-        ax.plot([0.765, 0.955], [gy, gy], color="#263445", lw=0.4, alpha=0.45 * alpha)
+def draw_sparse_panel(ax: plt.Axes, alpha: float, growth: float, entries: list[tuple[int, int, int]]) -> None:
+    panel_x, panel_y = 0.755, 0.205
+    panel_w, panel_h = 0.215, 0.60
+    ax.add_patch(
+        plt.Rectangle(
+            (panel_x, panel_y),
+            panel_w,
+            panel_h,
+            facecolor="#08121d",
+            edgecolor="#40546b",
+            lw=1.1,
+            alpha=0.88,
+            zorder=4,
+        )
+    )
+    add_text(ax, panel_x + 0.012, panel_y + panel_h - 0.035, "signed incidence entries", size=8, color="#dcecff", alpha=alpha, zorder=8)
+    add_text(ax, panel_x + 0.012, panel_y + panel_h - 0.067, "bounded curl-curl structure", size=7, color="#91a7c0", alpha=alpha, zorder=8)
+
+    grid_x, grid_y = panel_x + 0.018, panel_y + 0.128
+    grid_w, grid_h = panel_w - 0.036, panel_h - 0.225
+    n_rows, n_cols = 8, 10
+    cell_w = grid_w / n_cols
+    cell_h = grid_h / n_rows
+
+    for row in range(n_rows):
+        for col in range(n_cols):
+            x = grid_x + col * cell_w
+            y = grid_y + (n_rows - 1 - row) * cell_h
+            ax.add_patch(
+                plt.Rectangle(
+                    (x, y),
+                    cell_w * 0.92,
+                    cell_h * 0.84,
+                    facecolor="#1a2634",
+                    edgecolor="#35475b",
+                    lw=0.35,
+                    alpha=0.34 * alpha,
+                    zorder=5,
+                )
+            )
+
+    count = max(0, int(len(entries) * growth))
+    for row, col, sign in entries[:count]:
+        x = grid_x + col * cell_w
+        y = grid_y + (n_rows - 1 - row) * cell_h
+        color = "#48dcff" if sign > 0 else "#ff9b55"
+        ax.add_patch(
+            plt.Rectangle(
+                (x, y),
+                cell_w * 0.92,
+                cell_h * 0.84,
+                facecolor=color,
+                edgecolor="#eaf8ff",
+                lw=0.35,
+                alpha=0.80 * alpha,
+                zorder=7,
+            )
+        )
+        add_text(
+            ax,
+            x + cell_w * 0.46,
+            y + cell_h * 0.42,
+            "+1" if sign > 0 else "-1",
+            size=5,
+            color="#06111a",
+            ha="center",
+            alpha=0.95 * alpha,
+            weight="bold",
+            zorder=8,
+        )
+
+    ax.annotate(
+        "",
+        xy=(panel_x - 0.006, panel_y + 0.36),
+        xytext=(0.722, panel_y + 0.36),
+        arrowprops=dict(arrowstyle="->", color="#8ea3b8", lw=1.2, alpha=0.72 * alpha),
+        zorder=8,
+    )
+    add_text(ax, panel_x + 0.030, panel_y + 0.075, "cyan +1", size=6, color="#48dcff", alpha=alpha, zorder=8)
+    add_text(ax, panel_x + 0.105, panel_y + 0.075, "orange -1", size=6, color="#ff9b55", alpha=alpha, zorder=8)
+    add_text(ax, panel_x + 0.012, panel_y + 0.035, "prototype only", size=7, color="#dcecff", alpha=alpha, weight="bold", zorder=8)
 
 
 def draw_field(ax: plt.Axes, alpha: float, phase: float) -> None:
@@ -256,9 +339,9 @@ def draw_field(ax: plt.Axes, alpha: float, phase: float) -> None:
 def draw_bottom_panel(ax: plt.Axes, summary: dict[str, str | bool], alpha: float) -> None:
     ax.add_patch(plt.Rectangle((0.055, 0.055), 0.91, 0.09, facecolor="#101823", edgecolor="#2b3c50", lw=1.0, alpha=0.86))
     labels = [
-        ("residual check", str(summary["residual_label"])),
-        ("analytic PEC reference comparison", str(summary["reference_label"])),
-        ("bounded internal prototype only", compact_words(str(summary["comparison_label"]), 24)),
+        ("residual check", str(summary["residual_label"]).replace("residual check:", "").strip()),
+        ("analytic PEC reference comparison", str(summary["reference_label"]).replace("analytic PEC reference:", "").strip()),
+        ("bounded internal prototype only", str(summary["comparison_label"]).replace("status:", "").strip()),
     ]
     xs = [0.08, 0.34, 0.66]
     for x, (head, body) in zip(xs, labels):
@@ -266,7 +349,7 @@ def draw_bottom_panel(ax: plt.Axes, summary: dict[str, str | bool], alpha: float
         add_text(ax, x, 0.080, compact_words(body, 29), size=7, color="#edf6ff", alpha=alpha)
 
 
-def render_frame(index: int, frame_dir: Path, summary: dict[str, str | bool], sparse: tuple[np.ndarray, np.ndarray, np.ndarray]) -> Path:
+def render_frame(index: int, frame_dir: Path, summary: dict[str, str | bool], sparse_entries: list[tuple[int, int, int]]) -> Path:
     t = index / (FRAME_COUNT - 1)
     phase_unknowns = smoothstep(0.00, 0.24, t) * (1.0 - 0.15 * smoothstep(0.65, 0.75, t))
     phase_loops = smoothstep(0.18, 0.36, t) * (1.0 - smoothstep(0.54, 0.64, t))
@@ -288,7 +371,7 @@ def render_frame(index: int, frame_dir: Path, summary: dict[str, str | bool], sp
     draw_grid(ax, phase_unknowns)
     draw_edge_unknowns(ax, phase_unknowns)
     draw_curl_loops(ax, phase_loops, t * 3.0)
-    draw_sparse_panel(ax, max(phase_sparse, 0.25), phase_sparse, *sparse)
+    draw_sparse_panel(ax, max(phase_sparse, 0.25), phase_sparse, sparse_entries)
     draw_bottom_panel(ax, summary, smoothstep(0.62, 0.78, t))
 
     add_text(ax, 0.045, 0.935, TITLE, size=19, color="#f4fbff", weight="bold")
@@ -376,6 +459,8 @@ def write_summary_json(output_path: Path, summary: dict[str, str | bool], gif_fr
         "claim_boundary": "bounded internal prototype visualization only; not external validation, not production readiness, not a qubit simulation",
         "mode_formula_used": MODE_FORMULA,
         "grid_size": GRID_SIZE,
+        "right_panel": "sparse matrix style signed incidence entries: cyan +1, orange -1, faint gray empty cells",
+        "right_panel_claim_boundary": "operator visualization only; not production matrix assembly, not eigensolver readiness",
         "frames": gif_frames,
         "gif_dimensions": {"width": gif_size[0], "height": gif_size[1]},
         "duration_seconds": gif_frames / FPS,
@@ -408,8 +493,8 @@ def main() -> None:
         old_frame.unlink()
 
     summary = read_public_safe_summary(args.summary_csv)
-    sparse = build_sparse_pattern()
-    frame_paths = [render_frame(i, frame_dir, summary, sparse) for i in range(FRAME_COUNT)]
+    sparse_entries = build_sparse_pattern()
+    frame_paths = [render_frame(i, frame_dir, summary, sparse_entries) for i in range(FRAME_COUNT)]
 
     gif_path = output_dir / "microwave_cavity_eigenmode_birth.gif"
     poster_path = output_dir / "microwave_cavity_eigenmode_birth_poster.png"

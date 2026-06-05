@@ -7,14 +7,16 @@
     "nx": 72,
     "ny": 48
   },
+  "right_panel": "sparse matrix style signed incidence entries: cyan +1, orange -1, faint gray empty cells",
+  "right_panel_claim_boundary": "operator visualization only; not production matrix assembly, not eigensolver readiness",
   "frames": 118,
   "gif_dimensions": {
     "width": 1280,
     "height": 720
   },
   "duration_seconds": 11.8,
-  "optional_summary_csv_supplied_at_generation_time": true,
-  "optional_summary_csv_used_at_generation_time": true,
+  "optional_summary_csv_supplied_at_generation_time": false,
+  "optional_summary_csv_used_at_generation_time": false,
   "mp4_created": false,
   "external_validation_claim": false,
   "production_claim": false,
