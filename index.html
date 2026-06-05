@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DAD FieldWorks Showcase by Harun Aktas</title>
-    <meta name="description" content="Public showcase and whitepaper material for DAD FieldWorks.">
+    <meta name="description" content="Evidence contract framework for trustworthy computational electromagnetics.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
@@ -12,9 +12,9 @@
       <a class="brand" href="index.html">DAD FieldWorks</a>
       <nav aria-label="Primary navigation">
         <a href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_8_public.pdf">Whitepaper</a>
+        <a href="docs/evidence_contract_platform_roadmap.md">Roadmap</a>
         <a href="docs/current_public_status.md">Status</a>
-        <a href="docs/evidence_contract_architecture.md">Architecture</a>
-        <a href="docs/evidence_contract_platform_roadmap.md">Platform Roadmap</a>
+        <a href="docs/claim_boundaries.md">Claims</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </nav>
@@ -22,200 +22,151 @@
 
     <main>
       <section class="page-title" aria-labelledby="hero-title">
-        <p class="eyebrow">Public showcase and whitepaper material</p>
+        <p class="eyebrow">Evidence Contract Framework</p>
         <h1 id="hero-title">DAD FieldWorks</h1>
-        <p>Evidence-Driven Computational Electromagnetics</p>
+        <p>Trustworthy CEM starts after the field plot.</p>
       </section>
 
-      <section class="hero-visual" aria-label="Generated field diagnostic visualization">
-        <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero animation">
+      <section class="hero-visual" aria-label="DAD FieldWorks field diagnostic hero">
+        <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero">
       </section>
 
       <section class="intro">
         <div class="intro-text">
-          <h2>Evidence Contract Framework</h2>
-          <p>DAD FieldWorks is being shaped into an evidence-controlled computational electromagnetics framework for validation-aware RF and quantum hardware design workflows. This public repository contains selected architecture notes, current public status, claim boundaries, generated visual assets, and the public whitepaper PDF.</p>
-          <p>The project explores electromagnetic modeling, RF PCB workflows, microwave structures, resonator and cavity analysis, solver research, and reproducible evidence records.</p>
-          <p>The field animation is a solver generated diagnostic visualization produced from numerical field data.</p>
+          <h2>The Evidence Layer for CEM and Physics AI</h2>
+          <p>DAD FieldWorks adds evidence contracts to classical solvers, resonator workflows and future physics-AI backends, so numerical results carry residuals, limits and claim boundaries before they are trusted.</p>
+          <p>The current public-safe milestone is a bounded internal PEC cavity eigenmode prototype path with residual and analytical reference comparison. It is presented as an Alpha evidence path, not as a production solver.</p>
         </div>
         <div class="status-panel">
-          <h2>Public Claim Boundary</h2>
-          <p>This site presents selected public architecture notes and solver-generated diagnostic visualizations from a private research and development project. The public material is not validation evidence, not a production readiness claim, and not a commercial solver equivalence claim.</p>
+          <h2>Public Status</h2>
+          <p>Private research and development project. Public showcase and whitepaper material only.</p>
+          <ul>
+            <li>No external validation claim.</li>
+            <li>No production readiness claim.</li>
+            <li>No commercial solver equivalence claim.</li>
+          </ul>
         </div>
       </section>
 
-      <section class="explanation-section" id="evidence-platform" aria-labelledby="evidence-platform-title">
+      <section class="explanation-section" aria-labelledby="why-title">
         <div class="section-heading">
-          <p class="eyebrow">Current public position</p>
-          <h2 id="evidence-platform-title">Evidence-Driven Computational Electromagnetics</h2>
-          <p>DAD FieldWorks currently demonstrates a bounded internal PEC cavity eigenmode prototype path with residual and analytical reference comparison. The public showcase presents this as an Alpha evidence path, not as a production solver.</p>
+          <p class="eyebrow">Why this matters</p>
+          <h2 id="why-title">Fields can look right before they are right.</h2>
+          <p>CEM results can be visually convincing while failing residual, boundary-condition, energy, divergence, reference or reproducibility checks. DAD FieldWorks is being shaped around evidence records that say what was checked, what failed, what remains bounded and what the result is allowed to claim.</p>
         </div>
         <div class="explanation-grid">
           <article class="explanation-card">
-            <h3>Why this matters</h3>
-            <p>CEM results can look convincing while still being wrong. A trustworthy framework should expose residuals, boundary-condition checks, reference mismatch, reproducibility metadata, and claim boundaries.</p>
+            <h3>Residuals</h3>
+            <p>Candidate fields and modes need residual records before they can support stronger interpretations.</p>
           </article>
           <article class="explanation-card">
-            <h3>Classical solver layer</h3>
-            <p>The current path is bounded to PEC cavity evidence: curl-curl route, mass matrix route, generalized eigenproblem route, residual checks, and analytical comparison records.</p>
+            <h3>Boundaries</h3>
+            <p>Boundary-condition and finite-value checks prevent plausible pictures from outrunning the evidence.</p>
           </article>
           <article class="explanation-card">
-            <h3>C++ product layer</h3>
-            <p>The public direction is a Resonator Lab Alpha report and replay path with a replay-only CLI skeleton before any future numerical kernel claim.</p>
+            <h3>References</h3>
+            <p>Analytical comparison rows keep reference scope separate from visual diagnostics.</p>
           </article>
           <article class="explanation-card">
-            <h3>Future backend layer</h3>
-            <p>DGTD, PINN, and neural-operator routes are future research directions. Their outputs remain candidates until evidence gates pass.</p>
+            <h3>Claim gates</h3>
+            <p>Production and validation gates remain closed unless the evidence record supports opening them.</p>
           </article>
         </div>
-        <p class="explanation-note">ProductionAllowedQ remains false by default. Promotion stays blocked when residuals are too large, boundary conditions fail, reference mismatch is unexplained, finite-value sanity fails, divergence or gauge checks fail, physical eigenpair acceptance is not justified, or external evidence is missing.</p>
       </section>
 
-      <section class="showcase-block" aria-labelledby="evidence-contract-diagram-title">
+      <section class="explanation-section" aria-labelledby="visuals-title">
+        <div class="section-heading">
+          <p class="eyebrow">Featured diagnostics</p>
+          <h2 id="visuals-title">Public-safe visual evidence paths</h2>
+          <p>The public visuals are diagnostic communication assets. They show field behavior, resonator ringdown, PEC cavity modes and operator-near evidence concepts.</p>
+        </div>
+        <div class="visual-grid">
+          <article class="visual-card">
+            <img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="FDTD resonator ringdown with FFT spectrum">
+            <h3>FDTD Resonator Ringdown with FFT Spectrum</h3>
+            <p>Time-domain build-up, ringdown and spectrum derived from the probe signal.</p>
+          </article>
+          <article class="visual-card">
+            <img src="assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif" alt="PEC cavity eigenmode field slice">
+            <h3>PEC Cavity Eigenmode Field Slice</h3>
+            <p>Standing scalar eigenmode field-slice diagnostic for a bounded reference path.</p>
+          </article>
+          <article class="visual-card">
+            <img src="assets/animations/microwave_cavity_eigenmode_birth.gif" alt="Microwave cavity eigenmode birth">
+            <h3>Microwave Cavity Eigenmode Birth</h3>
+            <p>Yee electric unknowns toward a bounded PEC cavity eigenmode residual check.</p>
+          </article>
+          <article class="visual-card">
+            <img src="assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif" alt="Yee curl incidence microprototype">
+            <h3>Yee Curl Incidence Microprototype</h3>
+            <p>Oriented Yee E unknowns and signed curl incidence rows as a bounded microprototype.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="showcase-block" aria-labelledby="roadmap-title">
         <div class="showcase-copy">
-          <p class="eyebrow">Roadmap</p>
-          <h2 id="evidence-contract-diagram-title">From Solver Prototype to Evidence Contract Platform</h2>
-          <p>The long-term roadmap is to make the same evidence-contract layer usable around classical numerical solvers, future DGTD backends, and future AI-assisted backends.</p>
-          <p>A future PINN or neural solver backend should be treated as an untrusted field generator until its output survives Maxwell residual checks, boundary-condition checks, finite-value checks, reference comparison and claim-boundary gates.</p>
-          <a class="text-link" href="docs/evidence_contract_platform_roadmap.md">Read the evidence contract platform roadmap</a>
+          <p class="eyebrow">Evidence Contract Roadmap</p>
+          <h2 id="roadmap-title">Classical, DGTD and future physics-AI routes under one evidence discipline.</h2>
+          <p>A future PINN or neural-operator backend is treated as an AI-assisted solver quarantine: neural outputs remain untrusted until residual, boundary, divergence, energy, reference and reproducibility checks support a bounded claim.</p>
+          <a class="text-link" href="docs/evidence_contract_platform_roadmap.md">Read the platform roadmap</a>
         </div>
         <img src="assets/diagrams/evidence_contract_layer.svg" alt="Evidence contract layer roadmap diagram">
       </section>
 
-      <section class="explanation-section" id="ai-solver-quarantine" aria-labelledby="ai-solver-quarantine-title">
+      <section class="explanation-section" aria-labelledby="roadmap-table-title">
         <div class="section-heading">
-          <p class="eyebrow">AI-assisted solvers under evidence contract</p>
-          <h2 id="ai-solver-quarantine-title">AI Solver Quarantine</h2>
-          <p>The AI is not trusted because it is neural. It is trusted only when its output survives Maxwell residual checks, boundary-condition checks, finite-value checks, reference comparison, and claim-boundary gates.</p>
+          <p class="eyebrow">Backend gates</p>
+          <h2 id="roadmap-table-title">Evidence before trust</h2>
         </div>
         <table class="roadmap-table">
           <thead>
             <tr>
-              <th>Backend</th>
-              <th>Status</th>
+              <th>Layer</th>
+              <th>Direction</th>
               <th>Evidence Gate</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Classical PEC cavity prototype</td>
-              <td>Internal Alpha evidence path</td>
-              <td>Residual and analytical comparison</td>
+              <td>Classical solver path</td>
+              <td>PEC cavity, curl-curl route, residual and reference comparison</td>
+              <td>Residual, boundary, finite-value and analytical reference checks</td>
             </tr>
             <tr>
-              <td>C++ CLI skeleton</td>
-              <td>Replay-only Alpha infrastructure path</td>
+              <td>C++ product layer</td>
+              <td>Resonator Lab Alpha, CLI skeleton, artifact replay</td>
               <td>Contract and replay checks</td>
             </tr>
             <tr>
-              <td>DGTD backend</td>
-              <td>Future research route</td>
-              <td>Discontinuous Galerkin residual and boundary evidence</td>
+              <td>Future DGTD backend</td>
+              <td>Discontinuous Galerkin time-domain route</td>
+              <td>DG residual, flux, boundary and conservation checks</td>
             </tr>
             <tr>
-              <td>PINN or neural-operator backend</td>
-              <td>Future research route</td>
-              <td>Maxwell residual, boundary and reference gates</td>
+              <td>Future physics-AI backend</td>
+              <td>PINN or neural-operator route</td>
+              <td>Maxwell residual, boundary, divergence, energy and reference gates</td>
             </tr>
           </tbody>
         </table>
       </section>
 
-      <section class="showcase-block" aria-labelledby="pec-cavity-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">PEC cavity diagnostic visualization</p>
-          <h2 id="pec-cavity-title">PEC Cavity Eigenmode Field Slice</h2>
-          <p>Solver generated diagnostic visualization of a scalar Helmholtz rectangular PEC cavity eigenmode with three orthogonal field slices.</p>
-          <p>The animation shows standing-wave phase evolution from numerical eigenmode field data.</p>
-          <a class="text-link" href="docs/pec_cavity_visualization_provenance.md">View PEC cavity visualization provenance</a>
-        </div>
-        <img src="assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif" alt="PEC cavity eigenmode field-slice animation">
-      </section>
-
-      <section class="showcase-block" aria-labelledby="quantum-hardware-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">RF and quantum hardware direction</p>
-          <h2 id="quantum-hardware-title">Quantum Hardware Oriented Resonator Diagnostic</h2>
-          <p>Solver generated diagnostic visualization of microwave resonator field behavior relevant to RF and quantum hardware design workflows.</p>
-          <p>The animation shows standing-wave phase evolution from numerical cavity mode data and does not represent qubit physics.</p>
-          <a class="text-link" href="docs/quantum_hardware_visualization_provenance.md">View quantum hardware visualization provenance</a>
-        </div>
-        <img src="assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic.gif" alt="Quantum hardware oriented microwave resonator diagnostic animation">
-      </section>
-
-      <section class="showcase-block" aria-labelledby="fdtd-resonator-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">FDTD microwave resonator diagnostic</p>
-          <h2 id="fdtd-resonator-title">FDTD Microwave Resonator Ringdown</h2>
-          <p>Solver generated diagnostic visualization of pulse-driven field build-up and ringdown in a line-coupled microwave resonator geometry.</p>
-          <p>The animation is generated from 2D FDTD TMz numerical field data and does not represent qubit physics.</p>
-          <a class="text-link" href="docs/fdtd_microwave_resonator_explanation.md">Read the resonator simulation explanation</a><br>
-          <a class="text-link" href="docs/fdtd_quantum_hardware_resonator_provenance.md">View FDTD resonator provenance</a>
-        </div>
-        <img src="assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown.gif" alt="FDTD microwave resonator ringdown diagnostic animation">
-      </section>
-
-      <section class="showcase-block" aria-labelledby="yee-incidence-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">Bounded operator-near diagnostic</p>
-          <h2 id="yee-incidence-title">Yee Curl Incidence Microprototype</h2>
-          <p>Public-safe diagnostic visualization of the bounded step from oriented Yee E unknowns to signed curl incidence rows.</p>
-          <p>The animation is a claim-bounded microprototype view only. It is not curl-curl assembly, not a production incidence matrix, and not an eigensolve.</p>
-          <a class="text-link" href="docs/yee_curl_incidence_microprototype_provenance.md">View Yee incidence provenance</a>
-        </div>
-        <img src="assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif" alt="Yee curl incidence microprototype diagnostic animation">
-      </section>
-
-      <section class="showcase-block" aria-labelledby="microwave-cavity-birth-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">Bounded native Yee eigenmode prototype path</p>
-          <h2 id="microwave-cavity-birth-title">Native Yee Eigenmode Prototype Path</h2>
-          <p>DAD FieldWorks visualizes a bounded PEC cavity eigenmode prototype path: Yee electric unknowns, oriented curl incidence, bounded curl-curl structure, minimal eigenmode path, residual check and analytical reference comparison.</p>
-          <p>This is an internal bounded prototype visualization, not a production solver or external validation claim. The cavity is a microwave package cavity surrogate relevant to resonant enclosure and package-mode thinking.</p>
-          <a class="text-link" href="docs/microwave_cavity_eigenmode_birth_provenance.md">View microwave cavity eigenmode birth provenance</a>
-        </div>
-        <picture>
-          <source srcset="assets/animations/microwave_cavity_eigenmode_birth_poster.png" media="(prefers-reduced-motion: reduce)">
-          <img src="assets/animations/microwave_cavity_eigenmode_birth.gif" alt="Microwave cavity eigenmode birth bounded prototype animation">
-        </picture>
-      </section>
-
-      <section class="showcase-block" aria-labelledby="fdtd-resonator-fft-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">FDTD ringdown and spectrum diagnostic</p>
-          <h2 id="fdtd-resonator-fft-title">FDTD Resonator Ringdown with FFT Spectrum</h2>
-          <p>Solver generated diagnostic visualization of field build-up, late-time ringdown, a time-domain probe trace, and an FFT spectrum derived from the probe signal.</p>
-          <p>The animation uses 2D FDTD TMz field data in a line-coupled resonator-like geometry. It is not a qubit simulation.</p>
-          <a class="text-link" href="docs/fdtd_resonator_fft_provenance.md">View FDTD resonator FFT provenance</a>
-        </div>
-        <img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="FDTD resonator ringdown and FFT spectrum diagnostic animation">
-      </section>
-
-      <section class="explanation-section" id="resonator-explanation" aria-labelledby="resonator-explanation-title">
+      <section class="explanation-section" aria-labelledby="claim-title">
         <div class="section-heading">
-          <p class="eyebrow">Reading the diagnostic</p>
-          <h2 id="resonator-explanation-title">What the resonator simulation shows</h2>
-          <p>This visualization shows a classical electromagnetic time-domain diagnostic of a microwave resonator-like structure. A short pulse enters from the feed line, couples into the resonator region, builds up an oscillating field pattern, and then decays after the excitation has passed. This late-time decay is the ringdown.</p>
+          <p class="eyebrow">Central claim boundary</p>
+          <h2 id="claim-title">What this public showcase does not claim</h2>
+          <p>DAD FieldWorks public materials show architecture notes, whitepaper material and diagnostic visualizations from a private research and development project.</p>
         </div>
-        <div class="explanation-grid">
-          <article class="explanation-card">
-            <h3>Field build-up</h3>
-            <p>The large field panel shows the Ez field of a 2D TMz FDTD diagnostic. Warm and cool colors indicate opposite signs of the electric field component, not temperature. The feed line brings energy into the resonator-like cavity, where the field is temporarily stored and forms a resonant pattern.</p>
-          </article>
-          <article class="explanation-card">
-            <h3>Probe signal</h3>
-            <p>The upper right trace shows the local Ez signal at one observation point. Its oscillation reveals how the resonator responds in time after the pulse excitation reaches the coupled cavity region.</p>
-          </article>
-          <article class="explanation-card">
-            <h3>Ringdown energy</h3>
-            <p>The lower right trace shows how field energy builds up inside the resonator and then decays. This helps communicate coupling strength, temporary energy storage, and ringdown behavior.</p>
-          </article>
-          <article class="explanation-card">
-            <h3>Why it matters</h3>
-            <p>In quantum-hardware-oriented RF design, many important structures are classical microwave structures: feed lines, resonators, cavities, coupling regions, and field concentration areas. Understanding the microwave environment helps identify resonant modes, coupling paths, stored energy, and unwanted parasitic field behavior.</p>
-          </article>
+        <div class="claim-list">
+          <span>No external validation claim.</span>
+          <span>No production readiness claim.</span>
+          <span>No commercial solver equivalence claim.</span>
+          <span>No complete quantum hardware solver claim.</span>
+          <span>No qubit simulation claim.</span>
+          <span>No production AI solver claim.</span>
+          <span>No DGTD production backend claim.</span>
         </div>
-        <p class="explanation-note">This is not a qubit simulation. It does not model quantum states, Josephson junctions, gate fidelity, coherence times, or a quantum processor. It is a classical electromagnetic resonator diagnostic that supports RF and microwave structure understanding.</p>
       </section>
 
       <section class="links-section" aria-labelledby="materials-title">
@@ -227,19 +178,15 @@
           </a>
           <a class="material-card" href="docs/evidence_contract_architecture.md">
             <span class="material-card-title">Evidence Contract Architecture</span>
-            <span class="material-card-description">Companion notes for claim-aware evidence structure.</span>
+            <span class="material-card-description">Companion notes for evidence structure.</span>
           </a>
           <a class="material-card" href="docs/evidence_contract_platform_roadmap.md">
             <span class="material-card-title">Evidence Contract Platform Roadmap</span>
-            <span class="material-card-description">Roadmap for classical, DGTD and AI-assisted backends under evidence gates.</span>
+            <span class="material-card-description">Classical, DGTD and physics-AI routes under evidence gates.</span>
           </a>
           <a class="material-card" href="docs/current_public_status.md">
             <span class="material-card-title">Current Public Status</span>
             <span class="material-card-description">Conservative public status for the current project state.</span>
-          </a>
-          <a class="material-card" href="docs/quantum_hardware_direction.md">
-            <span class="material-card-title">Quantum Hardware Direction</span>
-            <span class="material-card-description">Conservative RF and quantum hardware workflow direction.</span>
           </a>
           <a class="material-card" href="docs/claim_boundaries.md">
             <span class="material-card-title">Claim Boundaries</span>
@@ -249,41 +196,17 @@
             <span class="material-card-title">Public Roadmap</span>
             <span class="material-card-description">Documentation-oriented next steps.</span>
           </a>
-          <a class="material-card" href="assets/asset_manifest.md">
-            <span class="material-card-title">Asset Manifest</span>
-            <span class="material-card-description">Creation method and claim boundary for public assets.</span>
-          </a>
-          <a class="material-card" href="docs/visualization_provenance.md">
-            <span class="material-card-title">Visualization Provenance</span>
-            <span class="material-card-description">Public-safe provenance for the solver diagnostic hero.</span>
-          </a>
-          <a class="material-card" href="docs/pec_cavity_visualization_provenance.md">
-            <span class="material-card-title">PEC Cavity Visualization Provenance</span>
-            <span class="material-card-description">Public-safe provenance for the PEC cavity field-slice diagnostic.</span>
-          </a>
-          <a class="material-card" href="docs/quantum_hardware_visualization_provenance.md">
-            <span class="material-card-title">Quantum Hardware Visualization Provenance</span>
-            <span class="material-card-description">Public-safe provenance for the microwave resonator diagnostic.</span>
+          <a class="material-card" href="docs/quantum_hardware_direction.md">
+            <span class="material-card-title">Quantum Hardware Direction</span>
+            <span class="material-card-description">Conservative RF and microwave workflow direction.</span>
           </a>
           <a class="material-card" href="docs/fdtd_microwave_resonator_explanation.md">
             <span class="material-card-title">FDTD Resonator Explanation</span>
-            <span class="material-card-description">Explanation of the microwave resonator ringdown diagnostic and its relevance to RF and quantum-hardware-oriented workflows.</span>
+            <span class="material-card-description">How to read the resonator ringdown diagnostic.</span>
           </a>
-          <a class="material-card" href="docs/fdtd_quantum_hardware_resonator_provenance.md">
-            <span class="material-card-title">FDTD Resonator Provenance</span>
-            <span class="material-card-description">Public-safe provenance for the microwave resonator ringdown diagnostic.</span>
-          </a>
-          <a class="material-card" href="docs/yee_curl_incidence_microprototype_provenance.md">
-            <span class="material-card-title">Yee Curl Incidence Provenance</span>
-            <span class="material-card-description">Claim-bounded provenance for the oriented E unknown to signed incidence row microprototype visualization.</span>
-          </a>
-          <a class="material-card" href="docs/microwave_cavity_eigenmode_birth_provenance.md">
-            <span class="material-card-title">Microwave Cavity Eigenmode Birth Provenance</span>
-            <span class="material-card-description">Public-safe provenance for the bounded Yee eigenmode prototype path animation.</span>
-          </a>
-          <a class="material-card" href="docs/fdtd_resonator_fft_provenance.md">
-            <span class="material-card-title">FDTD Resonator FFT Provenance</span>
-            <span class="material-card-description">Public-safe provenance for field build-up, ringdown, probe trace, and FFT spectrum diagnostics.</span>
+          <a class="material-card" href="assets/asset_manifest.md">
+            <span class="material-card-title">Asset Manifest</span>
+            <span class="material-card-description">Creation method and claim boundary for public assets.</span>
           </a>
         </div>
       </section>
