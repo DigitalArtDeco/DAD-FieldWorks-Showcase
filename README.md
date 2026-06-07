@@ -32,6 +32,15 @@ Future PINN or neural-operator backends are treated as untrusted field generator
 
 <table>
 <tr>
+<td colspan="2">
+<img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate" width="100%">
+<br>
+<strong>PEC Resonator Candidate Evidence Gate</strong>
+<br>
+Analytic TE101 PEC cavity reference field, discrete finite difference candidate residual check and explicit Evidence Gate Pending state. Bounded diagnostic only, not a validated eigenmode and not a production solver claim.
+</td>
+</tr>
+<tr>
 <td width="50%">
 <img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="FDTD resonator ringdown with FFT spectrum" width="100%">
 <br>
@@ -104,6 +113,7 @@ DAD FieldWorks public materials show architecture notes, whitepaper material and
 | Visualization Provenance | [docs/visualization_provenance.md](docs/visualization_provenance.md) |
 | FDTD Resonator FFT Provenance | [docs/fdtd_resonator_fft_provenance.md](docs/fdtd_resonator_fft_provenance.md) |
 | Microwave Cavity Eigenmode Birth Provenance | [docs/microwave_cavity_eigenmode_birth_provenance.md](docs/microwave_cavity_eigenmode_birth_provenance.md) |
+| PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
 | Yee Curl Incidence Provenance | [docs/yee_curl_incidence_microprototype_provenance.md](docs/yee_curl_incidence_microprototype_provenance.md) |
 | PEC Cavity Visualization Provenance | [docs/pec_cavity_visualization_provenance.md](docs/pec_cavity_visualization_provenance.md) |
 

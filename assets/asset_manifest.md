@@ -322,3 +322,55 @@
 - Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif
+
+- Asset type: animated GIF
+- Creation method: deterministic Python analytic and discrete diagnostic generation.
+- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate_poster.png
+
+- Asset type: static PNG poster
+- Creation method: deterministic Python analytic and discrete diagnostic generation.
+- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate_summary.json
+
+- Asset type: JSON summary
+- Creation method: deterministic Python analytic and discrete diagnostic generation.
+- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/generate_pec_resonator_candidate_evidence_gate.py
+
+- Asset type: Python generator script
+- Creation method: deterministic Python analytic and discrete diagnostic generation.
+- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

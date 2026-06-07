@@ -1,0 +1,42 @@
+{
+  "title": "PEC Resonator Candidate Evidence Gate",
+  "subtitle": "Analytic TE101 cavity reference with a discrete residual check",
+  "created_by_script": "scripts/generate_pec_resonator_candidate_evidence_gate.py",
+  "model_type": "analytic rectangular PEC cavity reference with public finite difference scalar diagnostic",
+  "cavity_dimensions_m": {
+    "a": 0.08,
+    "b": 0.084,
+    "d": 0.084
+  },
+  "mode": "TE101",
+  "field_formula": "Ey(x,z,t) = sin(pi x/a) sin(pi z/d) cos(omega t)",
+  "frequency_hz": 2587494429.166666,
+  "frequency_ghz": 2.587494429166666,
+  "lambda_ref": 2940.8791458744863,
+  "lambda_candidate": 2940.425284581867,
+  "relative_lambda_error": 0.00015432844061480933,
+  "normalized_residual": 1.6236169493344042e-13,
+  "grid_size": {
+    "Nx": 72,
+    "Nz": 72
+  },
+  "frames": 144,
+  "duration_seconds": 12.0,
+  "evidence_gate": "Candidate / Pending",
+  "promoted": false,
+  "ProductionAllowedQ": false,
+  "ExternalValidationQ": false,
+  "external_validation_claim": false,
+  "production_claim": false,
+  "commercial_solver_equivalence_claim": false,
+  "qubit_simulation_claim": false,
+  "quantum_device_claim": false,
+  "cpml_claim": false,
+  "arbitrary_geometry_claim": false,
+  "external_images_used": false,
+  "screenshots_used": false,
+  "generative_image_tools_used": false,
+  "private_source_code_copied": false,
+  "mp4_created": false,
+  "claim_boundary": "bounded diagnostic only; not external validation, not production readiness, not validated eigenmode"
+}
