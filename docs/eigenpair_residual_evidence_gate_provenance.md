@@ -17,11 +17,13 @@ with dimensions `a = 0.080 m`, `b = 0.084 m` and `d = 0.084 m`.
 
 ## Layout
 
-The public animation uses a readable two-column dashboard layout. The left
-panel is reserved for the candidate field slice. The right side separates the
-residual equation, residual metrics, bounded evidence score and final claim
-gate into distinct cards. Public text is wrapped to the panel bounds to avoid
-overlap in the poster and GIF frames.
+The public animation uses explicit pixel safe zones and a readable two-column
+dashboard layout. The left panel is reserved for the candidate field slice.
+The right side separates the residual equation, residual metrics, bounded
+evidence score and final claim gate into distinct cards. Public text is
+wrapped or fitted to the panel bounds to avoid overlap in the poster and GIF
+frames. The poster is rendered from the final complete state so the computed
+bounded diagnostic score and claim gate are visible together.
 
 ## Residual
 

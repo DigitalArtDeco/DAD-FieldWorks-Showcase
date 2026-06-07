@@ -27,10 +27,11 @@
     "Nx": 72,
     "Nz": 72
   },
-  "frames": 132,
-  "duration_seconds": 12.0,
-  "layout_quality_check": "two-column dashboard layout with separated equation, metrics, score, and claim gate panels",
+  "frames": 131,
+  "duration_seconds": 11.88,
+  "layout_quality_check": "explicit pixel safe zones with separate candidate header, tag row, field region, residual equation card, metrics table, score gauge, and footer",
   "text_overlap_check": true,
+  "poster_final_state": true,
   "evidence_gate": "bounded diagnostic",
   "claim_promotion": "internal candidate only",
   "promoted": false,
@@ -49,5 +50,5 @@
   "generative_image_tools_used": false,
   "private_source_code_copied": false,
   "mp4_created": false,
-  "claim_boundary": "bounded diagnostic only; no external validation, no production readiness, no eigenmode validation result"
+  "claim_boundary": "bounded diagnostic only; not external validation, no production readiness claim, not a validated eigenmode"
 }

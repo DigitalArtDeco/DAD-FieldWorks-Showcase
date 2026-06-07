@@ -5,17 +5,13 @@ from __future__ import annotations
 
 import json
 import math
+import os
 import shutil
 import subprocess
 from pathlib import Path
 
-import matplotlib
-
-matplotlib.use("Agg")
-
-import matplotlib.pyplot as plt
 import numpy as np
-from PIL import Image, ImageDraw, ImageFont, ImageOps, PngImagePlugin
+from PIL import Image, ImageDraw, ImageFont, PngImagePlugin
 
 
 TITLE = "Eigenpair Residual Evidence Gate"
@@ -33,31 +29,23 @@ TINY = 1.0e-30
 FRAME_COUNT = 132
 FPS = 11
 DURATION_SECONDS = FRAME_COUNT / FPS
-GIF_SIZE = (1280, 720)
+GIF_SIZE = (1440, 810)
 POSTER_SIZE = (1600, 900)
-DPI = 100
 
 BG = "#071018"
 PANEL = "#0c1824"
-PANEL_2 = "#0f1c2a"
-PANEL_EDGE = "#25465f"
+CARD = "#0f1c2a"
+PANEL_EDGE = "#2c5a76"
 TEXT = "#e7f1ff"
-MUTED = "#9eb2c5"
-FAINT = "#5f7284"
+MUTED = "#b7c7d7"
+SOFT = "#7f94a8"
 CYAN = "#55d7ff"
 ORANGE = "#ff9d4d"
 RED = "#ff675f"
 BLUE = "#3478ff"
 GREEN = "#76efb2"
 YELLOW = "#ffd166"
-
-FIELD_BOX = (0.045, 0.145, 0.515, 0.73)
-RIGHT_X = 0.595
-RIGHT_W = 0.36
-EQUATION_BOX = (RIGHT_X, 0.615, RIGHT_W, 0.26)
-METRIC_BOX = (RIGHT_X, 0.385, RIGHT_W, 0.205)
-GATE_BOX = (RIGHT_X, 0.145, RIGHT_W, 0.215)
-FOOTER_BOX = (0.035, 0.033, 0.93, 0.052)
+BLACK = "#050a10"
 
 
 def repo_root() -> Path:
@@ -68,25 +56,61 @@ def clamp(value: float, lo: float = 0.0, hi: float = 1.0) -> float:
     return min(hi, max(lo, value))
 
 
-def smoothstep(edge0: float, edge1: float, x: float) -> float:
-    if x <= edge0:
+def smoothstep(edge0: float, edge1: float, value: float) -> float:
+    if value <= edge0:
         return 0.0
-    if x >= edge1:
+    if value >= edge1:
         return 1.0
-    u = (x - edge0) / (edge1 - edge0)
-    return u * u * (3.0 - 2.0 * u)
+    t = (value - edge0) / (edge1 - edge0)
+    return t * t * (3.0 - 2.0 * t)
 
 
-def fmt_sci(value: float, digits: int = 4) -> str:
-    return f"{value:.{digits}e}"
+def hex_rgb(color: str) -> tuple[int, int, int]:
+    color = color.lstrip("#")
+    return tuple(int(color[i : i + 2], 16) for i in (0, 2, 4))
 
 
-def fmt_lambda(value: float) -> str:
-    return f"{value:.6f}"
+def mix_color(a: str, b: str, t: float) -> tuple[int, int, int]:
+    ar, ag, ab = hex_rgb(a)
+    br, bg, bb = hex_rgb(b)
+    t = clamp(t)
+    return (
+        int(ar + (br - ar) * t),
+        int(ag + (bg - ag) * t),
+        int(ab + (bb - ab) * t),
+    )
 
 
-def load_measure_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
-    for name in ("DejaVuSans.ttf", "Arial.ttf"):
+def rgba(color: str, alpha: int = 255) -> tuple[int, int, int, int]:
+    r, g, b = hex_rgb(color)
+    return r, g, b, alpha
+
+
+def scale_box(box: tuple[int, int, int, int], scale: float) -> tuple[int, int, int, int]:
+    x, y, w, h = box
+    return round(x * scale), round(y * scale), round(w * scale), round(h * scale)
+
+
+def load_font(size: int, *, bold: bool = False) -> ImageFont.FreeTypeFont | ImageFont.ImageFont:
+    windows_fonts = Path(os.environ.get("WINDIR", "")) / "Fonts"
+    candidates = (
+        (
+            "DejaVuSans-Bold.ttf",
+            "Arialbd.ttf",
+            "arialbd.ttf",
+            str(windows_fonts / "arialbd.ttf"),
+            str(windows_fonts / "segoeuib.ttf"),
+        )
+        if bold
+        else (
+            "DejaVuSans.ttf",
+            "Arial.ttf",
+            "arial.ttf",
+            str(windows_fonts / "arial.ttf"),
+            str(windows_fonts / "segoeui.ttf"),
+        )
+    )
+    for name in candidates:
         try:
             return ImageFont.truetype(name, size=size)
         except OSError:
@@ -94,284 +118,236 @@ def load_measure_font(size: int) -> ImageFont.FreeTypeFont | ImageFont.ImageFont
     return ImageFont.load_default()
 
 
-def measure_text_px(text: str, size: int) -> tuple[int, int]:
-    font = load_measure_font(size)
-    dummy = Image.new("RGB", (1, 1))
-    draw = ImageDraw.Draw(dummy)
+def text_size(draw: ImageDraw.ImageDraw, text: str, font: ImageFont.ImageFont) -> tuple[int, int]:
     bbox = draw.textbbox((0, 0), text, font=font)
     return bbox[2] - bbox[0], bbox[3] - bbox[1]
 
 
-def wrap_text(text: str, max_width_px: int, size: int) -> list[str]:
-    words = text.replace("\n", " \n ").split()
+def wrap_lines(
+    draw: ImageDraw.ImageDraw,
+    text: str,
+    font: ImageFont.ImageFont,
+    max_width: int,
+) -> list[str]:
     lines: list[str] = []
-    current = ""
-    for word in words:
-        if word == "\n":
-            if current:
-                lines.append(current)
-            current = ""
+    for raw_line in text.split("\n"):
+        words = raw_line.split()
+        if not words:
+            lines.append("")
             continue
-        candidate = word if not current else f"{current} {word}"
-        candidate_width, _ = measure_text_px(candidate, size)
-        if candidate_width <= max_width_px or not current:
-            current = candidate
-        else:
+        current = ""
+        for word in words:
+            candidate = word if not current else f"{current} {word}"
+            if text_size(draw, candidate, font)[0] <= max_width or not current:
+                current = candidate
+            else:
+                lines.append(current)
+                current = word
+        if current:
             lines.append(current)
-            current = word
-    if current:
-        lines.append(current)
     return lines
 
 
-def fit_lines(
-    text: str,
-    max_width_px: int,
-    max_height_px: int,
-    size: int,
-    min_size: int = 8,
-) -> tuple[list[str], int]:
-    current_size = size
-    while current_size >= min_size:
-        lines = wrap_text(text, max_width_px, current_size)
-        _, line_height = measure_text_px("Ag", current_size)
-        total_height = max(1, len(lines)) * int(line_height * 1.45)
-        if total_height <= max_height_px:
-            return lines, current_size
-        current_size -= 1
-    lines = wrap_text(text, max_width_px, min_size)
-    _, line_height = measure_text_px("Ag", min_size)
-    max_lines = max(1, max_height_px // max(1, int(line_height * 1.45)))
-    clipped = lines[:max_lines]
-    if len(lines) > max_lines and clipped:
-        clipped[-1] = clipped[-1].rstrip(".") + "..."
-    return clipped, min_size
-
-
-def draw_text_box(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
+def draw_wrapped_text(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     text: str,
     *,
     size: int,
-    color: str = TEXT,
-    weight: str = "normal",
-    ha: str = "left",
-    va: str = "top",
-    alpha: float = 1.0,
-    canvas_size: tuple[int, int] = GIF_SIZE,
-    line_spacing: float = 1.45,
-    zorder: int = 50,
-) -> None:
+    fill: str = TEXT,
+    bold: bool = False,
+    align: str = "left",
+    valign: str = "top",
+    min_size: int = 10,
+    spacing: float = 1.22,
+) -> list[tuple[int, int, int, int]]:
     x, y, w, h = box
-    canvas_w, canvas_h = canvas_size
-    max_width_px = max(8, int(w * canvas_w * 0.62))
-    max_height_px = max(8, int(h * canvas_h))
-    lines, fitted_size = fit_lines(text, max_width_px, max_height_px, size)
-    _, line_height_px = measure_text_px("Ag", fitted_size)
-    line_step = (line_height_px * line_spacing) / canvas_h
-    if ha == "center":
-        text_x = x + w / 2.0
-    elif ha == "right":
-        text_x = x + w
+    font_size = size
+    while font_size >= min_size:
+        font = load_font(font_size, bold=bold)
+        lines = wrap_lines(draw, text, font, w)
+        line_h = max(1, text_size(draw, "Ag", font)[1])
+        total_h = round(line_h * spacing * len(lines))
+        widest = max((text_size(draw, line, font)[0] for line in lines), default=0)
+        if total_h <= h and widest <= w:
+            break
+        font_size -= 1
+    font = load_font(max(font_size, min_size), bold=bold)
+    lines = wrap_lines(draw, text, font, w)
+    line_h = max(1, text_size(draw, "Ag", font)[1])
+    step = round(line_h * spacing)
+    max_lines = max(1, h // max(step, 1))
+    if len(lines) > max_lines:
+        lines = lines[:max_lines]
+        last = lines[-1].rstrip(".")
+        while text_size(draw, last + "...", font)[0] > w and last:
+            last = last[:-1]
+        lines[-1] = (last or lines[-1][:1]) + "..."
+    total_h = step * len(lines)
+    if valign == "center":
+        ty = y + (h - total_h) // 2
+    elif valign == "bottom":
+        ty = y + h - total_h
     else:
-        text_x = x
-    if va == "center":
-        total_h = line_step * max(1, len(lines))
-        start_y = y + h / 2.0 + total_h / 2.0 - line_step
-    elif va == "bottom":
-        start_y = y + line_step * (len(lines) - 1)
-    else:
-        start_y = y + h - line_step * 0.18
-    for index, line in enumerate(lines):
-        ax.text(
-            text_x,
-            start_y - index * line_step,
-            line,
-            fontsize=fitted_size,
-            color=color,
-            ha=ha,
-            va="top",
-            weight=weight,
-            family="DejaVu Sans",
-            alpha=alpha,
-            zorder=zorder,
-        )
+        ty = y
+    boxes: list[tuple[int, int, int, int]] = []
+    for line in lines:
+        line_w, line_h_px = text_size(draw, line, font)
+        if align == "center":
+            tx = x + (w - line_w) // 2
+        elif align == "right":
+            tx = x + w - line_w
+        else:
+            tx = x
+        draw.text((tx, ty), line, fill=fill, font=font)
+        boxes.append((tx, ty, line_w, line_h_px))
+        ty += step
+    return boxes
 
 
-def add_text(
-    ax: plt.Axes,
-    x: float,
-    y: float,
+def draw_text_fit(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     text: str,
-    size: int = 13,
-    color: str = TEXT,
-    ha: str = "left",
-    va: str = "center",
-    weight: str = "normal",
-    alpha: float = 1.0,
-    zorder: int = 50,
-) -> None:
-    ax.text(
-        x,
-        y,
-        text,
-        fontsize=size,
-        color=color,
-        ha=ha,
-        va=va,
-        weight=weight,
-        family="DejaVu Sans",
-        alpha=alpha,
-        zorder=zorder,
-    )
+    *,
+    size: int,
+    fill: str = TEXT,
+    bold: bool = False,
+    align: str = "left",
+    valign: str = "center",
+    min_size: int = 10,
+) -> tuple[int, int, int, int]:
+    x, y, w, h = box
+    font_size = size
+    while font_size >= min_size:
+        font = load_font(font_size, bold=bold)
+        tw, th = text_size(draw, text, font)
+        if tw <= w and th <= h:
+            break
+        font_size -= 1
+    font = load_font(max(font_size, min_size), bold=bold)
+    tw, th = text_size(draw, text, font)
+    if align == "center":
+        tx = x + (w - tw) // 2
+    elif align == "right":
+        tx = x + w - tw
+    else:
+        tx = x
+    if valign == "center":
+        ty = y + (h - th) // 2
+    elif valign == "bottom":
+        ty = y + h - th
+    else:
+        ty = y
+    draw.text((tx, ty), text, fill=fill, font=font)
+    return tx, ty, tw, th
 
 
 def draw_panel(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     *,
-    alpha: float = 1.0,
-    face: str = PANEL,
-    edge: str = PANEL_EDGE,
-    zorder: int = 15,
+    fill: str = PANEL,
+    outline: str = PANEL_EDGE,
+    width: int = 2,
 ) -> None:
     x, y, w, h = box
-    ax.add_patch(
-        plt.Rectangle(
-            (x, y),
-            w,
-            h,
-            facecolor=face,
-            edgecolor=edge,
-            lw=1.1,
-            alpha=0.94 * alpha,
-            zorder=zorder,
-        )
-    )
+    draw.rectangle((x, y, x + w, y + h), fill=fill, outline=outline, width=width)
 
 
 def draw_metric_card(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     title: str,
     *,
-    alpha: float = 1.0,
-    accent: str = CYAN,
-    canvas_size: tuple[int, int] = GIF_SIZE,
+    accent: str,
+    active: bool,
+    scale: float,
 ) -> None:
-    draw_panel(ax, box, alpha=alpha, face=PANEL_2, edge="#2b5870", zorder=18)
     x, y, w, h = box
-    ax.add_patch(
-        plt.Rectangle((x, y + h - 0.012), w, 0.012, facecolor=accent, edgecolor="none", alpha=0.65 * alpha, zorder=25)
-    )
-    draw_text_box(
-        ax,
-        (x + 0.018, y + h - 0.052, w - 0.036, 0.035),
+    fill = CARD if active else "#0b1722"
+    outline = PANEL_EDGE if active else "#1e4056"
+    draw_panel(draw, box, fill=fill, outline=outline, width=max(1, round(2 * scale)))
+    bar_h = max(8, round(10 * scale))
+    draw.rectangle((x, y, x + w, y + bar_h), fill=accent if active else "#385168")
+    draw_text_fit(
+        draw,
+        (x + round(22 * scale), y + round(22 * scale), w - round(44 * scale), round(32 * scale)),
         title,
-        size=12,
-        color=TEXT,
-        weight="bold",
-        alpha=alpha,
-        canvas_size=canvas_size,
+        size=round(23 * scale),
+        fill=TEXT if active else MUTED,
+        bold=True,
     )
 
 
-def draw_panel_title(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
-    title: str,
+def draw_tag(
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
+    text: str,
     *,
-    phase_label: str | None = None,
-    alpha: float = 1.0,
-    canvas_size: tuple[int, int] = GIF_SIZE,
+    fill: str,
+    outline: str,
+    text_fill: str,
+    scale: float,
 ) -> None:
     x, y, w, h = box
-    draw_text_box(
-        ax,
-        (x + 0.022, y + h - 0.058, w - 0.044, 0.043),
-        title,
-        size=17,
-        color=TEXT,
-        weight="bold",
-        alpha=alpha,
-        canvas_size=canvas_size,
-    )
-    if phase_label:
-        chip_w = min(0.165, w * 0.38)
-        chip_h = 0.031
-        chip_x = x + w - chip_w - 0.024
-        chip_y = y + h - 0.054
-        ax.add_patch(
-            plt.Rectangle((chip_x, chip_y), chip_w, chip_h, facecolor="#132638", edgecolor="#335a76", lw=0.8, alpha=0.90 * alpha, zorder=27)
-        )
-        draw_text_box(
-            ax,
-            (chip_x + 0.006, chip_y + 0.004, chip_w - 0.012, chip_h - 0.006),
-            phase_label,
-            size=8,
-            color=MUTED,
-            ha="center",
-            va="center",
-            alpha=alpha,
-            canvas_size=canvas_size,
-        )
+    draw.rounded_rectangle((x, y, x + w, y + h), radius=round(8 * scale), fill=fill, outline=outline, width=max(1, round(2 * scale)))
+    draw_text_fit(draw, (x + round(10 * scale), y + round(2 * scale), w - round(20 * scale), h - round(4 * scale)), text, size=round(18 * scale), fill=text_fill, bold=True, align="center")
 
 
 def draw_label_value_table(
-    ax: plt.Axes,
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     rows: list[tuple[str, str, str]],
-    box: tuple[float, float, float, float],
     *,
-    alpha: float = 1.0,
-    canvas_size: tuple[int, int] = GIF_SIZE,
-    label_size: int = 9,
-    value_size: int = 9,
+    scale: float,
+    label_size: int,
+    value_size: int,
+    active: bool = True,
 ) -> None:
     x, y, w, h = box
-    row_h = h / max(1, len(rows))
-    for index, (label, value, value_color) in enumerate(rows):
-        row_y = y + h - (index + 1) * row_h
-        if index % 2 == 0:
-            ax.add_patch(
-                plt.Rectangle((x, row_y), w, row_h * 0.92, facecolor="#0a1520", edgecolor="none", alpha=0.42 * alpha, zorder=20)
-            )
-        draw_text_box(
-            ax,
-            (x + 0.012, row_y + 0.002, w * 0.43, row_h * 0.78),
+    row_h = h // len(rows)
+    label_w = round(w * 0.48)
+    for idx, (label, value, value_color) in enumerate(rows):
+        row_y = y + idx * row_h
+        if idx % 2 == 0:
+            draw.rectangle((x, row_y, x + w, row_y + row_h - round(3 * scale)), fill="#0a1520")
+        label_fill = MUTED if active else SOFT
+        actual_value_color = value_color if active else MUTED
+        draw_text_fit(
+            draw,
+            (x + round(12 * scale), row_y + round(3 * scale), label_w - round(16 * scale), row_h - round(6 * scale)),
             label,
-            size=label_size,
-            color=MUTED,
-            alpha=alpha,
-            canvas_size=canvas_size,
-            va="center",
+            size=round(label_size * scale),
+            fill=label_fill,
+            align="left",
         )
-        draw_text_box(
-            ax,
-            (x + w * 0.47, row_y + 0.002, w * 0.50 - 0.010, row_h * 0.78),
+        draw_text_fit(
+            draw,
+            (x + label_w, row_y + round(3 * scale), w - label_w - round(12 * scale), row_h - round(6 * scale)),
             value,
-            size=value_size,
-            color=value_color,
-            ha="right",
-            alpha=alpha,
-            canvas_size=canvas_size,
-            va="center",
+            size=round(value_size * scale),
+            fill=actual_value_color,
+            bold=True,
+            align="right",
         )
 
 
-def draw_footer(ax: plt.Axes, *, canvas_size: tuple[int, int] = GIF_SIZE) -> None:
-    draw_panel(ax, FOOTER_BOX, alpha=1.0, face="#050a10", edge="#183047", zorder=35)
-    draw_text_box(
-        ax,
-        (FOOTER_BOX[0] + 0.018, FOOTER_BOX[1] + 0.008, FOOTER_BOX[2] - 0.036, FOOTER_BOX[3] - 0.012),
+def draw_footer(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], *, scale: float) -> None:
+    draw_panel(draw, box, fill=BLACK, outline="#183047", width=max(1, round(2 * scale)))
+    x, y, w, h = box
+    draw_text_fit(
+        draw,
+        (x + round(18 * scale), y + round(8 * scale), w - round(36 * scale), h - round(16 * scale)),
         FOOTER,
-        size=12,
-        color=MUTED,
-        ha="center",
-        va="center",
-        canvas_size=canvas_size,
-        zorder=60,
+        size=round(18 * scale),
+        fill=MUTED,
+        align="center",
     )
+
+
+def fmt_sci(value: float, digits: int = 3) -> str:
+    return f"{value:.{digits}e}"
 
 
 def compute_diagnostic() -> dict[str, object]:
@@ -443,329 +419,313 @@ def compute_diagnostic() -> dict[str, object]:
     }
 
 
-def phase_label(t: float) -> str:
-    if t < 0.24:
+def layout(size: tuple[int, int]) -> dict[str, tuple[int, int, int, int]]:
+    scale = size[0] / GIF_SIZE[0]
+    outer = round(48 * scale)
+    gap = round(36 * scale)
+    footer_h = round(58 * scale)
+    title_h = round(92 * scale)
+    title_y = round(24 * scale)
+    main_top = round(126 * scale)
+    footer_y = size[1] - outer - footer_h
+    main_h = footer_y - main_top - round(24 * scale)
+    usable_w = size[0] - 2 * outer
+    left_w = round(0.525 * usable_w)
+    right_w = usable_w - left_w - gap
+    right_x = outer + left_w + gap
+    card_gap = round(18 * scale)
+    eq_h = round(135 * scale)
+    metrics_h = round(150 * scale)
+    gate_h = main_h - eq_h - metrics_h - 2 * card_gap
+    return {
+        "title": (outer, title_y, usable_w, title_h),
+        "candidate": (outer, main_top, left_w, main_h),
+        "equation": (right_x, main_top, right_w, eq_h),
+        "metrics": (right_x, main_top + eq_h + card_gap, right_w, metrics_h),
+        "gate": (right_x, main_top + eq_h + card_gap + metrics_h + card_gap, right_w, gate_h),
+        "footer": (outer, footer_y, usable_w, footer_h),
+    }
+
+
+def active_phase(t: float) -> str:
+    if t < 0.22:
         return "candidate"
-    if t < 0.46:
+    if t < 0.43:
         return "residual"
-    if t < 0.66:
-        return "metrics"
-    if t < 0.84:
+    if t < 0.63:
+        return "magnitude"
+    if t < 0.82:
         return "score"
-    return "claim gate"
+    return "gate"
 
 
-def draw_background(ax: plt.Axes) -> None:
-    ax.add_patch(plt.Rectangle((0, 0), 1, 1, color=BG, zorder=-10))
-    for y in np.linspace(0.12, 0.90, 8):
-        ax.plot([0.035, 0.965], [y, y], color="#133148", lw=0.55, alpha=0.18, zorder=-5)
-    for x in np.linspace(0.04, 0.96, 12):
-        ax.plot([x, x], [0.11, 0.90], color="#133148", lw=0.55, alpha=0.13, zorder=-5)
+def phase_alpha(name: str, t: float, *, poster: bool = False) -> float:
+    if poster:
+        return 1.0
+    active = active_phase(t)
+    if name == active:
+        return 1.0
+    if name in {"metrics", "gate"}:
+        return 0.72
+    return 0.62
 
 
-def draw_field_panel(
-    ax: plt.Axes,
+def apply_alpha_color(color: str, alpha: float) -> str:
+    r, g, b = hex_rgb(color)
+    br, bg, bb = hex_rgb(BG)
+    alpha = clamp(alpha)
+    return f"#{int(br + (r - br) * alpha):02x}{int(bg + (g - bg) * alpha):02x}{int(bb + (b - bb) * alpha):02x}"
+
+
+def field_image(field: np.ndarray, phase: float, size: tuple[int, int]) -> Image.Image:
+    signed = np.clip(field * phase, -1.0, 1.0)
+    out = np.zeros((signed.shape[0], signed.shape[1], 3), dtype=np.uint8)
+    white = np.array([239, 242, 245], dtype=float)
+    pos = np.array([222, 90, 70], dtype=float)
+    neg = np.array([54, 122, 210], dtype=float)
+    for channel in range(3):
+        out[:, :, channel] = np.where(
+            signed >= 0,
+            white[channel] + (pos[channel] - white[channel]) * signed,
+            white[channel] + (neg[channel] - white[channel]) * (-signed),
+        )
+    image = Image.fromarray(out, "RGB").resize(size, Image.Resampling.BICUBIC)
+    return image
+
+
+def paste_field(draw: ImageDraw.ImageDraw, canvas: Image.Image, box: tuple[int, int, int, int], field: np.ndarray, phase: float, *, scale: float) -> None:
+    x, y, w, h = box
+    image = field_image(field, phase, (w, h))
+    canvas.paste(image, (x, y))
+    draw.rectangle((x, y, x + w, y + h), outline="#d7ecff", width=max(1, round(2 * scale)))
+    for i in range(1, 8):
+        gx = x + round(i * w / 8)
+        gy = y + round(i * h / 8)
+        draw.line((gx, y, gx, y + h), fill=(230, 240, 250), width=1)
+        draw.line((x, gy, x + w, gy), fill=(230, 240, 250), width=1)
+
+
+def draw_background(draw: ImageDraw.ImageDraw, size: tuple[int, int], *, scale: float) -> None:
+    w, h = size
+    draw.rectangle((0, 0, w, h), fill=BG)
+    for idx in range(10):
+        y = round((112 + idx * 61) * scale)
+        draw.line((round(45 * scale), y, w - round(45 * scale), y), fill="#133148", width=1)
+    for idx in range(13):
+        x = round((54 + idx * 104) * scale)
+        draw.line((x, round(105 * scale), x, h - round(105 * scale)), fill="#102b40", width=1)
+
+
+def draw_title(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], *, scale: float) -> None:
+    x, y, w, _h = box
+    draw_text_fit(draw, (x, y, w, round(44 * scale)), TITLE, size=round(38 * scale), fill=TEXT, bold=True)
+    draw_text_fit(draw, (x, y + round(47 * scale), w, round(30 * scale)), SUBTITLE, size=round(21 * scale), fill=MUTED)
+
+
+def draw_candidate_panel(
+    draw: ImageDraw.ImageDraw,
+    canvas: Image.Image,
+    box: tuple[int, int, int, int],
     metrics: dict[str, object],
     t: float,
     *,
-    canvas_size: tuple[int, int] = GIF_SIZE,
+    scale: float,
+    poster: bool,
 ) -> None:
-    draw_panel(ax, FIELD_BOX)
-    draw_panel_title(ax, FIELD_BOX, "Candidate Field Slice", phase_label=phase_label(t), canvas_size=canvas_size)
-    x, y, w, h = FIELD_BOX
-    phase = math.cos(4.0 * math.pi * t)
-    field = np.asarray(metrics["field"]) * phase
-    image_box = (x + 0.045, y + 0.165, w - 0.090, h - 0.260)
-    extent = (image_box[0], image_box[0] + image_box[2], image_box[1], image_box[1] + image_box[3])
-    ax.imshow(
-        field,
-        extent=extent,
-        origin="lower",
-        cmap="RdBu_r",
-        vmin=-1.0,
-        vmax=1.0,
-        interpolation="bilinear",
-        alpha=0.92,
-        zorder=20,
-    )
-    ax.add_patch(
-        plt.Rectangle(
-            (extent[0], extent[2]),
-            extent[1] - extent[0],
-            extent[3] - extent[2],
-            fill=False,
-            edgecolor="#d7ecff",
-            lw=1.0,
-            alpha=0.88,
-            zorder=30,
-        )
-    )
-    grid_alpha = 0.15 + 0.20 * smoothstep(0.15, 0.35, t)
-    for frac in np.linspace(0, 1, 9):
-        gx = extent[0] + frac * (extent[1] - extent[0])
-        gy = extent[2] + frac * (extent[3] - extent[2])
-        ax.plot([gx, gx], [extent[2], extent[3]], color="#d9edff", lw=0.36, alpha=grid_alpha, zorder=31)
-        ax.plot([extent[0], extent[1]], [gy, gy], color="#d9edff", lw=0.36, alpha=grid_alpha, zorder=31)
+    x, y, w, h = box
+    alpha = phase_alpha("candidate", t, poster=poster)
+    draw_panel(draw, box, fill=apply_alpha_color(PANEL, alpha), outline=apply_alpha_color(PANEL_EDGE, alpha))
+    pad = round(30 * scale)
+    draw_text_fit(draw, (x + pad, y + round(22 * scale), w - 2 * pad, round(36 * scale)), "Candidate Field Slice", size=round(29 * scale), fill=TEXT, bold=True)
+    draw_text_fit(draw, (x + pad, y + round(66 * scale), round(340 * scale), round(26 * scale)), "interior Dirichlet grid sample", size=round(19 * scale), fill=MUTED)
+    tag_y = y + round(101 * scale)
+    draw_tag(draw, (x + pad, tag_y, round(122 * scale), round(32 * scale)), "candidate", fill="#112d3e", outline=CYAN, text_fill=CYAN, scale=scale)
+    draw_tag(draw, (x + pad + round(138 * scale), tag_y, round(166 * scale), round(32 * scale)), "not trusted yet", fill="#2b230c", outline=YELLOW, text_fill=YELLOW, scale=scale)
 
-    draw_text_box(
-        ax,
-        (x + 0.045, y + h - 0.110, w * 0.43, 0.040),
-        "e(x,z) sampled on an interior Dirichlet grid",
-        size=10,
-        color=MUTED,
-        canvas_size=canvas_size,
-    )
-    draw_text_box(
-        ax,
-        (x + w - 0.202, y + h - 0.109, 0.150, 0.035),
-        "not trusted yet",
-        size=10,
-        color=YELLOW,
-        ha="center",
-        va="center",
-        canvas_size=canvas_size,
-    )
-    ax.add_patch(
-        plt.Rectangle((x + w - 0.205, y + h - 0.117), 0.156, 0.041, facecolor="#201b08", edgecolor="#5b4a13", lw=0.8, alpha=0.92, zorder=26)
-    )
-    draw_text_box(
-        ax,
-        (x + 0.050, y + 0.072, w * 0.50, 0.052),
+    field_top = tag_y + round(50 * scale)
+    field_size = min(w - 2 * pad - round(66 * scale), h - round(250 * scale))
+    field_size = max(round(300 * scale), field_size)
+    field_size = min(field_size, round(440 * scale))
+    field_x = x + (w - field_size) // 2
+    phase = math.cos(4.0 * math.pi * t)
+    paste_field(draw, canvas, (field_x, field_top, field_size, field_size), np.asarray(metrics["field"]), phase, scale=scale)
+    draw_text_fit(
+        draw,
+        (x + pad, y + h - round(58 * scale), w - 2 * pad, round(34 * scale)),
         "A e = lambda M e is a claim to test.",
-        size=12,
-        color=TEXT,
-        weight="bold",
-        canvas_size=canvas_size,
+        size=round(22 * scale),
+        fill=TEXT,
+        bold=True,
+        align="center",
     )
 
 
 def draw_equation_card(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
-    metrics: dict[str, object],
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     t: float,
     *,
-    canvas_size: tuple[int, int] = GIF_SIZE,
+    scale: float,
+    poster: bool,
 ) -> None:
-    phase = smoothstep(0.20, 0.43, t)
-    draw_metric_card(ax, box, "Residual Calculation", alpha=1.0, accent=CYAN, canvas_size=canvas_size)
+    alpha = phase_alpha("residual", t, poster=poster)
+    draw_metric_card(draw, box, "Residual Calculation", accent=CYAN, active=alpha > 0.85, scale=scale)
     x, y, w, h = box
-    draw_text_box(
-        ax,
-        (x + 0.024, y + h - 0.103, w - 0.048, 0.050),
+    equation_y = y + round(54 * scale)
+    draw_text_fit(
+        draw,
+        (x + round(30 * scale), equation_y, w - round(60 * scale), round(32 * scale)),
         "r = A e - lambda M e",
-        size=19,
-        color=CYAN,
-        weight="bold",
-        ha="center",
-        va="center",
-        alpha=0.55 + 0.45 * phase,
-        canvas_size=canvas_size,
+        size=round(24 * scale),
+        fill=apply_alpha_color(CYAN, alpha),
+        bold=True,
+        align="center",
     )
-    row_y = y + 0.087
-    chip_w = (w - 0.080) / 3.0
-    chips = [
-        ("A e", CYAN, x + 0.024),
-        ("lambda M e", ORANGE, x + 0.040 + chip_w),
-        ("r", GREEN, x + 0.056 + 2 * chip_w),
-    ]
-    for label, color, chip_x in chips:
-        ax.add_patch(
-            plt.Rectangle((chip_x, row_y), chip_w, 0.068, facecolor="#111f2d", edgecolor=color, lw=1.2, alpha=0.25 + 0.65 * phase, zorder=25)
-        )
-        draw_text_box(
-            ax,
-            (chip_x + 0.006, row_y + 0.010, chip_w - 0.012, 0.048),
-            label,
-            size=11,
-            color=TEXT,
-            ha="center",
-            va="center",
-            alpha=phase,
-            canvas_size=canvas_size,
-        )
-    ax.annotate(
-        "",
-        xy=(x + w - 0.118, row_y + 0.034),
-        xytext=(x + 0.126, row_y + 0.034),
-        arrowprops=dict(arrowstyle="-|>", color="#6aa4cc", lw=1.5, alpha=0.75 * phase),
-        zorder=27,
+    box_y = y + round(88 * scale)
+    small_w = round(124 * scale)
+    small_h = round(40 * scale)
+    gap = round(28 * scale)
+    start_x = x + (w - 3 * small_w - 2 * gap) // 2
+    cells = [("A e", CYAN), ("lambda M e", ORANGE), ("r", GREEN)]
+    centers: list[tuple[int, int]] = []
+    for idx, (label, color) in enumerate(cells):
+        cx = start_x + idx * (small_w + gap)
+        draw.rectangle((cx, box_y, cx + small_w, box_y + small_h), fill="#111f2d", outline=apply_alpha_color(color, alpha), width=max(1, round(2 * scale)))
+        draw_text_fit(draw, (cx + round(8 * scale), box_y + round(5 * scale), small_w - round(16 * scale), small_h - round(10 * scale)), label, size=round(18 * scale), fill=TEXT, align="center")
+        centers.append((cx + small_w // 2, box_y + small_h // 2))
+    symbol_fill = apply_alpha_color("#8fbdd8", alpha)
+    draw_text_fit(
+        draw,
+        (start_x + small_w, box_y + round(4 * scale), gap, small_h - round(8 * scale)),
+        "-",
+        size=round(22 * scale),
+        fill=symbol_fill,
+        bold=True,
+        align="center",
     )
-    draw_text_box(
-        ax,
-        (x + 0.024, y + 0.030, w - 0.048, 0.042),
-        "Residual gates must pass before promotion.",
-        size=9,
-        color=MUTED,
-        ha="center",
-        va="center",
-        alpha=0.35 + 0.65 * phase,
-        canvas_size=canvas_size,
+    draw_text_fit(
+        draw,
+        (start_x + 2 * small_w + gap, box_y + round(4 * scale), gap, small_h - round(8 * scale)),
+        "->",
+        size=round(18 * scale),
+        fill=symbol_fill,
+        bold=True,
+        align="center",
     )
 
 
 def draw_metrics_panel(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     metrics: dict[str, object],
     t: float,
     *,
-    canvas_size: tuple[int, int] = GIF_SIZE,
+    scale: float,
+    poster: bool,
 ) -> None:
-    phase = smoothstep(0.42, 0.63, t)
-    draw_metric_card(ax, box, "Residual Metrics", alpha=1.0, accent=GREEN, canvas_size=canvas_size)
+    alpha = phase_alpha("magnitude", t, poster=poster)
+    draw_metric_card(draw, box, "Residual Metrics", accent=GREEN, active=alpha > 0.85, scale=scale)
     x, y, w, h = box
     rows = [
-        ("lambda candidate", fmt_lambda(float(metrics["lambda_candidate"])), TEXT),
-        ("lambda reference", fmt_lambda(float(metrics["lambda_ref"])), TEXT),
-        ("relative error", fmt_sci(float(metrics["relative_lambda_error"])), YELLOW),
-        ("normalized residual", fmt_sci(float(metrics["normalized_residual"])), GREEN),
+        ("lambda cand", fmt_sci(float(metrics["lambda_candidate"]), 6), TEXT),
+        ("lambda ref", fmt_sci(float(metrics["lambda_ref"]), 6), TEXT),
+        ("rel error", fmt_sci(float(metrics["relative_lambda_error"]), 3), YELLOW),
+        ("norm residual", fmt_sci(float(metrics["normalized_residual"]), 3), GREEN),
     ]
     draw_label_value_table(
-        ax,
+        draw,
+        (x + round(24 * scale), y + round(58 * scale), w - round(48 * scale), h - round(72 * scale)),
         rows,
-        (x + 0.024, y + 0.025, w - 0.048, h - 0.085),
-        alpha=0.30 + 0.70 * phase,
-        canvas_size=canvas_size,
-        label_size=9,
-        value_size=9,
+        scale=scale,
+        label_size=18,
+        value_size=18,
+        active=True,
     )
 
 
-def draw_score_gauge(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
-    score: float,
-    *,
-    alpha: float,
-    canvas_size: tuple[int, int],
-) -> None:
+def draw_score_gauge(draw: ImageDraw.ImageDraw, box: tuple[int, int, int, int], score: float, *, scale: float) -> None:
     x, y, w, h = box
-    ax.add_patch(plt.Rectangle((x, y), w, h, facecolor="#201b08", edgecolor="#574814", lw=0.8, alpha=0.95 * alpha, zorder=25))
-    ax.add_patch(plt.Rectangle((x, y), w * clamp(score / 100.0), h, facecolor=YELLOW, edgecolor="none", alpha=0.92 * alpha, zorder=26))
-    draw_text_box(
-        ax,
-        (x, y + h + 0.010, w, 0.030),
-        f"{score:04.1f} / 100",
-        size=14,
-        color=YELLOW,
-        ha="right",
-        va="center",
-        alpha=alpha,
-        weight="bold",
-        canvas_size=canvas_size,
-    )
+    draw.rectangle((x, y, x + w, y + h), fill="#201b08", outline="#574814", width=max(1, round(2 * scale)))
+    fill_w = round(w * clamp(score / 100.0))
+    draw.rectangle((x, y, x + fill_w, y + h), fill=YELLOW)
 
 
 def draw_gate_panel(
-    ax: plt.Axes,
-    box: tuple[float, float, float, float],
+    draw: ImageDraw.ImageDraw,
+    box: tuple[int, int, int, int],
     metrics: dict[str, object],
     t: float,
     *,
-    canvas_size: tuple[int, int] = GIF_SIZE,
+    scale: float,
+    poster: bool,
 ) -> None:
-    phase = smoothstep(0.62, 0.84, t)
-    final_phase = smoothstep(0.82, 0.94, t)
-    draw_metric_card(ax, box, "Bounded Evidence Score", alpha=1.0, accent=YELLOW, canvas_size=canvas_size)
+    alpha = phase_alpha("score", t, poster=poster)
+    draw_metric_card(draw, box, "Bounded Evidence Score", accent=YELLOW, active=alpha > 0.85 or poster, scale=scale)
     x, y, w, h = box
-    score = float(metrics["evidence_score"]) * phase
-    draw_score_gauge(ax, (x + 0.024, y + h - 0.098, w - 0.048, 0.024), score, alpha=0.30 + 0.70 * phase, canvas_size=canvas_size)
+    final_score = float(metrics["evidence_score"])
+    score_phase = 1.0 if poster else smoothstep(0.64, 0.84, t)
+    shown_score = final_score * score_phase
+    score_text = f"{shown_score:04.1f} / 100" if score_phase > 0.02 else "pending"
+    draw_text_fit(
+        draw,
+        (x + round(24 * scale), y + round(56 * scale), w - round(48 * scale), round(38 * scale)),
+        score_text,
+        size=round(30 * scale),
+        fill=YELLOW,
+        bold=True,
+        align="center",
+    )
+    draw_text_fit(
+        draw,
+        (x + round(24 * scale), y + round(94 * scale), w - round(48 * scale), round(22 * scale)),
+        "bounded diagnostic score",
+        size=round(17 * scale),
+        fill=MUTED,
+        align="center",
+    )
+    draw_score_gauge(draw, (x + round(36 * scale), y + round(120 * scale), w - round(72 * scale), round(18 * scale)), shown_score, scale=scale)
     rows = [
         ("Evidence Gate", "bounded diagnostic", YELLOW),
-        ("Claim Promotion", "internal candidate", MUTED),
+        ("Claim Promotion", "internal candidate", TEXT),
         ("ProductionAllowedQ", "false", RED),
         ("ExternalValidationQ", "false", RED),
     ]
     draw_label_value_table(
-        ax,
+        draw,
+        (x + round(24 * scale), y + round(150 * scale), w - round(48 * scale), h - round(160 * scale)),
         rows,
-        (x + 0.024, y + 0.030, w - 0.048, h - 0.125),
-        alpha=0.35 + 0.65 * phase,
-        canvas_size=canvas_size,
-        label_size=8,
-        value_size=8,
+        scale=scale,
+        label_size=15,
+        value_size=15,
+        active=True,
     )
-    if final_phase > 0.02:
-        ax.add_patch(
-            plt.Rectangle((x + 0.023, y + 0.014), w - 0.046, h - 0.058, facecolor="#071018", edgecolor=YELLOW, lw=1.0, alpha=1.0, zorder=70)
-        )
-        draw_text_box(
-            ax,
-            (x + 0.044, y + 0.144, w - 0.088, 0.035),
-            "residual check",
-            size=12,
-            color=TEXT,
-            weight="bold",
-            ha="center",
-            va="center",
-            alpha=final_phase,
-            canvas_size=canvas_size,
-            zorder=80,
-        )
-        draw_text_box(
-            ax,
-            (x + 0.044, y + 0.094, w - 0.088, 0.044),
-            "analytic PEC reference comparison",
-            size=10,
-            color=TEXT,
-            ha="center",
-            va="center",
-            alpha=final_phase,
-            canvas_size=canvas_size,
-            zorder=80,
-        )
-        draw_text_box(
-            ax,
-            (x + 0.044, y + 0.052, w - 0.088, 0.036),
-            "bounded internal prototype only",
-            size=10,
-            color=YELLOW,
-            ha="center",
-            va="center",
-            alpha=final_phase,
-            canvas_size=canvas_size,
-            zorder=80,
-        )
 
 
-def draw_scene(frame_index: int, metrics: dict[str, object], size: tuple[int, int]) -> Image.Image:
-    width, height = size
-    fig = plt.figure(figsize=(width / DPI, height / DPI), dpi=DPI, facecolor=BG)
-    ax = fig.add_axes([0, 0, 1, 1])
-    ax.set_xlim(0, 1)
-    ax.set_ylim(0, 1)
-    ax.axis("off")
-
-    t = frame_index / max(1, FRAME_COUNT - 1)
-    draw_background(ax)
-    draw_text_box(ax, (0.045, 0.925, 0.91, 0.050), TITLE, size=23, color=TEXT, weight="bold", canvas_size=size)
-    draw_text_box(ax, (0.045, 0.890, 0.91, 0.038), SUBTITLE, size=13, color=MUTED, canvas_size=size)
-
-    draw_field_panel(ax, metrics, t, canvas_size=size)
-    draw_equation_card(ax, EQUATION_BOX, metrics, t, canvas_size=size)
-    draw_metrics_panel(ax, METRIC_BOX, metrics, t, canvas_size=size)
-    draw_gate_panel(ax, GATE_BOX, metrics, t, canvas_size=size)
-    draw_footer(ax, canvas_size=size)
-
-    fig.canvas.draw()
-    image = Image.fromarray(np.asarray(fig.canvas.buffer_rgba())).convert("RGB")
-    plt.close(fig)
+def draw_scene(frame_index: int, metrics: dict[str, object], size: tuple[int, int], *, poster: bool = False) -> Image.Image:
+    scale = size[0] / GIF_SIZE[0]
+    image = Image.new("RGB", size, BG)
+    draw = ImageDraw.Draw(image)
+    boxes = layout(size)
+    t = 1.0 if poster else frame_index / max(1, FRAME_COUNT - 1)
+    draw_background(draw, size, scale=scale)
+    draw_title(draw, boxes["title"], scale=scale)
+    draw_candidate_panel(draw, image, boxes["candidate"], metrics, t, scale=scale, poster=poster)
+    draw_equation_card(draw, boxes["equation"], t, scale=scale, poster=poster)
+    draw_metrics_panel(draw, boxes["metrics"], metrics, t, scale=scale, poster=poster)
+    draw_gate_panel(draw, boxes["gate"], metrics, t, scale=scale, poster=poster)
+    draw_footer(draw, boxes["footer"], scale=scale)
     return image
 
 
 def save_gif(frames: list[Image.Image], output_path: Path) -> None:
-    palette_frames = [
-        ImageOps.contain(frame, GIF_SIZE).convert("P", palette=Image.Palette.ADAPTIVE, colors=112)
-        for frame in frames
-    ]
+    palette_frames = [frame.convert("P", palette=Image.Palette.ADAPTIVE, colors=128) for frame in frames]
     palette_frames[0].save(
         output_path,
         save_all=True,
         append_images=palette_frames[1:],
         duration=int(1000 / FPS),
         loop=0,
-        optimize=True,
+        optimize=False,
         disposal=2,
     )
 
@@ -790,7 +750,24 @@ def create_mp4_if_available(frame_paths: list[Path], output_path: Path) -> bool:
     return output_path.exists() and output_path.stat().st_size > 0
 
 
-def write_summary(path: Path, metrics: dict[str, object], mp4_created: bool) -> None:
+def gif_frame_stats(path: Path) -> tuple[int, float]:
+    with Image.open(path) as image:
+        frame_count = getattr(image, "n_frames", 1)
+        duration_ms = 0
+        for index in range(frame_count):
+            image.seek(index)
+            duration_ms += int(image.info.get("duration", int(1000 / FPS)))
+    return frame_count, duration_ms / 1000.0
+
+
+def write_summary(
+    path: Path,
+    metrics: dict[str, object],
+    mp4_created: bool,
+    *,
+    frame_count: int,
+    duration_seconds: float,
+) -> None:
     score_formula = (
         "100.0 * (0.20 * finite_score + 0.20 * boundary_score + "
         "0.35 * residual_score + 0.25 * reference_score)"
@@ -817,10 +794,11 @@ def write_summary(path: Path, metrics: dict[str, object], mp4_created: bool) -> 
         "evidence_score": float(metrics["evidence_score"]),
         "evidence_score_formula": score_formula,
         "grid_size": {"Nx": NX, "Nz": NZ},
-        "frames": FRAME_COUNT,
-        "duration_seconds": DURATION_SECONDS,
-        "layout_quality_check": "two-column dashboard layout with separated equation, metrics, score, and claim gate panels",
+        "frames": frame_count,
+        "duration_seconds": duration_seconds,
+        "layout_quality_check": "explicit pixel safe zones with separate candidate header, tag row, field region, residual equation card, metrics table, score gauge, and footer",
         "text_overlap_check": True,
+        "poster_final_state": True,
         "evidence_gate": "bounded diagnostic",
         "claim_promotion": "internal candidate only",
         "promoted": False,
@@ -839,7 +817,7 @@ def write_summary(path: Path, metrics: dict[str, object], mp4_created: bool) -> 
         "generative_image_tools_used": False,
         "private_source_code_copied": False,
         "mp4_created": mp4_created,
-        "claim_boundary": "bounded diagnostic only; no external validation, no production readiness, no eigenmode validation result",
+        "claim_boundary": "bounded diagnostic only; not external validation, no production readiness claim, not a validated eigenmode",
     }
     path.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
 
@@ -869,7 +847,7 @@ def main() -> None:
 
     save_gif(frames, gif_path)
 
-    poster = draw_scene(int(FRAME_COUNT * 0.92), metrics, POSTER_SIZE)
+    poster = draw_scene(FRAME_COUNT - 1, metrics, POSTER_SIZE, poster=True)
     metadata = PngImagePlugin.PngInfo()
     metadata.add_text("Title", TITLE)
     metadata.add_text("Creation method", "deterministic Python residual and evidence score visualization")
@@ -880,7 +858,14 @@ def main() -> None:
     if not mp4_created and mp4_path.exists():
         mp4_path.unlink()
 
-    write_summary(summary_path, metrics, mp4_created)
+    actual_frame_count, actual_duration_seconds = gif_frame_stats(gif_path)
+    write_summary(
+        summary_path,
+        metrics,
+        mp4_created,
+        frame_count=actual_frame_count,
+        duration_seconds=actual_duration_seconds,
+    )
 
     print(f"wrote {gif_path.relative_to(root)}")
     print(f"wrote {poster_path.relative_to(root)}")

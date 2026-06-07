@@ -11,10 +11,12 @@ The animation shows:
 4. A deterministic bounded evidence score.
 5. A final claim gate.
 
-The current rendering uses a two-column dashboard layout: a large candidate
-field slice on the left and separate residual equation, metrics and evidence
-gate cards on the right. Text is wrapped inside panel bounds so the public
-poster and GIF frames remain readable.
+The current rendering uses explicit pixel safe zones with a two-column
+dashboard layout: a large candidate field slice on the left and separate
+residual equation, metrics and evidence gate cards on the right. Text is
+wrapped inside panel bounds so the public poster and GIF frames remain
+readable. The poster shows the final complete state with the computed bounded
+diagnostic score visible.
 
 The residual magnitude is computed, not invented. The evidence score is
 formula based and bounded diagnostic only. If no public safe summary data is
