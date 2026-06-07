@@ -31,6 +31,38 @@
         <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero">
       </section>
 
+      <section class="priority-showcase" id="pec-resonator-candidate-evidence-gate" aria-labelledby="pec-candidate-title">
+        <div class="section-kicker">Evidence-gated resonator diagnostic</div>
+        <h2 id="pec-candidate-title">PEC Resonator Candidate Evidence Gate</h2>
+        <p class="section-lead">Analytic TE101 cavity reference with a discrete residual check.</p>
+        <figure class="showcase-figure">
+          <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate animation">
+          <figcaption>This deterministic visualization treats an ideal PEC resonator field as a candidate record. The analytic TE101 style reference is sampled on a discrete grid and checked through a residual diagnostic before any claim can be promoted.</figcaption>
+        </figure>
+        <div class="explanation-card priority-explanation">
+          <h3>What this shows</h3>
+          <p>An analytic PEC reference is used to form a TE101 style rectangular cavity field. That field is sampled as a discrete candidate, then checked with a finite difference residual diagnostic. The evidence panel shows reference and candidate quantities, relative error, normalized residual and an Evidence Gate Pending or candidate state.</p>
+          <h3>Why it matters for DAD FieldWorks</h3>
+          <p>The animation does not ask the viewer to trust a field plot by appearance. It shows the result as a candidate record. The candidate remains bounded until residual, reference and claim boundary checks justify a stronger statement. ProductionAllowedQ remains false, ExternalValidationQ remains false, and the visualization is diagnostic only, not a validated eigenmode, not external validation and not a production solver claim.</p>
+        </div>
+      </section>
+
+      <section class="priority-showcase" id="eigenpair-residual-evidence-gate" aria-labelledby="eigenpair-gate-title">
+        <div class="section-kicker">Residual-based evidence gate</div>
+        <h2 id="eigenpair-gate-title">Eigenpair Residual Evidence Gate</h2>
+        <p class="section-lead">Candidate eigenpair to residual magnitude and bounded evidence score.</p>
+        <figure class="showcase-figure">
+          <img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" alt="Eigenpair residual evidence gate animation">
+          <figcaption>This deterministic visualization shows how a candidate eigenpair is treated as a claim. The residual is computed, its magnitude is reported and a bounded evidence score is used to keep the result inside an explicit claim boundary.</figcaption>
+        </figure>
+        <div class="explanation-card priority-explanation">
+          <h3>What this shows</h3>
+          <p>After a solver or candidate generator produces a candidate eigenpair, DAD FieldWorks computes the residual r = A e - lambda M e, reports the residual magnitude and derives a bounded evidence score. The claim gate records that the result is a bounded diagnostic candidate.</p>
+          <h3>Why it matters for DAD FieldWorks</h3>
+          <p>A solver output is a claim, not truth. DAD FieldWorks checks the claim before it can be promoted. ProductionAllowedQ remains false, ExternalValidationQ remains false, and this visual is diagnostic only, not a validated eigenmode, not external validation and not a production solver claim.</p>
+        </div>
+      </section>
+
       <section class="intro">
         <div class="intro-text">
           <h2>The Evidence Layer for CEM and Physics AI</h2>
@@ -76,29 +108,11 @@
 
       <section class="explanation-section" aria-labelledby="visuals-title">
         <div class="section-heading">
-          <p class="eyebrow">Featured diagnostics</p>
-          <h2 id="visuals-title">Public-safe visual evidence paths</h2>
-          <p>The public visuals are diagnostic communication assets. They show field behavior, resonator ringdown, PEC cavity modes and operator-near evidence concepts.</p>
+          <p class="eyebrow">Additional diagnostics</p>
+          <h2 id="visuals-title">Additional public-safe visual evidence paths</h2>
+          <p>The remaining public visuals are diagnostic communication assets. They show field behavior, resonator ringdown and PEC cavity mode slices without changing the evidence-gate claim boundary.</p>
         </div>
         <div class="visual-grid">
-          <article class="visual-card">
-            <picture>
-              <source srcset="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" type="image/gif">
-              <img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate_poster.png" alt="Eigenpair residual evidence gate">
-            </picture>
-            <h3>Eigenpair Residual Evidence Gate</h3>
-            <p>Candidate eigenpair to residual magnitude and bounded evidence score.</p>
-            <p>This deterministic visualization shows how a solver candidate is treated as a claim, not as truth. DAD FieldWorks computes a residual, derives a bounded evidence score and keeps the result inside an explicit claim boundary unless stronger evidence exists.</p>
-          </article>
-          <article class="visual-card">
-            <picture>
-              <source srcset="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" type="image/gif">
-              <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate_poster.png" alt="PEC resonator candidate evidence gate">
-            </picture>
-            <h3>PEC Resonator Candidate Evidence Gate</h3>
-            <p>Analytic TE101 cavity reference with a discrete residual check.</p>
-            <p>This deterministic visualization shows an ideal rectangular PEC cavity reference field and a discrete candidate residual check. The field remains a bounded candidate until residual, reference and claim boundary gates support a stronger statement.</p>
-          </article>
           <article class="visual-card">
             <img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="FDTD resonator ringdown with FFT spectrum">
             <h3>FDTD Resonator Ringdown with FFT Spectrum</h3>
@@ -108,17 +122,6 @@
             <img src="assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif" alt="PEC cavity eigenmode field slice">
             <h3>PEC Cavity Eigenmode Field Slice</h3>
             <p>Standing scalar eigenmode field-slice diagnostic for a bounded reference path.</p>
-          </article>
-          <article class="visual-card">
-            <img src="assets/animations/microwave_cavity_eigenmode_birth.gif" alt="Microwave cavity eigenmode birth">
-            <h3>Microwave Cavity Eigenmode Birth</h3>
-            <p>From Yee electric unknowns to a bounded PEC cavity eigenmode residual check.</p>
-            <p>This deterministic visualization shows a bounded internal path from Yee electric unknowns through oriented curl incidence and prototype operator structure toward a PEC cavity eigenmode slice with residual and analytical reference status.</p>
-          </article>
-          <article class="visual-card">
-            <img src="assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif" alt="Yee curl incidence microprototype">
-            <h3>Yee Curl Incidence Microprototype</h3>
-            <p>Oriented Yee E unknowns and signed curl incidence rows as a bounded microprototype.</p>
           </article>
         </div>
       </section>
@@ -222,10 +225,6 @@
           <a class="material-card" href="docs/fdtd_microwave_resonator_explanation.md">
             <span class="material-card-title">FDTD Resonator Explanation</span>
             <span class="material-card-description">How to read the resonator ringdown diagnostic.</span>
-          </a>
-          <a class="material-card" href="docs/microwave_cavity_eigenmode_birth_provenance.md">
-            <span class="material-card-title">Microwave Cavity Eigenmode Birth Provenance</span>
-            <span class="material-card-description">Creation method and claim boundary for the eigenmode birth animation.</span>
           </a>
           <a class="material-card" href="docs/pec_resonator_candidate_evidence_gate_provenance.md">
             <span class="material-card-title">PEC Resonator Candidate Provenance</span>

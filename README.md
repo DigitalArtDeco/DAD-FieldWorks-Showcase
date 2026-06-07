@@ -10,6 +10,24 @@ DAD FieldWorks adds evidence contracts to classical solvers, resonator workflows
   <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero" width="100%">
 </p>
 
+## Featured evidence-gate diagnostics
+
+### PEC Resonator Candidate Evidence Gate
+
+<p align="center">
+  <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate animation" width="100%">
+</p>
+
+This deterministic diagnostic shows an analytic TE101 style PEC resonator reference, a sampled discrete candidate field and a finite-difference residual check. The result remains a candidate record with ProductionAllowedQ false and ExternalValidationQ false. It is diagnostic only, not a validated eigenmode, not external validation and not a production solver claim.
+
+### Eigenpair Residual Evidence Gate
+
+<p align="center">
+  <img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" alt="Eigenpair residual evidence gate animation" width="100%">
+</p>
+
+This diagnostic shows the DAD FieldWorks principle that solver output is a claim. A candidate eigenpair is checked through residual calculation, residual magnitude and a bounded evidence score before any stronger claim can be considered. ProductionAllowedQ remains false and ExternalValidationQ remains false.
+
 ## Why this matters
 
 Computational electromagnetics results can look convincing while still being wrong. Classical solvers, fast surrogate models and future physics-AI backends can all produce fields, modes or spectra that appear plausible but fail residual, boundary-condition, energy, divergence, reference or reproducibility checks.
@@ -23,32 +41,12 @@ Future PINN or neural-operator backends are treated as untrusted field generator
 - Solver-generated field diagnostics.
 - PEC cavity eigenmode evidence path.
 - FDTD resonator ringdown and FFT spectrum.
-- Native Yee curl incidence microprototype visualization.
-- Microwave cavity eigenmode birth path.
 - Evidence contract roadmap for classical, DGTD and future physics-AI backends.
 - Claim boundaries and production gates.
 
-## Featured visual diagnostics
+## Additional visual diagnostics
 
 <table>
-<tr>
-<td colspan="2">
-<img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" alt="Eigenpair residual evidence gate" width="100%">
-<br>
-<strong>Eigenpair Residual Evidence Gate</strong>
-<br>
-Eigenpair Residual Evidence Gate shows how a candidate eigenpair is checked through residual calculation, residual magnitude and a bounded diagnostic evidence score. It visualizes the DAD FieldWorks principle that solver output is a claim until evidence gates define what it may assert.
-</td>
-</tr>
-<tr>
-<td colspan="2">
-<img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate" width="100%">
-<br>
-<strong>PEC Resonator Candidate Evidence Gate</strong>
-<br>
-Analytic TE101 PEC cavity reference field, discrete finite difference candidate residual check and explicit Evidence Gate Pending state. Bounded diagnostic only, not a validated eigenmode and not a production solver claim.
-</td>
-</tr>
 <tr>
 <td width="50%">
 <img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="FDTD resonator ringdown with FFT spectrum" width="100%">
@@ -63,22 +61,6 @@ Time-domain field build-up, late-time ringdown and spectrum derived from the pro
 <strong>PEC Cavity Eigenmode Field Slice</strong>
 <br>
 Standing scalar eigenmode field-slice diagnostic for a bounded PEC cavity reference path. Diagnostic only.
-</td>
-</tr>
-<tr>
-<td width="50%">
-<img src="assets/animations/microwave_cavity_eigenmode_birth.gif" alt="Microwave cavity eigenmode birth" width="100%">
-<br>
-<strong>Microwave Cavity Eigenmode Birth</strong>
-<br>
-Microwave Cavity Eigenmode Birth visualizes the bounded path from Yee electric unknowns through signed incidence entries and prototype operator structure toward a PEC cavity eigenmode residual check. Diagnostic only.
-</td>
-<td width="50%">
-<img src="assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif" alt="Yee curl incidence microprototype" width="100%">
-<br>
-<strong>Yee Curl Incidence Microprototype</strong>
-<br>
-Operator-near visualization of oriented Yee E unknowns and signed curl incidence rows. Bounded microprototype only.
 </td>
 </tr>
 </table>
@@ -121,10 +103,8 @@ DAD FieldWorks public materials show architecture notes, whitepaper material and
 | Asset Manifest | [assets/asset_manifest.md](assets/asset_manifest.md) |
 | Visualization Provenance | [docs/visualization_provenance.md](docs/visualization_provenance.md) |
 | FDTD Resonator FFT Provenance | [docs/fdtd_resonator_fft_provenance.md](docs/fdtd_resonator_fft_provenance.md) |
-| Microwave Cavity Eigenmode Birth Provenance | [docs/microwave_cavity_eigenmode_birth_provenance.md](docs/microwave_cavity_eigenmode_birth_provenance.md) |
 | PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
 | Eigenpair Residual Evidence Gate Provenance | [docs/eigenpair_residual_evidence_gate_provenance.md](docs/eigenpair_residual_evidence_gate_provenance.md) |
-| Yee Curl Incidence Provenance | [docs/yee_curl_incidence_microprototype_provenance.md](docs/yee_curl_incidence_microprototype_provenance.md) |
 | PEC Cavity Visualization Provenance | [docs/pec_cavity_visualization_provenance.md](docs/pec_cavity_visualization_provenance.md) |
 
 ## Repository contents
