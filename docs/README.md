@@ -16,5 +16,6 @@ This directory contains public companion notes for the DAD FieldWorks showcase.
 - [Yee curl incidence microprototype provenance](yee_curl_incidence_microprototype_provenance.md)
 - [FDTD resonator FFT provenance](fdtd_resonator_fft_provenance.md)
 - [PEC resonator candidate evidence gate provenance](pec_resonator_candidate_evidence_gate_provenance.md)
+- [Eigenpair residual evidence gate provenance](eigenpair_residual_evidence_gate_provenance.md)
 
 The public notes summarize selected architecture and status boundaries. They are not validation evidence, not production readiness claims, and not a release of private implementation.

@@ -33,6 +33,15 @@ Future PINN or neural-operator backends are treated as untrusted field generator
 <table>
 <tr>
 <td colspan="2">
+<img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" alt="Eigenpair residual evidence gate" width="100%">
+<br>
+<strong>Eigenpair Residual Evidence Gate</strong>
+<br>
+Eigenpair Residual Evidence Gate shows how a candidate eigenpair is checked through residual calculation, residual magnitude and a bounded diagnostic evidence score. It visualizes the DAD FieldWorks principle that solver output is a claim until evidence gates define what it may assert.
+</td>
+</tr>
+<tr>
+<td colspan="2">
 <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate" width="100%">
 <br>
 <strong>PEC Resonator Candidate Evidence Gate</strong>
@@ -114,6 +123,7 @@ DAD FieldWorks public materials show architecture notes, whitepaper material and
 | FDTD Resonator FFT Provenance | [docs/fdtd_resonator_fft_provenance.md](docs/fdtd_resonator_fft_provenance.md) |
 | Microwave Cavity Eigenmode Birth Provenance | [docs/microwave_cavity_eigenmode_birth_provenance.md](docs/microwave_cavity_eigenmode_birth_provenance.md) |
 | PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
+| Eigenpair Residual Evidence Gate Provenance | [docs/eigenpair_residual_evidence_gate_provenance.md](docs/eigenpair_residual_evidence_gate_provenance.md) |
 | Yee Curl Incidence Provenance | [docs/yee_curl_incidence_microprototype_provenance.md](docs/yee_curl_incidence_microprototype_provenance.md) |
 | PEC Cavity Visualization Provenance | [docs/pec_cavity_visualization_provenance.md](docs/pec_cavity_visualization_provenance.md) |
 

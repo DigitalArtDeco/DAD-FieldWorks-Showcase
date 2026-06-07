@@ -374,3 +374,55 @@
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif
+
+- Asset type: animated GIF
+- Creation method: deterministic Python residual and evidence score visualization.
+- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate_poster.png
+
+- Asset type: static PNG poster
+- Creation method: deterministic Python residual and evidence score visualization.
+- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate_summary.json
+
+- Asset type: JSON summary
+- Creation method: deterministic Python residual and evidence score visualization.
+- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/generate_eigenpair_residual_evidence_gate.py
+
+- Asset type: Python generator script
+- Creation method: deterministic Python residual and evidence score visualization.
+- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
