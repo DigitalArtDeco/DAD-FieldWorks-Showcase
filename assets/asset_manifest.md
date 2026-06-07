@@ -327,7 +327,7 @@
 
 - Asset type: animated GIF
 - Creation method: deterministic Python analytic and discrete diagnostic generation.
-- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- Rendered quantities or concepts: 3D projected rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
@@ -340,7 +340,7 @@
 
 - Asset type: static PNG poster
 - Creation method: deterministic Python analytic and discrete diagnostic generation.
-- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- Rendered quantities or concepts: 3D projected rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
@@ -353,7 +353,7 @@
 
 - Asset type: JSON summary
 - Creation method: deterministic Python analytic and discrete diagnostic generation.
-- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- Rendered quantities or concepts: 3D projected rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
@@ -366,7 +366,7 @@
 
 - Asset type: Python generator script
 - Creation method: deterministic Python analytic and discrete diagnostic generation.
-- Rendered quantities or concepts: rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
+- Rendered quantities or concepts: 3D projected rectangular PEC cavity; TE101 analytic reference field; candidate eigenvalue; finite difference residual; evidence gate.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none

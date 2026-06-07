@@ -1,11 +1,13 @@
 # PEC Resonator Candidate Evidence Gate Provenance
 
 This public showcase animation is created with deterministic Python numerical
-arrays and plotting code.
+arrays and plotting code. The repaired version uses a custom 3D projected
+rectangular PEC cavity view with semi-transparent analytic field slices.
 
 ## Reference
 
 - Reference type: analytic rectangular PEC cavity reference.
+- Visualization type: 3D rendered rectangular PEC cavity view.
 - Cavity dimensions: `a = 0.080 m`, `b = 0.084 m`, `d = 0.084 m`.
 - Mode label: TE101 style reference field.
 - Field formula: `Ey(x,z,t) = sin(pi x/a) sin(pi z/d) cos(omega t)`.

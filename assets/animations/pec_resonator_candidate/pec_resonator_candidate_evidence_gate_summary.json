@@ -3,13 +3,14 @@
   "subtitle": "Analytic TE101 cavity reference with a discrete residual check",
   "created_by_script": "scripts/generate_pec_resonator_candidate_evidence_gate.py",
   "model_type": "analytic rectangular PEC cavity reference with public finite difference scalar diagnostic",
+  "visualization_type": "custom deterministic 3D projected cavity with semi-transparent field slices",
   "cavity_dimensions_m": {
     "a": 0.08,
     "b": 0.084,
     "d": 0.084
   },
   "mode": "TE101",
-  "field_formula": "Ey(x,z,t) = sin(pi x/a) sin(pi z/d) cos(omega t)",
+  "field_formula": "Ey(x,y,z,t) = sin(pi x/a) sin(pi z/d) cos(omega t)",
   "frequency_hz": 2587494429.166666,
   "frequency_ghz": 2.587494429166666,
   "lambda_ref": 2940.8791458744863,
@@ -29,6 +30,7 @@
   "external_validation_claim": false,
   "production_claim": false,
   "commercial_solver_equivalence_claim": false,
+  "validated_eigenmode_claim": false,
   "qubit_simulation_claim": false,
   "quantum_device_claim": false,
   "cpml_claim": false,
