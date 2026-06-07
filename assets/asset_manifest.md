@@ -379,12 +379,12 @@
 
 - Asset type: animated GIF
 - Creation method: deterministic Python residual and evidence score visualization.
-- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- Rendered quantities or concepts: large candidate field slice; residual equation card; residual metrics table; bounded evidence score; final claim gate; text-bounded two-column dashboard layout.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -392,12 +392,12 @@
 
 - Asset type: static PNG poster
 - Creation method: deterministic Python residual and evidence score visualization.
-- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- Rendered quantities or concepts: large candidate field slice; residual equation card; residual metrics table; bounded evidence score; final claim gate; text-bounded two-column dashboard layout.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -405,12 +405,12 @@
 
 - Asset type: JSON summary
 - Creation method: deterministic Python residual and evidence score visualization.
-- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- Rendered quantities or concepts: large candidate field slice; residual equation card; residual metrics table; bounded evidence score; final claim gate; text-bounded two-column dashboard layout.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -418,11 +418,11 @@
 
 - Asset type: Python generator script
 - Creation method: deterministic Python residual and evidence score visualization.
-- Rendered quantities or concepts: candidate eigenpair; residual calculation; residual magnitude; bounded evidence score; evidence gate.
+- Rendered quantities or concepts: large candidate field slice; residual equation card; residual metrics table; bounded evidence score; final claim gate; text-bounded two-column dashboard layout.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

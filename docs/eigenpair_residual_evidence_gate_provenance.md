@@ -15,6 +15,14 @@ e(x,z) = sin(pi x/a) sin(pi z/d)
 
 with dimensions `a = 0.080 m`, `b = 0.084 m` and `d = 0.084 m`.
 
+## Layout
+
+The public animation uses a readable two-column dashboard layout. The left
+panel is reserved for the candidate field slice. The right side separates the
+residual equation, residual metrics, bounded evidence score and final claim
+gate into distinct cards. Public text is wrapped to the panel bounds to avoid
+overlap in the poster and GIF frames.
+
 ## Residual
 
 The public scalar diagnostic uses a minus finite difference Laplacian as `A`
@@ -58,8 +66,8 @@ The evidence gate status is `bounded diagnostic`. Claim promotion remains
 `internal candidate only`.
 
 This animation is not external validation. It is not production readiness. It
-is not a validated eigenmode. It is not a full DAD eigenmode-solver result. It
-is not a qubit simulation.
+is not an eigenmode validation result. It is not a full DAD eigenmode-solver
+result. It is not a qubit simulation.
 
 No external images were used. No screenshots were used. No generative image
 tools were used. No private source code is published.
