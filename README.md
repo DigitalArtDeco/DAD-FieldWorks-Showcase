@@ -53,6 +53,14 @@ This deterministic diagnostic shows an analytic TE101 style PEC resonator refere
 
 This diagnostic shows the DAD FieldWorks principle that solver output is a claim. A candidate eigenpair is checked through residual calculation, residual magnitude and a bounded evidence score before any stronger claim can be considered. ProductionAllowedQ remains false and ExternalValidationQ remains false.
 
+### PEC Cavity Convergence Plot
+
+<p align="center">
+  <img src="assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot.gif" alt="PEC cavity convergence plot animation" width="100%">
+</p>
+
+PEC Cavity Convergence Plot shows grid refinement against an analytical rectangular PEC cavity reference. It displays numerical frequency estimates, relative error and the convergence trend as bounded diagnostic evidence.
+
 ## Why this matters
 
 Computational electromagnetics results can look convincing while still being wrong. Classical solvers, fast surrogate models and future physics-AI backends can all produce fields, modes or spectra that appear plausible but fail residual, boundary-condition, energy, divergence, reference or reproducibility checks.
@@ -65,6 +73,7 @@ Future PINN or neural-operator backends are treated as untrusted field generator
 
 - Solver-generated field diagnostics.
 - PEC cavity eigenmode evidence path.
+- PEC cavity grid-refinement convergence diagnostic.
 - FDTD resonator ringdown and FFT spectrum.
 - Evidence contract roadmap for classical, DGTD and future physics-AI backends.
 - Claim boundaries and production gates.
@@ -132,6 +141,7 @@ DAD FieldWorks public materials show architecture notes, whitepaper material and
 | FDTD Resonator FFT Provenance | [docs/fdtd_resonator_fft_provenance.md](docs/fdtd_resonator_fft_provenance.md) |
 | PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
 | Eigenpair Residual Evidence Gate Provenance | [docs/eigenpair_residual_evidence_gate_provenance.md](docs/eigenpair_residual_evidence_gate_provenance.md) |
+| PEC Cavity Convergence Provenance | [docs/pec_cavity_convergence_provenance.md](docs/pec_cavity_convergence_provenance.md) |
 | PEC Cavity Visualization Provenance | [docs/pec_cavity_visualization_provenance.md](docs/pec_cavity_visualization_provenance.md) |
 
 ## Repository contents

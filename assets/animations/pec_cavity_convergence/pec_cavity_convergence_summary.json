@@ -1,0 +1,70 @@
+{
+  "title": "PEC Cavity Convergence Plot",
+  "subtitle": "Grid refinement against an analytical rectangular PEC cavity reference",
+  "created_by_script": "scripts/generate_pec_cavity_convergence_plot.py",
+  "model_type": "deterministic scalar finite-difference PEC cavity diagnostic",
+  "data_source": "closed-form analytical reference and exact discrete scalar Helmholtz finite-difference formula",
+  "fallback_used": true,
+  "cavity_dimensions_m": {
+    "a": 0.08,
+    "b": 0.084,
+    "d": 0.084
+  },
+  "mode": [
+    1,
+    1,
+    1
+  ],
+  "analytical_frequency_hz": 3143165987.503105,
+  "analytical_frequency_ghz": 3.1431659875031053,
+  "grid_levels": [
+    8,
+    12,
+    16,
+    20
+  ],
+  "numerical_frequencies_hz": [
+    3127232556.326656,
+    3135523194.8979454,
+    3138695317.8403354,
+    3140235797.8160076
+  ],
+  "numerical_frequencies_ghz": [
+    3.1272325563266556,
+    3.1355231948979454,
+    3.138695317840335,
+    3.1402357978160076
+  ],
+  "relative_errors": [
+    0.0050692299547013845,
+    0.0024315587008597998,
+    0.0014223460296225853,
+    0.0009322414720532333
+  ],
+  "relative_errors_percent": [
+    0.5069229954701384,
+    0.24315587008597997,
+    0.14223460296225854,
+    0.09322414720532333
+  ],
+  "final_grid": 20,
+  "final_relative_error": 0.0009322414720532333,
+  "convergence_trend": "relative error decreases monotonically with grid refinement",
+  "frames": 120,
+  "duration_seconds": 12.0,
+  "ProductionAllowedQ": false,
+  "ExternalValidationQ": false,
+  "external_validation_claim": false,
+  "production_claim": false,
+  "commercial_solver_equivalence_claim": false,
+  "validated_eigenmode_claim": false,
+  "qubit_simulation_claim": false,
+  "quantum_device_claim": false,
+  "cpml_claim": false,
+  "arbitrary_geometry_claim": false,
+  "external_images_used": false,
+  "screenshots_used": false,
+  "generative_image_tools_used": false,
+  "private_source_code_copied": false,
+  "claim_boundary": "bounded scalar PEC diagnostic only; analytical reference comparison, not external validation and not production readiness"
+}

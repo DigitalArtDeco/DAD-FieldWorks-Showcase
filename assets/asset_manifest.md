@@ -425,3 +425,55 @@
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot.gif
+
+- Asset type: animated GIF
+- Creation method: deterministic Python analytical and finite-difference convergence diagnostic.
+- Rendered quantities or concepts: rectangular PEC cavity, mode 111 scalar reference, grid refinement, numerical frequency sequence, relative error, convergence curve, analytical reference comparison.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot_poster.png
+
+- Asset type: static PNG poster
+- Creation method: deterministic Python analytical and finite-difference convergence diagnostic.
+- Rendered quantities or concepts: rectangular PEC cavity, mode 111 scalar reference, grid refinement, numerical frequency sequence, relative error, convergence curve, analytical reference comparison.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pec_cavity_convergence/pec_cavity_convergence_summary.json
+
+- Asset type: JSON summary
+- Creation method: deterministic Python analytical and finite-difference convergence diagnostic.
+- Rendered quantities or concepts: rectangular PEC cavity, mode 111 scalar reference, grid refinement, numerical frequency sequence, relative error, convergence curve, analytical reference comparison.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/generate_pec_cavity_convergence_plot.py
+
+- Asset type: Python generator script
+- Creation method: deterministic Python analytical and finite-difference convergence diagnostic.
+- Rendered quantities or concepts: rectangular PEC cavity, mode 111 scalar reference, grid refinement, numerical frequency sequence, relative error, convergence curve, analytical reference comparison.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

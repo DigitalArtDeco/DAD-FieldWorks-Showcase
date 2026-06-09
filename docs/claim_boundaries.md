@@ -47,4 +47,6 @@ Future DGTD, PINN and neural-operator backend routes are roadmap concepts only. 
 
 Visual assets are diagnostic style communication aids only. They are not validation evidence, not benchmark reports, and not external solver equivalence claims.
 
+The PEC Cavity Convergence Plot is a bounded scalar diagnostic for grid-refinement behavior against an analytical reference. It is not physical mode acceptance evidence and does not change validation or production claim status.
+
 Copyright &copy; 2026 Harun Aktas. All rights reserved.

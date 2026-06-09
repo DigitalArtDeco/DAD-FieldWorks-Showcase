@@ -63,6 +63,22 @@
         </div>
       </section>
 
+      <section class="priority-showcase" id="pec-cavity-convergence-plot" aria-labelledby="pec-convergence-title">
+        <div class="section-kicker">Grid-refinement diagnostic</div>
+        <h2 id="pec-convergence-title">PEC Cavity Convergence Plot</h2>
+        <p class="section-lead">Grid refinement against an analytical rectangular PEC cavity reference.</p>
+        <figure class="showcase-figure">
+          <img src="assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot.gif" alt="PEC cavity convergence plot animation">
+          <figcaption>This deterministic diagnostic shows numerical grid refinement for a rectangular PEC cavity reference case. Each grid level produces a numerical frequency estimate, which is compared against the analytical mode 111 reference. The error curve is computed from the data and remains a bounded diagnostic, not external validation or a production solver claim.</figcaption>
+        </figure>
+        <div class="explanation-card priority-explanation">
+          <h3>What this shows</h3>
+          <p>The analytical reference is the closed-form mode 111 frequency for an 80 mm x 84 mm x 84 mm rectangular PEC cavity. The numerical sequence uses a deterministic scalar finite-difference diagnostic at multiple grid resolutions. The plot shows the relative error decreasing as the grid is refined.</p>
+          <h3>Why it matters for DAD FieldWorks</h3>
+          <p>DAD FieldWorks does not ask the viewer to trust a field image by appearance. This diagnostic shows a numerical sequence, an analytical reference and a computed error trend. A result becomes more meaningful when the error path and claim boundary are visible.</p>
+        </div>
+      </section>
+
       <section class="intro">
         <div class="intro-text">
           <h2>Long-Term Target: Evidence-Controlled Full-Wave CEM Solver Platform</h2>
@@ -261,6 +277,10 @@
           <a class="material-card" href="docs/eigenpair_residual_evidence_gate_provenance.md">
             <span class="material-card-title">Eigenpair Residual Evidence Gate Provenance</span>
             <span class="material-card-description">Creation method and claim boundary for the residual evidence score animation.</span>
+          </a>
+          <a class="material-card" href="docs/pec_cavity_convergence_provenance.md">
+            <span class="material-card-title">PEC Cavity Convergence Provenance</span>
+            <span class="material-card-description">Computed grid-refinement sequence and claim boundary for the convergence animation.</span>
           </a>
           <a class="material-card" href="assets/asset_manifest.md">
             <span class="material-card-title">Asset Manifest</span>

@@ -22,6 +22,8 @@ animations/
 !assets/animations/pec_resonator_candidate/**
 !assets/animations/eigenpair_residual_gate/
 !assets/animations/eigenpair_residual_gate/**
+!assets/animations/pec_cavity_convergence/
+!assets/animations/pec_cavity_convergence/**
 !scripts/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 notebooks/
@@ -44,6 +46,7 @@ __pycache__/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 !scripts/generate_pec_resonator_candidate_evidence_gate.py
 !scripts/generate_eigenpair_residual_evidence_gate.py
+!scripts/generate_pec_cavity_convergence_plot.py
 *.ipynb
 *.log
 *.wl

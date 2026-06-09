@@ -26,9 +26,10 @@ No physical eigenpair acceptance has been executed. No physical eigenfrequency a
 The current homepage features:
 
 - PEC Resonator Candidate Evidence Gate,
-- Eigenpair Residual Evidence Gate.
+- Eigenpair Residual Evidence Gate,
+- PEC Cavity Convergence Plot.
 
-These are deterministic public-safe visual diagnostics for candidate, residual, evidence-gate and claim-boundary concepts. They do not broaden the claim boundary.
+These are deterministic public-safe visual diagnostics for candidate, residual, grid-refinement, evidence-gate and claim-boundary concepts. They do not broaden the claim boundary.
 
 ## Closed Boundaries
 

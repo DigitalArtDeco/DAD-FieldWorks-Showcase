@@ -19,5 +19,6 @@ The current public whitepaper is [version 0.9](../paper/DAD_FieldWorks_Evidence_
 - [FDTD resonator FFT provenance](fdtd_resonator_fft_provenance.md)
 - [PEC resonator candidate evidence gate provenance](pec_resonator_candidate_evidence_gate_provenance.md)
 - [Eigenpair residual evidence gate provenance](eigenpair_residual_evidence_gate_provenance.md)
+- [PEC cavity convergence provenance](pec_cavity_convergence_provenance.md)
 
 The public notes summarize selected architecture and status boundaries. They are not validation evidence, not production readiness claims, and not a release of private implementation.
