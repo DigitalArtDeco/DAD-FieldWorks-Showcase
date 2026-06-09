@@ -1,52 +1,55 @@
 # Current Public Status
 
-DAD FieldWorks is a private research and development project being developed toward validation-aware RF and quantum hardware design workflows.
+DAD FieldWorks is a private research and development project being developed toward an evidence-controlled full-wave computational electromagnetics solver platform.
 
-This public site contains selected architecture, public status notes, and solver generated diagnostic visualization material only. It does not release private solver source code, notebooks, tests, internal project control files, or internal result artifacts.
+The public site contains selected architecture notes, public status notes, public whitepaper material and diagnostic visualization material only. It does not release private solver source code, notebooks, tests, internal project-control files or internal result artifacts.
 
-The project uses evidence contracts to separate numerical execution from claim status. Current public status remains research and development. The public direction is now framed as evidence-driven computational electromagnetics: every solver or backend route must carry evidence rows, gate rows, failure rows, comparison rows and claim boundaries before stronger claims are considered.
+The project uses evidence contracts to separate numerical execution from claim status. A field, eigenpair, spectrum or solver output remains a candidate claim until residual checks, reference comparisons, reproducibility records and claim boundaries define what it is allowed to say.
 
-Internal research may include electromagnetic modeling, RF PCB workflows, microwave structures, resonator and cavity analysis, solver experiments, diagnostics, grid and evidence audits, boundary policy work, and claim-status checks. The public site summarizes only public-safe status boundaries.
+## Current Public-Safe Alpha State
 
-Current public-safe technical status centers on a bounded internal PEC cavity eigenmode evidence path. The path includes oriented Yee incidence and bounded curl-curl prototype records, a minimal mass and generalized-eigenproblem route, residual computation, analytical PEC cavity reference comparison, and an Alpha-style report path. These are internal evidence and replay records; they do not create external validation, production readiness, or a released numerical product.
+The current internal alpha direction has moved from candidate and residual diagnostics into records for residual threshold and analytical comparison gates. Physical eigenpair acceptance gate planning is now open as a records-only next step.
 
-The C++ direction is currently limited to evidence-contract and replay infrastructure. A replay-only CLI skeleton and audit path may support future Resonator Lab Alpha artifact replay, but no production numerical C++ kernel is claimed.
+Public-safe status:
 
-Future DGTD, PINN, and neural-operator backend routes are roadmap concepts only. Their outputs would be treated as untrusted candidates until they pass residual, boundary-condition, finite-value, reference-comparison and claim-boundary gates.
+- bounded internal alpha evidence paths,
+- C++ Resonator Lab Alpha records,
+- candidate eigenpair and residual diagnostics,
+- residual threshold gate record layers,
+- analytical comparison gate record layers,
+- planning-only physical eigenpair acceptance gate direction.
 
-The public visualization material demonstrates field diagnostic rendering from
-numerical data and claim-bounded technical schematics. The landing page
-currently features a solver generated field diagnostic hero, a scalar Helmholtz
-PEC cavity field-slice diagnostic, a microwave resonator field-mode
-diagnostic, a 2D FDTD microwave resonator ringdown diagnostic for RF and
-quantum hardware workflow direction, a bounded Yee curl incidence
-microprototype visualization, and a 2D FDTD resonator ringdown visualization
-with an FFT spectrum derived from the probe signal. Retained PCB visual assets
-remain in the repository for possible later use, but they are not featured on
-the homepage.
+No physical eigenpair acceptance has been executed. No physical eigenfrequency acceptance has been executed. No external validation claim is made. No production readiness claim is made. No commercial solver equivalence claim is made.
 
-The FDTD microwave resonator explanation page describes how to read the field panel, probe trace, cavity field energy trace, and ringdown behavior in the public visualization.
+## Public Diagnostics
 
-Current public boundaries:
+The current homepage features:
+
+- PEC Resonator Candidate Evidence Gate,
+- Eigenpair Residual Evidence Gate.
+
+These are deterministic public-safe visual diagnostics for candidate, residual, evidence-gate and claim-boundary concepts. They do not broaden the claim boundary.
+
+## Closed Boundaries
 
 - No external validation claim.
 - No production readiness claim.
 - No commercial solver equivalence claim.
-- No complete qubit or quantum processor simulation claim.
-- No Josephson junction modeling claim.
-- No Hamiltonian extraction claim.
-- No coherence-time prediction claim.
+- No physical eigenpair acceptance claim.
+- No physical eigenfrequency acceptance claim.
+- No mode identification claim.
+- No rank/nullspace claim.
+- No complete quantum hardware solver claim.
+- No qubit simulation claim.
 - No CPML support claim.
 - No open boundary support claim.
-- No GUI availability claim.
-- No production C++ EM solver claim.
+- No graphical user interface availability claim.
+- No production C++ electromagnetic solver claim.
 - No DGTD implementation claim.
 - No AI-backend validation claim.
-- No production curl operator claim.
-- No curl-curl assembly claim from the microprototype visualization.
-- No production incidence matrix claim.
-- No eigensolve claim from the microprototype visualization.
 - No private implementation release.
 - No public claim that diagnostic visuals are validation evidence.
 
-The public whitepaper PDF is version 0.8. These Markdown pages provide current public companion notes.
+The current public whitepaper PDF is version 0.9. These Markdown pages provide current public companion notes.
+
+Copyright &copy; 2026 Harun Aktas. All rights reserved.

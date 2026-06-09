@@ -2,6 +2,8 @@
 
 This directory contains public companion notes for the DAD FieldWorks showcase.
 
+The current public whitepaper is [version 0.9](../paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf).
+
 - [Evidence contract architecture](evidence_contract_architecture.md)
 - [Evidence contract platform roadmap](evidence_contract_platform_roadmap.md)
 - [Current public status](current_public_status.md)

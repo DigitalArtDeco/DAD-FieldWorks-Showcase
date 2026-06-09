@@ -2,13 +2,38 @@
 
 **Trustworthy CEM starts after the field plot.**
 
-DAD FieldWorks adds evidence contracts to classical solvers, resonator workflows and future physics-AI backends, so numerical results carry residuals, limits and claim boundaries before they are trusted.
+DAD FieldWorks is being developed toward an evidence-controlled full-wave computational electromagnetics solver platform. The project treats solver output as a candidate claim until residual checks, reference comparisons, reproducibility records and claim boundaries define what it is allowed to say.
 
 **Public status:** private research and development project, public showcase and whitepaper material only. No external validation claim. No production readiness claim. No commercial solver equivalence claim.
 
 <p align="center">
   <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero" width="100%">
 </p>
+
+## Current Public-Safe Alpha State
+
+The current internal alpha direction has moved from candidate and residual diagnostics into records for residual threshold and analytical comparison gates, with physical eigenpair acceptance gate planning now open as a records-only next step.
+
+- No physical eigenpair acceptance has been executed.
+- No physical eigenfrequency acceptance has been executed.
+- No external validation claim is made.
+- No production readiness claim is made.
+- No commercial solver equivalence claim is made.
+
+## Evidence Gate Progression
+
+| Step | Public status |
+| --- | --- |
+| Candidate eigenpair | Bounded internal alpha evidence path |
+| Residual diagnostic | Candidate compatibility evidence |
+| Residual threshold gate | Record layer |
+| Analytical comparison gate | Record layer |
+| Physical eigenpair acceptance gate | Planning only |
+| Claim boundary | External validation and production closed |
+
+## Long-Term Target
+
+The long-term target is a native full-wave solver platform in which numerical outputs carry evidence records by default. A field, eigenpair or spectrum is not promoted because it looks plausible. It remains claim-bounded until residual, reference, reproducibility and validation evidence support a stronger statement.
 
 ## Featured evidence-gate diagnostics
 
@@ -18,7 +43,7 @@ DAD FieldWorks adds evidence contracts to classical solvers, resonator workflows
   <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate animation" width="100%">
 </p>
 
-This deterministic diagnostic shows an analytic TE101 style PEC resonator reference, a sampled discrete candidate field and a finite-difference residual check. The result remains a candidate record with ProductionAllowedQ false and ExternalValidationQ false. It is diagnostic only, not a validated eigenmode, not external validation and not a production solver claim.
+This deterministic diagnostic shows an analytic TE101 style PEC resonator reference, a sampled discrete candidate field and a finite-difference residual check. The result remains a candidate record with ProductionAllowedQ false and ExternalValidationQ false. It is diagnostic only, not physical mode acceptance evidence, not external validation and not a production solver claim.
 
 ### Eigenpair Residual Evidence Gate
 
@@ -67,32 +92,34 @@ Standing scalar eigenmode field-slice diagnostic for a bounded PEC cavity refere
 
 ## Evidence Contract Roadmap
 
-| Layer | Direction | Evidence gate |
+| Stage | Direction | Public claim boundary |
 | --- | --- | --- |
-| Classical solver path | PEC cavity, curl-curl route, residual and reference comparison | residual, boundary, finite-value and analytical reference checks |
-| C++ product layer | Resonator Lab Alpha, CLI skeleton, artifact replay | contract and replay checks |
-| Future DGTD backend | discontinuous Galerkin time-domain route | DG residual, flux, boundary and conservation checks |
-| Future physics-AI backend | PINN or neural-operator route | Maxwell residual, boundary, divergence, energy and reference gates |
+| Current alpha evidence layer | candidate, residual and analytical comparison records | bounded internal alpha evidence only |
+| Current planning step | physical eigenpair acceptance gate planning | planning only, no physical acceptance execution |
+| Near term | residual threshold and acceptance gate hardening | internal classification only |
+| Mid term | native solver core hardening and artifact replay | no production solver claim |
+| Long term | evidence-controlled full-wave CEM solver platform | future target, no current production claim |
+| Future research route | DGTD and physics-AI backends under evidence contracts | future route only |
 
 DGTD and physics-AI backend support are future research routes, not implemented production features.
 
-## Current claim boundary
+## What this public showcase is not
 
 DAD FieldWorks public materials show architecture notes, whitepaper material and diagnostic visualizations from a private research and development project.
 
-- No external validation claim.
-- No production readiness claim.
-- No commercial solver equivalence claim.
-- No complete quantum hardware solver claim.
-- No qubit simulation claim.
-- No production AI solver claim.
-- No DGTD production backend claim.
+- Not production ready.
+- Not externally validated.
+- Not a commercial solver equivalent.
+- Not a qubit simulation.
+- Not a complete quantum hardware solver.
+- Not a production AI solver.
+- Not a measurement-validated product.
 
 ## Public materials
 
 | Material | Link |
 | --- | --- |
-| Whitepaper PDF | [DAD FieldWorks Evidence Contract Architecture Whitepaper v0.8](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_8_public.pdf) |
+| Whitepaper PDF | [DAD FieldWorks Evidence Contract Architecture Whitepaper v0.9](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf) |
 | Evidence Contract Architecture | [docs/evidence_contract_architecture.md](docs/evidence_contract_architecture.md) |
 | Evidence Contract Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
 | Current Public Status | [docs/current_public_status.md](docs/current_public_status.md) |

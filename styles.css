@@ -334,6 +334,47 @@ h2 {
   padding: 9px 13px;
 }
 
+.gate-flow {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.gate-step {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.98rem;
+  font-weight: 700;
+  min-height: 128px;
+  padding: 18px;
+  position: relative;
+}
+
+.gate-step::after {
+  color: var(--accent);
+  content: ">";
+  font-size: 1.3rem;
+  position: absolute;
+  right: -13px;
+  top: 42%;
+}
+
+.gate-step:last-child::after {
+  content: "";
+}
+
+.gate-step span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 400;
+  line-height: 1.35;
+  margin-top: 10px;
+}
+
 .roadmap-table {
   border-collapse: collapse;
   color: var(--muted);
@@ -442,7 +483,15 @@ footer p {
   .showcase-block,
   .explanation-grid,
   .visual-grid,
-  .material-grid {
+  .material-grid,
+  .gate-flow {
     grid-template-columns: 1fr;
+  }
+
+  .gate-step::after {
+    bottom: -20px;
+    right: 18px;
+    top: auto;
+    transform: rotate(90deg);
   }
 }

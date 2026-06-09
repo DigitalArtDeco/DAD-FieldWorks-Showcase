@@ -1,39 +1,44 @@
 # Evidence Contract Platform Roadmap
 
-DAD FieldWorks is being shaped into an evidence-controlled computational electromagnetics framework. The public position is deliberately narrow: the repository presents a public-safe roadmap, diagnostic visualizations, and a bounded internal PEC cavity eigenmode evidence path. It is not a production solver release and not validation evidence.
+DAD FieldWorks is being shaped toward an evidence-controlled full-wave computational electromagnetics solver platform. The public position is deliberately narrow: the repository presents a public-safe roadmap, diagnostic visualizations, bounded internal alpha evidence paths and public whitepaper material. It is not a production solver release and not validation evidence.
 
-## Evidence-Driven Computational Electromagnetics
+## Evidence-Controlled CEM Direction
 
-The current public-safe milestone is a bounded internal PEC cavity eigenmode prototype path with residual and analytical reference comparison. It is exposed as an Alpha-style evidence path: useful for explaining how evidence rows, residual rows, reference rows, and claim boundaries travel with a result, but not a production solver claim.
+The core idea is that a field, eigenpair, spectrum or solver output remains a candidate claim until evidence gates define what it is allowed to say. A trustworthy solver ecosystem should expose residuals, boundary-condition checks, analytical reference error, reproducibility metadata and explicit claim boundaries.
 
-## Why This Matters
+The current public-safe alpha path includes:
 
-Computational electromagnetics results can look convincing while still being wrong. A trustworthy solver ecosystem should compute fields, modes, traces, spectra, and RF quantities, but it should also expose residuals, boundary-condition checks, analytical reference error, reproducibility metadata, and explicit claim boundaries.
+- C++ Resonator Lab Alpha records,
+- generalized eigenproblem metadata records,
+- candidate eigenpair and residual diagnostics,
+- residual threshold gate records,
+- analytical comparison gate records,
+- physical eigenpair acceptance gate planning only.
 
-The evidence contract layer is intended to prevent numerical success from automatically becoming a validation or product claim.
+## Gate Progression
+
+| Step | Meaning | Current public boundary |
+| --- | --- | --- |
+| Candidate eigenpair | A result that may support a claim later | Bounded internal alpha evidence |
+| Residual diagnostic | Compatibility check under stated assumptions | Diagnostic evidence |
+| Residual threshold gate | Record layer for residual classification | Internal classification only |
+| Analytical comparison gate | Record layer for comparison to a stated reference | Not external validation |
+| Physical eigenpair acceptance gate | Planned schema and prerequisite layer | Planning only |
+| Claim boundary | Explicit statement of what remains closed | External validation and production closed |
 
 ## From Solver Prototype To Evidence Contract Platform
 
-The roadmap has three layers:
-
 | Layer | Public direction | Claim boundary |
 | --- | --- | --- |
-| Classical solver layer | Bounded PEC cavity path, curl-curl route, mass matrix route, generalized eigenproblem route, residual checks, and analytical comparison records. | Internal Alpha evidence path only. |
-| C++ product layer | Resonator Lab Alpha report and replay route, CLI skeleton, artifact replay, and later numerical-kernel integration when evidence permits. | No production numerical kernel claim. |
-| Future research backend layer | Future DGTD route and future AI-assisted route using PINN or neural-operator backends under the same evidence contract discipline. | Future research direction only. |
+| Native solver evidence layer | Candidate records, residual records and analytical comparison records. | Bounded internal alpha evidence path only. |
+| C++ product-core direction | Resonator Lab Alpha records, artifact replay and later numerical-kernel integration when evidence permits. | No production numerical kernel claim. |
+| Future research backend layer | Future DGTD route and future AI-assisted route under the same evidence contract discipline. | Future research direction only. |
 
 ## AI-Assisted Solvers Under Evidence Contract
 
 A future PINN or neural-operator backend should be treated as an untrusted field generator until it passes evidence gates.
 
-The AI is not trusted because it is neural. It is trusted only when its output survives Maxwell residual checks, boundary-condition checks, finite-value checks, reference comparison where available, reproducibility checks, and claim-boundary gates.
-
-| Backend | Status | Evidence gate |
-| --- | --- | --- |
-| Classical PEC cavity prototype | Internal Alpha evidence path | Residual and analytical comparison |
-| C++ CLI skeleton | Replay-only Alpha infrastructure path | Contract and replay checks |
-| DGTD backend | Future research route | Discontinuous Galerkin residual and boundary evidence |
-| PINN or neural-operator backend | Future research route | Maxwell residual, boundary and reference gates |
+The AI is not trusted because it is neural. It is trusted only when its output survives Maxwell residual checks, boundary-condition checks, finite-value checks, reference comparison where available, reproducibility checks and claim-boundary gates.
 
 ## Rejection Logic
 
@@ -46,11 +51,11 @@ Promotion should stay blocked when:
 - analytical reference mismatch is unexplained,
 - finite-value sanity fails,
 - divergence or gauge checks fail,
-- physical eigenpair acceptance is not justified,
+- physical eigenpair acceptance has not been executed,
 - external validation evidence is missing.
 
 ## What This Is Not
 
-This roadmap is not a production solver release, not an external validation claim, not a commercial solver equivalence claim, not an AI-backend validation claim, and not a DGTD implementation claim. It is a public-safe architecture direction for evidence-controlled computational electromagnetics.
+This roadmap is not a production solver release, not an external validation claim, not a commercial solver equivalence claim, not an AI-backend validation claim and not a DGTD implementation claim. It is a public-safe architecture direction for evidence-controlled computational electromagnetics.
 
 Copyright &copy; 2026 Harun Aktas. All rights reserved.
