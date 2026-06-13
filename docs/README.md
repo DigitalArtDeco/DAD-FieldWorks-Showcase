@@ -6,7 +6,7 @@ The current public whitepaper is [version 0.9](../paper/DAD_FieldWorks_Evidence_
 
 - [Evidence contract architecture](evidence_contract_architecture.md)
 - [Evidence contract platform roadmap](evidence_contract_platform_roadmap.md)
-- [Current public status](current_public_status.md)
+- [Current public status](current_public_status.md)`r`n- [Live engineering examples provenance](live_engineering_examples_provenance.md)
 - [Quantum hardware direction](quantum_hardware_direction.md)
 - [Claim boundaries](claim_boundaries.md)
 - [Roadmap](roadmap.md)

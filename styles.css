@@ -495,3 +495,254 @@ footer p {
     transform: rotate(90deg);
   }
 }
+
+.live-engineering {
+  border-top: 1px solid var(--line);
+  margin: 0 auto;
+  max-width: 1180px;
+  padding: 72px 28px;
+}
+
+.live-card,
+.capability-card,
+.future-card,
+.evidence-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 22px;
+}
+
+.live-card {
+  margin-top: 28px;
+}
+
+.feature-card {
+  background: linear-gradient(180deg, rgba(38, 181, 223, 0.08), rgba(11, 20, 32, 0.98));
+}
+
+.card-kicker {
+  color: var(--accent);
+  font-size: 0.78rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+}
+
+.live-grid,
+.capability-grid,
+.future-grid,
+.metric-grid {
+  display: grid;
+  gap: 16px;
+}
+
+.live-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.capability-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.future-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 20px;
+}
+
+.metric-grid.compact {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric {
+  background: rgba(255, 255, 255, 0.035);
+  border: 1px solid rgba(255, 255, 255, 0.075);
+  border-radius: 8px;
+  padding: 14px;
+}
+
+.metric span,
+.evidence-card dt,
+.future-card span {
+  color: var(--muted);
+  display: block;
+  font-size: 0.78rem;
+}
+
+.metric strong {
+  color: var(--text);
+  display: block;
+  font-size: 1.08rem;
+  margin-top: 4px;
+}
+
+.evidence-card {
+  margin-top: 18px;
+}
+
+.evidence-card h4 {
+  margin: 0 0 12px;
+}
+
+.evidence-card dl {
+  display: grid;
+  gap: 10px;
+  margin: 0;
+}
+
+.evidence-card dd {
+  color: var(--text);
+  margin: 3px 0 0;
+}
+
+.badge-row,
+.spacing-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.badge-row span,
+.spacing-button {
+  background: rgba(38, 181, 223, 0.08);
+  border: 1px solid rgba(38, 181, 223, 0.28);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.78rem;
+  padding: 7px 10px;
+}
+
+.spacing-button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.spacing-button.active {
+  background: rgba(242, 139, 47, 0.18);
+  border-color: rgba(242, 139, 47, 0.52);
+}
+
+.microstrip-visual,
+.stripline-visual,
+.coupled-visual,
+.diff-visual {
+  background: #07111d;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin-top: 18px;
+  overflow: hidden;
+  padding: 24px;
+}
+
+.microstrip-visual .trace {
+  background: var(--warm);
+  border-radius: 4px 4px 0 0;
+  height: 24px;
+  margin: 0 auto;
+  transition: width 900ms ease;
+}
+
+.microstrip-visual .substrate {
+  align-items: center;
+  background: #263447;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  color: var(--muted);
+  display: flex;
+  height: 74px;
+  justify-content: center;
+}
+
+.microstrip-visual .ground,
+.stripline-visual .plane {
+  background: #8293a6;
+  height: 12px;
+}
+
+.stripline-visual {
+  display: grid;
+  gap: 24px;
+}
+
+.stripline-visual .strip-center {
+  background: var(--warm);
+  border-radius: 4px;
+  height: 20px;
+  margin: 0 auto;
+  width: 44%;
+}
+
+.coupled-visual,
+.diff-visual {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 120px;
+}
+
+.coupled-trace,
+.diff-trace {
+  align-items: center;
+  background: var(--warm);
+  border-radius: 8px;
+  color: #140b03;
+  display: flex;
+  font-weight: 700;
+  height: 64px;
+  justify-content: center;
+  width: 104px;
+}
+
+.coupled-trace + .coupled-trace {
+  margin-left: 34px;
+}
+
+.diff-gap {
+  height: 1px;
+  width: 32px;
+}
+
+.concept-note,
+.deviation-panel p,
+.future-card p,
+.capability-card p,
+.locked-card p {
+  color: var(--muted);
+}
+
+.deviation-panel {
+  background: rgba(242, 139, 47, 0.08);
+  border: 1px solid rgba(242, 139, 47, 0.26);
+  border-radius: 8px;
+  margin-top: 18px;
+  padding: 18px;
+}
+
+.deviation-bar {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  height: 16px;
+  overflow: hidden;
+}
+
+.deviation-bar span {
+  background: var(--warm);
+  display: block;
+  height: 100%;
+}
+
+@media (max-width: 860px) {
+  .live-grid,
+  .capability-grid,
+  .future-grid,
+  .metric-grid,
+  .metric-grid.compact {
+    grid-template-columns: 1fr;
+  }
+}

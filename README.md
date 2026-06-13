@@ -1,156 +1,105 @@
 # DAD FieldWorks
 
-**Trustworthy CEM starts after the field plot.**
+**DAD FieldWorks turns engineering calculations into evidence gated records.**
 
-DAD FieldWorks is being developed toward an evidence-controlled full-wave computational electromagnetics solver platform. The project treats solver output as a candidate claim until residual checks, reference comparisons, reproducibility records and claim boundaries define what it is allowed to say.
+The project is being developed toward an evidence controlled CEM and signal integrity platform where a computed width, impedance, mode or field remains a candidate result until source, test, audit, reproducibility and claim boundary records define what it is allowed to say.
 
-**Public status:** private research and development project, public showcase and whitepaper material only. No external validation claim. No production readiness claim. No commercial solver equivalence claim.
+**Current public status:** bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim. No commercial solver equivalence claim. No full wave EM simulation claim for Signal Integrity examples.
 
 <p align="center">
-  <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks solver generated field diagnostic hero" width="100%">
+  <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks evidence contract hero animation" width="100%">
 </p>
 
-## Current Public-Safe Alpha State
+## Live Style Engineering Examples
 
-The current internal alpha direction has moved from candidate and residual diagnostics into records for residual threshold and analytical comparison gates, with physical eigenpair acceptance gate planning now open as a records-only next step.
+These examples show source backed internal analytical reference models from the DAD FieldWorks Signal Integrity Kernel v0.3. They are not external validation results, not production use certification and not full wave EM simulations.
 
-- No physical eigenpair acceptance has been executed.
-- No physical eigenfrequency acceptance has been executed.
-- No external validation claim is made.
-- No production readiness claim is made.
-- No commercial solver equivalence claim is made.
+The live website consumes [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json) through a lightweight local script. No external images, screenshots, third-party embeds or analytics are used.
 
-## Evidence Gate Progression
+### Microstrip 50 Ohm Width Synthesis
 
-| Step | Public status |
+| Field | Value |
+| --- | ---: |
+| Target impedance | 50.0 ohm |
+| Relative permittivity | 4.3 |
+| Substrate height | 1.6 mm |
+| Computed trace width | 3.1187 mm |
+| Verification impedance | 50.000 ohm |
+| Target error | 0.0000 ohm |
+| Trust status | INTERNAL_SOURCE_BACKED_INVERSION_READY |
+
+### Signal Integrity v0.3 Capability Map
+
+| Capability | Public status |
 | --- | --- |
-| Candidate eigenpair | Bounded internal alpha evidence path |
-| Residual diagnostic | Candidate compatibility evidence |
-| Residual threshold gate | Record layer |
-| Analytical comparison gate | Record layer |
-| Physical eigenpair acceptance gate | Planning only |
-| Claim boundary | External validation and production closed |
+| Microstrip characteristic impedance | source pinned; implemented; tested; audited; internal only |
+| Microstrip width synthesis | source pinned; implemented; tested; audited; internal only |
+| IPC-2141A vs Hammerstad-Jensen comparison | source pinned; implemented; tested; audited; internal comparison only |
+| Stripline characteristic impedance | source pinned; implemented; tested; audited; internal only |
+| Stripline width synthesis | source pinned; implemented; tested; audited; internal only |
+| Coupled Line reference model | source pinned; implemented; tested; audited; internal only |
+| Differential Pair reference model | source pinned; implemented; tested; audited; internal only |
 
-## Long-Term Target
+All capability cards remain not externally validated and not production ready.
 
-The long-term target is a native full-wave solver platform in which numerical outputs carry evidence records by default. A field, eigenpair or spectrum is not promoted because it looks plausible. It remains claim-bounded until residual, reference, reproducibility and validation evidence support a stronger statement.
+### Available Live Examples
 
-## Featured evidence-gate diagnostics
+| Example | Real public-safe values shown |
+| --- | --- |
+| IPC-2141A vs Hammerstad-Jensen comparison | 21 audited internal comparison cases; maximum relative deviation 18.5711 percent |
+| Stripline analytical reference example | Z0 = 50.0785 ohm for the listed symmetric stripline case; width synthesis check returns 1.000 mm |
+| Coupled Line Even/Odd Mode | Z0e = 89.4488 ohm; Z0o = 54.8093 ohm; C = 4.1646; K = 0.2401 |
+| Differential Pair Spacing Sweep | Three real spacing rows with Zdiff, Zcommon and K from the audited reference model |
 
-### PEC Resonator Candidate Evidence Gate
+Mode drawings are conceptual illustrations, not full wave field simulations.
 
-<p align="center">
-  <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate animation" width="100%">
-</p>
+### Awaiting Or Future Data
 
-This deterministic diagnostic shows an analytic TE101 style PEC resonator reference, a sampled discrete candidate field and a finite-difference residual check. The result remains a candidate record with ProductionAllowedQ false and ExternalValidationQ false. It is diagnostic only, not physical mode acceptance evidence, not external validation and not a production solver claim.
+The current public dashboard has real values for the live v0.3 examples above. Beyond v0.3 directions such as dispersion, dielectric loss, conductor loss, roughness, finite thickness expansion, stripline coupled line, GUI, PCB import and external comparison planning remain future routes with no public result shown.
 
-### Eigenpair Residual Evidence Gate
+## Other Evidence Gate Diagnostics
 
-<p align="center">
-  <img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" alt="Eigenpair residual evidence gate animation" width="100%">
-</p>
+Supporting evidence-gate diagnostics remain available below the live Signal Integrity story on the website and through provenance notes. They are diagnostic communication assets only and do not change the claim boundary.
 
-This diagnostic shows the DAD FieldWorks principle that solver output is a claim. A candidate eigenpair is checked through residual calculation, residual magnitude and a bounded evidence score before any stronger claim can be considered. ProductionAllowedQ remains false and ExternalValidationQ remains false.
+| Supporting material | Link |
+| --- | --- |
+| PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
+| Eigenpair Residual Evidence Gate Provenance | [docs/eigenpair_residual_evidence_gate_provenance.md](docs/eigenpair_residual_evidence_gate_provenance.md) |
+| PEC Cavity Convergence Provenance | [docs/pec_cavity_convergence_provenance.md](docs/pec_cavity_convergence_provenance.md) |
 
-### PEC Cavity Convergence Plot
+## What This Public Showcase Is Not
 
-<p align="center">
-  <img src="assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot.gif" alt="PEC cavity convergence plot animation" width="100%">
-</p>
+DAD FieldWorks public materials show architecture notes, whitepaper material, diagnostic visualizations and public-safe engineering dashboards from a private research and development project.
 
-PEC Cavity Convergence Plot shows grid refinement against an analytical rectangular PEC cavity reference. It displays numerical frequency estimates, relative error and the convergence trend as bounded diagnostic evidence.
+- No external validation claim.
+- No production readiness claim.
+- No commercial solver equivalence claim.
+- Not full wave EM simulation for Signal Integrity examples.
+- Not measurement validation.
+- Not production use certification.
+- Not a release of private solver source code.
 
-## Why this matters
-
-Computational electromagnetics results can look convincing while still being wrong. Classical solvers, fast surrogate models and future physics-AI backends can all produce fields, modes or spectra that appear plausible but fail residual, boundary-condition, energy, divergence, reference or reproducibility checks.
-
-DAD FieldWorks is being shaped around the idea that a result should not be trusted because it is visually impressive, numerically fast or neural. It should be trusted only when the evidence record says what was checked, what failed, what remains bounded and what the result is allowed to claim.
-
-Future PINN or neural-operator backends are treated as untrusted field generators until their outputs pass evidence gates. This is an AI-assisted solver quarantine: neural outputs remain untrusted until residual, boundary, divergence, energy, reference and reproducibility checks support a bounded claim.
-
-## What the showcase demonstrates
-
-- Solver-generated field diagnostics.
-- PEC cavity eigenmode evidence path.
-- PEC cavity grid-refinement convergence diagnostic.
-- FDTD resonator ringdown and FFT spectrum.
-- Evidence contract roadmap for classical, DGTD and future physics-AI backends.
-- Claim boundaries and production gates.
-
-## Additional visual diagnostics
-
-<table>
-<tr>
-<td width="50%">
-<img src="assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif" alt="FDTD resonator ringdown with FFT spectrum" width="100%">
-<br>
-<strong>FDTD Resonator Ringdown with FFT Spectrum</strong>
-<br>
-Time-domain field build-up, late-time ringdown and spectrum derived from the probe signal. Diagnostic only.
-</td>
-<td width="50%">
-<img src="assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif" alt="PEC cavity eigenmode field slice" width="100%">
-<br>
-<strong>PEC Cavity Eigenmode Field Slice</strong>
-<br>
-Standing scalar eigenmode field-slice diagnostic for a bounded PEC cavity reference path. Diagnostic only.
-</td>
-</tr>
-</table>
-
-## Evidence Contract Roadmap
-
-| Stage | Direction | Public claim boundary |
-| --- | --- | --- |
-| Current alpha evidence layer | candidate, residual and analytical comparison records | bounded internal alpha evidence only |
-| Current planning step | physical eigenpair acceptance gate planning | planning only, no physical acceptance execution |
-| Near term | residual threshold and acceptance gate hardening | internal classification only |
-| Mid term | native solver core hardening and artifact replay | no production solver claim |
-| Long term | evidence-controlled full-wave CEM solver platform | future target, no current production claim |
-| Future research route | DGTD and physics-AI backends under evidence contracts | future route only |
-
-DGTD and physics-AI backend support are future research routes, not implemented production features.
-
-## What this public showcase is not
-
-DAD FieldWorks public materials show architecture notes, whitepaper material and diagnostic visualizations from a private research and development project.
-
-- Not production ready.
-- Not externally validated.
-- Not a commercial solver equivalent.
-- Not a qubit simulation.
-- Not a complete quantum hardware solver.
-- Not a production AI solver.
-- Not a measurement-validated product.
-
-## Public materials
+## Public Materials
 
 | Material | Link |
 | --- | --- |
 | Whitepaper PDF | [DAD FieldWorks Evidence Contract Architecture Whitepaper v0.9](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf) |
+| Live Engineering Examples Provenance | [docs/live_engineering_examples_provenance.md](docs/live_engineering_examples_provenance.md) |
+| Signal Integrity Example Data | [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json) |
 | Evidence Contract Architecture | [docs/evidence_contract_architecture.md](docs/evidence_contract_architecture.md) |
 | Evidence Contract Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
 | Current Public Status | [docs/current_public_status.md](docs/current_public_status.md) |
 | Claim Boundaries | [docs/claim_boundaries.md](docs/claim_boundaries.md) |
 | Public Roadmap | [docs/roadmap.md](docs/roadmap.md) |
-| Quantum Hardware Direction | [docs/quantum_hardware_direction.md](docs/quantum_hardware_direction.md) |
-| FDTD Resonator Explanation | [docs/fdtd_microwave_resonator_explanation.md](docs/fdtd_microwave_resonator_explanation.md) |
 | Asset Manifest | [assets/asset_manifest.md](assets/asset_manifest.md) |
-| Visualization Provenance | [docs/visualization_provenance.md](docs/visualization_provenance.md) |
-| FDTD Resonator FFT Provenance | [docs/fdtd_resonator_fft_provenance.md](docs/fdtd_resonator_fft_provenance.md) |
-| PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
-| Eigenpair Residual Evidence Gate Provenance | [docs/eigenpair_residual_evidence_gate_provenance.md](docs/eigenpair_residual_evidence_gate_provenance.md) |
-| PEC Cavity Convergence Provenance | [docs/pec_cavity_convergence_provenance.md](docs/pec_cavity_convergence_provenance.md) |
-| PEC Cavity Visualization Provenance | [docs/pec_cavity_visualization_provenance.md](docs/pec_cavity_visualization_provenance.md) |
 
-## Repository contents
+## Repository Contents
 
-This public repository contains selected website files, public documentation, public whitepaper PDFs and reproducible public-safe visual assets.
+This public repository contains selected website files, public documentation, public whitepaper PDFs, public-safe visual assets and public-safe example data.
 
-It does not contain private solver source code. It does not contain private validation workbench files. It does not contain commercial tool screenshots. It does not contain copied standard or textbook figures.
+It does not contain private solver source code. It does not contain private validation workbench files. It does not contain commercial tool screenshots. It does not contain reproduced standards, books or textbook figures.
 
-## Legal links and copyright
+## Legal Links And Copyright
 
 - [Impressum](impressum.html)
 - [Datenschutz](datenschutz.html)

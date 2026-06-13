@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "source": "DAD FieldWorks Signal Integrity Kernel v0.3",
+    "dataStatus": "real",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "externalValidationClaimQ": false,
+    "productionClaimQ": false,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "forLayoutOnlyQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "dataSourceSummary": "Public-safe values from audited internal analytical reference records and temporary read-only function probes executed with outputs written only to the public showcase repository."
+  },
+  "capabilityMap": [
+    {
+      "name": "Microstrip characteristic impedance",
+      "family": "Microstrip",
+      "status": "implemented",
+      "evidence": "audited internal analytical reference",
+      "publicClaim": "bounded internal alpha",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    },
+    {
+      "name": "Microstrip width synthesis",
+      "family": "Microstrip",
+      "status": "implemented",
+      "evidence": "audited internal analytical inversion",
+      "publicClaim": "bounded internal alpha",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    },
+    {
+      "name": "IPC-2141A vs Hammerstad-Jensen comparison",
+      "family": "Microstrip comparison",
+      "status": "implemented",
+      "evidence": "audited internal comparison",
+      "publicClaim": "bounded internal alpha comparison only",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    },
+    {
+      "name": "Stripline characteristic impedance",
+      "family": "Stripline",
+      "status": "implemented",
+      "evidence": "audited internal analytical reference",
+      "publicClaim": "bounded internal alpha",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    },
+    {
+      "name": "Stripline width synthesis",
+      "family": "Stripline",
+      "status": "implemented",
+      "evidence": "audited internal analytical inversion",
+      "publicClaim": "bounded internal alpha",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    },
+    {
+      "name": "Coupled Line reference model",
+      "family": "Coupled line",
+      "status": "implemented",
+      "evidence": "audited internal analytical reference",
+      "publicClaim": "bounded internal alpha",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    },
+    {
+      "name": "Differential Pair reference model",
+      "family": "Differential pair",
+      "status": "implemented",
+      "evidence": "audited internal analytical reference",
+      "publicClaim": "bounded internal alpha",
+      "badges": [
+        "source pinned",
+        "implemented",
+        "tested",
+        "audited",
+        "internal only",
+        "not externally validated",
+        "not production ready"
+      ]
+    }
+  ],
+  "microstripWidthSynthesis": {
+    "title": "Microstrip 50 Ohm Width Synthesis",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal analytical reference and inversion record",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_INVERSION_READY",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "input": {
+      "targetImpedanceOhm": 50.0,
+      "relativePermittivity": 4.3,
+      "substrateHeightMm": 1.6,
+      "conductorThicknessMm": 0.0
+    },
+    "output": {
+      "computedWidthMm": 3.118657853069731,
+      "widthToHeightRatio": 1.949161158168582,
+      "verificationImpedanceOhm": 50.0,
+      "targetErrorOhm": 0.0,
+      "effectivePermittivity": 3.268293138117804,
+      "propagationDelayNsPerM": 6.030312216897589
+    }
+  },
+  "ipcHammerstadComparison": {
+    "title": "IPC-2141A vs Hammerstad-Jensen Comparison",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal comparison record; IPC-2141A used only as comparison label",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_COMPARISON_AUDIT_PASS",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "summary": {
+      "caseCount": 21,
+      "maxDeviationPercent": 18.57105701831764,
+      "meanDeviationPercent": 6.239181166575536,
+      "maxAbsoluteDifferenceOhm": 19.68743716680659
+    },
+    "representativeCase": {
+      "primaryImpedanceOhm": 73.3112794151944,
+      "secondaryImpedanceOhm": 74.62755819452498,
+      "absoluteDifferenceOhm": 1.316278779330574,
+      "relativeDifferencePercent": 1.7954655679597422
+    }
+  },
+  "striplineCharacteristicImpedance": {
+    "title": "Stripline Analytical Reference Example",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal analytical reference record",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_ANALYTICAL_REFERENCE_READY",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "input": {
+      "relativePermittivity": 4.0,
+      "groundPlaneSeparationMm": 2.0,
+      "conductorWidthMm": 1.0,
+      "conductorThicknessMm": 0.0
+    },
+    "output": {
+      "characteristicImpedanceOhm": 50.078522639582246,
+      "effectiveWidthMm": 1.0,
+      "widthToSeparationRatio": 0.5
+    }
+  },
+  "striplineWidthSynthesis": {
+    "title": "Stripline Width Synthesis Check",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal analytical inversion record",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_INVERSION_READY",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "input": {
+      "targetImpedanceOhm": 50.078522639582246,
+      "relativePermittivity": 4.0,
+      "groundPlaneSeparationMm": 2.0,
+      "conductorThicknessMm": 0.0
+    },
+    "output": {
+      "computedWidthMm": 1.0,
+      "verificationImpedanceOhm": 50.078522639582246,
+      "targetErrorOhm": 0.0
+    }
+  },
+  "coupledLineEvenOdd": {
+    "title": "Coupled Line Even/Odd Mode",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal coupled-line analytical reference record",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_COUPLED_LINE_REFERENCE_MODEL_READY",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "conceptualDrawingNote": "Mode drawings are conceptual illustrations, not full wave field simulations.",
+    "input": {
+      "geometryType": "edge_coupled_microstrip",
+      "relativePermittivity": 4.1,
+      "substrateHeightMm": 0.5,
+      "widthMm": 0.5,
+      "spacingMm": 0.25,
+      "conductorThicknessMm": 0.0
+    },
+    "output": {
+      "z0eOhm": 89.4488123561128,
+      "z0oOhm": 54.809301792652754,
+      "C": 4.164554054090423,
+      "K": 0.2401217482140256,
+      "couplingDb": 12.391370068197281,
+      "normalizedWidthU": 1.0,
+      "normalizedGapG": 0.5
+    }
+  },
+  "differentialPairSpacingSweep": {
+    "title": "Differential Pair Spacing Sweep",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal differential-pair analytical reference record using coupled-line modal outputs",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_DIFFERENTIAL_PAIR_REFERENCE_MODEL_READY",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "conceptualDrawingNote": "Mode drawings are conceptual illustrations, not full wave field simulations.",
+    "relationshipNotes": [
+      "Zdiff = 2 Z0o",
+      "Zcommon = Z0e / 2",
+      "K is inherited from the coupled-line model."
+    ],
+    "fixedInput": {
+      "geometryType": "edge_coupled_microstrip",
+      "relativePermittivity": 4.1,
+      "substrateHeightMm": 0.5,
+      "widthMm": 0.5,
+      "conductorThicknessMm": 0.0
+    },
+    "rows": [
+      {
+        "spacingMm": 0.1,
+        "normalizedGapG": 0.2,
+        "z0eOhm": 95.22545951500584,
+        "z0oOhm": 45.17560065033739,
+        "zdiffOhm": 90.35120130067477,
+        "zcommonOhm": 47.61272975750292,
+        "K": 0.3564777844677759,
+        "C": 2.8052238977332284
+      },
+      {
+        "spacingMm": 0.25,
+        "normalizedGapG": 0.5,
+        "z0eOhm": 89.4488123561128,
+        "z0oOhm": 54.809301792652754,
+        "zdiffOhm": 109.61860358530551,
+        "zcommonOhm": 44.7244061780564,
+        "K": 0.2401217482140256,
+        "C": 4.164554054090423
+      },
+      {
+        "spacingMm": 0.5,
+        "normalizedGapG": 1.0,
+        "z0eOhm": 83.43048128562239,
+        "z0oOhm": 62.47283387186192,
+        "zdiffOhm": 124.94566774372385,
+        "zcommonOhm": 41.715240642811196,
+        "K": 0.14364065265507722,
+        "C": 6.961817434798833
+      }
+    ]
+  },
+  "beyondV03": [
+    {
+      "name": "dispersion",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "dielectric loss",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "conductor loss",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "roughness",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "finite thickness expansion",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "stripline coupled line",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "GUI",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "PCB import",
+      "status": "future route",
+      "publicClaim": "not implemented; no public result"
+    },
+    {
+      "name": "external comparison planning",
+      "status": "future route",
+      "publicClaim": "planning only; no public result"
+    }
+  ]
+}

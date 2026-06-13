@@ -332,7 +332,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not a validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -345,7 +345,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not a validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -358,7 +358,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not a validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -371,7 +371,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not a validated eigenmode.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -384,7 +384,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 ## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate_poster.png
@@ -396,7 +396,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -409,7 +409,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -422,7 +422,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not an eigenmode validation result.
+- Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -435,7 +435,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -448,7 +448,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -461,7 +461,7 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -474,6 +474,42 @@
 - Screenshots: none
 - Generative image tools: none
 - Private source code copied: no
-- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not validated eigenmode evidence.
+- Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+## data/dad_signal_integrity_v0_3_examples.json
+
+- Asset type: JSON public data file
+- Creation method: public-safe data model assembled from audited internal Signal Integrity Kernel v0.3 records and read-only function probe outputs.
+- Rendered quantities or concepts: Microstrip width synthesis, IPC-2141A vs Hammerstad-Jensen comparison summary, stripline analytical reference, coupled-line even/odd mode, differential-pair spacing sweep, capability map and future-route status.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: source backed internal analytical reference dashboards only, not external validation, not production readiness, not full wave EM simulation, not measurement validation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/live_engineering_examples.js
+
+- Asset type: local JavaScript renderer
+- Creation method: lightweight public website script that renders the public Signal Integrity v0.3 JSON data into engineering dashboard cards.
+- External scripts: none
+- External network dependencies: none
+- Analytics: none
+- Private source code copied: no
+- Claim boundary: display layer only; it does not implement engineering formulas and does not broaden validation or production claims.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## docs/live_engineering_examples_provenance.md
+
+- Asset type: Markdown provenance note
+- Creation method: public documentation for the live engineering examples section.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Private source code copied: no
+- Claim boundary: provenance note only, not external validation, not production readiness.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

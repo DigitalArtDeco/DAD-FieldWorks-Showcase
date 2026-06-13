@@ -1,52 +1,37 @@
 # Claim Boundaries
 
-DAD FieldWorks public showcase material is scoped to documentation, architecture notes, public status notes, generated visual communication and public-safe roadmap material.
+Copyright © 2026 Harun Aktas. All rights reserved.
 
-The project is being developed toward an evidence-controlled full-wave computational electromagnetics solver platform. This is a strategic direction, not a current production or validation claim.
+This public showcase uses conservative claim boundaries.
 
-## This Repository Does Not Claim
+## Allowed Public Wording
 
-- external validation
-- production readiness
-- commercial solver equivalence
-- physical eigenpair acceptance
-- physical eigenfrequency acceptance
-- mode identification
-- rank/nullspace results
-- finished quantum hardware design tool status
-- complete quantum hardware solver status
-- DGTD implementation status
-- AI-assisted backend validation status
-- autonomous solver status
-- PINN production-use status
-- qubit simulation
-- Josephson junction modeling
-- Hamiltonian extraction
-- coherence-time prediction
-- quantum processor modeling
-- cryogenic device modeling
-- CPML support
-- absorbing or open boundary support
-- graphical user interface availability
-- production C++ electromagnetic solver release
-- release of private solver source code
-- release of internal test suites or internal result artifacts
+- Public showcase.
+- Public whitepaper.
+- Evidence contract architecture.
+- Source backed internal analytical reference model.
+- Bounded internal alpha evidence.
+- Diagnostic visualization.
+- Conceptual engineering diagram.
+- Future route.
+- Planning only.
 
-## Planning-Only Boundary
+## Signal Integrity v0.3 Boundary
 
-Physical eigenpair acceptance gate work is currently public only as planning direction. The public claim boundary is:
+The Live Style Engineering Examples reflect the audited internal Signal Integrity Kernel v0.3 baseline and public-safe example values. They are analytical reference model dashboards.
 
-- residual threshold and analytical comparison gate records are bounded internal alpha evidence layers,
-- physical eigenpair acceptance gate work is planning only,
-- no physical eigenpair acceptance execution is claimed,
-- no physical eigenfrequency acceptance execution is claimed.
+They are not external validation results. They are not production use certification. They are not full wave EM simulations. They are not measurement validation. They are not commercial solver equivalence claims.
 
-## Future Routes
+Conceptual coupled-line and differential-pair mode drawings must remain labeled as conceptual illustrations, not full wave field simulations.
 
-Future DGTD, PINN and neural-operator backend routes are roadmap concepts only. Any future backend output must remain a candidate until it passes residual, boundary-condition, finite-value, reproducibility, reference-comparison and claim-boundary gates.
+## Closed Claims
 
-Visual assets are diagnostic style communication aids only. They are not validation evidence, not benchmark reports, and not external solver equivalence claims.
-
-The PEC Cavity Convergence Plot is a bounded scalar diagnostic for grid-refinement behavior against an analytical reference. It is not physical mode acceptance evidence and does not change validation or production claim status.
-
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- No external validation claim.
+- No production readiness claim.
+- No commercial solver equivalence claim.
+- No full wave EM simulation claim for Signal Integrity examples.
+- No measurement validation claim.
+- No released private solver source code.
+- No employer or external organization affiliation claim.
+- No claim that future directions are implemented.
+- No claim that visual diagnostics alone prove physical acceptance.
