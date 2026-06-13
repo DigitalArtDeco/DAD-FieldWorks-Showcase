@@ -13,12 +13,42 @@
     return `<div class="metric"><span>${label}</span><strong>${value}${unit ? ` ${unit}` : ''}</strong></div>`;
   }
 
+  function shortTrustStatus(status = '') {
+    if (!status) return 'source backed internal record';
+    if (status.includes('COMPARISON')) return 'source backed comparison record';
+    if (status.includes('INVERSION')) return 'source backed inversion record';
+    return 'source backed internal record';
+  }
+
+  function claimItems(example) {
+    if (Array.isArray(example.claimBoundaryItems)) return example.claimBoundaryItems;
+    return String(example.claimBoundary || '')
+      .split(';')
+      .map((item) => item.trim())
+      .filter(Boolean);
+  }
+
+  function claimBoundaryList(example) {
+    const items = claimItems(example);
+    if (!items.length) return '';
+    return `<ul class="claim-boundary-list">${items.map((item) => `<li>${item}</li>`).join('')}</ul>`;
+  }
+
+  function recordDetail(label, value) {
+    if (!value) return '';
+    return `<details class="record-detail"><summary>${label}</summary><code>${value}</code></details>`;
+  }
+
+  function relationshipChips(items) {
+    return `<div class="relationship-chip-row">${items.map((item) => `<span>${item}</span>`).join('')}</div>`;
+  }
+
   function evidenceCard(example) {
     return `<div class="evidence-card"><h4>Evidence / Trust</h4><dl>
       <div><dt>Source Authority</dt><dd>${example.sourceAuthority}</dd></div>
-      <div><dt>Trust Status</dt><dd>${example.trustStatus}</dd></div>
-      <div><dt>Claim Boundary</dt><dd>${example.claimBoundary}</dd></div>
-      <div><dt>Flags</dt><dd>${flagText}</dd></div>
+      <div><dt>Trust Status</dt><dd><span class="status-badge" title="${example.trustStatus}" data-full-status="${example.trustStatus}">${shortTrustStatus(example.trustStatus)}</span>${recordDetail('Record detail', example.trustStatus)}</dd></div>
+      <div><dt>Claim Boundary</dt><dd>${claimBoundaryList(example)}</dd></div>
+      <div><dt>Flags</dt><dd class="flag-row"><span>ExternallyValidatedQ = False</span><span>ProductionAllowedQ = False</span></dd></div>
     </dl></div>`;
   }
 
@@ -62,7 +92,7 @@
     const rows = item.rows;
     const buttons = rows.map((row, index) => `<button type="button" class="spacing-button${index === 1 ? ' active' : ''}" data-index="${index}">${fmt(row.spacingMm, 2)} mm</button>`).join('');
     const start = rows[1] || rows[0];
-    return `<article class="live-card" id="differential-pair-sweep"><div class="card-kicker">Spacing sweep</div><h3>${item.title}</h3><div class="diff-visual" aria-label="Conceptual differential pair drawing"><div class="diff-trace"></div><div class="diff-gap" id="diff-gap-visual"></div><div class="diff-trace"></div></div><p class="concept-note">${item.conceptualDrawingNote}</p><div class="spacing-controls">${buttons}</div><div class="metric-grid compact" id="diff-metrics">${metric('Spacing', fmt(start.spacingMm, 2), 'mm')}${metric('Zdiff', fmt(start.zdiffOhm, 3), 'ohm')}${metric('Zcommon', fmt(start.zcommonOhm, 3), 'ohm')}${metric('K', fmt(start.K, 3))}</div><p class="concept-note">${item.relationshipNotes.join(' | ')}</p>${evidenceCard(item)}</article>`;
+    return `<article class="live-card" id="differential-pair-sweep"><div class="card-kicker">Spacing sweep</div><h3>${item.title}</h3><div class="diff-visual" aria-label="Conceptual differential pair drawing"><div class="diff-trace"></div><div class="diff-gap" id="diff-gap-visual"></div><div class="diff-trace"></div></div><p class="concept-note">${item.conceptualDrawingNote}</p><div class="spacing-controls">${buttons}</div><div class="metric-grid compact" id="diff-metrics">${metric('Spacing', fmt(start.spacingMm, 2), 'mm')}${metric('Zdiff', fmt(start.zdiffOhm, 3), 'ohm')}${metric('Zcommon', fmt(start.zcommonOhm, 3), 'ohm')}${metric('K', fmt(start.K, 3))}</div>${relationshipChips(item.relationshipNotes)}${evidenceCard(item)}</article>`;
   }
 
   function renderBeyond(items) {

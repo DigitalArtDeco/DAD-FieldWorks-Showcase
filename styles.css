@@ -10,7 +10,9 @@
   --warm: #f28b2f;
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -37,6 +39,13 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
+}
+
+.site-header,
+nav,
+nav a {
+  min-width: 0;
+  max-width: 100%;
 }
 
 .brand {
@@ -82,6 +91,15 @@ nav a:hover,
   letter-spacing: 0;
   margin: 0 0 10px;
   text-transform: uppercase;
+}
+
+h1,
+h2,
+h3,
+p,
+a {
+  overflow-wrap: anywhere;
+  word-break: break-word;
 }
 
 h1,
@@ -133,6 +151,14 @@ h2 {
   margin: 0 auto;
   max-width: 1180px;
   padding: 72px 28px;
+}
+
+.live-engineering,
+.priority-showcase,
+.showcase-block,
+.explanation-section,
+.links-section {
+  scroll-margin-top: 116px;
 }
 
 .priority-showcase:first-of-type {
@@ -496,6 +522,27 @@ footer p {
   }
 }
 
+@media (max-width: 520px) {
+  .live-engineering,
+  .priority-showcase,
+  .showcase-block,
+  .explanation-section,
+  .links-section {
+    scroll-margin-top: 184px;
+  }
+
+  nav {
+    display: grid;
+    gap: 8px 12px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  nav a {
+    white-space: normal;
+  }
+}
+
 .live-engineering {
   border-top: 1px solid var(--line);
   margin: 0 auto;
@@ -510,6 +557,9 @@ footer p {
   background: var(--panel);
   border: 1px solid var(--line);
   border-radius: 8px;
+  max-width: 100%;
+  min-width: 0;
+  overflow: hidden;
   padding: 22px;
 }
 
@@ -538,21 +588,21 @@ footer p {
 }
 
 .live-grid {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
 }
 
 .capability-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 230px), 1fr));
   margin-top: 28px;
 }
 
 .future-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   margin-top: 28px;
 }
 
 .metric-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 145px), 1fr));
   margin-top: 20px;
 }
 
@@ -564,6 +614,7 @@ footer p {
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(255, 255, 255, 0.075);
   border-radius: 8px;
+  min-width: 0;
   padding: 14px;
 }
 
@@ -580,6 +631,51 @@ footer p {
   display: block;
   font-size: 1.08rem;
   margin-top: 4px;
+}
+
+.live-engineering,
+.live-grid,
+.capability-grid,
+.future-grid,
+.metric-grid,
+.metric,
+.live-card,
+.capability-card,
+.future-card,
+.evidence-card,
+.evidence-card dl,
+.evidence-card dd,
+.evidence-card li,
+.evidence-card span,
+.evidence-card code,
+.metric strong,
+.metric span,
+.concept-note,
+.status-badge,
+.record-detail,
+.claim-boundary-list,
+.relationship-chip-row {
+  min-width: 0;
+  max-width: 100%;
+}
+
+.evidence-card p,
+.evidence-card li,
+.evidence-card span,
+.evidence-card code,
+.evidence-card dd,
+.metric strong,
+.metric span,
+.status-badge,
+.record-detail,
+.record-detail code,
+.claim-boundary-list,
+.claim-boundary-list li,
+.relationship-chip-row span,
+.concept-note {
+  overflow-wrap: anywhere;
+  white-space: normal;
+  word-break: break-word;
 }
 
 .evidence-card {
@@ -599,6 +695,74 @@ footer p {
 .evidence-card dd {
   color: var(--text);
   margin: 3px 0 0;
+}
+
+.status-badge {
+  background: rgba(38, 181, 223, 0.1);
+  border: 1px solid rgba(38, 181, 223, 0.32);
+  border-radius: 999px;
+  color: var(--text);
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.25;
+  padding: 7px 10px;
+}
+
+.record-detail {
+  color: var(--muted);
+  font-size: 0.84rem;
+  margin-top: 8px;
+}
+
+.record-detail summary {
+  cursor: pointer;
+}
+
+.record-detail code {
+  color: var(--text);
+  display: block;
+  font-family: Consolas, "Liberation Mono", monospace;
+  margin-top: 6px;
+}
+
+.claim-boundary-list {
+  display: grid;
+  gap: 6px;
+  list-style: none;
+  margin: 8px 0 0;
+  padding: 0;
+}
+
+.claim-boundary-list li {
+  background: rgba(242, 139, 47, 0.08);
+  border: 1px solid rgba(242, 139, 47, 0.24);
+  border-radius: 999px;
+  color: var(--text);
+  font-size: 0.82rem;
+  line-height: 1.25;
+  padding: 7px 10px;
+}
+
+.flag-row,
+.relationship-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.flag-row span,
+.relationship-chip-row span {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 999px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  padding: 7px 10px;
+}
+
+.relationship-chip-row {
+  margin-top: 14px;
 }
 
 .badge-row,
