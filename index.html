@@ -24,23 +24,26 @@
     </header>
 
     <main>
-      <section class="landing-hero" aria-labelledby="hero-title">
+      <section class="landing-hero hero-stacked" aria-labelledby="hero-title">
         <div class="hero-copy">
           <p class="eyebrow">Evidence controlled engineering software</p>
           <div class="hero-wordmark" aria-label="DAD FieldWorks">DAD FieldWorks</div>
           <h1 id="hero-title">Engineering results should carry evidence.</h1>
           <p>DAD FieldWorks develops evidence controlled engineering software for computational electromagnetics, RF design and signal integrity.</p>
           <p>It combines analytical reference kernels, numerical diagnostics and claim aware evidence records so engineering results remain traceable before they are trusted.</p>
-          <p class="status-line"><strong>Current public state:</strong> bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim.</p>
           <div class="hero-actions">
             <a href="#technology">Technology</a>
             <a href="#examples">Engineering Examples</a>
             <a href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf">Whitepaper</a>
           </div>
+          <p class="status-line"><strong>Current public state:</strong> bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim.</p>
         </div>
-        <figure class="hero-media">
-          <img src="assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown.gif" alt="FDTD microwave resonator ringdown diagnostic animation" loading="eager" decoding="async">
-          <figcaption>FDTD microwave resonator ringdown diagnostic. Time domain field response with probe trace and bounded spectral evidence. No external validation claim. No production readiness claim.</figcaption>
+        <figure class="hero-visual-wide">
+          <picture>
+            <source srcset="assets/hero/dad_fieldworks_kernel_wave_hero.webp" type="image/webp">
+            <img src="assets/hero/dad_fieldworks_kernel_wave_hero.png" alt="Deterministic DAD FieldWorks kernel wave hero graphic derived from a PEC cavity mode 111 scalar field" loading="eager" decoding="async">
+          </picture>
+          <figcaption>Deterministic kernel-derived field graphic. Public safe brand asset, not external validation and not production readiness.</figcaption>
         </figure>
       </section>
 
@@ -174,6 +177,7 @@
           <a class="material-card" href="docs/current_public_status.md"><span class="material-card-title">Current Public State</span><span class="material-card-description">Conservative public state for the current project.</span></a>
           <a class="material-card" href="docs/claim_boundaries.md"><span class="material-card-title">Claim Boundaries</span><span class="material-card-description">What the public material does and does not claim.</span></a>
           <a class="material-card" href="docs/live_engineering_examples_provenance.md"><span class="material-card-title">Engineering Example Provenance</span><span class="material-card-description">Data source and claim boundary for the public examples.</span></a>
+          <a class="material-card" href="docs/kernel_wave_hero_brand_provenance.md"><span class="material-card-title">Kernel Wave Hero Provenance</span><span class="material-card-description">Creation method and claim boundary for the public hero graphic.</span></a>
           <a class="material-card" href="data/dad_signal_integrity_v0_3_examples.json"><span class="material-card-title">Public Example Data</span><span class="material-card-description">Public-safe JSON consumed by the example panels.</span></a>
           <a class="material-card" href="assets/asset_manifest.md"><span class="material-card-title">Asset Manifest</span><span class="material-card-description">Creation method and claim boundary for public assets.</span></a>
           <a class="material-card" href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"><span class="material-card-title">GitHub Repository</span><span class="material-card-description">Public showcase repository.</span></a>

@@ -484,7 +484,7 @@
 - Rendered quantities or concepts: Microstrip width synthesis, analytical reference family comparison summary, stripline analytical reference, coupled-line even/odd mode, differential-pair spacing sweep, capability map and future-route status.
 - External source images: none
 - Screenshots: none
-- Generative image tools: none
+- AI image generation: none
 - Private source code copied: no
 - Claim boundary: source backed internal analytical reference dashboards only, not external validation, not production readiness, not full wave EM simulation, not measurement validation.
 - Copyright holder: Harun Aktas
@@ -508,8 +508,121 @@
 - Creation method: public documentation for the live engineering examples section.
 - External source images: none
 - Screenshots: none
-- Generative image tools: none
+- AI image generation: none
 - Private source code copied: no
 - Claim boundary: provenance note only, not external validation, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/dad_fieldworks_kernel_wave_hero.png
+
+- Asset type: public website hero PNG
+- Creation method: deterministic Python rendering from public-safe rectangular PEC cavity mode 111 scalar field data.
+- Rendered quantities or concepts: scalar field slice, contour structure, Yee-style sample markers and abstract evidence nodes.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/dad_fieldworks_kernel_wave_hero.webp
+
+- Asset type: public website hero WebP
+- Creation method: deterministic Python rendering from public-safe rectangular PEC cavity mode 111 scalar field data.
+- Rendered quantities or concepts: scalar field slice, contour structure, Yee-style sample markers and abstract evidence nodes.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/dad_fieldworks_kernel_wave_hero_summary.json
+
+- Asset type: JSON summary
+- Creation method: deterministic Python rendering from public-safe rectangular PEC cavity mode 111 scalar field data.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/brand/dad_fieldworks_kernel_wave_mark.png
+
+- Asset type: public brand PNG mark
+- Creation method: deterministic Python rendering from public-safe rectangular PEC cavity mode 111 scalar field data.
+- Rendered quantities or concepts: scalar field contours, bounded cavity frame and abstract evidence nodes.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/brand/dad_fieldworks_kernel_wave_mark.svg
+
+- Asset type: public brand SVG mark
+- Creation method: deterministic Python vector rendering from public-safe rectangular PEC cavity mode 111 scalar field contour data.
+- Rendered quantities or concepts: contour paths, bounded cavity frame and abstract evidence nodes.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/brand/dad_fieldworks_kernel_wave_mark_poster.png
+
+- Asset type: public brand poster PNG
+- Creation method: deterministic Python rendering from public-safe rectangular PEC cavity mode 111 scalar field data.
+- Rendered quantities or concepts: scalar field contours, bounded cavity frame and abstract evidence nodes.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/brand/README.md
+
+- Asset type: Markdown brand asset note
+- Creation method: public documentation for the kernel wave brand graphics.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: documentation only, not external validation, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## docs/kernel_wave_hero_brand_provenance.md
+
+- Asset type: Markdown provenance note
+- Creation method: public documentation for the kernel wave hero graphic.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: provenance note only, not external validation, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/generate_kernel_wave_hero_brand.py
+
+- Asset type: Python renderer script
+- Creation method: deterministic public asset renderer using a public-safe rectangular PEC cavity mode 111 scalar field specification.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: public asset renderer only; it does not implement runtime engineering behavior and does not broaden validation or production claims.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

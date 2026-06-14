@@ -1,0 +1,55 @@
+{
+  "title": "DAD FieldWorks Kernel Wave Hero",
+  "asset_type": "deterministic public website hero graphic",
+  "created_by_script": "scripts/generate_kernel_wave_hero_brand.py",
+  "data_source": "Public safe rectangular PEC cavity mode 111 scalar field specification with a=0.080 m, b=0.084 m, d=0.084 m.",
+  "kernel_family": "Rectangular PEC cavity scalar eigenmode reference",
+  "field_quantity": "Mode 111 scalar field slice E(x,z)=sin(pi x/a) sin(pi z/d)",
+  "grid_size": {
+    "x": 960,
+    "z": 450
+  },
+  "dimensions_px": {
+    "hero": {
+      "width": 1920,
+      "height": 900
+    },
+    "mark": {
+      "width": 1024,
+      "height": 1024
+    }
+  },
+  "mode_index": {
+    "m": 1,
+    "n": 1,
+    "p": 1
+  },
+  "cavity_dimensions_m": {
+    "a": 0.08,
+    "b": 0.084,
+    "d": 0.084
+  },
+  "output_files": [
+    "assets/brand/dad_fieldworks_kernel_wave_mark.png",
+    "assets/brand/dad_fieldworks_kernel_wave_mark.svg",
+    "assets/brand/dad_fieldworks_kernel_wave_mark_poster.png",
+    "assets/hero/dad_fieldworks_kernel_wave_hero.png",
+    "assets/hero/dad_fieldworks_kernel_wave_hero.webp",
+    "assets/hero/dad_fieldworks_kernel_wave_hero_summary.json"
+  ],
+  "private_repo_read": false,
+  "private_code_executed": false,
+  "external_images_used": false,
+  "screenshots_used": false,
+  "generative_image_tools_used": false,
+  "private_source_code_copied": false,
+  "ProductionAllowedQ": false,
+  "ExternalValidationQ": false,
+  "external_validation_claim": false,
+  "production_claim": false,
+  "commercial_solver_equivalence_claim": false,
+  "validated_solver_claim": false,
+  "claim_boundary": "public brand visualization derived from a scalar reference field; bounded internal diagnostic only.",
+  "copyright_holder": "Harun Aktas",
+  "copyright_notice": "Copyright (c) 2026 Harun Aktas. All rights reserved."
+}

@@ -41,6 +41,16 @@ The examples show source backed internal analytical reference model outputs. The
 
 Small technical diagrams are conceptual illustrations only.
 
+## Public Hero Graphic
+
+The website hero graphic is created deterministically with Python from a
+public-safe rectangular PEC cavity mode 111 scalar field slice. It uses no
+external images, no screen captures and no AI image generation.
+
+The graphic is public brand material only. It is not external validation
+evidence, not production readiness evidence and not a commercial solver
+equivalence claim.
+
 ## Evidence Model
 
 A DAD FieldWorks result is not promoted because it looks plausible. It remains bounded until evidence records define what it may claim.
@@ -72,6 +82,7 @@ The evidence model separates numerical output from trust state, reproducibility 
 | Current Public State | [docs/current_public_status.md](docs/current_public_status.md) |
 | Claim Boundaries | [docs/claim_boundaries.md](docs/claim_boundaries.md) |
 | Engineering Example Provenance | [docs/live_engineering_examples_provenance.md](docs/live_engineering_examples_provenance.md) |
+| Kernel Wave Hero Provenance | [docs/kernel_wave_hero_brand_provenance.md](docs/kernel_wave_hero_brand_provenance.md) |
 | Public Example Data | [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json) |
 | Asset Manifest | [assets/asset_manifest.md](assets/asset_manifest.md) |
 
