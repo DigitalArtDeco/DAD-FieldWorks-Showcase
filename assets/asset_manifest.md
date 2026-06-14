@@ -668,6 +668,32 @@
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
+## assets/hero/dad_fieldworks_rf_wave_background.svg
+
+- Asset type: hero background SVG
+- Creation method: deterministic local SVG/CSS technical illustration.
+- Rendered quantities or concepts: abstract RF field-wave mesh, cyan field ribbon, restrained orange signal trace and luminous mesh nodes.
+- External images: none
+- Screenshots: none
+- AI image generation: none
+- External network dependencies: none
+- Private source code copied: no
+- Claim boundary: brand background only, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## docs/hero_rf_wave_background_provenance.md
+
+- Asset type: Markdown provenance note
+- Creation method: public documentation for the RF wave hero background.
+- External images: none
+- Screenshots: none
+- AI image generation: none
+- Private source code copied: no
+- Claim boundary: provenance note only, not validation evidence, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
 ## docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md
 
 - Asset type: Markdown provenance note

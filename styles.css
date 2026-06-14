@@ -1428,7 +1428,37 @@ nav a:hover {
   grid-template-columns: 1fr;
   max-width: 1320px;
   min-height: auto;
+  overflow: hidden;
   padding: 96px 32px 86px;
+  position: relative;
+  isolation: isolate;
+}
+
+.landing-hero.hero-stacked::before {
+  background:
+    linear-gradient(90deg, rgba(3, 9, 16, 0.98) 0%, rgba(5, 15, 24, 0.9) 42%, rgba(4, 14, 22, 0.76) 100%),
+    url("assets/hero/dad_fieldworks_rf_wave_background.svg") center / cover no-repeat;
+  content: "";
+  inset: 0;
+  opacity: 0.96;
+  position: absolute;
+  z-index: -2;
+}
+
+.landing-hero.hero-stacked::after {
+  background:
+    radial-gradient(circle at 19% 25%, rgba(38, 181, 223, 0.2), transparent 34%),
+    radial-gradient(circle at 78% 44%, rgba(242, 139, 47, 0.11), transparent 34%),
+    linear-gradient(180deg, rgba(3, 7, 13, 0.08), rgba(3, 7, 13, 0.84));
+  content: "";
+  inset: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.landing-hero.hero-stacked > * {
+  position: relative;
+  z-index: 1;
 }
 
 .hero-stacked .hero-copy {
