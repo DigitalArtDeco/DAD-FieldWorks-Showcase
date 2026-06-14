@@ -29,6 +29,7 @@ animations/
 !scripts/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 !scripts/generate_kernel_wave_hero_brand.py
+!scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py
 notebooks/
 src/
 cpp/
@@ -48,6 +49,7 @@ __pycache__/
 !scripts/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 !scripts/generate_kernel_wave_hero_brand.py
+!scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py
 !scripts/generate_pec_resonator_candidate_evidence_gate.py
 !scripts/generate_eigenpair_residual_evidence_gate.py
 !scripts/generate_pec_cavity_convergence_plot.py

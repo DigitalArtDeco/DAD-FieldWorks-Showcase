@@ -626,3 +626,70 @@
 - Claim boundary: public asset renderer only; it does not implement runtime engineering behavior and does not broaden validation or production claims.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif
+
+- Asset type: text-free public website hero GIF
+- Creation method: deterministic Python 2D FDTD TMz diagnostic rendering from public-safe microwave resonator ringdown model data.
+- Rendered quantities or concepts: signed Ez field, feed guide, coupling slot, rectangular resonator, central post, pulse coupling and late-time ringdown.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Text inside frames: no
+- Private source code copied: no
+- Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png
+
+- Asset type: text-free public website hero poster PNG
+- Creation method: deterministic Python 2D FDTD TMz diagnostic rendering from public-safe microwave resonator ringdown model data.
+- Rendered quantities or concepts: signed Ez field, feed guide, coupling slot, rectangular resonator, central post and ringdown field state.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Text inside frames: no
+- Private source code copied: no
+- Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_summary.json
+
+- Asset type: JSON summary
+- Creation method: deterministic Python 2D FDTD TMz diagnostic rendering from public-safe microwave resonator ringdown model data.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Text inside frames: no
+- Private source code copied: no
+- Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md
+
+- Asset type: Markdown provenance note
+- Creation method: public documentation for the text-free FDTD microwave resonator ringdown hero animation.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Text inside frames: no
+- Private source code copied: no
+- Claim boundary: provenance note only, not external validation, not production readiness.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py
+
+- Asset type: Python renderer script
+- Creation method: deterministic public 2D FDTD TMz diagnostic asset renderer using public-safe microwave resonator model parameters.
+- External source images: none
+- Screenshots: none
+- AI image generation: none
+- Text inside frames: no
+- Private source code copied: no
+- Claim boundary: public asset renderer only; it does not broaden validation or production claims.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

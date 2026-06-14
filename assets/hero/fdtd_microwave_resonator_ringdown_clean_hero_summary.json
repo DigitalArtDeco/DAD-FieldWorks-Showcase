@@ -1,0 +1,42 @@
+{
+  "title": "FDTD Microwave Resonator Ringdown Clean Hero",
+  "asset_type": "text-free deterministic public website hero animation",
+  "created_by_script": "scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py",
+  "data_source": "Deterministic public-safe 2D FDTD TMz diagnostic computation following the existing public resonator ringdown provenance.",
+  "kernel_family": "2D FDTD TMz microwave resonator diagnostic",
+  "field_quantity": "signed Ez field",
+  "geometry_summary": "line-coupled resonator with feed guide, coupling slot, rectangular cavity, central post and graded-loss edge absorber",
+  "frames": 90,
+  "fps": 12.5,
+  "duration_seconds": 7.2,
+  "dimensions_px": {
+    "width": 640,
+    "height": 360
+  },
+  "file_size_bytes": {
+    "gif": 2367968,
+    "poster_png": 89326,
+    "summary_json": 1871
+  },
+  "text_inside_frames": false,
+  "output_files": [
+    "assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif",
+    "assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png",
+    "assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_summary.json"
+  ],
+  "private_repo_read": false,
+  "private_code_executed": false,
+  "external_images_used": false,
+  "screenshots_used": false,
+  "generative_image_tools_used": false,
+  "private_source_code_copied": false,
+  "ProductionAllowedQ": false,
+  "ExternalValidationQ": false,
+  "external_validation_claim": false,
+  "production_claim": false,
+  "commercial_solver_equivalence_claim": false,
+  "validated_solver_claim": false,
+  "claim_boundary": "deterministic public-safe FDTD microwave resonator ringdown diagnostic only; not external validation, not production readiness and not commercial solver equivalence",
+  "copyright_holder": "Harun Aktas",
+  "copyright_notice": "Copyright (c) 2026 Harun Aktas. All rights reserved."
+}
