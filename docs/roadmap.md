@@ -1,6 +1,6 @@
 # Public Roadmap
 
-The public roadmap presents DAD FieldWorks as being developed toward an evidence-controlled full-wave computational electromagnetics solver platform. The roadmap remains public-safe and claim-bounded: it is not a production solver roadmap, not an external validation claim, and not a commercial solver equivalence claim.
+The public roadmap presents DAD FieldWorks as being developed toward evidence controlled computational electromagnetics, RF engineering and signal integrity workflows. The roadmap remains public-safe and claim-bounded: it is not a production solver roadmap, not an external validation claim, and not a commercial solver equivalence claim.
 
 ## Current Alpha Evidence Layer
 
@@ -37,7 +37,7 @@ The public boundary remains planning only:
 
 ## Long-Term Direction
 
-- Build an evidence-controlled full-wave CEM solver platform.
+- Build an evidence-controlled computational electromagnetics and RF engineering platform direction.
 - Create a full eigenmode solver chain under evidence contracts.
 - Establish independent FDTD validation cases when appropriate evidence exists.
 - Build external comparison workflows only when public evidence supports them.
@@ -52,7 +52,7 @@ The public boundary remains planning only:
 | Current planning step | Physical eigenpair acceptance gate planning | Planning only, no physical acceptance execution |
 | Near term | Residual threshold and acceptance gate hardening | Internal classification only |
 | Mid term | Native solver core hardening and artifact replay | No production solver claim |
-| Long term | Evidence-controlled full-wave CEM solver platform | Future target, no current production claim |
+| Long term | Evidence-controlled CEM and RF engineering platform direction | Future target, no current production claim |
 | Future research route | DGTD and physics-AI backends under evidence contracts | Future route only |
 
 Any future material should preserve the distinction between roadmap direction, internal evidence, validation evidence and production authorization.

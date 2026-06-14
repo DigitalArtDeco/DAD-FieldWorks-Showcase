@@ -6,9 +6,10 @@ This public showcase uses conservative claim boundaries.
 
 ## Allowed Public Wording
 
-- Public showcase.
+- Public technical website.
 - Public whitepaper.
 - Evidence contract architecture.
+- Founder led independent software engineering initiative.
 - Source backed internal analytical reference model.
 - Bounded internal alpha evidence.
 - Diagnostic visualization.
@@ -20,7 +21,7 @@ This public showcase uses conservative claim boundaries.
 
 The Live Style Engineering Examples reflect the audited internal Signal Integrity Kernel v0.3 baseline and public-safe example values. They are analytical reference model dashboards.
 
-They are not external validation results. They are not production use certification. They are not full wave EM simulations. They are not measurement validation. They are not commercial solver equivalence claims.
+They are not external validation results. They are not production use authorization. They are not full wave EM simulations. They are not measurement validation. They are not commercial solver equivalence claims.
 
 Conceptual coupled-line and differential-pair mode drawings must remain labeled as conceptual illustrations, not full wave field simulations.
 

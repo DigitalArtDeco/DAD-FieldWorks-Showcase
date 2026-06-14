@@ -1,107 +1,85 @@
 # DAD FieldWorks
 
-**DAD FieldWorks turns engineering calculations into evidence gated records.**
+**Evidence controlled engineering software for computational electromagnetics, RF design and signal integrity.**
 
-The project is being developed toward an evidence controlled CEM and signal integrity platform where a computed width, impedance, mode or field remains a candidate result until source, test, audit, reproducibility and claim boundary records define what it is allowed to say.
+Developed by Harun Aktas as an independent software engineering initiative.
 
-**Current public status:** bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim. No commercial solver equivalence claim. No full wave EM simulation claim for Signal Integrity examples.
+DAD FieldWorks is being developed for engineering workflows where computed results are accompanied by source, evidence, reproducibility and claim boundary records before they are trusted.
 
-<p align="center">
-  <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks evidence contract hero animation" width="100%">
-</p>
+**Current public status:** bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim. No commercial solver equivalence claim.
 
-## Live Style Engineering Examples
+## What DAD FieldWorks Is
 
-These examples show source backed internal analytical reference models from the DAD FieldWorks Signal Integrity Kernel v0.3. They are not external validation results, not production use certification and not full wave EM simulations.
+DAD FieldWorks develops evidence controlled engineering software for computational electromagnetics, RF design and signal integrity workflows.
 
-The live website consumes [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json) through a lightweight local script. No external images, screenshots, third-party embeds or analytics are used.
+The current public material focuses on source backed analytical reference kernels, bounded alpha diagnostics, evidence gated records and claim aware result handling.
 
-### Microstrip 50 Ohm Width Synthesis
+This repository is a public technical presence for selected website, whitepaper, documentation and public-safe example data. It is not a release of private solver source code.
 
-| Field | Value |
-| --- | ---: |
-| Target impedance | 50.0 ohm |
-| Relative permittivity | 4.3 |
-| Substrate height | 1.6 mm |
-| Computed trace width | 3.1187 mm |
-| Verification impedance | 50.000 ohm |
-| Target error | 0.0000 ohm |
-| Trust status | INTERNAL_SOURCE_BACKED_INVERSION_READY |
+## Technology Areas
 
-### Signal Integrity v0.3 Capability Map
-
-| Capability | Public status |
+| Area | Current public direction |
 | --- | --- |
-| Microstrip characteristic impedance | source pinned; implemented; tested; audited; internal only |
-| Microstrip width synthesis | source pinned; implemented; tested; audited; internal only |
-| IPC-2141A vs Hammerstad-Jensen comparison | source pinned; implemented; tested; audited; internal comparison only |
-| Stripline characteristic impedance | source pinned; implemented; tested; audited; internal only |
-| Stripline width synthesis | source pinned; implemented; tested; audited; internal only |
-| Coupled Line reference model | source pinned; implemented; tested; audited; internal only |
-| Differential Pair reference model | source pinned; implemented; tested; audited; internal only |
+| Computational Electromagnetics | Numerical field, mode and residual driven workflows. |
+| RF and Microwave Engineering | Resonator, cavity and wave structure diagnostics. |
+| Signal Integrity | Analytical reference kernels for impedance, width synthesis and coupled line derived quantities. |
+| Evidence Contracts | Result records, trust states, reproducibility metadata and claim boundaries. |
 
-All capability cards remain not externally validated and not production ready.
+## Engineering Examples
 
-### Available Live Examples
+The public website includes a restrained engineering dashboard backed by public-safe data in [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json).
 
-| Example | Real public-safe values shown |
+The examples show source backed internal analytical reference model outputs. They are not external validation results, not production use authorization and not full wave EM simulations.
+
+| Example | Public-safe values shown |
 | --- | --- |
-| IPC-2141A vs Hammerstad-Jensen comparison | 21 audited internal comparison cases; maximum relative deviation 18.5711 percent |
-| Stripline analytical reference example | Z0 = 50.0785 ohm for the listed symmetric stripline case; width synthesis check returns 1.000 mm |
-| Coupled Line Even/Odd Mode | Z0e = 89.4488 ohm; Z0o = 54.8093 ohm; C = 4.1646; K = 0.2401 |
-| Differential Pair Spacing Sweep | Three real spacing rows with Zdiff, Zcommon and K from the audited reference model |
+| Microstrip 50 Ohm Width Synthesis | Computed trace width `3.1187 mm`; verification impedance `50.000 ohm`. |
+| Analytical Reference Family Comparison | `21` audited internal comparison cases; maximum relative deviation `18.5711 percent`. |
+| Stripline analytical reference example | `Z0 = 50.0785 ohm`; width synthesis check returns `1.000 mm`. |
+| Coupled Line Even/Odd Mode | `Z0e = 89.4488 ohm`; `Z0o = 54.8093 ohm`; `C = 4.1646`; `K = 0.2401`. |
+| Differential Pair Spacing Sweep | Three spacing rows with `Zdiff`, `Zcommon` and `K` from the audited reference model. |
 
-Mode drawings are conceptual illustrations, not full wave field simulations.
+Mode drawings are conceptual illustrations only.
 
-### Awaiting Or Future Data
+## Evidence Model
 
-The current public dashboard has real values for the live v0.3 examples above. Beyond v0.3 directions such as dispersion, dielectric loss, conductor loss, roughness, finite thickness expansion, stripline coupled line, GUI, PCB import and external comparison planning remain future routes with no public result shown.
+A DAD FieldWorks result is not promoted because it looks plausible. It remains bounded until evidence records define what it may claim.
 
-## Other Evidence Gate Diagnostics
+```text
+Computation -> Evidence Record -> Reference or Residual Check -> Claim Boundary -> Trust Status
+```
 
-Supporting evidence-gate diagnostics remain available below the live Signal Integrity story on the website and through provenance notes. They are diagnostic communication assets only and do not change the claim boundary.
+The evidence model separates numerical output from trust state, reproducibility metadata and public claim boundaries.
 
-| Supporting material | Link |
-| --- | --- |
-| PEC Resonator Candidate Provenance | [docs/pec_resonator_candidate_evidence_gate_provenance.md](docs/pec_resonator_candidate_evidence_gate_provenance.md) |
-| Eigenpair Residual Evidence Gate Provenance | [docs/eigenpair_residual_evidence_gate_provenance.md](docs/eigenpair_residual_evidence_gate_provenance.md) |
-| PEC Cavity Convergence Provenance | [docs/pec_cavity_convergence_provenance.md](docs/pec_cavity_convergence_provenance.md) |
+## Current Public State
 
-## What This Public Showcase Is Not
-
-DAD FieldWorks public materials show architecture notes, whitepaper material, diagnostic visualizations and public-safe engineering dashboards from a private research and development project.
-
+- Active development by Harun Aktas.
+- Internal source backed analytical reference evidence.
+- Selected bounded alpha kernels and diagnostic examples.
 - No external validation claim.
 - No production readiness claim.
 - No commercial solver equivalence claim.
-- Not full wave EM simulation for Signal Integrity examples.
-- Not measurement validation.
-- Not production use certification.
-- Not a release of private solver source code.
+- No full wave EM simulation claim for Signal Integrity examples.
 
-## Public Materials
+## Technical Materials
 
 | Material | Link |
 | --- | --- |
+| Public website | [https://www.dadlabs.de/](https://www.dadlabs.de/) |
 | Whitepaper PDF | [DAD FieldWorks Evidence Contract Architecture Whitepaper v0.9](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf) |
-| Live Engineering Examples Provenance | [docs/live_engineering_examples_provenance.md](docs/live_engineering_examples_provenance.md) |
-| Signal Integrity Example Data | [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json) |
 | Evidence Contract Architecture | [docs/evidence_contract_architecture.md](docs/evidence_contract_architecture.md) |
-| Evidence Contract Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
-| Current Public Status | [docs/current_public_status.md](docs/current_public_status.md) |
+| Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
+| Current Public State | [docs/current_public_status.md](docs/current_public_status.md) |
 | Claim Boundaries | [docs/claim_boundaries.md](docs/claim_boundaries.md) |
-| Public Roadmap | [docs/roadmap.md](docs/roadmap.md) |
+| Engineering Example Provenance | [docs/live_engineering_examples_provenance.md](docs/live_engineering_examples_provenance.md) |
+| Public Example Data | [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json) |
 | Asset Manifest | [assets/asset_manifest.md](assets/asset_manifest.md) |
 
-## Repository Contents
-
-This public repository contains selected website files, public documentation, public whitepaper PDFs, public-safe visual assets and public-safe example data.
-
-It does not contain private solver source code. It does not contain private validation workbench files. It does not contain commercial tool screenshots. It does not contain reproduced standards, books or textbook figures.
-
-## Legal Links And Copyright
+## Legal
 
 - [Impressum](impressum.html)
 - [Datenschutz](datenschutz.html)
+- [COPYRIGHT.md](COPYRIGHT.md)
+- [LICENSE_NOTICE.md](LICENSE_NOTICE.md)
 
-See [COPYRIGHT.md](COPYRIGHT.md) and [LICENSE_NOTICE.md](LICENSE_NOTICE.md).
+Copyright © 2026 Harun Aktas. All rights reserved.

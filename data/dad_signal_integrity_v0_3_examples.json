@@ -10,7 +10,7 @@
     "engineeringResultQ": true,
     "forLayoutOnlyQ": false,
     "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
-    "dataSourceSummary": "Public-safe values from audited internal analytical reference records and temporary read-only function probes executed with outputs written only to the public showcase repository."
+    "dataSourceSummary": "Public-safe values from audited internal analytical reference records and exported public-safe evidence data."
   },
   "capabilityMap": [
     {
@@ -46,7 +46,7 @@
       ]
     },
     {
-      "name": "IPC-2141A vs Hammerstad-Jensen comparison",
+      "name": "Analytical reference family comparison",
       "family": "Microstrip comparison",
       "status": "implemented",
       "evidence": "audited internal comparison",
@@ -151,12 +151,12 @@
       "propagationDelayNsPerM": 6.030312216897589
     }
   },
-  "ipcHammerstadComparison": {
-    "title": "IPC-2141A vs Hammerstad-Jensen Comparison",
+  "formulaFamilyComparison": {
+    "title": "Analytical Reference Family Comparison",
     "dataAvailableQ": true,
     "sampleDataQ": false,
     "engineeringResultQ": true,
-    "sourceAuthority": "audited internal comparison record; IPC-2141A used only as comparison label",
+    "sourceAuthority": "audited internal comparison record across two analytical reference families",
     "trustStatus": "INTERNAL_SOURCE_BACKED_COMPARISON_AUDIT_PASS",
     "externallyValidatedQ": false,
     "productionAllowedQ": false,

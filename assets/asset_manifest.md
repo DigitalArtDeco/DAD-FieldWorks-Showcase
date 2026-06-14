@@ -481,7 +481,7 @@
 
 - Asset type: JSON public data file
 - Creation method: public-safe data model assembled from audited internal Signal Integrity Kernel v0.3 records and read-only function probe outputs.
-- Rendered quantities or concepts: Microstrip width synthesis, IPC-2141A vs Hammerstad-Jensen comparison summary, stripline analytical reference, coupled-line even/odd mode, differential-pair spacing sweep, capability map and future-route status.
+- Rendered quantities or concepts: Microstrip width synthesis, analytical reference family comparison summary, stripline analytical reference, coupled-line even/odd mode, differential-pair spacing sweep, capability map and future-route status.
 - External source images: none
 - Screenshots: none
 - Generative image tools: none

@@ -71,8 +71,8 @@
     return `<section class="explanation-section live-map" aria-labelledby="capability-map-title"><div class="section-heading"><p class="eyebrow">Signal Integrity v0.3</p><h2 id="capability-map-title">Signal Integrity v0.3 Capability Map</h2><p>All capability cards are bounded internal analytical reference evidence. No card opens an external validation or production claim.</p></div><div class="capability-grid">${items.map((item) => `<article class="capability-card"><h3>${item.family}</h3><p>${item.name}</p>${badges(item.badges)}</article>`).join('')}</div></section>`;
   }
 
-  function renderIpc(item) {
-    if (!item || !item.dataAvailableQ) return unavailable('IPC-2141A vs Hammerstad-Jensen Comparison');
+  function renderComparison(item) {
+    if (!item || !item.dataAvailableQ) return unavailable('Analytical Reference Family Comparison');
     const max = item.summary.maxDeviationPercent;
     return `<article class="live-card" id="ipc-hammerstad-comparison"><div class="card-kicker">Comparison audit</div><h3>${item.title}</h3><div class="deviation-panel"><div class="deviation-bar"><span style="width:${Math.min(max, 100)}%"></span></div><strong>${fmt(max, 2)}%</strong><p>Maximum relative deviation across ${item.summary.caseCount} audited internal comparison cases.</p></div><div class="metric-grid compact">${metric('Case count', item.summary.caseCount, 'cases')}${metric('Mean deviation', fmt(item.summary.meanDeviationPercent, 2), '%')}${metric('Max abs. diff.', fmt(item.summary.maxAbsoluteDifferenceOhm, 2), 'ohm')}</div>${evidenceCard(item)}</article>`;
   }
@@ -119,7 +119,7 @@
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     return response.json();
   }).then((data) => {
-    mount.innerHTML = `${renderMicrostrip(data.microstripWidthSynthesis)}${renderCapabilityMap(data.capabilityMap)}<div class="live-grid">${renderIpc(data.ipcHammerstadComparison)}${renderStripline(data.striplineCharacteristicImpedance, data.striplineWidthSynthesis)}${renderCoupled(data.coupledLineEvenOdd)}${renderDifferential(data.differentialPairSpacingSweep)}</div>${renderBeyond(data.beyondV03)}`;
+    mount.innerHTML = `${renderMicrostrip(data.microstripWidthSynthesis)}${renderCapabilityMap(data.capabilityMap)}<div class="live-grid">${renderComparison(data.formulaFamilyComparison)}${renderStripline(data.striplineCharacteristicImpedance, data.striplineWidthSynthesis)}${renderCoupled(data.coupledLineEvenOdd)}${renderDifferential(data.differentialPairSpacingSweep)}</div>${renderBeyond(data.beyondV03)}`;
     attachDiffControls(data.differentialPairSpacingSweep);
   }).catch(() => {
     mount.innerHTML = '<article class="live-card locked-card"><h3>Live examples unavailable</h3><p>The public data file could not be loaded. No engineering result is shown without evidence data.</p></article>';

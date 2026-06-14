@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DAD FieldWorks Showcase by Harun Aktas</title>
-    <meta name="description" content="Evidence-gated computational electromagnetics and signal integrity public showcase.">
+    <title>DAD FieldWorks by Harun Aktas</title>
+    <meta name="description" content="Evidence controlled engineering software for computational electromagnetics, RF design and signal integrity.">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts/live_engineering_examples.js" defer></script>
   </head>
@@ -12,34 +12,81 @@
     <header class="site-header">
       <a class="brand" href="index.html">DAD FieldWorks</a>
       <nav aria-label="Primary navigation">
-        <a href="#live-style-engineering-examples">Live Examples</a>
+        <a href="#technology">Technology</a>
+        <a href="#examples">Examples</a>
+        <a href="#evidence">Evidence</a>
+        <a href="#roadmap">Roadmap</a>
         <a href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf">Whitepaper</a>
-        <a href="docs/evidence_contract_platform_roadmap.md">Roadmap</a>
-        <a href="docs/current_public_status.md">Status</a>
-        <a href="docs/claim_boundaries.md">Claims</a>
+        <a href="#contact">Contact</a>
         <a href="impressum.html">Impressum</a>
         <a href="datenschutz.html">Datenschutz</a>
       </nav>
     </header>
 
     <main>
-      <section class="page-title" aria-labelledby="hero-title">
-        <p class="eyebrow">Evidence gated engineering records</p>
-        <h1 id="hero-title">DAD FieldWorks</h1>
-        <p>DAD FieldWorks turns engineering calculations into evidence gated records.</p>
-        <p>The project is being developed toward an evidence controlled CEM and signal integrity platform where a computed width, impedance, mode or field remains a candidate result until source, test, audit, reproducibility and claim boundary records define what it is allowed to say.</p>
-        <p><strong>Current public status:</strong> bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim. No commercial solver equivalence claim. No full wave EM simulation claim for Signal Integrity examples.</p>
+      <section class="landing-hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">Evidence controlled engineering software</p>
+          <h1 id="hero-title">DAD<br>FieldWorks</h1>
+          <p class="hero-tagline">Engineering results should carry evidence.</p>
+          <p>DAD FieldWorks develops evidence controlled engineering software for computational electromagnetics, RF design and signal integrity.</p>
+          <p>It combines analytical reference kernels, numerical diagnostics and claim aware evidence records so engineering results remain traceable before they are trusted.</p>
+          <p class="status-line"><strong>Current public state:</strong> bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim.</p>
+          <div class="hero-actions">
+            <a href="#technology">View Technology</a>
+            <a href="#examples">View Engineering Examples</a>
+            <a href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf">Read Whitepaper</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-label="DAD FieldWorks evidence contract visual">
+          <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks evidence contract visual">
+        </div>
       </section>
 
-      <section class="hero-visual" aria-label="DAD FieldWorks evidence contract hero">
-        <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks evidence contract hero animation">
-      </section>
-
-      <section class="live-engineering" id="live-style-engineering-examples" aria-labelledby="live-examples-title">
+      <section class="content-section" id="build" aria-labelledby="build-title">
         <div class="section-heading">
-          <p class="eyebrow">Live style engineering examples</p>
-          <h2 id="live-examples-title">Live Style Engineering Examples</h2>
-          <p>These examples show source backed internal analytical reference models from the DAD FieldWorks Signal Integrity Kernel v0.3. They are not external validation results, not production use certification and not full wave EM simulations.</p>
+          <p class="eyebrow">What is being built</p>
+          <h2 id="build-title">A software platform where computed results stay bounded until evidence says what they may claim.</h2>
+          <p>DAD FieldWorks is being developed as a software platform for engineering workflows where computed results are not treated as trustworthy merely because they look plausible or produce a number. Results are accompanied by evidence records, source boundaries, reproducibility metadata and claim limits.</p>
+        </div>
+        <div class="focus-list">
+          <span>Computational electromagnetics</span>
+          <span>RF and microwave structures</span>
+          <span>Signal Integrity analytical reference kernels</span>
+          <span>Evidence gated engineering records</span>
+        </div>
+      </section>
+
+      <section class="content-section" id="technology" aria-labelledby="technology-title">
+        <div class="section-heading">
+          <p class="eyebrow">Technology areas</p>
+          <h2 id="technology-title">Built around computation, evidence and claim boundaries.</h2>
+        </div>
+        <div class="technology-grid">
+          <article class="technology-card">
+            <h3>Computational Electromagnetics</h3>
+            <p>Numerical field, mode and residual driven workflows.</p>
+          </article>
+          <article class="technology-card">
+            <h3>RF and Microwave Engineering</h3>
+            <p>Resonator, cavity and wave structure diagnostics.</p>
+          </article>
+          <article class="technology-card">
+            <h3>Signal Integrity</h3>
+            <p>Analytical reference kernels for impedance, width synthesis and coupled line derived quantities.</p>
+          </article>
+          <article class="technology-card">
+            <h3>Evidence Contracts</h3>
+            <p>Result records, trust states, reproducibility metadata and claim boundaries.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="live-engineering" id="examples" aria-labelledby="live-examples-title">
+        <div class="section-heading">
+          <p class="eyebrow">Engineering examples</p>
+          <h2 id="live-examples-title">Source backed analytical reference dashboards.</h2>
+          <p>These examples show source backed internal analytical reference models from DAD FieldWorks Signal Integrity work. They are not external validation results, not production use authorization and not full wave EM simulations.</p>
         </div>
         <div id="live-engineering-examples" data-source="data/dad_signal_integrity_v0_3_examples.json">
           <article class="live-card locked-card">
@@ -50,79 +97,93 @@
         <noscript>
           <article class="live-card locked-card">
             <h3>JavaScript disabled</h3>
-            <p>The live dashboard uses a small local script to render public-safe example data. No external scripts, analytics or third-party embeds are used.</p>
+            <p>The engineering dashboard uses a small local script to render public-safe example data. No external scripts, analytics or third-party embeds are used.</p>
           </article>
         </noscript>
       </section>
 
-      <section class="priority-showcase" id="pec-resonator-candidate-evidence-gate" aria-labelledby="pec-candidate-title">
-        <div class="section-kicker">Evidence-gated resonator diagnostic</div>
-        <h2 id="pec-candidate-title">PEC Resonator Candidate Evidence Gate</h2>
-        <p class="section-lead">Analytic TE101 cavity reference with a discrete residual check.</p>
-        <figure class="showcase-figure">
-          <img src="assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif" alt="PEC resonator candidate evidence gate animation">
-          <figcaption>This deterministic visualization treats an ideal PEC resonator field as a candidate record. It remains diagnostic only, not external validation and not a production solver claim.</figcaption>
-        </figure>
-      </section>
-
-      <section class="priority-showcase" id="eigenpair-residual-evidence-gate" aria-labelledby="eigenpair-gate-title">
-        <div class="section-kicker">Residual-based evidence gate</div>
-        <h2 id="eigenpair-gate-title">Eigenpair Residual Evidence Gate</h2>
-        <p class="section-lead">Candidate eigenpair to residual magnitude and bounded evidence score.</p>
-        <figure class="showcase-figure">
-          <img src="assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif" alt="Eigenpair residual evidence gate animation">
-          <figcaption>A candidate eigenpair is checked through residual calculation and bounded evidence scoring before any stronger claim can be considered.</figcaption>
-        </figure>
-      </section>
-
-      <section class="priority-showcase" id="pec-cavity-convergence-plot" aria-labelledby="pec-convergence-title">
-        <div class="section-kicker">Grid-refinement diagnostic</div>
-        <h2 id="pec-convergence-title">PEC Cavity Convergence Plot</h2>
-        <p class="section-lead">Grid refinement against an analytical rectangular PEC cavity reference.</p>
-        <figure class="showcase-figure">
-          <img src="assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot.gif" alt="PEC cavity convergence plot animation">
-          <figcaption>The convergence sequence is bounded diagnostic evidence, not external validation and not a production solver claim.</figcaption>
-        </figure>
-      </section>
-
-      <section class="showcase-block" aria-labelledby="roadmap-title">
-        <div class="showcase-copy">
-          <p class="eyebrow">Evidence Contract Roadmap</p>
-          <h2 id="roadmap-title">Native outputs under one evidence discipline.</h2>
-          <p>The long-term target is an evidence-controlled CEM and signal integrity platform. Future directions remain candidate routes whose outputs must stay bounded until evidence gates support stronger claims.</p>
-          <a class="text-link" href="docs/evidence_contract_platform_roadmap.md">Read the platform roadmap</a>
-        </div>
-        <img src="assets/diagrams/evidence_contract_layer.svg" alt="Evidence contract layer roadmap diagram">
-      </section>
-
-      <section class="explanation-section" aria-labelledby="claim-title">
+      <section class="content-section" id="evidence" aria-labelledby="evidence-title">
         <div class="section-heading">
-          <p class="eyebrow">Central claim boundary</p>
-          <h2 id="claim-title">What this public showcase is not</h2>
-          <p>DAD FieldWorks public materials show architecture notes, whitepaper material and diagnostic visualizations from a private research and development project.</p>
+          <p class="eyebrow">Evidence model</p>
+          <h2 id="evidence-title">A result is not promoted because it looks plausible.</h2>
+          <p>A DAD FieldWorks result remains bounded until evidence records define what it may claim.</p>
         </div>
-        <div class="claim-list">
+        <div class="evidence-pipeline" aria-label="Evidence model pipeline">
+          <span>Computation</span>
+          <span>Evidence Record</span>
+          <span>Reference or Residual Check</span>
+          <span>Claim Boundary</span>
+          <span>Trust Status</span>
+        </div>
+      </section>
+
+      <section class="content-section" id="state" aria-labelledby="state-title">
+        <div class="section-heading">
+          <p class="eyebrow">Current public state</p>
+          <h2 id="state-title">Bounded internal alpha analytical reference evidence only.</h2>
+        </div>
+        <div class="state-grid">
+          <span>Active development by Harun Aktas.</span>
+          <span>Internal source backed analytical reference evidence.</span>
+          <span>Selected bounded alpha kernels and diagnostic examples.</span>
           <span>No external validation claim.</span>
           <span>No production readiness claim.</span>
           <span>No commercial solver equivalence claim.</span>
-          <span>Not full wave EM simulation for Signal Integrity examples.</span>
-          <span>Not measurement validation.</span>
-          <span>Not production use certification.</span>
+          <span>No full wave EM simulation claim for Signal Integrity examples.</span>
         </div>
       </section>
 
-      <section class="links-section" aria-labelledby="materials-title">
-        <h2 id="materials-title">Public Materials</h2>
+      <section class="content-section" id="roadmap" aria-labelledby="roadmap-title">
+        <div class="section-heading">
+          <p class="eyebrow">Roadmap</p>
+          <h2 id="roadmap-title">A conservative route toward evidence controlled engineering workflows.</h2>
+        </div>
+        <div class="roadmap-cards">
+          <article>
+            <h3>Now</h3>
+            <p>Signal Integrity analytical reference kernels and evidence records.</p>
+          </article>
+          <article>
+            <h3>Next</h3>
+            <p>Documentation, example coverage, stronger result contracts and public safe engineering dashboards.</p>
+          </article>
+          <article>
+            <h3>Long term</h3>
+            <p>Evidence controlled computational electromagnetics and RF engineering platform direction, with broader solver workflows and external validation only when evidence supports them.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="content-section" id="about" aria-labelledby="about-title">
+        <div class="section-heading">
+          <p class="eyebrow">About</p>
+          <h2 id="about-title">Founder led technical software development.</h2>
+          <p>DAD FieldWorks is developed by Harun Aktas as an independent software engineering initiative. The project is currently in the transition from private research and development toward a public technical presence and future company formation.</p>
+          <p>The work combines software development, computational electromagnetics, RF engineering, signal integrity and evidence controlled engineering workflows.</p>
+        </div>
+      </section>
+
+      <section class="links-section" id="materials" aria-labelledby="materials-title">
+        <p class="eyebrow">Technical materials</p>
+        <h2 id="materials-title">Public technical references for the current site.</h2>
         <div class="material-grid">
           <a class="material-card" href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf"><span class="material-card-title">Whitepaper PDF</span><span class="material-card-description">Public whitepaper version 0.9.</span></a>
-          <a class="material-card" href="docs/live_engineering_examples_provenance.md"><span class="material-card-title">Live Engineering Examples Provenance</span><span class="material-card-description">Data source and claim boundary for the Signal Integrity v0.3 dashboards.</span></a>
-          <a class="material-card" href="data/dad_signal_integrity_v0_3_examples.json"><span class="material-card-title">Signal Integrity Example Data</span><span class="material-card-description">Public-safe JSON consumed by the website dashboard.</span></a>
           <a class="material-card" href="docs/evidence_contract_architecture.md"><span class="material-card-title">Evidence Contract Architecture</span><span class="material-card-description">Companion notes for evidence structure.</span></a>
-          <a class="material-card" href="docs/evidence_contract_platform_roadmap.md"><span class="material-card-title">Evidence Contract Platform Roadmap</span><span class="material-card-description">Classical and future routes under evidence gates.</span></a>
-          <a class="material-card" href="docs/current_public_status.md"><span class="material-card-title">Current Public Status</span><span class="material-card-description">Conservative public status for the current project state.</span></a>
-          <a class="material-card" href="docs/claim_boundaries.md"><span class="material-card-title">Claim Boundaries</span><span class="material-card-description">What this public showcase does and does not claim.</span></a>
-          <a class="material-card" href="docs/roadmap.md"><span class="material-card-title">Public Roadmap</span><span class="material-card-description">Documentation-oriented next steps.</span></a>
-          <a class="material-card" href="assets/asset_manifest.md"><span class="material-card-title">Asset Manifest</span><span class="material-card-description">Creation method and claim boundary for public assets and data files.</span></a>
+          <a class="material-card" href="docs/evidence_contract_platform_roadmap.md"><span class="material-card-title">Platform Roadmap</span><span class="material-card-description">Future routes under evidence gates.</span></a>
+          <a class="material-card" href="docs/current_public_status.md"><span class="material-card-title">Current Public State</span><span class="material-card-description">Conservative public state for the current project.</span></a>
+          <a class="material-card" href="docs/claim_boundaries.md"><span class="material-card-title">Claim Boundaries</span><span class="material-card-description">What the public material does and does not claim.</span></a>
+          <a class="material-card" href="docs/live_engineering_examples_provenance.md"><span class="material-card-title">Engineering Example Provenance</span><span class="material-card-description">Data source and claim boundary for the public dashboards.</span></a>
+          <a class="material-card" href="data/dad_signal_integrity_v0_3_examples.json"><span class="material-card-title">Public Example Data</span><span class="material-card-description">Public-safe JSON consumed by the dashboard.</span></a>
+          <a class="material-card" href="assets/asset_manifest.md"><span class="material-card-title">Asset Manifest</span><span class="material-card-description">Creation method and claim boundary for public assets.</span></a>
+          <a class="material-card" href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"><span class="material-card-title">GitHub Repository</span><span class="material-card-description">Public showcase repository.</span></a>
+        </div>
+      </section>
+
+      <section class="content-section" id="contact" aria-labelledby="contact-title">
+        <div class="section-heading">
+          <p class="eyebrow">Contact</p>
+          <h2 id="contact-title">Technical discussion, collaboration or early access inquiries.</h2>
+          <p><a class="contact-link" href="mailto:harun.aktas@me.com">harun.aktas@me.com</a></p>
         </div>
       </section>
     </main>
