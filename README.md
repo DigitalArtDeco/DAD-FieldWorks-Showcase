@@ -27,7 +27,7 @@ This repository is a public technical presence for selected website, whitepaper,
 
 ## Engineering Examples
 
-The public website includes a restrained engineering dashboard backed by public-safe data in [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json).
+The public website includes restrained engineering example panels backed by public-safe data in [data/dad_signal_integrity_v0_3_examples.json](data/dad_signal_integrity_v0_3_examples.json).
 
 The examples show source backed internal analytical reference model outputs. They are not external validation results, not production use authorization and not full wave EM simulations.
 
@@ -39,7 +39,7 @@ The examples show source backed internal analytical reference model outputs. The
 | Coupled Line Even/Odd Mode | `Z0e = 89.4488 ohm`; `Z0o = 54.8093 ohm`; `C = 4.1646`; `K = 0.2401`. |
 | Differential Pair Spacing Sweep | Three spacing rows with `Zdiff`, `Zcommon` and `K` from the audited reference model. |
 
-Mode drawings are conceptual illustrations only.
+Small technical diagrams are conceptual illustrations only.
 
 ## Evidence Model
 
@@ -82,4 +82,4 @@ The evidence model separates numerical output from trust state, reproducibility 
 - [COPYRIGHT.md](COPYRIGHT.md)
 - [LICENSE_NOTICE.md](LICENSE_NOTICE.md)
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 Harun Aktas. All rights reserved.

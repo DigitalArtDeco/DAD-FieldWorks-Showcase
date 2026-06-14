@@ -33,19 +33,30 @@
           <p>It combines analytical reference kernels, numerical diagnostics and claim aware evidence records so engineering results remain traceable before they are trusted.</p>
           <p class="status-line"><strong>Current public state:</strong> bounded internal alpha analytical reference evidence only. No external validation claim. No production readiness claim.</p>
           <div class="hero-actions">
-            <a href="#technology">View Technology</a>
-            <a href="#examples">View Engineering Examples</a>
-            <a href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf">Read Whitepaper</a>
+            <a href="#technology">Technology</a>
+            <a href="#examples">Engineering Examples</a>
+            <a href="paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf">Whitepaper</a>
           </div>
         </div>
-        <div class="hero-panel" aria-label="DAD FieldWorks evidence contract visual">
-          <img src="assets/hero/dad_fieldworks_solver_scattering_hero.gif" alt="DAD FieldWorks evidence contract visual">
+        <div class="hero-panel hero-system-map" aria-label="DAD FieldWorks evidence contract visual">
+          <div class="system-grid" aria-hidden="true">
+            <span class="system-node node-computation">Computation</span>
+            <span class="system-node node-evidence">Evidence</span>
+            <span class="system-node node-boundary">Boundary</span>
+            <span class="signal-line line-a"></span>
+            <span class="signal-line line-b"></span>
+            <div class="record-stack">
+              <span>source record</span>
+              <span>residual check</span>
+              <span>claim gate</span>
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="content-section" id="build" aria-labelledby="build-title">
         <div class="section-heading">
-          <p class="eyebrow">What is being built</p>
+          <p class="eyebrow">What DAD FieldWorks builds</p>
           <h2 id="build-title">A software platform where computed results stay bounded until evidence says what they may claim.</h2>
           <p>DAD FieldWorks is being developed as a software platform for engineering workflows where computed results are not treated as trustworthy merely because they look plausible or produce a number. Results are accompanied by evidence records, source boundaries, reproducibility metadata and claim limits.</p>
         </div>
@@ -85,7 +96,7 @@
       <section class="live-engineering" id="examples" aria-labelledby="live-examples-title">
         <div class="section-heading">
           <p class="eyebrow">Engineering examples</p>
-          <h2 id="live-examples-title">Source backed analytical reference dashboards.</h2>
+          <h2 id="live-examples-title">Source backed analytical reference panels.</h2>
           <p>These examples show source backed internal analytical reference models from DAD FieldWorks Signal Integrity work. They are not external validation results, not production use authorization and not full wave EM simulations.</p>
         </div>
         <div id="live-engineering-examples" data-source="data/dad_signal_integrity_v0_3_examples.json">
@@ -97,7 +108,7 @@
         <noscript>
           <article class="live-card locked-card">
             <h3>JavaScript disabled</h3>
-            <p>The engineering dashboard uses a small local script to render public-safe example data. No external scripts, analytics or third-party embeds are used.</p>
+            <p>The engineering examples use a small local script to render public-safe example data. No external scripts, analytics or third-party embeds are used.</p>
           </article>
         </noscript>
       </section>
@@ -145,7 +156,7 @@
           </article>
           <article>
             <h3>Next</h3>
-            <p>Documentation, example coverage, stronger result contracts and public safe engineering dashboards.</p>
+            <p>Documentation, example coverage, stronger result contracts and public safe engineering panels.</p>
           </article>
           <article>
             <h3>Long term</h3>
@@ -172,8 +183,8 @@
           <a class="material-card" href="docs/evidence_contract_platform_roadmap.md"><span class="material-card-title">Platform Roadmap</span><span class="material-card-description">Future routes under evidence gates.</span></a>
           <a class="material-card" href="docs/current_public_status.md"><span class="material-card-title">Current Public State</span><span class="material-card-description">Conservative public state for the current project.</span></a>
           <a class="material-card" href="docs/claim_boundaries.md"><span class="material-card-title">Claim Boundaries</span><span class="material-card-description">What the public material does and does not claim.</span></a>
-          <a class="material-card" href="docs/live_engineering_examples_provenance.md"><span class="material-card-title">Engineering Example Provenance</span><span class="material-card-description">Data source and claim boundary for the public dashboards.</span></a>
-          <a class="material-card" href="data/dad_signal_integrity_v0_3_examples.json"><span class="material-card-title">Public Example Data</span><span class="material-card-description">Public-safe JSON consumed by the dashboard.</span></a>
+          <a class="material-card" href="docs/live_engineering_examples_provenance.md"><span class="material-card-title">Engineering Example Provenance</span><span class="material-card-description">Data source and claim boundary for the public examples.</span></a>
+          <a class="material-card" href="data/dad_signal_integrity_v0_3_examples.json"><span class="material-card-title">Public Example Data</span><span class="material-card-description">Public-safe JSON consumed by the example panels.</span></a>
           <a class="material-card" href="assets/asset_manifest.md"><span class="material-card-title">Asset Manifest</span><span class="material-card-description">Creation method and claim boundary for public assets.</span></a>
           <a class="material-card" href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"><span class="material-card-title">GitHub Repository</span><span class="material-card-description">Public showcase repository.</span></a>
         </div>
