@@ -1655,6 +1655,8 @@ nav a:hover {
 
   .hero-stacked .hero-copy,
   .hero-stacked .status-line,
+  .hero-simulation,
+  .hero-simulation img,
   .hero-ringdown-player,
   .hero-ringdown-player img {
     max-width: calc(100vw - 64px) !important;

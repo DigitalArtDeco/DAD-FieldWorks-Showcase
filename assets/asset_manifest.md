@@ -629,42 +629,49 @@
 
 ## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif
 
-- Asset type: text-free public website hero GIF
-- Creation method: deterministic Python 2D FDTD TMz diagnostic rendering from public-safe microwave resonator ringdown model data.
-- Rendered quantities or concepts: signed Ez field, feed guide, coupling slot, rectangular resonator, central post, pulse coupling and late-time ringdown.
+- Asset type: text-free public website hero GIF.
+- Creation method: derived website preview packaged from the sanitized DAD PNG writer frame sequence.
+- Primary evidence artifact: `assets/animations/fdtd_ringdown_png_sequence/frames/`
+- GIF evidence status: website preview only.
+- Rendered quantities or concepts: signed `Ez` microwave resonator ringdown field evolution and bounded PEC post geometry.
 - External source images: none
 - Screenshots: none
 - AI image generation: none
+- GIF generated directly from solver data: no
+- Existing GIF used as source: no
 - Text inside frames: no
 - Private source code copied: no
-- Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Claim boundary: derived website preview only, not external validation, not measurement evidence, not benchmark evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png
 
-- Asset type: text-free public website hero poster PNG
-- Creation method: deterministic Python 2D FDTD TMz diagnostic rendering from public-safe microwave resonator ringdown model data.
-- Rendered quantities or concepts: signed Ez field, feed guide, coupling slot, rectangular resonator, central post and ringdown field state.
+- Asset type: text-free public website hero poster PNG.
+- Creation method: first resized frame written by `scripts/package_fdtd_ringdown_png_sequence_to_gif.py` from the sanitized DAD PNG writer frame sequence.
+- Primary evidence artifact: `assets/animations/fdtd_ringdown_png_sequence/frames/`
 - External source images: none
 - Screenshots: none
 - AI image generation: none
-- Text inside frames: no
+- Text inside frame: no
 - Private source code copied: no
-- Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Claim boundary: poster frame for website preview only, not external validation, not measurement evidence, not benchmark evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_summary.json
 
-- Asset type: JSON summary
-- Creation method: deterministic Python 2D FDTD TMz diagnostic rendering from public-safe microwave resonator ringdown model data.
+- Asset type: JSON summary for the derived website GIF preview.
+- Creation method: written by `scripts/package_fdtd_ringdown_png_sequence_to_gif.py`.
+- Primary evidence artifact: `PNGFrameSequence`.
+- DerivedWebsitePreviewFromPngFramesQ: true
+- GifIsEvidenceArtifactQ: false
 - External source images: none
 - Screenshots: none
 - AI image generation: none
 - Text inside frames: no
 - Private source code copied: no
-- Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
+- Claim boundary: summary metadata only, not external validation, not measurement evidence, not benchmark evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
@@ -696,10 +703,11 @@
 
 ## assets/animations/fdtd_ringdown_png_sequence/
 
-- Asset type: local PNG frame sequence directory
-- Creation method or source: existing tracked public-safe text-free FDTD microwave resonator ringdown visualization decomposed into local PNG frames.
-- Frame count: 90
-- Frame dimensions: 640 x 360 px
+- Asset type: sanitized public PNG frame sequence directory.
+- Creation method or source: DAD FDTD microwave resonator ringdown solver output written by the audited internal DAD PNG writer, then copied into the public showcase as sanitized frames and metadata.
+- Primary evidence artifact: yes
+- Frame count: 64
+- Frame dimensions: 720 x 405 px
 - External images: none
 - Screenshots: none
 - AI image generation: none
@@ -707,7 +715,7 @@
 - MP4 generated: no
 - APNG generated: no
 - External JS library: no
-- Private source copied: no
+- Private source code copied: no
 - Claim boundary: internal research visualization only, not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
@@ -715,7 +723,9 @@
 ## assets/animations/fdtd_ringdown_png_sequence/manifest.json
 
 - Asset type: JSON frame sequence manifest
-- Creation method or source: sanitized public metadata for the local PNG frame sequence.
+- Creation method or source: sanitized public metadata for the DAD PNG writer frame sequence.
+- Primary evidence artifact: `PNGFrameSequence`
+- Internal PNG writer confirmed: yes
 - External images: none
 - Screenshots: none
 - AI image generation: none
@@ -723,15 +733,15 @@
 - MP4 generated: no
 - APNG generated: no
 - External JS library: no
-- Private source copied: no
+- Private source code copied: no
 - Claim boundary: manifest metadata only, not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## assets/animations/fdtd_ringdown_png_sequence/frames/frame_000.png
 
-- Asset type: first PNG frame and poster fallback for local frame sequence player
-- Creation method or source: frame extracted from the existing tracked public-safe text-free FDTD microwave resonator ringdown visualization.
+- Asset type: first PNG frame in the primary frame sequence.
+- Creation method or source: DAD PNG writer output copied from the ordered internal FDTD microwave resonator ringdown frame sequence.
 - External images: none
 - Screenshots: none
 - AI image generation: none
@@ -739,15 +749,15 @@
 - MP4 generated: no
 - APNG generated: no
 - External JS library: no
-- Private source copied: no
+- Private source code copied: no
 - Claim boundary: internal research visualization only, not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
-## scripts/fdtd_ringdown_frame_player.js
+## assets/animations/fdtd_ringdown_png_sequence/metadata/
 
-- Asset type: local JavaScript frame player
-- Creation method or source: lightweight local website code for looping a PNG frame sequence from the public manifest.
+- Asset type: sanitized public frame metadata directory.
+- Creation method or source: metadata distilled from the ordered DAD PNG writer frame sequence without local paths, private task identifiers or private source code.
 - External images: none
 - Screenshots: none
 - AI image generation: none
@@ -755,15 +765,15 @@
 - MP4 generated: no
 - APNG generated: no
 - External JS library: no
-- Private source copied: no
-- Claim boundary: display layer only; it does not implement engineering formulas and does not broaden validation or production claims.
+- Private source code copied: no
+- Claim boundary: metadata only, not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
 ## docs/fdtd_ringdown_png_sequence_showcase_provenance.md
 
 - Asset type: Markdown provenance note
-- Creation method or source: public documentation for the local PNG frame sequence hero animation.
+- Creation method or source: public documentation for the sanitized DAD PNG writer frame sequence used as the primary visual artifact.
 - External images: none
 - Screenshots: none
 - AI image generation: none
@@ -779,25 +789,29 @@
 ## docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md
 
 - Asset type: Markdown provenance note
-- Creation method: public documentation for the text-free FDTD microwave resonator ringdown hero animation.
+- Creation method: public documentation for the PNG-frame-to-GIF website preview chain.
 - External source images: none
 - Screenshots: none
 - AI image generation: none
 - Text inside frames: no
 - Private source code copied: no
-- Claim boundary: provenance note only, not external validation, not production readiness.
+- Primary evidence artifact: `PNGFrameSequence`
+- GIF evidence status: website preview only.
+- Claim boundary: provenance note only, not external validation, not measurement evidence, not benchmark evidence and not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
-## scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py
+## scripts/package_fdtd_ringdown_png_sequence_to_gif.py
 
-- Asset type: Python renderer script
-- Creation method: deterministic public 2D FDTD TMz diagnostic asset renderer using public-safe microwave resonator model parameters.
+- Asset type: Python packaging script.
+- Creation method: reads sanitized public PNG frames, resizes them for the website hero, applies GIF palette optimization, writes the derived GIF, writes the poster and writes the summary JSON.
+- Field data generation: none
+- External plotting tools: none
 - External source images: none
 - Screenshots: none
 - AI image generation: none
 - Text inside frames: no
 - Private source code copied: no
-- Claim boundary: public asset renderer only; it does not broaden validation or production claims.
+- Claim boundary: packaging script only; it does not implement engineering formulas and does not broaden validation or production claims.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

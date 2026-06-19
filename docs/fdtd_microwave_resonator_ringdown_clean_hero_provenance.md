@@ -1,54 +1,71 @@
-# FDTD Microwave Resonator Ringdown Clean Hero Provenance
+# FDTD Microwave Resonator Ringdown Hero Provenance
 
-This note documents the text-free FDTD microwave resonator ringdown animation
-used as the DAD FieldWorks website hero visual.
+This note documents the public website hero animation for the DAD FieldWorks
+showcase site.
 
 ## Asset Set
 
+- `assets/animations/fdtd_ringdown_png_sequence/frames/`
+- `assets/animations/fdtd_ringdown_png_sequence/manifest.json`
 - `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif`
 - `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png`
 - `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_summary.json`
 
-## Script
+## Source Chain
 
-`scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py`
+The primary artifact is the ordered PNG frame sequence. The public GIF is a
+derived website preview created only from the sanitized public PNG frames.
 
-## Numerical Model
+```text
+DAD FDTD microwave resonator ringdown solver output
+-> audited internal DAD PNG writer
+-> ordered PNG frame sequence
+-> sanitized public PNG frame sequence
+-> optimized website GIF preview
+```
 
-- Model family: deterministic 2D FDTD TMz microwave resonator diagnostic.
-- Field components in the update: `Ez`, `Hx` and `Hy`.
-- Rendered field quantity: signed `Ez`.
-- Source: Gaussian-windowed sinusoidal pulse launched from the feed side.
-- Geometry: feed guide, coupling slot, rectangular resonator, central post and
-  graded-loss edge absorber.
-- Boundary note: the edge absorber is a visual diagnostic boundary treatment.
-  No CPML claim is made.
+## Frame Sequence
 
-The renderer follows the public-safe ringdown model documented by the existing
-DAD FieldWorks public FDTD resonator provenance. It performs a deterministic
-field update in the public asset script and writes only public hero assets.
+- Frame count: 64.
+- Public frame dimensions: 720 x 405 px.
+- GIF dimensions: 640 x 360 px.
+- Source field quantity: signed `Ez` field.
+- Ringdown case: rectangular PEC microwave resonator with internal PEC post.
+- PEC object confirmed: yes.
+- In-frame text: none.
+- Screenshots used: no.
+- External images used: no.
+- AI image generation used: no.
+- External plotting tools used: no.
+- Internal PNG writer confirmed: yes.
 
-## Public Safety
+## GIF Packaging
 
-- Private repository read: no.
-- Private code executed: no.
-- Existing public-safe FDTD generator reused: no.
-- External images: none.
-- Screen captures: none.
-- AI image generation: none.
-- Private source code copied: no.
-- Text inside generated GIF frames: no.
+The GIF was packaged in the public showcase repository by
+`scripts/package_fdtd_ringdown_png_sequence_to_gif.py`. The script reads only
+the sanitized public PNG frames, resizes them for website use, applies GIF
+palette optimization, writes the poster frame and writes the summary JSON.
 
-## File Size Optimization
+The packaging script does not compute field data, does not read private source
+code, does not use screenshots, does not use external images and does not use
+AI image generation.
 
-The GIF is rendered at website-hero size, uses a compact frame count and is
-palette optimized during export. The poster is a separate static PNG with no
-in-frame text.
+## Evidence Status
+
+- `DerivedWebsitePreviewFromPngFramesQ`: true.
+- `PrimaryEvidenceArtifact`: `PNGFrameSequence`.
+- `GifIsEvidenceArtifactQ`: false.
+- `ExternalValidationQ`: false.
+- `ProductionAllowedQ`: false.
+
+The GIF is a public website preview only. The PNG frame sequence remains the
+primary evidence artifact for this visual.
 
 ## Claim Boundary
 
-This text-free hero animation is a deterministic public-safe FDTD microwave
-resonator ringdown diagnostic. It is not external validation, not production
-readiness and not a commercial solver equivalence claim.
+This GIF is a derived public website preview from PNG frames written by the DAD
+PNG writer from internal FDTD microwave resonator ringdown solver output. It is
+not external validation, not measurement evidence, not benchmark evidence and
+not production evidence.
 
 Copyright &copy; 2026 Harun Aktas. All rights reserved.
