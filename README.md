@@ -27,12 +27,10 @@ This repository is a public technical presence for selected website, whitepaper,
 
 ## Public Hero Animation
 
-The homepage hero uses a small text-free FDTD microwave resonator ringdown GIF.
-The GIF is derived from a sanitized public PNG frame sequence written by the
-DAD PNG writer from internal solver output. The PNG frame sequence remains the
-primary visual artifact; the GIF is a website preview only.
-
-It uses no external images, no screen captures and no AI image generation.
+The homepage hero uses a small text-free FDTD microwave resonator ringdown
+animation created deterministically with Python from a public-safe 2D TMz
+diagnostic computation. It uses no external images, no screen captures and no
+AI image generation.
 
 The animation is public presentation material only. It is not external
 validation evidence, not production readiness evidence and not a commercial

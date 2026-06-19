@@ -1432,7 +1432,6 @@ nav a:hover {
   padding: 96px 32px 86px;
   position: relative;
   isolation: isolate;
-  width: 100%;
 }
 
 .landing-hero.hero-stacked::before {
@@ -1464,7 +1463,7 @@ nav a:hover {
 
 .hero-stacked .hero-copy {
   margin: 0 auto;
-  max-width: min(1120px, 100%);
+  max-width: 1120px;
   min-width: 0;
   width: 100%;
 }
@@ -1487,7 +1486,7 @@ nav a:hover {
 }
 
 .hero-stacked .hero-copy p {
-  max-width: min(900px, 100%);
+  max-width: 900px;
 }
 
 .hero-stacked .hero-actions {
@@ -1496,7 +1495,7 @@ nav a:hover {
 
 .hero-stacked .status-line {
   margin-top: 28px;
-  max-width: min(900px, 100%);
+  max-width: 900px;
 }
 
 .hero-visual-wide {
@@ -1570,40 +1569,6 @@ nav a:hover {
   margin-top: 12px;
 }
 
-.hero-ringdown-player {
-  background:
-    linear-gradient(180deg, rgba(13, 24, 38, 0.94), rgba(6, 16, 24, 0.98)),
-    #07111d;
-  border: 1px solid rgba(72, 196, 232, 0.26);
-  border-radius: 8px;
-  box-shadow: 0 22px 64px rgba(0, 0, 0, 0.34), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-  margin: 0 auto;
-  max-width: 720px;
-  min-width: 0;
-  overflow: hidden;
-  padding: clamp(0.55rem, 1.1vw, 0.9rem);
-  width: min(720px, 100%);
-}
-
-.hero-ringdown-player img {
-  aspect-ratio: 16 / 9;
-  background: #061018;
-  border: 1px solid rgba(129, 156, 178, 0.18);
-  border-radius: 8px;
-  display: block;
-  height: auto;
-  max-width: 100%;
-  object-fit: contain;
-  width: 100%;
-}
-
-.hero-ringdown-player figcaption {
-  color: #aebdcc;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  margin-top: 12px;
-}
-
 @media (max-width: 980px) {
   .landing-hero,
   .example-feature,
@@ -1634,8 +1599,8 @@ nav a:hover {
   .content-section,
   .live-engineering,
   .links-section {
-    padding-left: 32px;
-    padding-right: 32px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
 
   .site-header {
@@ -1645,49 +1610,5 @@ nav a:hover {
 
   .metric-grid.compact {
     grid-template-columns: 1fr;
-  }
-
-  .landing-hero.hero-stacked {
-    max-width: 100vw;
-    padding-bottom: 58px;
-    padding-top: 72px;
-  }
-
-  .hero-stacked .hero-copy,
-  .hero-stacked .status-line,
-  .hero-simulation,
-  .hero-simulation img,
-  .hero-ringdown-player,
-  .hero-ringdown-player img {
-    max-width: calc(100vw - 64px) !important;
-    width: 100% !important;
-  }
-
-  .hero-stacked .hero-wordmark {
-    font-size: clamp(1.8rem, 9vw, 2.3rem);
-    line-height: 1.04;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
-  .hero-stacked .hero-copy h1 {
-    font-size: clamp(2rem, 10.5vw, 2.75rem);
-    line-height: 1.02;
-    overflow-wrap: anywhere;
-    word-break: normal;
-  }
-
-  .hero-stacked .hero-copy p {
-    font-size: 1rem;
-  }
-
-  .hero-actions {
-    display: grid;
-    grid-template-columns: 1fr;
-    max-width: calc(100vw - 64px);
-  }
-
-  .hero-actions a {
-    padding: 10px 12px;
   }
 }

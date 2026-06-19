@@ -24,13 +24,12 @@ animations/
 !assets/animations/eigenpair_residual_gate/**
 !assets/animations/pec_cavity_convergence/
 !assets/animations/pec_cavity_convergence/**
-!assets/animations/fdtd_ringdown_png_sequence/
-!assets/animations/fdtd_ringdown_png_sequence/**
 !assets/brand/
 !assets/brand/**
 !scripts/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 !scripts/generate_kernel_wave_hero_brand.py
+!scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py
 notebooks/
 src/
 cpp/
@@ -50,7 +49,7 @@ __pycache__/
 !scripts/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 !scripts/generate_kernel_wave_hero_brand.py
-!scripts/package_fdtd_ringdown_png_sequence_to_gif.py
+!scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py
 !scripts/generate_pec_resonator_candidate_evidence_gate.py
 !scripts/generate_eigenpair_residual_evidence_gate.py
 !scripts/generate_pec_cavity_convergence_plot.py
