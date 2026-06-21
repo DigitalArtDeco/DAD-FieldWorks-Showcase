@@ -27,14 +27,14 @@ This repository is a public technical presence for selected website, documentati
 
 ## Public Hero Animation
 
-The homepage hero uses a small text-free FDTD microwave resonator ringdown GIF
-derived from a sanitized PNG frame sequence. The PNG frames were written with
-the DAD internal PNG writer from numeric field matrices computed by the DAD
-FieldWorks 2D TMz FDTD kernel.
+The homepage hero uses a scientific PCB 2D microstrip electric-field magnitude
+GIF derived from a public PNG frame sequence. The PNG frames were written with
+the DAD internal PNG writer from real internal PCB 2D quasi-static field-grid
+data.
 
-The animation is public presentation material only. It is not external
-validation evidence, not production readiness evidence and not a commercial
-solver equivalence claim.
+The animation is public presentation material only. It is a drive amplitude
+sweep visualization, not a frequency sweep, not a current sweep, not a full wave
+simulation and not a commercial solver equivalence claim.
 
 ## Evidence Model
 
@@ -65,8 +65,8 @@ The evidence model separates numerical output from trust state, reproducibility 
 | Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
 | Current Public State | [docs/current_public_status.md](docs/current_public_status.md) |
 | Claim Boundaries | [docs/claim_boundaries.md](docs/claim_boundaries.md) |
-| FDTD Ringdown PNG Sequence | [assets/animations/fdtd_ringdown_png_sequence/manifest.json](assets/animations/fdtd_ringdown_png_sequence/manifest.json) |
-| FDTD Ringdown Hero Provenance | [docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md](docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md) |
+| PCB 2D Field Sequence | [assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/manifest.json](assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/manifest.json) |
+| PCB 2D Hero Provenance | [docs/pcb2d_microstrip_field_scientific_v2_hero_provenance.md](docs/pcb2d_microstrip_field_scientific_v2_hero_provenance.md) |
 | Asset Manifest | [assets/asset_manifest.md](assets/asset_manifest.md) |
 
 ## Legal

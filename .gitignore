@@ -26,6 +26,8 @@ animations/
 !assets/animations/pec_cavity_convergence/**
 !assets/animations/fdtd_ringdown_png_sequence/
 !assets/animations/fdtd_ringdown_png_sequence/**
+!assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/
+!assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/**
 !assets/brand/
 !assets/brand/**
 !scripts/
@@ -51,6 +53,7 @@ __pycache__/
 !scripts/generate_microwave_cavity_eigenmode_birth.py
 !scripts/generate_kernel_wave_hero_brand.py
 !scripts/package_fdtd_ringdown_png_sequence_to_gif.py
+!scripts/package_pcb2d_microstrip_field_scientific_v2_to_gif.py
 !scripts/generate_pec_resonator_candidate_evidence_gate.py
 !scripts/generate_eigenpair_residual_evidence_gate.py
 !scripts/generate_pec_cavity_convergence_plot.py

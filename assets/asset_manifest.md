@@ -755,3 +755,91 @@
 - Claim boundary: packaging script only; it does not compute field data and does not broaden validation or production claims.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/
+
+- Asset type: PNG frame sequence
+- Creation method: rendered from real DAD FieldWorks PCB 2D quasi-static field-grid data with the internal DAD PNG writer.
+- Rendered quantity: `electric_field_magnitude_v_per_m`.
+- Renderer style: Scientific Field Image Renderer V2, blue-to-red scalar map, fixed axes, colorbar, ground, trace and substrate overlays.
+- Drive sweep method: deterministic drive voltage amplitude scaling of the real field grid from `0.10` to `1.00` and back to `0.10`.
+- Primary evidence artifact: PNG frame sequence.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Python plotting: none
+- Private source code copied: no
+- Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/pcb2d_microstrip_field_scientific_v2_hero.gif
+
+- Asset type: public website hero GIF
+- Creation method: derived website preview from the PNG frame sequence under `assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/frames/`.
+- GIF evidence status: website preview only.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Python plotting: none
+- Private source code copied: no
+- Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/pcb2d_microstrip_field_scientific_v2_hero_poster.png
+
+- Asset type: static poster PNG
+- Creation method: poster frame derived from the PNG frame sequence.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Python plotting: none
+- Private source code copied: no
+- Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/hero/pcb2d_microstrip_field_scientific_v2_hero_summary.json
+
+- Asset type: JSON summary
+- Creation method: summary for the derived website GIF packaged from the PNG frame sequence.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Python plotting: none
+- Private source code copied: no
+- Primary evidence artifact: PNG frame sequence.
+- GIF evidence status: website preview only.
+- Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## scripts/package_pcb2d_microstrip_field_scientific_v2_to_gif.py
+
+- Asset type: Python packaging script
+- Creation method: packages public PNG frames into a compact website GIF and writes public metadata.
+- Field computation: none.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Python plotting: none
+- Private source code copied: no
+- Claim boundary: packaging script only; it does not compute field data and does not broaden validation or production claims.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## docs/pcb2d_microstrip_field_scientific_v2_hero_provenance.md
+
+- Asset type: Markdown provenance note
+- Creation method: public documentation for the PCB 2D microstrip scientific field PNG sequence and derived website GIF.
+- External source images: none
+- Screenshots: none
+- Generative image tools: none
+- Python plotting: none
+- Private source code copied: no
+- Primary evidence artifact: PNG frame sequence.
+- GIF evidence status: website preview only.
+- Claim boundary: provenance note only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

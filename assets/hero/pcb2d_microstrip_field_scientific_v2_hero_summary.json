@@ -1,0 +1,40 @@
+{
+  "title": "PCB 2D microstrip scientific field hero",
+  "asset_type": "derived website GIF",
+  "created_by_script": "scripts/package_pcb2d_microstrip_field_scientific_v2_to_gif.py",
+  "source_png_sequence": "assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/frames",
+  "source_frame_count": 96,
+  "gif_frame_count": 96,
+  "fps": 24,
+  "duration_seconds": 4.0,
+  "source_dimensions_px": [
+    800,
+    600
+  ],
+  "gif_dimensions_px": [
+    800,
+    600
+  ],
+  "file_size_bytes": 4547263,
+  "source_field_quantity": "electric_field_magnitude_v_per_m",
+  "color_mapping": "dadfw-blue-red-linear-v2",
+  "normalization_method": "fixed global colorbar range across all frames",
+  "drive_amplitude_sweep": "0.10 to 1.00 to 0.10 smooth cosine envelope",
+  "derived_from_internal_png_writer_frames": true,
+  "primary_evidence_artifact": "PNGFrameSequence",
+  "gif_is_evidence_artifact": false,
+  "external_images_used": false,
+  "screenshots_used": false,
+  "generative_image_tools_used": false,
+  "python_plotting_used": false,
+  "private_source_code_copied": false,
+  "ProductionAllowedQ": false,
+  "ExternalValidationQ": false,
+  "external_validation_claim": false,
+  "production_claim": false,
+  "commercial_solver_equivalence_claim": false,
+  "validated_solver_claim": false,
+  "claim_boundary": "Website preview only from internal PCB 2D quasi-static field data; no external validation claim and no production readiness claim.",
+  "copyright_holder": "Harun Aktas",
+  "copyright_notice": "Copyright 2026 Harun Aktas. All rights reserved."
+}
