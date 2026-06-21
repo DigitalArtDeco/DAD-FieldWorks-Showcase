@@ -1,13 +1,11 @@
 # Hero Assets
 
-The active solver diagnostic hero animation is `assets/hero/dad_fieldworks_solver_scattering_hero.gif`. The matching poster is `assets/hero/dad_fieldworks_solver_scattering_hero_poster.png`.
+The active homepage hero animation is `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif`. The matching poster is `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png`.
 
-The hero animation and poster are generated from numerical field data. The generation path follows the DAD FieldWorks 2D FDTD TMz update structure in a public-safe temporary execution path.
+The GIF is a derived website preview created from the sanitized PNG frame sequence under `assets/animations/fdtd_ringdown_png_sequence/frames/`. The PNG frames are the primary image artifact and were written with the DAD internal PNG writer from field matrices computed by the DAD FieldWorks 2D TMz FDTD kernel.
 
-The visualization shows a 2D FDTD TMz style PEC scattering diagnostic. The PEC object is rendered from the simulation mask, and the rendered field quantity is Ez.
+The animation contains no in-frame text, no screenshots, no external images and no AI image generation.
 
-These assets are public-safe diagnostic visuals. They use no external images, no screenshots, and no AI image generation. They do not contain published private solver source code.
+Claim boundary: internal research visualization only. It is not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 
-They are not validation evidence and are not production readiness claims.
-
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright (c) 2026 Harun Aktas. All rights reserved.

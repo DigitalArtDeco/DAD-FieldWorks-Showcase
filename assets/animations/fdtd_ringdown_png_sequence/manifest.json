@@ -1,0 +1,320 @@
+{
+  "Title": "FDTD microwave resonator ringdown PNG frame sequence",
+  "AssetType": "primary PNG frame sequence",
+  "FrameCount": 48,
+  "FrameDimensionsPx": {
+    "width": 720,
+    "height": 405
+  },
+  "SourceGridSize": {
+    "Nx": 128,
+    "Ny": 72
+  },
+  "SourceSolver": "DAD FieldWorks 2D TMz FDTD kernel",
+  "SourceFieldQuantity": "signed Ez field",
+  "RingdownCase": "bounded PEC wall microwave resonator style diagnostic",
+  "PecObjectPresentQ": true,
+  "InternalPngWriterUsedQ": true,
+  "PrimaryEvidenceArtifact": "PNGFrameSequence",
+  "DerivedWebsitePreviewFromPngFramesQ": true,
+  "GifIsEvidenceArtifactQ": false,
+  "ExternalImagesUsedQ": false,
+  "ScreenshotsUsedQ": false,
+  "GenerativeImageToolsUsedQ": false,
+  "PrivateSourceCodeCopiedQ": false,
+  "ExternalValidationQ": false,
+  "ProductionAllowedQ": false,
+  "ClaimBoundary": "internal research visualization only; not external validation, not benchmark evidence, not measurement evidence and not production evidence",
+  "Frames": [
+    {
+      "FrameIndex": 0,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_000.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_000.json",
+      "TimeStepOrSampleIndex": 18
+    },
+    {
+      "FrameIndex": 1,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_001.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_001.json",
+      "TimeStepOrSampleIndex": 27
+    },
+    {
+      "FrameIndex": 2,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_002.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_002.json",
+      "TimeStepOrSampleIndex": 36
+    },
+    {
+      "FrameIndex": 3,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_003.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_003.json",
+      "TimeStepOrSampleIndex": 44
+    },
+    {
+      "FrameIndex": 4,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_004.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_004.json",
+      "TimeStepOrSampleIndex": 53
+    },
+    {
+      "FrameIndex": 5,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_005.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_005.json",
+      "TimeStepOrSampleIndex": 62
+    },
+    {
+      "FrameIndex": 6,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_006.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_006.json",
+      "TimeStepOrSampleIndex": 71
+    },
+    {
+      "FrameIndex": 7,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_007.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_007.json",
+      "TimeStepOrSampleIndex": 79
+    },
+    {
+      "FrameIndex": 8,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_008.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_008.json",
+      "TimeStepOrSampleIndex": 88
+    },
+    {
+      "FrameIndex": 9,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_009.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_009.json",
+      "TimeStepOrSampleIndex": 97
+    },
+    {
+      "FrameIndex": 10,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_010.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_010.json",
+      "TimeStepOrSampleIndex": 106
+    },
+    {
+      "FrameIndex": 11,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_011.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_011.json",
+      "TimeStepOrSampleIndex": 114
+    },
+    {
+      "FrameIndex": 12,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_012.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_012.json",
+      "TimeStepOrSampleIndex": 123
+    },
+    {
+      "FrameIndex": 13,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_013.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_013.json",
+      "TimeStepOrSampleIndex": 132
+    },
+    {
+      "FrameIndex": 14,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_014.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_014.json",
+      "TimeStepOrSampleIndex": 141
+    },
+    {
+      "FrameIndex": 15,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_015.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_015.json",
+      "TimeStepOrSampleIndex": 149
+    },
+    {
+      "FrameIndex": 16,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_016.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_016.json",
+      "TimeStepOrSampleIndex": 158
+    },
+    {
+      "FrameIndex": 17,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_017.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_017.json",
+      "TimeStepOrSampleIndex": 167
+    },
+    {
+      "FrameIndex": 18,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_018.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_018.json",
+      "TimeStepOrSampleIndex": 176
+    },
+    {
+      "FrameIndex": 19,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_019.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_019.json",
+      "TimeStepOrSampleIndex": 185
+    },
+    {
+      "FrameIndex": 20,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_020.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_020.json",
+      "TimeStepOrSampleIndex": 193
+    },
+    {
+      "FrameIndex": 21,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_021.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_021.json",
+      "TimeStepOrSampleIndex": 202
+    },
+    {
+      "FrameIndex": 22,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_022.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_022.json",
+      "TimeStepOrSampleIndex": 211
+    },
+    {
+      "FrameIndex": 23,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_023.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_023.json",
+      "TimeStepOrSampleIndex": 220
+    },
+    {
+      "FrameIndex": 24,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_024.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_024.json",
+      "TimeStepOrSampleIndex": 228
+    },
+    {
+      "FrameIndex": 25,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_025.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_025.json",
+      "TimeStepOrSampleIndex": 237
+    },
+    {
+      "FrameIndex": 26,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_026.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_026.json",
+      "TimeStepOrSampleIndex": 246
+    },
+    {
+      "FrameIndex": 27,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_027.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_027.json",
+      "TimeStepOrSampleIndex": 255
+    },
+    {
+      "FrameIndex": 28,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_028.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_028.json",
+      "TimeStepOrSampleIndex": 263
+    },
+    {
+      "FrameIndex": 29,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_029.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_029.json",
+      "TimeStepOrSampleIndex": 272
+    },
+    {
+      "FrameIndex": 30,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_030.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_030.json",
+      "TimeStepOrSampleIndex": 281
+    },
+    {
+      "FrameIndex": 31,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_031.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_031.json",
+      "TimeStepOrSampleIndex": 290
+    },
+    {
+      "FrameIndex": 32,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_032.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_032.json",
+      "TimeStepOrSampleIndex": 299
+    },
+    {
+      "FrameIndex": 33,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_033.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_033.json",
+      "TimeStepOrSampleIndex": 307
+    },
+    {
+      "FrameIndex": 34,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_034.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_034.json",
+      "TimeStepOrSampleIndex": 316
+    },
+    {
+      "FrameIndex": 35,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_035.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_035.json",
+      "TimeStepOrSampleIndex": 325
+    },
+    {
+      "FrameIndex": 36,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_036.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_036.json",
+      "TimeStepOrSampleIndex": 334
+    },
+    {
+      "FrameIndex": 37,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_037.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_037.json",
+      "TimeStepOrSampleIndex": 342
+    },
+    {
+      "FrameIndex": 38,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_038.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_038.json",
+      "TimeStepOrSampleIndex": 351
+    },
+    {
+      "FrameIndex": 39,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_039.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_039.json",
+      "TimeStepOrSampleIndex": 360
+    },
+    {
+      "FrameIndex": 40,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_040.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_040.json",
+      "TimeStepOrSampleIndex": 369
+    },
+    {
+      "FrameIndex": 41,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_041.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_041.json",
+      "TimeStepOrSampleIndex": 377
+    },
+    {
+      "FrameIndex": 42,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_042.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_042.json",
+      "TimeStepOrSampleIndex": 386
+    },
+    {
+      "FrameIndex": 43,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_043.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_043.json",
+      "TimeStepOrSampleIndex": 395
+    },
+    {
+      "FrameIndex": 44,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_044.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_044.json",
+      "TimeStepOrSampleIndex": 404
+    },
+    {
+      "FrameIndex": 45,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_045.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_045.json",
+      "TimeStepOrSampleIndex": 412
+    },
+    {
+      "FrameIndex": 46,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_046.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_046.json",
+      "TimeStepOrSampleIndex": 421
+    },
+    {
+      "FrameIndex": 47,
+      "ImagePath": "assets/animations/fdtd_ringdown_png_sequence/frames/frame_047.png",
+      "MetadataPath": "assets/animations/fdtd_ringdown_png_sequence/metadata/frame_047.json",
+      "TimeStepOrSampleIndex": 430
+    }
+  ],
+  "CopyrightHolder": "Harun Aktas",
+  "CopyrightNotice": "Copyright (c) 2026 Harun Aktas. All rights reserved."
+}

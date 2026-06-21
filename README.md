@@ -14,7 +14,7 @@ DAD FieldWorks develops evidence controlled engineering software for computation
 
 The current public material focuses on source backed analytical reference kernels, bounded alpha diagnostics, evidence gated records and claim aware result handling.
 
-This repository is a public technical presence for selected website, whitepaper, documentation and public-safe technical material. It is not a release of private solver source code.
+This repository is a public technical presence for selected website, documentation and public-safe technical material. It is not a release of private solver source code.
 
 ## Technology Areas
 
@@ -27,10 +27,10 @@ This repository is a public technical presence for selected website, whitepaper,
 
 ## Public Hero Animation
 
-The homepage hero uses a small text-free FDTD microwave resonator ringdown
-animation created deterministically with Python from a public-safe 2D TMz
-diagnostic computation. It uses no external images, no screen captures and no
-AI image generation.
+The homepage hero uses a small text-free FDTD microwave resonator ringdown GIF
+derived from a sanitized PNG frame sequence. The PNG frames were written with
+the DAD internal PNG writer from numeric field matrices computed by the DAD
+FieldWorks 2D TMz FDTD kernel.
 
 The animation is public presentation material only. It is not external
 validation evidence, not production readiness evidence and not a commercial
@@ -61,11 +61,11 @@ The evidence model separates numerical output from trust state, reproducibility 
 | Material | Link |
 | --- | --- |
 | Public website | [https://www.dadlabs.de/](https://www.dadlabs.de/) |
-| Whitepaper PDF | [DAD FieldWorks Evidence Contract Architecture Whitepaper v0.9](paper/DAD_FieldWorks_Evidence_Contract_Architecture_Whitepaper_v0_9_public.pdf) |
 | Evidence Contract Architecture | [docs/evidence_contract_architecture.md](docs/evidence_contract_architecture.md) |
 | Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
 | Current Public State | [docs/current_public_status.md](docs/current_public_status.md) |
 | Claim Boundaries | [docs/claim_boundaries.md](docs/claim_boundaries.md) |
+| FDTD Ringdown PNG Sequence | [assets/animations/fdtd_ringdown_png_sequence/manifest.json](assets/animations/fdtd_ringdown_png_sequence/manifest.json) |
 | FDTD Ringdown Hero Provenance | [docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md](docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md) |
 | Asset Manifest | [assets/asset_manifest.md](assets/asset_manifest.md) |
 

@@ -1436,11 +1436,10 @@ nav a:hover {
 
 .landing-hero.hero-stacked::before {
   background:
-    linear-gradient(90deg, rgba(3, 9, 16, 0.98) 0%, rgba(5, 15, 24, 0.9) 42%, rgba(4, 14, 22, 0.76) 100%),
-    url("assets/hero/dad_fieldworks_rf_wave_background.svg") center / cover no-repeat;
+    linear-gradient(90deg, rgba(3, 9, 16, 0.99) 0%, rgba(5, 15, 24, 0.94) 48%, rgba(4, 14, 22, 0.86) 100%);
   content: "";
   inset: 0;
-  opacity: 0.96;
+  opacity: 1;
   position: absolute;
   z-index: -2;
 }

@@ -1,54 +1,53 @@
-# FDTD Microwave Resonator Ringdown Clean Hero Provenance
+# FDTD Microwave Resonator Ringdown Hero Provenance
 
-This note documents the text-free FDTD microwave resonator ringdown animation
-used as the DAD FieldWorks website hero visual.
+This note documents the text-free FDTD microwave resonator ringdown animation used as the DAD FieldWorks website hero visual.
 
-## Asset Set
+## Public Assets
 
+- `assets/animations/fdtd_ringdown_png_sequence/frames/`
+- `assets/animations/fdtd_ringdown_png_sequence/manifest.json`
+- `assets/animations/fdtd_ringdown_png_sequence/metadata/`
 - `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif`
 - `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png`
 - `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_summary.json`
 
-## Script
+## Generation Path
 
-`scripts/generate_fdtd_microwave_resonator_ringdown_clean_hero.py`
+The numeric field matrices were computed by the DAD FieldWorks 2D TMz FDTD kernel in a read-only execution of the main project code. The matrices were written into a public-repository temporary folder. A public-side C++ wrapper then rendered those matrices through the DAD internal PNG writer.
 
-## Numerical Model
+The website GIF was derived only from the sanitized public PNG frames by `scripts/package_fdtd_ringdown_png_sequence_to_gif.py`.
 
-- Model family: deterministic 2D FDTD TMz microwave resonator diagnostic.
-- Field components in the update: `Ez`, `Hx` and `Hy`.
-- Rendered field quantity: signed `Ez`.
-- Source: Gaussian-windowed sinusoidal pulse launched from the feed side.
-- Geometry: feed guide, coupling slot, rectangular resonator, central post and
-  graded-loss edge absorber.
-- Boundary note: the edge absorber is a visual diagnostic boundary treatment.
-  No CPML claim is made.
+```text
+DAD FDTD solver output
+-> DAD internal PNG writer
+-> ordered public PNG frame sequence
+-> derived website GIF
+```
 
-The renderer follows the public-safe ringdown model documented by the existing
-DAD FieldWorks public FDTD resonator provenance. It performs a deterministic
-field update in the public asset script and writes only public hero assets.
+## Frame Set
+
+- Frame count: 48.
+- PNG frame dimensions: 720 x 405 px.
+- GIF dimensions: 640 x 360 px.
+- Source field quantity: signed `Ez`.
+- Source grid: 2D TMz Yee grid.
+- PEC object confirmed: yes.
+- In-frame text: no.
 
 ## Public Safety
 
-- Private repository read: no.
-- Private code executed: no.
-- Existing public-safe FDTD generator reused: no.
+- Private repository read: yes, for read-only package execution and internal PNG writer source compilation.
+- Private code executed: yes, through read-only DAD FDTD package execution and the internal PNG writer source linked into a public temporary build.
+- Private source code copied into public tracked files: no.
 - External images: none.
-- Screen captures: none.
+- Screenshots: none.
 - AI image generation: none.
-- Private source code copied: no.
-- Text inside generated GIF frames: no.
-
-## File Size Optimization
-
-The GIF is rendered at website-hero size, uses a compact frame count and is
-palette optimized during export. The poster is a separate static PNG with no
-in-frame text.
+- GIF source: sanitized PNG frame sequence only.
+- GIF evidence status: website preview only.
+- Primary image artifact: PNG frame sequence.
 
 ## Claim Boundary
 
-This text-free hero animation is a deterministic public-safe FDTD microwave
-resonator ringdown diagnostic. It is not external validation, not production
-readiness and not a commercial solver equivalence claim.
+This public website animation is an internal research visualization based on DAD FDTD field data and DAD internal PNG writer frame evidence. It is not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright (c) 2026 Harun Aktas. All rights reserved.
