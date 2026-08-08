@@ -57,6 +57,7 @@ __pycache__/
 !scripts/generate_pec_resonator_candidate_evidence_gate.py
 !scripts/generate_eigenpair_residual_evidence_gate.py
 !scripts/generate_pec_cavity_convergence_plot.py
+!scripts/validate_native_workbench_preview.py
 *.ipynb
 *.log
 *.wl

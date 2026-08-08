@@ -16,6 +16,27 @@ This public showcase uses conservative claim boundaries.
 - Conceptual engineering diagram.
 - Future route.
 - Planning only.
+- Native C++ engineering workbench development preview.
+- wxWidgets desktop prototype.
+- Embedded VTK scientific visualization.
+- Synthetic scalar-field slice.
+- Synthetic collocated vector glyphs.
+- Parametric PCB demo geometry.
+- Claim-aware engineering report.
+- Independent R&D prototype.
+
+## Native Workbench Excluded Claims
+
+- No accepted physical solver-field binding.
+- No real Yee-field visualization claim.
+- No physical wave-animation claim.
+- No complete real S-parameter matrix.
+- No real S-parameter plotting workflow.
+- No interactive PCB authoring claim.
+- No Port-authoring claim.
+- No external validation.
+- No production readiness.
+- No commercial solver equivalence.
 
 ## Signal Integrity v0.3 Boundary
 

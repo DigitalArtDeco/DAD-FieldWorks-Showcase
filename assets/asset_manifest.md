@@ -843,3 +843,75 @@
 - Claim boundary: provenance note only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_scalar_slice_synthetic.png
+
+- Asset type: application screenshot
+- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
+- Visual role: embedded VTK 3D view showing a synthetic scalar-field slice together with the parametric PCB demo geometry.
+- External source images: none
+- AI image generation: none
+- Private source code copied: no
+- Physical solver-field binding claim: no
+- Complete real S-parameter workflow claim: no
+- Interactive PCB model authoring claim: no
+- External validation claim: no
+- Production readiness claim: no
+- Commercial solver equivalence claim: no
+- Claim boundary: synthetic visualization fixture only; not an accepted physical solver field, real Yee-field visualization or physical wave animation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_pcb_cross_section.png
+
+- Asset type: application screenshot
+- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
+- Visual role: DAD-owned parametric microstrip cross-section with substrate, air region, trace, ports and monitor location.
+- External source images: none
+- AI image generation: none
+- Private source code copied: no
+- Physical solver-field binding claim: no
+- Complete real S-parameter workflow claim: no
+- Interactive PCB model authoring claim: no
+- External validation claim: no
+- Production readiness claim: no
+- Commercial solver equivalence claim: no
+- Claim boundary: parametric PCB demo geometry only; not an interactive PCB or Port-authoring claim.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_vector_glyphs_synthetic.png
+
+- Asset type: application screenshot
+- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
+- Visual role: synthetic collocated vector-field fixture rendered as oriented and magnitude-colored glyphs in V/m.
+- External source images: none
+- AI image generation: none
+- Private source code copied: no
+- Physical solver-field binding claim: no
+- Complete real S-parameter workflow claim: no
+- Interactive PCB model authoring claim: no
+- External validation claim: no
+- Production readiness claim: no
+- Commercial solver equivalence claim: no
+- Claim boundary: synthetic visualization fixture only; not an accepted physical solver field, real Yee-field visualization or physical wave animation.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+
+## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_claim_aware_report.png
+
+- Asset type: application screenshot
+- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
+- Visual role: claim-aware Engineering Report with model identity, reference result, validation flags and explicitly documented limitations.
+- External source images: none
+- AI image generation: none
+- Private source code copied: no
+- Physical solver-field binding claim: no
+- Complete real S-parameter workflow claim: no
+- Interactive PCB model authoring claim: no
+- External validation claim: no
+- Production readiness claim: no
+- Commercial solver equivalence claim: no
+- Claim boundary: analytical reference reporting demonstration only; not external validation, production readiness or commercial solver equivalence.
+- Copyright holder: Harun Aktas
+- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.

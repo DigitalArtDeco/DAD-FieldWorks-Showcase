@@ -75,6 +75,11 @@ nav a:hover,
   color: var(--text);
 }
 
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
 .eyebrow {
   color: var(--accent);
   font-size: clamp(0.78rem, 1vw, 0.95rem);
@@ -388,6 +393,86 @@ h2 {
   color: var(--muted);
   font-size: 1.05rem;
   margin: 18px 0 0;
+}
+
+.workbench-preview {
+  overflow: hidden;
+}
+
+.workbench-badge {
+  align-items: center;
+  background: rgba(38, 181, 223, 0.08);
+  border: 1px solid rgba(38, 181, 223, 0.3);
+  border-radius: 999px;
+  color: var(--text);
+  display: inline-flex;
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 24px 0 0;
+  max-width: 100%;
+  padding: 8px 12px;
+}
+
+.workbench-gallery {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+  min-width: 0;
+}
+
+.workbench-card {
+  background: var(--panel);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  margin: 0;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.workbench-card-featured,
+.workbench-card-report {
+  grid-column: 1 / -1;
+}
+
+.workbench-image-link {
+  background: #061018;
+  display: block;
+  min-width: 0;
+}
+
+.workbench-image-link:focus-visible {
+  outline-offset: -4px;
+}
+
+.workbench-card img {
+  border-bottom: 1px solid var(--line);
+  display: block;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  width: 100%;
+}
+
+.workbench-card figcaption {
+  color: var(--muted);
+  font-size: 0.94rem;
+  line-height: 1.55;
+  padding: 16px 18px 18px;
+}
+
+.workbench-claim-note {
+  background: rgba(242, 139, 47, 0.08);
+  border: 1px solid rgba(242, 139, 47, 0.3);
+  border-radius: 8px;
+  color: var(--muted);
+  margin: 22px 0 0;
+  padding: 18px 20px;
+}
+
+.workbench-claim-note strong {
+  color: var(--text);
 }
 
 .showcase-block {
@@ -1237,7 +1322,8 @@ nav a:hover {
 .state-grid span,
 .technology-card,
 .roadmap-cards article,
-.material-card {
+.material-card,
+.workbench-card {
   background: rgba(13, 24, 38, 0.82);
   border-color: rgba(129, 156, 178, 0.16);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
@@ -1246,6 +1332,7 @@ nav a:hover {
 .technology-card,
 .roadmap-cards article,
 .material-card,
+.workbench-card,
 .example-card,
 .example-feature,
 .capability-summary,
@@ -1590,6 +1677,17 @@ nav a:hover {
     font-size: clamp(2.8rem, 12vw, 4.9rem);
   }
 
+}
+
+@media (max-width: 700px) {
+  .workbench-gallery {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .workbench-card-featured,
+  .workbench-card-report {
+    grid-column: auto;
+  }
 }
 
 @media (max-width: 520px) {
