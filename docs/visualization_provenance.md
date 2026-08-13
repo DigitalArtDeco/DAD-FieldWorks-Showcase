@@ -24,4 +24,4 @@ This visualization is a solver generated diagnostic asset for public presentatio
 
 No external images, screenshots, or AI image generation were used. No private solver source code is published in this repository.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

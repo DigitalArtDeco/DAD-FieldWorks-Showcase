@@ -1,6 +1,6 @@
 # Engineering Examples Provenance
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## Purpose
 

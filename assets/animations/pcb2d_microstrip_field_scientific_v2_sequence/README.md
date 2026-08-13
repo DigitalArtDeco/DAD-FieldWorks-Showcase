@@ -23,4 +23,4 @@ This is an internal field visualization only. It is not a frequency sweep, not a
 current sweep, not a time-domain wave propagation result, not a full wave
 simulation, not external validation and not production evidence.
 
-Copyright 2026 Harun Aktas. All rights reserved.
+Copyright 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

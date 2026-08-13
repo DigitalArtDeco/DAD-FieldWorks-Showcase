@@ -28,4 +28,4 @@ claim.
 
 No private source code is published by this animation or its generator.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

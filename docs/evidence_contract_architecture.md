@@ -29,4 +29,4 @@ See [Evidence contract platform roadmap](evidence_contract_platform_roadmap.md).
 
 These notes describe an architecture pattern. They do not create an external validation claim, a production readiness claim, a commercial solver equivalence claim, a physical eigenpair acceptance claim, or a physical eigenfrequency acceptance claim.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

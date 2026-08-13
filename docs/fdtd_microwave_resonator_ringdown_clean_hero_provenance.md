@@ -50,4 +50,4 @@ DAD FDTD solver output
 
 This public website animation is an internal research visualization based on DAD FDTD field data and DAD internal PNG writer frame evidence. It is not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 
-Copyright (c) 2026 Harun Aktas. All rights reserved.
+Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

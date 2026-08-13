@@ -52,4 +52,4 @@ This is public brand and presentation material derived from a scalar reference
 field. It is not external validation evidence, not production readiness
 evidence and not a commercial solver equivalence claim.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

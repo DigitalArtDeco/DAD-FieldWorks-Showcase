@@ -34,4 +34,4 @@ A future DGTD route, PINN route or neural-operator route would be used only as a
 - No commercial solver equivalence claim.
 - No future-backend validation claim.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

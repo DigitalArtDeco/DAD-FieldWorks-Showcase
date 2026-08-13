@@ -6,4 +6,4 @@ The frames were written with the DAD internal PNG writer from numeric field matr
 
 Claim boundary: internal research visualization only. It is not external validation, not benchmark evidence, not measurement evidence and not production evidence.
 
-Copyright (c) 2026 Harun Aktas. All rights reserved.
+Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

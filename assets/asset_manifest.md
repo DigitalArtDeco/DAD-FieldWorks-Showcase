@@ -10,8 +10,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: roadmap diagram only, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/dad_fieldworks_solver_scattering_hero.gif
 
@@ -24,8 +24,8 @@
 - Screenshots: none
 - AI image generation: none
 - Private source code copied: no
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/hero/dad_fieldworks_solver_scattering_hero_poster.png
@@ -39,8 +39,8 @@
 - Screenshots: none
 - AI image generation: none
 - Private source code copied: no
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/animations/pcb_trace/pcb_trace_sideview_energy_flow.gif
@@ -55,8 +55,8 @@
 - AI image generation: none
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/animations/pcb_trace/pcb_trace_sideview_energy_flow_poster.png
@@ -71,8 +71,8 @@
 - AI image generation: none
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 
 ## assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice.gif
@@ -91,8 +91,8 @@
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Scalar boundary: not a full vector Maxwell eigenmode claim.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_cavity/pec_cavity_eigenmode_field_slice_poster.png
 
@@ -110,8 +110,8 @@
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
 - Scalar boundary: not a full vector Maxwell eigenmode claim.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pcb_discontinuity/pcb_discontinuity_reflection.gif
 
@@ -127,8 +127,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pcb_discontinuity/pcb_discontinuity_reflection_poster.png
 
@@ -144,8 +144,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic.gif
 
@@ -160,8 +160,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not a complete quantum hardware solver claim.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/quantum_hardware/quantum_hardware_resonator_diagnostic_poster.png
 
@@ -176,8 +176,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not a complete quantum hardware solver claim.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown.gif
 
@@ -194,8 +194,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/quantum_hardware/fdtd_microwave_resonator_ringdown_poster.png
 
@@ -212,8 +212,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/yee_incidence/yee_curl_incidence_microprototype.gif
 
@@ -227,8 +227,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not curl-curl assembly, not a production incidence matrix, not an eigensolve, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/yee_incidence/yee_curl_incidence_microprototype_poster.png
 
@@ -242,8 +242,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not curl-curl assembly, not a production incidence matrix, not an eigensolve, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft.gif
 
@@ -260,8 +260,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation, not a Josephson junction model.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/fdtd_resonator_fft/fdtd_resonator_ringdown_fft_poster.png
 
@@ -278,8 +278,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: diagnostic visualization only, not validation evidence, not production readiness, not qubit simulation, not a Josephson junction model.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/microwave_cavity_eigenmode_birth.gif
 
@@ -292,8 +292,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/microwave_cavity_eigenmode_birth_poster.png
 
@@ -306,8 +306,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/microwave_cavity_eigenmode_birth_summary.json
 
@@ -320,8 +320,8 @@
 - Internal named toolchains used in public asset generation: none
 - Private source code copied: no
 - Claim boundary: bounded internal prototype visualization only, not external validation, not production readiness, not a qubit simulation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate.gif
 
@@ -333,8 +333,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate_poster.png
 
@@ -346,8 +346,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_resonator_candidate/pec_resonator_candidate_evidence_gate_summary.json
 
@@ -359,8 +359,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/generate_pec_resonator_candidate_evidence_gate.py
 
@@ -372,8 +372,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate.gif
 
@@ -385,8 +385,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 ## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate_poster.png
 
 - Asset type: static PNG poster
@@ -397,8 +397,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/eigenpair_residual_gate/eigenpair_residual_evidence_gate_summary.json
 
@@ -410,8 +410,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/generate_eigenpair_residual_evidence_gate.py
 
@@ -423,8 +423,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot.gif
 
@@ -436,8 +436,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_cavity_convergence/pec_cavity_convergence_plot_poster.png
 
@@ -449,8 +449,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pec_cavity_convergence/pec_cavity_convergence_summary.json
 
@@ -462,8 +462,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/generate_pec_cavity_convergence_plot.py
 
@@ -475,8 +475,8 @@
 - Generative image tools: none
 - Private source code copied: no
 - Claim boundary: bounded scalar PEC diagnostic only, not external validation, not production readiness, not mode acceptance evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 ## data/dad_signal_integrity_v0_3_examples.json
 
 - Asset type: JSON public data file
@@ -487,8 +487,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: source backed internal analytical reference dashboards only, not external validation, not production readiness, not full wave EM simulation, not measurement validation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/live_engineering_examples.js
 
@@ -499,8 +499,8 @@
 - Analytics: none
 - Private source code copied: no
 - Claim boundary: display layer only; it does not implement engineering formulas and does not broaden validation or production claims.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## docs/live_engineering_examples_provenance.md
 
@@ -511,8 +511,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: provenance note only, not external validation, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/dad_fieldworks_kernel_wave_hero.png
 
@@ -524,8 +524,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/dad_fieldworks_kernel_wave_hero.webp
 
@@ -537,8 +537,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/dad_fieldworks_kernel_wave_hero_summary.json
 
@@ -549,8 +549,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/brand/dad_fieldworks_kernel_wave_mark.png
 
@@ -562,8 +562,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/brand/dad_fieldworks_kernel_wave_mark.svg
 
@@ -575,8 +575,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/brand/dad_fieldworks_kernel_wave_mark_poster.png
 
@@ -588,8 +588,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public brand visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/brand/README.md
 
@@ -600,8 +600,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: documentation only, not external validation, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## docs/kernel_wave_hero_brand_provenance.md
 
@@ -612,8 +612,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: provenance note only, not external validation, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/generate_kernel_wave_hero_brand.py
 
@@ -624,8 +624,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: public asset renderer only; it does not implement runtime engineering behavior and does not broaden validation or production claims.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/fdtd_ringdown_png_sequence/
 
@@ -639,8 +639,8 @@
 - Text inside frames: no
 - Private source code copied: no
 - Claim boundary: internal research visualization only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/fdtd_ringdown_png_sequence/manifest.json
 
@@ -653,8 +653,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: manifest only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif
 
@@ -669,8 +669,8 @@
 - Text inside frames: no
 - Private source code copied: no
 - Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png
 
@@ -684,8 +684,8 @@
 - Text inside frames: no
 - Private source code copied: no
 - Claim boundary: bounded diagnostic visualization only, not external validation, not production readiness, not commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_summary.json
 
@@ -699,8 +699,8 @@
 - Primary evidence artifact: PNG frame sequence.
 - GIF evidence status: website preview only.
 - Claim boundary: bounded diagnostic visualization only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/dad_fieldworks_rf_wave_background.svg
 
@@ -713,8 +713,8 @@
 - External network dependencies: none
 - Private source code copied: no
 - Claim boundary: brand background only, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## docs/hero_rf_wave_background_provenance.md
 
@@ -725,8 +725,8 @@
 - AI image generation: none
 - Private source code copied: no
 - Claim boundary: provenance note only, not validation evidence, not production readiness.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## docs/fdtd_microwave_resonator_ringdown_clean_hero_provenance.md
 
@@ -740,8 +740,8 @@
 - Primary evidence artifact: PNG frame sequence.
 - GIF evidence status: website preview only.
 - Claim boundary: provenance note only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/package_fdtd_ringdown_png_sequence_to_gif.py
 
@@ -753,8 +753,8 @@
 - Text inside frames: no
 - Private source code copied: no
 - Claim boundary: packaging script only; it does not compute field data and does not broaden validation or production claims.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/
 
@@ -770,8 +770,8 @@
 - Python plotting: none
 - Private source code copied: no
 - Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/pcb2d_microstrip_field_scientific_v2_hero.gif
 
@@ -784,8 +784,8 @@
 - Python plotting: none
 - Private source code copied: no
 - Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/pcb2d_microstrip_field_scientific_v2_hero_poster.png
 
@@ -797,8 +797,8 @@
 - Python plotting: none
 - Private source code copied: no
 - Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/hero/pcb2d_microstrip_field_scientific_v2_hero_summary.json
 
@@ -812,8 +812,8 @@
 - Primary evidence artifact: PNG frame sequence.
 - GIF evidence status: website preview only.
 - Claim boundary: internal PCB 2D quasi-static field visualization only, not external validation, not measurement evidence, not benchmark evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## scripts/package_pcb2d_microstrip_field_scientific_v2_to_gif.py
 
@@ -826,8 +826,8 @@
 - Python plotting: none
 - Private source code copied: no
 - Claim boundary: packaging script only; it does not compute field data and does not broaden validation or production claims.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## docs/pcb2d_microstrip_field_scientific_v2_hero_provenance.md
 
@@ -841,8 +841,8 @@
 - Primary evidence artifact: PNG frame sequence.
 - GIF evidence status: website preview only.
 - Claim boundary: provenance note only, not external validation, not benchmark evidence, not measurement evidence, not production evidence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Copyright holder: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
 ## assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png
 

@@ -296,8 +296,8 @@ def save_assets() -> list[str]:
         "commercial_solver_equivalence_claim": False,
         "validated_solver_claim": False,
         "claim_boundary": "public brand visualization derived from a scalar reference field; bounded internal diagnostic only.",
-        "copyright_holder": "Harun Aktas",
-        "copyright_notice": "Copyright (c) 2026 Harun Aktas. All rights reserved.",
+        "copyright_holder": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+        "copyright_notice": "Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.",
     }
     SUMMARY_JSON.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     return summary["output_files"]

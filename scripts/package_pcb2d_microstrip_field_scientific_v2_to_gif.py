@@ -114,8 +114,8 @@ def main() -> None:
         "commercial_solver_equivalence_claim": False,
         "validated_solver_claim": False,
         "claim_boundary": "Website preview only from internal PCB 2D quasi-static field data; no external validation claim and no production readiness claim.",
-        "copyright_holder": "Harun Aktas",
-        "copyright_notice": "Copyright 2026 Harun Aktas. All rights reserved.",
+        "copyright_holder": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+        "copyright_notice": "Copyright 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.",
     }
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
     print(f"Wrote {GIF_PATH} ({file_size} bytes, {gif_frame_count} frames at {fps} fps).")

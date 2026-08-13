@@ -179,8 +179,8 @@ def write_sequence_metadata(frame_count: int) -> None:
         "ProductionAllowedQ": False,
         "ClaimBoundary": "internal research visualization only; not external validation, not benchmark evidence, not measurement evidence and not production evidence",
         "Frames": frame_entries,
-        "CopyrightHolder": "Harun Aktas",
-        "CopyrightNotice": "Copyright (c) 2026 Harun Aktas. All rights reserved.",
+        "CopyrightHolder": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+        "CopyrightNotice": "Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.",
     }
     MANIFEST_PATH.write_text(json.dumps(manifest, indent=2) + "\n", encoding="utf-8")
 
@@ -195,7 +195,7 @@ def write_sequence_metadata(frame_count: int) -> None:
                 "",
                 "Claim boundary: internal research visualization only. It is not external validation, not benchmark evidence, not measurement evidence and not production evidence.",
                 "",
-                "Copyright (c) 2026 Harun Aktas. All rights reserved.",
+                "Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.",
                 "",
             ]
         ),
@@ -234,8 +234,8 @@ def write_summary(frames: list[Image.Image]) -> None:
         "commercial_solver_equivalence_claim": False,
         "validated_solver_claim": False,
         "claim_boundary": "derived public website preview only; not external validation, not benchmark evidence, not measurement evidence and not production evidence",
-        "copyright_holder": "Harun Aktas",
-        "copyright_notice": "Copyright (c) 2026 Harun Aktas. All rights reserved.",
+        "copyright_holder": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+        "copyright_notice": "Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.",
     }
     SUMMARY_PATH.write_text(json.dumps(summary, indent=2) + "\n", encoding="utf-8")
 

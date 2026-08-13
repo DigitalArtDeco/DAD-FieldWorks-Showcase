@@ -24,4 +24,4 @@ The PCB side view animation is generated from numerical field data for a public-
 
 The visualization is intended for public showcase context. It does not establish external agreement, measurement agreement, or production suitability.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

@@ -13,4 +13,4 @@ It uses dark gradients, a perspective mesh, a cyan field-wave ribbon and a restr
 - Private source code copied: no
 - Claim boundary: brand background only, not solver validation evidence, not production readiness.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

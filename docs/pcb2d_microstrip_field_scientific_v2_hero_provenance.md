@@ -72,4 +72,4 @@ This animation is an internal PCB 2D quasi-static field visualization. It is not
 external validation, not benchmark evidence, not measurement evidence and not
 production evidence. It does not claim commercial solver equivalence.
 
-Copyright 2026 Harun Aktas. All rights reserved.
+Copyright 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

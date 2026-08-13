@@ -37,4 +37,4 @@ These visualizations are diagnostic communication only. They are not validation 
 
 Additional explanation: [FDTD microwave resonator explanation](../../../docs/fdtd_microwave_resonator_explanation.md).
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

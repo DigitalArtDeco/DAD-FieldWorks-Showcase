@@ -58,4 +58,4 @@ Promotion should stay blocked when:
 
 This roadmap is not a production solver release, not an external validation claim, not a commercial solver equivalence claim, not an AI-backend validation claim and not a DGTD implementation claim. It is a public-safe architecture direction for evidence-controlled computational electromagnetics.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

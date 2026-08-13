@@ -2,7 +2,7 @@
 
 **Evidence controlled engineering software for computational electromagnetics, RF design and signal integrity.**
 
-Developed by Harun Aktas as an independent software engineering initiative.
+This repository publishes the official public DAD FieldWorks Showcase. DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt).
 
 DAD FieldWorks is being developed for engineering workflows where computed results are accompanied by source, evidence, reproducibility and claim boundary records before they are trusted.
 
@@ -34,6 +34,7 @@ Confirmed capabilities shown by this sequence:
 
 - [Canonical-Yee Screenshot Manifest](assets/images/dad-fieldworks/canonical-yee/manifest.json)
 - [Canonical-Yee Visualization Provenance](docs/canonical_yee_field_visualization_provenance.md)
+- [Legal Site Identity Audit](docs/legal_site_identity_audit.md)
 
 ## What DAD FieldWorks Is
 
@@ -41,7 +42,7 @@ DAD FieldWorks develops evidence controlled engineering software for computation
 
 The current public material focuses on source backed analytical reference kernels, bounded alpha diagnostics, evidence gated records and claim aware result handling.
 
-This repository is a public technical presence for selected website, documentation and public-safe technical material. It is not a release of private solver source code.
+This public repository contains only the static Showcase website, documentation and public-safe technical material. Private source code, private solver packages and private engineering evidence are not included.
 
 ## Technology Areas
 
@@ -74,7 +75,7 @@ The evidence model separates numerical output from trust state, reproducibility 
 
 ## Current Public State
 
-- Active development by Harun Aktas.
+- Developed by DigitalArtDeco Labs UG (haftungsbeschränkt).
 - Native Windows Workbench integration using wxWidgets and VTK.
 - Precomputed Canonical-Yee field snapshots displayed with PCB geometry.
 - Interactive slice, camera, clipping and saved-frame inspection.
@@ -87,6 +88,8 @@ The evidence model separates numerical output from trust state, reproducibility 
 | Material | Link |
 | --- | --- |
 | Public website | [https://www.dadlabs.de/](https://www.dadlabs.de/) |
+| Company | DigitalArtDeco Labs UG (haftungsbeschränkt) |
+| Principal public contact | [info@dadlabs.de](mailto:info@dadlabs.de) |
 | Evidence Contract Architecture | [docs/evidence_contract_architecture.md](docs/evidence_contract_architecture.md) |
 | Platform Roadmap | [docs/evidence_contract_platform_roadmap.md](docs/evidence_contract_platform_roadmap.md) |
 | Current Public State | [docs/current_public_status.md](docs/current_public_status.md) |
@@ -104,4 +107,4 @@ The evidence model separates numerical output from trust state, reproducibility 
 - [COPYRIGHT.md](COPYRIGHT.md)
 - [LICENSE_NOTICE.md](LICENSE_NOTICE.md)
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

@@ -14,4 +14,4 @@ The quantum-hardware-oriented resonator diagnostic is generated from numerical f
 - AI image generation: none.
 - Private source code published: no.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

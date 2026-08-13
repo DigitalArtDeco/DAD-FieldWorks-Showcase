@@ -56,4 +56,4 @@ The relative error decreases monotonically with grid refinement.
 
 This visualization is a bounded scalar PEC diagnostic. It demonstrates a computed convergence trend against an analytical reference. It is not external validation, not production readiness, not a validated eigenmode, and not a full production solver result.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

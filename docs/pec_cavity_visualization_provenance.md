@@ -23,4 +23,4 @@ The PEC cavity animation is generated from numerical eigenmode field data for a 
 - Claim boundary: diagnostic visualization only, not validation evidence, not a production readiness claim.
 - Scalar boundary: not a full vector Maxwell eigenmode claim.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

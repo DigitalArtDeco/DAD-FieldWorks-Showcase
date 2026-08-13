@@ -33,4 +33,4 @@ model.
 No external images were used. No screenshots were used. No AI image generation
 was used. No private source code is published.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

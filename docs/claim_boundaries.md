@@ -1,6 +1,6 @@
 # Claim Boundaries
 
-Copyright © 2026 Harun Aktas. All rights reserved, except where an asset manifest identifies a different copyright owner.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved, except where an asset manifest identifies a different copyright owner.
 
 This public showcase uses precise capability wording tied to visible artifacts and public evidence records.
 

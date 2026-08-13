@@ -1,8 +1,8 @@
 # Current Public Status
 
-Copyright © 2026 Harun Aktas. All rights reserved, except where an asset manifest identifies a different copyright owner.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved, except where an asset manifest identifies a different copyright owner.
 
-DAD FieldWorks is developed by Harun Aktas as an independent software engineering initiative. The public website contains selected architecture notes, public whitepaper material, source-backed Signal Integrity engineering dashboards and a native Workbench visualization sequence.
+DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). The public website contains selected architecture notes, public whitepaper material, source-backed Signal Integrity engineering dashboards and a native Workbench visualization sequence.
 
 ## Current Public Story
 

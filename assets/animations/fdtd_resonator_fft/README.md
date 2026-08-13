@@ -37,4 +37,4 @@ Assets:
 - `fdtd_resonator_ringdown_fft.gif`
 - `fdtd_resonator_ringdown_fft_poster.png`
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

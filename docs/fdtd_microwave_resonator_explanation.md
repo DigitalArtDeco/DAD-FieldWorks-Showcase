@@ -46,4 +46,4 @@ It is also not external validation evidence and not a production readiness claim
 
 ## Copyright
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

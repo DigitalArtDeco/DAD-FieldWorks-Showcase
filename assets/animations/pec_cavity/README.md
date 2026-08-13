@@ -17,4 +17,4 @@ This animation shows a rectangular PEC cavity scalar Helmholtz eigenmode diagnos
 - Claim boundary: diagnostic visualization only, not validation evidence, not a production readiness claim.
 - Scalar boundary: this is not a full vector Maxwell eigenmode claim.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

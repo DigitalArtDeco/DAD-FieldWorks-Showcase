@@ -15,4 +15,4 @@ This animation shows a side view microstrip-like PCB visualization. The upper co
 - Private solver source code published: no.
 - Claim boundary: diagnostic visualization only, not validation evidence, not a production readiness claim.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

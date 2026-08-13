@@ -57,4 +57,4 @@ The public boundary remains planning only:
 
 Any future material should preserve the distinction between roadmap direction, internal evidence, validation evidence and production authorization.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

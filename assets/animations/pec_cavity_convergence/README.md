@@ -19,4 +19,4 @@ This is a bounded diagnostic. It is not external validation, not production read
 
 No external images were used. No screenshots were used. No generative image tools were used. No private source code is published.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

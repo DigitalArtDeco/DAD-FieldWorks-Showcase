@@ -22,4 +22,4 @@ The PCB discontinuity reflection animation is generated from numerical time-doma
 - Private source code published: no.
 - Claim boundary: diagnostic visualization only, not validation evidence, not a production readiness claim.
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

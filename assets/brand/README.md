@@ -25,4 +25,4 @@ Claim boundary: bounded internal diagnostic visualization only. No external
 validation claim. No production readiness claim. No commercial solver
 equivalence claim.
 
-Copyright &copy; 2026 Harun Aktas. All rights reserved.
+Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
