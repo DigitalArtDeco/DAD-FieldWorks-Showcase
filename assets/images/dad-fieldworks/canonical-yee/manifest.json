@@ -1,0 +1,81 @@
+{
+  "schema_id": "DAD_FIELDWORKS_CANONICAL_YEE_IMAGE_MANIFEST_V1",
+  "asset_set": "Canonical-Yee Z-slice saved-frame sequence",
+  "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+  "processing": {
+    "method": "Lossless PNG re-encode with ancillary metadata omitted; decoded RGBA pixels and native dimensions preserved.",
+    "metadata_stripped": true,
+    "decoded_pixels_preserved": true,
+    "visual_edits": false
+  },
+  "images": [
+    {
+      "path": "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png",
+      "source_filename": "canonical yee Z 11.PNG",
+      "sha256": "f7f69083156dff0c9fa094f28b744523630cd580263b0c9ae6a7bc5cb47b200b",
+      "bytes": 103229,
+      "width": 1440,
+      "height": 861,
+      "description": "Canonical-Yee Z-slice visualization, saved state 2/5, step 924. Early electric-field magnitude begins to form along the microstrip in the native 3D PCB view.",
+      "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+      "usage_role": "Supporting sequence image — saved state 2/5",
+      "saved_state": "2/5",
+      "solver_step": 924,
+      "slice_axis": "Z",
+      "quantity": "Derived cell-centred electric-field magnitude",
+      "unit": "V/m",
+      "primary": false
+    },
+    {
+      "path": "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png",
+      "source_filename": "canonical yee Z 12.PNG",
+      "sha256": "6bb7ab23ab9386aa42ff96a822d2cd27be25a586e0c1339cf10d1a125f76e729",
+      "bytes": 111156,
+      "width": 1440,
+      "height": 862,
+      "description": "Canonical-Yee Z-slice visualization, saved state 3/5, step 1109. Electric-field magnitude extends along the microstrip with a common quantitative V/m color scale.",
+      "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+      "usage_role": "Primary showcase and social-preview image — saved state 3/5",
+      "saved_state": "3/5",
+      "solver_step": 1109,
+      "slice_axis": "Z",
+      "quantity": "Derived cell-centred electric-field magnitude",
+      "unit": "V/m",
+      "primary": true
+    },
+    {
+      "path": "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png",
+      "source_filename": "canonical yee Z 13.PNG",
+      "sha256": "e836192e7a6fdf9a4c28d04f58a02a7b77805f0f7f0da69264eb5c04a280ab8e",
+      "bytes": 114266,
+      "width": 1439,
+      "height": 861,
+      "description": "Canonical-Yee Z-slice visualization, saved state 4/5, step 1294. Later saved state shows a stronger distributed field along the trace in the same Z-oriented slice.",
+      "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+      "usage_role": "Supporting sequence image — saved state 4/5",
+      "saved_state": "4/5",
+      "solver_step": 1294,
+      "slice_axis": "Z",
+      "quantity": "Derived cell-centred electric-field magnitude",
+      "unit": "V/m",
+      "primary": false
+    },
+    {
+      "path": "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png",
+      "source_filename": "canonical yee Z 14.PNG",
+      "sha256": "d4d1702c5c3078daf1336f59421e6de6bad9b0d09f0b5171488305132ae301f3",
+      "bytes": 126283,
+      "width": 1440,
+      "height": 863,
+      "description": "Canonical-Yee Z-slice visualization, saved state 5/5, step 4095. Final saved comparison state shows the electric-field magnitude distributed along the microstrip structure.",
+      "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+      "usage_role": "Supporting sequence image — saved state 5/5",
+      "saved_state": "5/5",
+      "solver_step": 4095,
+      "slice_axis": "Z",
+      "quantity": "Derived cell-centred electric-field magnitude",
+      "unit": "V/m",
+      "primary": false
+    }
+  ]
+}

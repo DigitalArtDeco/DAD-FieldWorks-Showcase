@@ -1,59 +1,29 @@
 # Claim Boundaries
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 Harun Aktas. All rights reserved, except where an asset manifest identifies a different copyright owner.
 
-This public showcase uses conservative claim boundaries.
+This public showcase uses precise capability wording tied to visible artifacts and public evidence records.
 
-## Allowed Public Wording
+## Supported Public Wording
 
-- Public technical website.
-- Public whitepaper.
-- Evidence contract architecture.
-- Founder led independent software engineering initiative.
-- Source backed internal analytical reference model.
-- Bounded internal alpha evidence.
-- Diagnostic visualization.
-- Conceptual engineering diagram.
-- Future route.
-- Planning only.
-- Native C++ engineering workbench development preview.
-- wxWidgets desktop prototype.
-- Embedded VTK scientific visualization.
-- Synthetic scalar-field slice.
-- Synthetic collocated vector glyphs.
-- Parametric PCB demo geometry.
-- Claim-aware engineering report.
-- Independent R&D prototype.
+- Evidence-controlled engineering software.
+- Native Windows engineering workbench using wxWidgets and VTK.
+- Loading and inspection of precomputed Canonical-Yee result packages.
+- PCB geometry and real stored field data displayed together in 3D.
+- Derived cell-centred electric-field magnitude in V/m.
+- Selectable X, Y and Z field slices.
+- Saved solver-state comparison on a common quantitative scale.
+- Interactive camera, clipping, slice positioning and frame navigation.
+- Source-backed analytical reference model.
+- Diagnostic visualization and conceptual engineering diagram.
+- Evidence records, reproducibility metadata and trust states.
 
-## Native Workbench Excluded Claims
+## Canonical-Yee Sequence Scope
 
-- No accepted physical solver-field binding.
-- No real Yee-field visualization claim.
-- No physical wave-animation claim.
-- No complete real S-parameter matrix.
-- No real S-parameter plotting workflow.
-- No interactive PCB authoring claim.
-- No Port-authoring claim.
-- No external validation.
-- No production readiness.
-- No commercial solver equivalence.
+The four published Workbench captures form a chronological saved-field sequence: state 2/5 at step 924, state 3/5 at step 1109, state 4/5 at step 1294 and state 5/5 at step 4095. All four show the same Z-oriented slice and quantitative V/m scale inside the PCB geometry.
 
-## Signal Integrity v0.3 Boundary
+The public description is limited to capabilities directly demonstrated by these captures and the supplied project facts. Statements about certification, deployment approval, measured accuracy, complete S-parameter extraction, complete PCB authoring or end-to-end simulation require their own public evidence before publication.
 
-The Live Style Engineering Examples reflect the audited internal Signal Integrity Kernel v0.3 baseline and public-safe example values. They are analytical reference model dashboards.
+## Publication Rule
 
-They are not external validation results. They are not production use authorization. They are not full wave EM simulations. They are not measurement validation. They are not commercial solver equivalence claims.
-
-Conceptual coupled-line and differential-pair mode drawings must remain labeled as conceptual illustrations, not full wave field simulations.
-
-## Closed Claims
-
-- No external validation claim.
-- No production readiness claim.
-- No commercial solver equivalence claim.
-- No full wave EM simulation claim for Signal Integrity examples.
-- No measurement validation claim.
-- No released private solver source code.
-- No employer or external organization affiliation claim.
-- No claim that future directions are implemented.
-- No claim that visual diagnostics alone prove physical acceptance.
+Each public result should identify its source class, displayed quantity, units, provenance, comparison basis and usage role. Visual presentation does not replace the evidence record; it communicates the capability that the record supports.

@@ -844,74 +844,58 @@
 - Copyright holder: Harun Aktas
 - Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
 
-## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_scalar_slice_synthetic.png
+## assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png
 
 - Asset type: application screenshot
-- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
-- Visual role: embedded VTK 3D view showing a synthetic scalar-field slice together with the parametric PCB demo geometry.
-- External source images: none
-- AI image generation: none
-- Private source code copied: no
-- Physical solver-field binding claim: no
-- Complete real S-parameter workflow claim: no
-- Interactive PCB model authoring claim: no
-- External validation claim: no
-- Production readiness claim: no
-- Commercial solver equivalence claim: no
-- Claim boundary: synthetic visualization fixture only; not an accepted physical solver field, real Yee-field visualization or physical wave animation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Public relative path: `assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png`
+- Source attachment filename: `canonical yee Z 11.PNG`
+- SHA-256: `f7f69083156dff0c9fa094f28b744523630cd580263b0c9ae6a7bc5cb47b200b`
+- Byte size: 103,229
+- Pixel dimensions: 1440 × 861
+- Short description: Canonical-Yee electric-field magnitude on the selected Z slice at saved state 2/5, step 924.
+- Usage role: supporting chronological sequence image
+- Creation method: human-supplied DAD FieldWorks capture, losslessly re-encoded with ancillary PNG metadata omitted and decoded RGBA pixels preserved.
+- Copyright owner: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
-## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_pcb_cross_section.png
+## assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png
 
 - Asset type: application screenshot
-- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
-- Visual role: DAD-owned parametric microstrip cross-section with substrate, air region, trace, ports and monitor location.
-- External source images: none
-- AI image generation: none
-- Private source code copied: no
-- Physical solver-field binding claim: no
-- Complete real S-parameter workflow claim: no
-- Interactive PCB model authoring claim: no
-- External validation claim: no
-- Production readiness claim: no
-- Commercial solver equivalence claim: no
-- Claim boundary: parametric PCB demo geometry only; not an interactive PCB or Port-authoring claim.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Public relative path: `assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png`
+- Source attachment filename: `canonical yee Z 12.PNG`
+- SHA-256: `6bb7ab23ab9386aa42ff96a822d2cd27be25a586e0c1339cf10d1a125f76e729`
+- Byte size: 111,156
+- Pixel dimensions: 1440 × 862
+- Short description: Canonical-Yee electric-field magnitude on the selected Z slice at saved state 3/5, step 1109.
+- Usage role: primary showcase and social-preview image
+- Creation method: human-supplied DAD FieldWorks capture, losslessly re-encoded with ancillary PNG metadata omitted and decoded RGBA pixels preserved.
+- Copyright owner: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
-## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_vector_glyphs_synthetic.png
+## assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png
 
 - Asset type: application screenshot
-- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
-- Visual role: synthetic collocated vector-field fixture rendered as oriented and magnitude-colored glyphs in V/m.
-- External source images: none
-- AI image generation: none
-- Private source code copied: no
-- Physical solver-field binding claim: no
-- Complete real S-parameter workflow claim: no
-- Interactive PCB model authoring claim: no
-- External validation claim: no
-- Production readiness claim: no
-- Commercial solver equivalence claim: no
-- Claim boundary: synthetic visualization fixture only; not an accepted physical solver field, real Yee-field visualization or physical wave animation.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Public relative path: `assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png`
+- Source attachment filename: `canonical yee Z 13.PNG`
+- SHA-256: `e836192e7a6fdf9a4c28d04f58a02a7b77805f0f7f0da69264eb5c04a280ab8e`
+- Byte size: 114,266
+- Pixel dimensions: 1439 × 861
+- Short description: Canonical-Yee electric-field magnitude on the selected Z slice at saved state 4/5, step 1294.
+- Usage role: supporting chronological sequence image
+- Creation method: human-supplied DAD FieldWorks capture, losslessly re-encoded with ancillary PNG metadata omitted and decoded RGBA pixels preserved.
+- Copyright owner: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
 
-## assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_claim_aware_report.png
+## assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png
 
 - Asset type: application screenshot
-- Creation method: human-captured screenshot of the running DAD FieldWorks native Workbench
-- Visual role: claim-aware Engineering Report with model identity, reference result, validation flags and explicitly documented limitations.
-- External source images: none
-- AI image generation: none
-- Private source code copied: no
-- Physical solver-field binding claim: no
-- Complete real S-parameter workflow claim: no
-- Interactive PCB model authoring claim: no
-- External validation claim: no
-- Production readiness claim: no
-- Commercial solver equivalence claim: no
-- Claim boundary: analytical reference reporting demonstration only; not external validation, production readiness or commercial solver equivalence.
-- Copyright holder: Harun Aktas
-- Copyright notice: Copyright &copy; 2026 Harun Aktas. All rights reserved.
+- Public relative path: `assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png`
+- Source attachment filename: `canonical yee Z 14.PNG`
+- SHA-256: `d4d1702c5c3078daf1336f59421e6de6bad9b0d09f0b5171488305132ae301f3`
+- Byte size: 126,283
+- Pixel dimensions: 1440 × 863
+- Short description: Canonical-Yee electric-field magnitude on the selected Z slice at saved state 5/5, step 4095.
+- Usage role: supporting chronological sequence image
+- Creation method: human-supplied DAD FieldWorks capture, losslessly re-encoded with ancillary PNG metadata omitted and decoded RGBA pixels preserved.
+- Copyright owner: DigitalArtDeco Labs UG (haftungsbeschränkt)
+- Copyright notice: Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

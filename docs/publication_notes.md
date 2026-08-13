@@ -8,6 +8,6 @@ Publication notes:
 - use only public-safe visual assets
 - identify diagnostic style visuals as communication aids
 - keep legal pages final before public launch
-- avoid validation, production, and equivalence claims unless supported by a separate public evidence record
+- publish capability statements only when the supporting artifact or public evidence record is available
 
-Current publication status is blocked until final legal page data and legal review are complete.
+The root GitHub Pages site, local assets and legal pages form the current public publication set.

@@ -1,22 +1,22 @@
 # Current Public Status
 
-Copyright © 2026 Harun Aktas. All rights reserved.
+Copyright © 2026 Harun Aktas. All rights reserved, except where an asset manifest identifies a different copyright owner.
 
-DAD FieldWorks is developed by Harun Aktas as an independent software engineering initiative. The public website contains selected architecture notes, public status notes, public whitepaper material, public-safe Signal Integrity engineering dashboards and a public-safe native Workbench development preview.
+DAD FieldWorks is developed by Harun Aktas as an independent software engineering initiative. The public website contains selected architecture notes, public whitepaper material, source-backed Signal Integrity engineering dashboards and a native Workbench visualization sequence.
 
 ## Current Public Story
 
-The current public homepage presents DAD FieldWorks as evidence controlled engineering software for computational electromagnetics, RF engineering and signal integrity workflows.
+The homepage presents DAD FieldWorks as evidence-controlled engineering software for computational electromagnetics, RF engineering and signal integrity workflows.
 
-## Native Workbench Development Preview
+## Interactive Canonical-Yee Field Visualization
 
-The public preview shows the native Windows application: a C++/wxWidgets desktop shell with an embedded VTK scientific visualization view, a DAD-owned parametric PCB cross-section, synthetic scalar-field slices, synthetic collocated vector glyphs and claim-aware engineering reporting.
+The native Windows Workbench loads a precomputed Canonical-Yee result package and displays the stored field data together with PCB geometry in an embedded VTK scientific view. The published sequence shows derived cell-centred electric-field magnitude in V/m on a Z-oriented slice at saved states 2/5, 3/5, 4/5 and 5/5.
 
-The displayed fields are synthetic visualization fixtures, and the PCB cross-section is a parametric demo model. The preview does not claim accepted physical solver-field binding, real Yee-field visualization, physical wave animation, complete real S-parameter workflows, interactive PCB model authoring, external validation, production readiness or commercial solver equivalence.
+The Workbench provides selectable X, Y and Z field slices, camera control, clipping, slice positioning and saved-frame navigation. The five stored states use a common quantitative scale for direct visual comparison.
 
 ## Analytical Reference Examples
 
-The public-safe live examples include:
+The public engineering examples include:
 
 - Microstrip 50 Ohm Width Synthesis.
 - Analytical Reference Family Comparison.
@@ -24,20 +24,14 @@ The public-safe live examples include:
 - Coupled Line Even/Odd Mode.
 - Differential Pair Spacing Sweep.
 
-These are source backed internal analytical reference model demonstrations. They are not external validation results, not production use authorization, not full wave EM simulations and not measurement validation.
+These examples present source-backed analytical reference workflows with traceable inputs, derived quantities and evidence-aware result records.
 
-## Current Claim Flags
+## Current Capability Summary
 
-- ExternallyValidatedQ = False.
-- ProductionAllowedQ = False.
-- ExternalValidationClaimQ = False.
-- ProductionClaimQ = False.
-
-## Excluded Current Claims
-
-- No external validation claim.
-- No production readiness claim.
-- No commercial solver equivalence claim.
-- No full wave EM simulation claim for Signal Integrity examples.
-- No measurement validation claim.
-- No private solver source code release.
+- Native Windows desktop integration using wxWidgets and VTK.
+- Precomputed Canonical-Yee field-package loading through the Workbench interface.
+- PCB geometry and stored electric-field data displayed together in 3D.
+- Quantitative cell-centred electric-field magnitude in V/m.
+- Interactive slice and saved-state inspection.
+- Source-backed analytical reference and diagnostic workflows.
+- Evidence records connecting computation, provenance, claim scope and trust state.

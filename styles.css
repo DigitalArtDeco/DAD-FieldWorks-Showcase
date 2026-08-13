@@ -399,27 +399,30 @@ h2 {
   overflow: hidden;
 }
 
-.workbench-badge {
-  align-items: center;
-  background: rgba(38, 181, 223, 0.08);
-  border: 1px solid rgba(38, 181, 223, 0.3);
-  border-radius: 999px;
-  color: var(--text);
-  display: inline-flex;
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1.3;
-  margin: 24px 0 0;
-  max-width: 100%;
-  padding: 8px 12px;
-}
-
 .workbench-gallery {
   display: grid;
   gap: 18px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin-top: 28px;
   min-width: 0;
+}
+
+.workbench-capabilities {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  list-style: none;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.workbench-capabilities li {
+  background: rgba(13, 24, 38, 0.72);
+  border: 1px solid rgba(129, 156, 178, 0.16);
+  border-radius: 8px;
+  color: var(--muted);
+  min-width: 0;
+  padding: 15px 17px;
 }
 
 .workbench-card {
@@ -431,9 +434,9 @@ h2 {
   overflow: hidden;
 }
 
-.workbench-card-featured,
-.workbench-card-report {
-  grid-column: 1 / -1;
+.workbench-card-primary {
+  border-color: rgba(72, 196, 232, 0.58);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.055);
 }
 
 .workbench-image-link {
@@ -462,17 +465,27 @@ h2 {
   padding: 16px 18px 18px;
 }
 
-.workbench-claim-note {
-  background: rgba(242, 139, 47, 0.08);
-  border: 1px solid rgba(242, 139, 47, 0.3);
-  border-radius: 8px;
-  color: var(--muted);
-  margin: 22px 0 0;
-  padding: 18px 20px;
+.workbench-card figcaption strong,
+.workbench-card figcaption > span {
+  display: block;
 }
 
-.workbench-claim-note strong {
+.workbench-card figcaption strong {
   color: var(--text);
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+.primary-marker {
+  background: rgba(38, 181, 223, 0.12);
+  border: 1px solid rgba(38, 181, 223, 0.32);
+  border-radius: 999px;
+  color: var(--accent);
+  display: inline-flex;
+  font-size: 0.72rem;
+  margin-left: 7px;
+  padding: 2px 7px;
+  vertical-align: 0.08em;
 }
 
 .showcase-block {
@@ -1682,11 +1695,6 @@ nav a:hover {
 @media (max-width: 700px) {
   .workbench-gallery {
     grid-template-columns: minmax(0, 1fr);
-  }
-
-  .workbench-card-featured,
-  .workbench-card-report {
-    grid-column: auto;
   }
 }
 

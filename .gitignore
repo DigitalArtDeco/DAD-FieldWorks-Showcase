@@ -2,6 +2,8 @@
 .local_private_assets/
 gallery/
 images/
+!assets/images/
+!assets/images/**
 animations/
 !assets/animations/
 !assets/animations/pcb_trace/

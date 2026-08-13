@@ -9,12 +9,12 @@
   });
 
   const evidenceChips = [
-    'internal alpha',
     'source backed',
     'analytical reference',
-    'not externally validated',
-    'not production ready',
-    'not full wave EM simulation'
+    'evidence recorded',
+    'traceable inputs',
+    'bounded scope',
+    'diagnostic example'
   ];
 
   function chips(items) {
@@ -90,7 +90,7 @@
       <div class="coupled-visual" aria-label="Conceptual coupled line mode drawing"><div class="coupled-trace even">+</div><div class="coupled-trace odd">-</div></div>
       <p class="concept-note">Conceptual illustration only.</p>
       <div class="metric-grid compact">${metric('Z0e', fmt(item.output.z0eOhm, 3), 'ohm')}${metric('Z0o', fmt(item.output.z0oOhm, 3), 'ohm')}${metric('C', fmt(item.output.C, 3))}${metric('K', fmt(item.output.K, 3))}</div>
-      ${chips(['internal alpha', 'not full wave EM simulation'])}
+      ${chips(['analytical modal outputs', 'bounded diagnostic scope'])}
     </article>`;
   }
 
@@ -109,8 +109,8 @@
   function renderBeyond(items) {
     return `<section class="future-summary" aria-labelledby="future-routes-title">
       <div>
-        <p class="card-kicker">Future routes</p>
-        <h3 id="future-routes-title">Closed until evidence exists.</h3>
+        <p class="card-kicker">Research directions</p>
+        <h3 id="future-routes-title">Evidence-gated exploration</h3>
       </div>
       <div class="capability-pills">${items.map((item) => `<span>${item.name}</span>`).join('')}</div>
     </section>`;

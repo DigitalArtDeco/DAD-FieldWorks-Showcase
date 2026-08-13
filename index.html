@@ -3,29 +3,29 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DAD FieldWorks — Native PCB EM Workbench Development Preview</title>
-    <meta name="description" content="Evidence controlled engineering software for computational electromagnetics, RF design and signal integrity.">
+    <title>DAD FieldWorks | Interactive Canonical-Yee Field Visualization</title>
+    <meta name="description" content="DAD FieldWorks visualizes precomputed Canonical-Yee PCB field data in an interactive native 3D workbench with X/Y/Z slices, saved frames and quantitative V/m scaling.">
     <link rel="canonical" href="https://www.dadlabs.de/">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="DAD FieldWorks — Native PCB EM Workbench Development Preview">
-    <meta property="og:description" content="Independent C++ R&amp;D project for PCB-oriented computational electromagnetics, RF engineering and signal integrity, with a native wxWidgets workbench and embedded VTK scientific visualization.">
+    <meta property="og:title" content="DAD FieldWorks | Interactive Canonical-Yee Field Visualization">
+    <meta property="og:description" content="DAD FieldWorks visualizes precomputed Canonical-Yee PCB field data in an interactive native 3D workbench with X/Y/Z slices, saved frames and quantitative V/m scaling.">
     <meta property="og:url" content="https://www.dadlabs.de/">
-    <meta property="og:image" content="https://www.dadlabs.de/assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_scalar_slice_synthetic.png">
+    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png">
     <meta property="og:image:width" content="1440">
-    <meta property="og:image:height" content="861">
-    <meta property="og:image:alt" content="DAD FieldWorks native Workbench displaying a synthetic scalar-field slice in an embedded VTK view.">
+    <meta property="og:image:height" content="862">
+    <meta property="og:image:alt" content="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DAD FieldWorks — Native PCB EM Workbench Development Preview">
-    <meta name="twitter:description" content="Independent C++ R&amp;D project for PCB-oriented computational electromagnetics, RF engineering and signal integrity, with a native wxWidgets workbench and embedded VTK scientific visualization.">
-    <meta name="twitter:image" content="https://www.dadlabs.de/assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_scalar_slice_synthetic.png">
-    <meta name="twitter:image:alt" content="DAD FieldWorks native Workbench displaying a synthetic scalar-field slice in an embedded VTK view.">
+    <meta name="twitter:title" content="DAD FieldWorks | Interactive Canonical-Yee Field Visualization">
+    <meta name="twitter:description" content="DAD FieldWorks visualizes precomputed Canonical-Yee PCB field data in an interactive native 3D workbench with X/Y/Z slices, saved frames and quantitative V/m scaling.">
+    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png">
+    <meta name="twitter:image:alt" content="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.">
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <header class="site-header">
       <a class="brand" href="index.html">DAD FieldWorks</a>
       <nav aria-label="Primary navigation">
-        <a href="#workbench">Workbench</a>
+        <a href="#workbench">Field View</a>
         <a href="#technology">Technology</a>
         <a href="#evidence">Evidence</a>
         <a href="#roadmap">Roadmap</a>
@@ -48,7 +48,7 @@
             <a href="#evidence">Evidence Model</a>
             <a href="#contact">Contact</a>
           </div>
-          <p class="status-line">No external validation claim. No production readiness claim.</p>
+          <p class="status-line">Current engineering capability &middot; Native scientific visualization with evidence-aware result handling.</p>
         </div>
         <figure class="hero-simulation">
           <img src="assets/hero/pcb2d_microstrip_field_scientific_v2_hero.gif" alt="PCB 2D microstrip electric-field magnitude visualization" loading="eager" decoding="async">
@@ -72,45 +72,51 @@
 
       <section class="content-section workbench-preview" id="workbench" aria-labelledby="workbench-title">
         <div class="section-heading">
-          <p class="eyebrow">Native engineering workbench</p>
-          <h2 id="workbench-title">From PCB cross-section to scientific 3D field inspection.</h2>
-          <p>DAD FieldWorks is being developed as an independent native C++ engineering workbench for PCB-oriented computational electromagnetics, RF engineering and signal integrity.</p>
-          <p>The current Windows prototype combines a wxWidgets desktop workbench with embedded VTK scientific 3D visualization, a DAD-owned parametric PCB cross-section, synthetic scalar and vector field fixtures, and claim-aware engineering reporting.</p>
+          <p class="eyebrow">Current engineering capability</p>
+          <h2 id="workbench-title">Interactive Canonical-Yee Field Visualization</h2>
+          <p>DAD FieldWorks loads precomputed Canonical-Yee field snapshots into its native wxWidgets and VTK engineering workbench. The Scientific Field View combines PCB geometry with a derived cell-centred electric-field magnitude in V/m and provides interactive X, Y and Z slice inspection, camera control, clipping and saved-frame navigation.</p>
+          <p>The four views below show progressively later saved solver states on the same Z-oriented slice and with the same quantitative V/m color scale. This makes the spatial evolution of the electric-field magnitude along the microstrip structure directly comparable inside the 3D PCB geometry.</p>
         </div>
 
-        <p class="workbench-badge">Independent R&amp;D prototype &middot; Synthetic visualization fixtures</p>
+        <ul class="workbench-capabilities" aria-label="Canonical-Yee field visualization capabilities">
+          <li>Loads a precomputed Canonical-Yee result package through the normal Workbench user interface.</li>
+          <li>Displays PCB geometry and real stored field data together in 3D.</li>
+          <li>Shows derived cell-centred electric-field magnitude in V/m.</li>
+          <li>Provides selectable X, Y and Z field slices.</li>
+          <li>Presents five saved solver states with a common comparison scale.</li>
+          <li>Supports interactive camera, clipping, slice positioning and frame navigation.</li>
+          <li>Integrates a native Windows desktop interface using wxWidgets and VTK.</li>
+        </ul>
 
         <div class="workbench-gallery">
-          <figure class="workbench-card workbench-card-featured">
-            <a class="workbench-image-link" href="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_scalar_slice_synthetic.png" aria-label="Open the full-resolution synthetic scalar-field Workbench screenshot">
-              <img src="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_scalar_slice_synthetic.png" width="1440" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks native Workbench with an embedded VTK 3D view of a synthetic scalar-field slice over parametric PCB demo geometry.">
+          <figure class="workbench-card">
+            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png" aria-label="Open full-resolution Canonical-Yee saved frame 2 of 5, step 924">
+              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png" width="1440" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 2 of 5, step 924.">
             </a>
-            <figcaption>Embedded VTK 3D view showing a synthetic scalar-field slice together with the parametric PCB demo geometry.</figcaption>
+            <figcaption><strong>Frame 2/5 &mdash; Step 924</strong><span>An early saved field state showing the electric-field magnitude on the selected Z slice through the microstrip PCB geometry.</span></figcaption>
+          </figure>
+
+          <figure class="workbench-card workbench-card-primary">
+            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png" aria-label="Open full-resolution Canonical-Yee saved frame 3 of 5, step 1109">
+              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png" width="1440" height="862" loading="eager" decoding="async" fetchpriority="high" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.">
+            </a>
+            <figcaption><strong>Frame 3/5 &mdash; Step 1109 <span class="primary-marker">Primary view</span></strong><span>The field concentration develops along the trace while the geometry, slice position and quantitative V/m scale remain directly inspectable.</span></figcaption>
           </figure>
 
           <figure class="workbench-card">
-            <a class="workbench-image-link" href="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_pcb_cross_section.png" aria-label="Open the full-resolution parametric PCB cross-section Workbench screenshot">
-              <img src="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_pcb_cross_section.png" width="1440" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks native Workbench showing a parametric microstrip cross-section with substrate, air, trace, ports and a monitor.">
+            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png" aria-label="Open full-resolution Canonical-Yee saved frame 4 of 5, step 1294">
+              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png" width="1439" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 4 of 5, step 1294.">
             </a>
-            <figcaption>DAD-owned parametric microstrip cross-section with substrate, air region, trace, ports and monitor location.</figcaption>
+            <figcaption><strong>Frame 4/5 &mdash; Step 1294</strong><span>A later saved state of the evolving electric-field distribution, displayed on the same common scale for visual comparison.</span></figcaption>
           </figure>
 
           <figure class="workbench-card">
-            <a class="workbench-image-link" href="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_vector_glyphs_synthetic.png" aria-label="Open the full-resolution synthetic vector-glyph Workbench screenshot">
-              <img src="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_vector_glyphs_synthetic.png" width="1439" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks native Workbench with an embedded VTK 3D view of synthetic collocated vector glyphs colored by magnitude in volts per metre.">
+            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png" aria-label="Open full-resolution Canonical-Yee saved frame 5 of 5, step 4095">
+              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png" width="1440" height="863" loading="lazy" decoding="async" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 5 of 5, step 4095.">
             </a>
-            <figcaption>Synthetic collocated vector-field fixture rendered as oriented and magnitude-colored glyphs in V/m.</figcaption>
-          </figure>
-
-          <figure class="workbench-card workbench-card-report">
-            <a class="workbench-image-link" href="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_claim_aware_report.png" aria-label="Open the full-resolution claim-aware Engineering Report Workbench screenshot">
-              <img src="assets/screenshots/native_workbench_preview/dad_fieldworks_native_workbench_claim_aware_report.png" width="1440" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks native Workbench Engineering Report showing model identity, a reference result, validation flags and explicit limitations.">
-            </a>
-            <figcaption>Claim-aware engineering report with model identity, reference result, validation flags and explicitly documented limitations.</figcaption>
+            <figcaption><strong>Frame 5/5 &mdash; Step 4095</strong><span>The final stored state in this sequence, showing the late-time spatial field distribution across the PCB structure.</span></figcaption>
           </figure>
         </div>
-
-        <p class="workbench-claim-note"><strong>Development preview.</strong> The screenshots show synthetic visualization fixtures and analytical reference reporting. Physical solver-field binding, complete real S-parameter workflows, interactive PCB model authoring, external validation and production readiness remain under development.</p>
       </section>
 
       <section class="content-section" id="technology" aria-labelledby="technology-title">
@@ -156,15 +162,15 @@
       <section class="content-section" id="state" aria-labelledby="state-title">
         <div class="section-heading">
           <p class="eyebrow">Current public state</p>
-          <h2 id="state-title">Bounded internal R&amp;D prototype and public-safe analytical/visualization material.</h2>
+          <h2 id="state-title">Native engineering workflows with traceable computation and scientific visualization.</h2>
         </div>
         <div class="state-grid">
           <span>Active development by Harun Aktas.</span>
-          <span>Native Windows Workbench development preview with synthetic scientific visualization fixtures.</span>
-          <span>Source-backed analytical reference workflows and public-safe diagnostic examples.</span>
-          <span>Physical solver-field binding and complete real S-parameter workflows remain under development.</span>
-          <span>External validation and production readiness flags remain conservative.</span>
-          <span>Commercial solver equivalence is not claimed.</span>
+          <span>Native Windows Workbench integrating wxWidgets and VTK.</span>
+          <span>Precomputed Canonical-Yee field packages displayed with PCB geometry.</span>
+          <span>Interactive 3D slice and saved-frame inspection with quantitative V/m scaling.</span>
+          <span>Source-backed analytical reference workflows and diagnostic examples.</span>
+          <span>Evidence records connect computation, provenance and trust state.</span>
         </div>
       </section>
 
@@ -176,15 +182,15 @@
         <div class="roadmap-cards">
           <article>
             <h3>Now</h3>
-            <p>Native engineering workbench, analytical reference workflows and public-safe synthetic scientific visualization previews.</p>
+            <p>Native engineering workbench, Canonical-Yee field-package visualization and source-backed analytical reference workflows.</p>
           </article>
           <article>
             <h3>Next</h3>
-            <p>Physical solver-result binding, RF result visualization and interactive PCB model-authoring foundations under explicit evidence and claim gates.</p>
+            <p>Deeper interoperability between accepted result packages, scientific visualization and evidence-aware engineering reporting.</p>
           </article>
           <article>
             <h3>Long term</h3>
-            <p>Evidence-controlled PCB electromagnetic simulation and RF engineering workflows, with external validation only when measurements, analytical references or alternative-code comparisons support it.</p>
+            <p>Evidence-controlled computational electromagnetics, RF engineering and signal integrity workflows with traceable result records.</p>
           </article>
         </div>
       </section>
@@ -211,8 +217,8 @@
           <a class="material-card" href="docs/claim_boundaries.md"><span class="material-card-title">Claim Boundaries</span><span class="material-card-description">What the public material does and does not claim.</span></a>
           <a class="material-card" href="assets/animations/pcb2d_microstrip_field_scientific_v2_sequence/manifest.json"><span class="material-card-title">PCB 2D Field Sequence</span><span class="material-card-description">Primary public image artifact manifest for the scientific hero preview.</span></a>
           <a class="material-card" href="docs/pcb2d_microstrip_field_scientific_v2_hero_provenance.md"><span class="material-card-title">PCB 2D Hero Provenance</span><span class="material-card-description">Creation method and claim boundary for the scientific field animation.</span></a>
-          <a class="material-card" href="assets/screenshots/native_workbench_preview/manifest.json"><span class="material-card-title">Native Workbench Screenshot Manifest</span><span class="material-card-description">Dimensions, identities, provenance and claim boundaries for the public Workbench screenshots.</span></a>
-          <a class="material-card" href="docs/native_workbench_development_preview_provenance.md"><span class="material-card-title">Native Workbench Preview Provenance</span><span class="material-card-description">Capture context, public role and limitations of the native Workbench development preview.</span></a>
+          <a class="material-card" href="assets/images/dad-fieldworks/canonical-yee/manifest.json"><span class="material-card-title">Canonical-Yee Screenshot Manifest</span><span class="material-card-description">Dimensions, identities and publication roles for the saved-field sequence.</span></a>
+          <a class="material-card" href="docs/canonical_yee_field_visualization_provenance.md"><span class="material-card-title">Canonical-Yee Visualization Provenance</span><span class="material-card-description">Capture mapping and lossless publication method for the native Workbench sequence.</span></a>
           <a class="material-card" href="assets/asset_manifest.md"><span class="material-card-title">Asset Manifest</span><span class="material-card-description">Creation method and claim boundary for public assets.</span></a>
           <a class="material-card" href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"><span class="material-card-title">GitHub Repository</span><span class="material-card-description">Public showcase repository.</span></a>
         </div>
