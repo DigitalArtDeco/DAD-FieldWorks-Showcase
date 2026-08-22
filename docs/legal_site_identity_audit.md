@@ -1,6 +1,6 @@
 # Legal Site Identity Audit
 
-Audit date: 2026-08-13
+Audit date: 2026-08-22
 
 ## Published company identity
 
@@ -10,10 +10,12 @@ Audit date: 2026-08-13
 - Register court: Amtsgericht Augsburg
 - Commercial register: HRB 43034
 - Primary company and legal contact: info@dadlabs.de
-- Additional direct managing-director contact: harun.aktas@me.com
+- Public business telephone: [+49 176 48296275](tel:+4917648296275)
 - Privacy controller: DigitalArtDeco Labs UG (haftungsbeschränkt)
 
-No telephone number, VAT identification number, economic identification number, share capital, private register-extract data or register-extract image is published as part of this identity record.
+`PUBLIC_BUSINESS_TELEPHONE` identifies the company telephone published in the homepage contact area and Organization structured data, the Impressum, the privacy controller information and this authority record.
+
+No VAT identification number, economic identification number, ordinary tax number, share capital, private register-extract data or register-extract image is published as part of this identity record. According to the binding company authority, neither a VAT identification number nor an economic identification number has currently been issued. This status is not a permanent exception: it must be reviewed after either identifier is issued and the public information must then be supplemented where legally required.
 
 ## Media-responsibility classification
 
@@ -26,7 +28,6 @@ The static website presents a company product, engineering capabilities, technic
 Every retained personal-identity occurrence has one of these defined roles:
 
 - `VERIFIED_MANAGING_DIRECTOR`: Harun Aktas as the legal representative of DigitalArtDeco Labs UG (haftungsbeschränkt) in `impressum.html`, `datenschutz.html` and this authority record.
-- `ADDITIONAL_DIRECT_CONTACT`: the explicitly authorized direct email address in the dedicated contact areas of `index.html`, `impressum.html`, `datenschutz.html` and this authority record.
 
 The managing director is not identified as the sole personal provider, private site owner, primary publisher, separate private privacy controller or generic unclassified responsible person.
 
@@ -38,20 +39,22 @@ Repository-wide semantic audit counts:
 - `PersonAsPrimaryPrivacyControllerCount`: 0
 - `UnclassifiedPersonalNameReferenceCount`: 0
 - `VerifiedManagingDirectorReferenceCount`: 4
-- `AdditionalDirectEmailReferenceCount`: 4
+- `PrivateEmailOccurrenceCount`: 0
+- `PublicBusinessTelephoneContextCount`: 5
 - `CompanyProviderIdentityQ`: true
 - `CompanyPrivacyControllerIdentityQ`: true
 - `CompanyPrimaryPublisherIdentityQ`: true
 
 ## Privacy implementation review
 
-The current static site uses local CSS, local images, ordinary links and `mailto:` links. It is hosted through GitHub Pages. It does not load site-authored analytics or tracking, external fonts, external JavaScript, third-party embeds or a contact form, and it does not set site-authored cookies. The privacy policy describes the GitHub Pages hosting path and these current implementation boundaries. No cookie banner is used because the inspected site does not contain consent-requiring site technology.
+The current static site uses local CSS, local images, ordinary links, `mailto:` links and `tel:` links. Apart from machine-readable Organization structured data, the published HTML does not load executable JavaScript. It is hosted through GitHub Pages. It does not load site-authored analytics or tracking, external fonts, third-party embeds or a contact form, and it does not set site-authored consent-requiring cookies. The privacy policy documents the GitHub Pages hosting path and IP logging, technical request data, purposes and legal bases, recipients, GitHub contact entities, third-country transfer safeguards, operator-authored technology boundaries, email and telephone contact processing, retention criteria, voluntariness, data-subject rights, objection rights, supervisory authority, automated decision-making, HTTPS and external links. No cookie banner is used because the inspected site does not contain operator-authored consent-requiring technology.
 
 ## Legal-page consistency result
 
 - Company provider identity: confirmed
 - Company privacy-controller identity: confirmed
 - Primary company email: confirmed
+- Public business telephone and functional `tel:` links: confirmed
 - Managing-director role: confirmed
 - Register court and register number: confirmed in the Impressum
 - Generic personal content-responsibility block: absent
