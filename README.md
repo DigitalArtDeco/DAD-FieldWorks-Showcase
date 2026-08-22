@@ -24,11 +24,11 @@ Confirmed capabilities shown by this sequence:
 - interactive camera, clipping, slice positioning and frame navigation;
 - native Windows desktop integration using wxWidgets and VTK.
 
-| Frame 2/5 — Step 924 | Frame 3/5 — Step 1109 · Primary view |
+| Frame 2/5: Step 924 | Frame 3/5: Step 1109 (Primary view) |
 | :---: | :---: |
 | [![DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 2 of 5, step 924.](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png)](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png) | [![DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png)](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png) |
 | An early saved field state showing the electric-field magnitude on the selected Z slice through the microstrip PCB geometry. | The field concentration develops along the trace while the geometry, slice position and quantitative V/m scale remain directly inspectable. |
-| **Frame 4/5 — Step 1294** | **Frame 5/5 — Step 4095** |
+| **Frame 4/5: Step 1294** | **Frame 5/5: Step 4095** |
 | [![DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 4 of 5, step 1294.](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png)](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png) | [![DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 5 of 5, step 4095.](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png)](assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png) |
 | A later saved state of the evolving electric-field distribution, displayed on the same common scale for visual comparison. | The final stored state in this sequence, showing the late-time spatial field distribution across the PCB structure. |
 

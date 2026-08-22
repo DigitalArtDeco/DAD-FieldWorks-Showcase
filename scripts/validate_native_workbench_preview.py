@@ -73,7 +73,7 @@ EXPECTED_SEQUENCE = (
         "height": 861,
         "pixel_sha256": "88c0576bfe16916c2d6ce164aa806ab66312e80628874e29699dc4b8c5fa170f",
         "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 2 of 5, step 924.",
-        "caption_title": "Frame 2/5 — Step 924",
+        "caption_title": "Frame 2/5: Step 924",
         "caption_body": (
             "An early saved field state showing the electric-field magnitude on the "
             "selected Z slice through the microstrip PCB geometry."
@@ -89,7 +89,7 @@ EXPECTED_SEQUENCE = (
         "height": 862,
         "pixel_sha256": "414c9ed272bd2dff7d72462096c99e4eab2d559466386462e5d19a7e6f94f4f1",
         "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.",
-        "caption_title": "Frame 3/5 — Step 1109",
+        "caption_title": "Frame 3/5: Step 1109",
         "caption_body": (
             "The field concentration develops along the trace while the geometry, "
             "slice position and quantitative V/m scale remain directly inspectable."
@@ -105,7 +105,7 @@ EXPECTED_SEQUENCE = (
         "height": 861,
         "pixel_sha256": "9b96e8e040efeebe8859361c30b2d1c2cc0fb8d86d34b2bfac0a305629f7a8e0",
         "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 4 of 5, step 1294.",
-        "caption_title": "Frame 4/5 — Step 1294",
+        "caption_title": "Frame 4/5: Step 1294",
         "caption_body": (
             "A later saved state of the evolving electric-field distribution, "
             "displayed on the same common scale for visual comparison."
@@ -121,7 +121,7 @@ EXPECTED_SEQUENCE = (
         "height": 863,
         "pixel_sha256": "5bcdb2394bfa9f80ec367074f691ef300c30a36676dd50e9549247013b4663c3",
         "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 5 of 5, step 4095.",
-        "caption_title": "Frame 5/5 — Step 4095",
+        "caption_title": "Frame 5/5: Step 4095",
         "caption_body": (
             "The final stored state in this sequence, showing the late-time spatial "
             "field distribution across the PCB structure."
