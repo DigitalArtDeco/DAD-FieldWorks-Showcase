@@ -1,37 +1,37 @@
-# Current Public Status
+# Current Implemented Capabilities
 
 Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved, except where an asset manifest identifies a different copyright owner.
 
-DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). The public website contains selected architecture notes, public whitepaper material, source-backed Signal Integrity engineering dashboards and a native Workbench visualization sequence.
+DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). The current public presentation is based on implemented code, focused tests and internally exercised engineering reference cases.
 
-## Current Public Story
+## Native True-3D Electromagnetic Simulation
 
-The homepage presents DAD FieldWorks as evidence-controlled engineering software for computational electromagnetics, RF engineering and signal integrity workflows.
+The DAD-owned C++ time-domain core represents Ex, Ey, Ez, Hx, Hy and Hz on their native staggered Yee lattice positions. Explicit leapfrog updates advance the full-vector field state. The solver architecture includes component-native material mapping, electric PEC enforcement, source coupling, material-aware CPML infrastructure, native field snapshots and two-port voltage and current acquisition.
 
-## Interactive Canonical-Yee Field Visualization
+One internally exercised PCB reference case completed 4,096 transient steps, saved five full-vector field states and produced two raw Port V/I traces with 4,096 samples each.
 
-The native Windows Workbench loads a precomputed Canonical-Yee result package and displays the stored field data together with PCB geometry in an embedded VTK scientific view. The published sequence shows derived cell-centred electric-field magnitude in V/m on a Z-oriented slice at saved states 2/5, 3/5, 4/5 and 5/5.
+## Scientific Field Visualization
 
-The Workbench provides selectable X, Y and Z field slices, camera control, clipping, slice positioning and saved-frame navigation. The five stored states use a common quantitative scale for direct visual comparison.
+The native wxWidgets Workbench embeds VTK for scientific 3D views. Implemented presentation modes include component-native signed scalar slices, derived collocated vector magnitude, vector glyphs and magnitude isosurfaces. The view also handles units, color scales, axes, camera controls, clipping, picking and explicit frame selection.
 
-## Analytical Reference Examples
+The published Canonical-Yee sequence shows four states from a five-state reference package on one common Z-oriented slice and V/m scale.
 
-The public engineering examples include:
+## Port Signals and RF Processing
 
-- Microstrip 50 Ohm Width Synthesis.
-- Analytical Reference Family Comparison.
-- Stripline Analytical Reference Example.
-- Coupled Line Even/Odd Mode.
-- Differential Pair Spacing Sweep.
+Port voltage is acquired from native electric-field paths and current from native magnetic-field contours. The RF layer provides Yee-aware temporal alignment, deterministic direct Fourier transformation and real-reference power-normalized pseudowaves. Supported one-port and two-port result datasets can be classified with reciprocity, passivity and losslessness diagnostics.
 
-These examples present source-backed analytical reference workflows with traceable inputs, derived quantities and evidence-aware result records.
+## S-Parameter Result Workbench
 
-## Current Capability Summary
+The Result Workbench uses a versioned product-owned complex S-parameter model. The Matrix view exposes response and excitation entries at a selected frequency. Cartesian views provide selectable complex traces and exact markers. The Smith-chart view presents diagonal reflection traces with gamma and normalized-impedance readout. Reference-impedance, reference-plane and package provenance remain explicit. Invalid samples remain visible as gaps, and inconsistent or incomplete payloads fail closed.
 
-- Native Windows desktop integration using wxWidgets and VTK.
-- Precomputed Canonical-Yee field-package loading through the Workbench interface.
-- PCB geometry and stored electric-field data displayed together in 3D.
-- Quantitative cell-centred electric-field magnitude in V/m.
-- Interactive slice and saved-state inspection.
-- Source-backed analytical reference and diagnostic workflows.
-- Evidence records connecting computation, provenance, claim scope and trust state.
+## Quasi-TEM Cross-Section Analysis
+
+DAD FieldWorks implements C++ foundations for lossless two-conductor quasi-TEM cross-section analysis. Paired electrostatic and vacuum-companion magnetic formulations record iteration, residual, convergence and finite-value diagnostics. Consistency checks connect voltage, charge, current, flux, energy and native staggered fields.
+
+## Evidence-Bound Engineering
+
+Controlled computations bind versioned inputs, solver and executable provenance, execution context, immutable numerical payloads, evaluation records and claim boundaries into a traceable evidence chain. Process journals and transactional payload handling support deterministic, single-use execution records.
+
+## Native Engineering Workbench
+
+wxWidgets provides the native desktop shell. DAD-owned engineering models and a dedicated PCB canvas remain separate from VTK visualization and from solver, result and evidence contracts. This keeps the computational core independent from the desktop presentation layer.

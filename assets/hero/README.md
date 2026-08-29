@@ -1,11 +1,9 @@
-# Hero Assets
+# Homepage Visual Assets
 
-The active homepage hero animation is `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero.gif`. The matching poster is `assets/hero/fdtd_microwave_resonator_ringdown_clean_hero_poster.png`.
+The active homepage visual is the approved Canonical-Yee Workbench capture at `assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png`. Its dimensions, decoded-pixel identity, source mapping and publication role are recorded in the [Canonical-Yee image manifest](../images/dad-fieldworks/canonical-yee/manifest.json) and [visualization provenance](../../docs/canonical_yee_field_visualization_provenance.md).
 
-The GIF is a derived website preview created from the sanitized PNG frame sequence under `assets/animations/fdtd_ringdown_png_sequence/frames/`. The PNG frames are the primary image artifact and were written with the DAD internal PNG writer from field matrices computed by the DAD FieldWorks 2D TMz FDTD kernel.
+The GIF, poster and supporting files in this directory remain approved public visualization artifacts. They are not used as the active homepage visual in the current capability presentation.
 
-The animation contains no in-frame text, no screenshots, no external images and no AI image generation.
-
-Claim boundary: internal research visualization only. It is not external validation, not benchmark evidence, not measurement evidence and not production evidence.
+No new scientific image was created for this update.
 
 Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

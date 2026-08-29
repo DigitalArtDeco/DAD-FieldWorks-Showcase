@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-"""Validate the public Canonical-Yee Workbench showcase update.
+"""Validate the current implemented-capability DAD FieldWorks showcase.
 
 The validator is intentionally standard-library only and offline.  It checks
 the four losslessly published screenshots, their manifest and chronological
-presentation, accessibility/metadata requirements, local link integrity, and
-the bounded public-copy contract requested for this publication tranche.
+presentation, the implemented-capability narrative, accessibility and
+metadata requirements, local link integrity, and the bounded public-copy
+contract requested for this publication tranche.
 """
 
 from __future__ import annotations
@@ -27,40 +28,149 @@ MANIFEST_PATH = CANONICAL_DIR / "manifest.json"
 INDEX_PATH = ROOT / "index.html"
 README_PATH = ROOT / "README.md"
 ASSET_INVENTORY_PATH = ROOT / "assets" / "asset_manifest.md"
+DOCS_INDEX_PATH = ROOT / "docs" / "README.md"
+CURRENT_CAPABILITIES_PATH = ROOT / "docs" / "current_public_status.md"
+CLAIM_BOUNDARIES_PATH = ROOT / "docs" / "claim_boundaries.md"
+HERO_README_PATH = ROOT / "assets" / "hero" / "README.md"
+EVIDENCE_ARCHITECTURE_PATH = ROOT / "docs" / "evidence_contract_architecture.md"
 
-SITE_TITLE = "DAD FieldWorks | Interactive Canonical-Yee Field Visualization"
+SITE_TITLE = "DAD FieldWorks | Native Electromagnetic Engineering Workbench"
 SITE_DESCRIPTION = (
-    "DAD FieldWorks visualizes precomputed Canonical-Yee PCB field data in an "
-    "interactive native 3D workbench with X/Y/Z slices, saved frames and "
-    "quantitative V/m scaling."
+    "DAD FieldWorks combines a native True-3D Yee FDTD core, scientific field "
+    "visualization, RF result processing and evidence-bound engineering in an "
+    "integrated desktop Workbench."
 )
-SECTION_HEADING = "Interactive Canonical-Yee Field Visualization"
+SOCIAL_DESCRIPTION = (
+    "Native True-3D Yee FDTD, scientific field visualization, RF result "
+    "processing and evidence-bound engineering in one desktop Workbench."
+)
+HERO_HEADLINE = "Physics-Based Electromagnetic Engineering for PCB and RF Design"
+HERO_TAGLINE = SITE_DESCRIPTION
+CAPABILITY_SECTION_HEADING = (
+    "Implemented foundations for native fields, scientific views and engineering results."
+)
+CAPABILITY_SECTION_PARAGRAPH = (
+    "The current implementation combines full-vector time-domain computation, "
+    "scientific visualization and structured RF processing. Each capability is "
+    "presented at the scope supported by current code, focused tests or an "
+    "internally exercised reference case."
+)
+WORKBENCH_SECTION_HEADING = "Canonical-Yee Field Visualization in the Native Workbench"
+README_WORKBENCH_HEADING = "Canonical-Yee Field Visualization"
 COPYRIGHT_OWNER = "DigitalArtDeco Labs UG (haftungsbeschränkt)"
+README_PRODUCT_PARAGRAPH = (
+    "DAD FieldWorks combines a DAD-owned full-vector 3D Yee FDTD core, scientific "
+    "field visualization, RF result processing and evidence-bound engineering in "
+    "an integrated native desktop Workbench."
+)
+CURRENT_CAPABILITIES_INTRO = (
+    "DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). "
+    "The current public presentation is based on implemented code, focused tests "
+    "and internally exercised engineering reference cases."
+)
 
-INTRO_PARAGRAPHS = (
+HERO_PROOF_ITEMS = (
+    "Full-vector Yee fields",
+    "Native field visualization",
+    "Port V/I acquisition",
+    "Direct DFT and pseudowaves",
+    "Matrix, Cartesian and Smith views",
+    "Hash-bound experiment provenance",
+)
+
+CAPABILITY_HEADINGS = (
+    "Native True-3D Electromagnetic Simulation",
+    "Scientific Field Visualization",
+    "Port Signals and RF Processing",
+    "S-Parameter Result Workbench",
+    "Quasi-TEM Cross-Section Analysis",
+    "Evidence-Bound Engineering",
+    "Native Engineering Workbench",
+)
+
+CAPABILITY_STATUS_LABELS = (
+    "Implemented and internally exercised",
+    "Scientific visualization implemented",
+    "RF core implemented",
+    "Result Workbench implemented",
+    "Internal numerical foundation implemented",
+    "Evidence architecture implemented",
+    "Native desktop architecture implemented",
+)
+
+CAPABILITY_REQUIRED_COPY = (
     (
-        "DAD FieldWorks loads precomputed Canonical-Yee field snapshots into its "
-        "native wxWidgets and VTK engineering workbench. The Scientific Field View "
-        "combines PCB geometry with a derived cell-centred electric-field magnitude "
-        "in V/m and provides interactive X, Y and Z slice inspection, camera control, "
-        "clipping and saved-frame navigation."
+        "DAD FieldWorks contains a DAD-owned full-vector 3D time-domain "
+        "electromagnetic core based on the spatially staggered Yee method. Ex, Ey, "
+        "Ez, Hx, Hy and Hz are represented at their native lattice positions and "
+        "advanced through explicit leapfrog updates."
     ),
     (
-        "The four views below show progressively later saved solver states on the "
-        "same Z-oriented slice and with the same quantitative V/m color scale. This "
-        "makes the spatial evolution of the electric-field magnitude along the "
-        "microstrip structure directly comparable inside the 3D PCB geometry."
+        "The native Workbench embeds VTK inside its wxWidgets desktop interface. "
+        "Its scientific view combines DAD-owned PCB geometry with field datasets "
+        "and supports component-native signed scalar slices, derived collocated "
+        "vector magnitude, vector glyphs, magnitude isosurfaces, engineering units, "
+        "axes, camera controls, clipping, picking and explicit frame selection."
+    ),
+    (
+        "DAD FieldWorks records port voltage from native electric-field paths and "
+        "current from native magnetic-field contours. Its downstream RF core "
+        "provides Yee-aware temporal alignment, deterministic direct Fourier "
+        "transformation, real-reference power-normalized pseudowaves and structured "
+        "one-port and two-port processing."
+    ),
+    (
+        "The native Result Workbench presents versioned complex S-parameter "
+        "datasets through Matrix, Cartesian and Smith-chart views. The Matrix view "
+        "exposes response and excitation entries at a selected frequency. Cartesian "
+        "views provide selectable complex traces and exact markers. The Smith-chart "
+        "view presents diagonal reflection traces with gamma and normalized-impedance "
+        "readout."
+    ),
+    (
+        "DAD FieldWorks implements evidence-bound C++ foundations for lossless "
+        "two-conductor quasi-TEM cross-section analysis. Paired electrostatic and "
+        "vacuum-companion magnetic formulations record iterations, residuals, "
+        "convergence thresholds and finite-value checks."
+    ),
+    (
+        "Every controlled computation is treated as a traceable engineering "
+        "experiment. DAD FieldWorks binds model inputs, solver identity, executable "
+        "state, execution context, numerical payloads and evaluation results into a "
+        "versioned evidence chain."
+    ),
+    (
+        "DAD FieldWorks uses wxWidgets for its native desktop shell, DAD-owned "
+        "engineering models and a dedicated PCB canvas. VTK provides the scientific "
+        "visualization backend. Project, solver, result and presentation contracts "
+        "remain explicitly separated so the computational core stays independent "
+        "from the desktop presentation layer."
     ),
 )
 
-CAPABILITIES = (
-    "Loads a precomputed Canonical-Yee result package through the normal Workbench user interface",
-    "Displays PCB geometry and real stored field data together in 3D",
-    "Shows derived cell-centred electric-field magnitude in V/m",
-    "Provides selectable X, Y and Z field slices",
-    "Presents five saved solver states with a common comparison scale",
-    "Supports interactive camera, clipping, slice positioning and frame navigation",
-    "Integrates a native Windows desktop interface using wxWidgets and VTK",
+WORKBENCH_INTRO_PARAGRAPHS = (
+    (
+        "A five-state Canonical-Yee reference package has been exercised internally "
+        "for magnitude, slice, camera and saved-frame inspection in the native GUI. "
+        "The Scientific Field View combines PCB geometry with derived cell-centred "
+        "electric-field magnitude in V/m while retaining the native full-vector "
+        "field package as its source."
+    ),
+    (
+        "The four published captures show progressively later saved states on the "
+        "same Z-oriented slice and with the same quantitative V/m color scale. Their "
+        "fixed geometry and scale make the spatial field evolution along the "
+        "microstrip directly comparable."
+    ),
+)
+
+WORKBENCH_CAPABILITIES = (
+    "Five saved full-vector field states from one internally exercised PCB reference run.",
+    "PCB geometry and stored field data presented together in a native 3D view.",
+    "Derived cell-centred electric-field magnitude with quantitative V/m units.",
+    "Selectable X, Y and Z slices with explicit source placement.",
+    "Camera, clipping, slice positioning and deterministic frame navigation.",
+    "Native Windows desktop integration using wxWidgets and VTK.",
 )
 
 EXPECTED_SEQUENCE = (
@@ -149,12 +259,26 @@ TEXT_SUFFIXES = {
     ".yaml",
 }
 SAFETY_SCAN_SUFFIXES = TEXT_SUFFIXES - {".py"}
-PUBLIC_COPY_PATHS = (
+ACTIVE_PRESENTATION_PATHS = (
     INDEX_PATH,
     README_PATH,
+    DOCS_INDEX_PATH,
+    CURRENT_CAPABILITIES_PATH,
+    CLAIM_BOUNDARIES_PATH,
+    HERO_README_PATH,
+)
+CLAIM_COPY_PATHS = ACTIVE_PRESENTATION_PATHS + (
     ROOT / "docs" / "canonical_yee_field_visualization_provenance.md",
     MANIFEST_PATH,
 )
+UNSUPPORTED_CLAIM_COPY_PATHS = (
+    INDEX_PATH,
+    README_PATH,
+    CURRENT_CAPABILITIES_PATH,
+    HERO_README_PATH,
+    ROOT / "docs" / "canonical_yee_field_visualization_provenance.md",
+)
+PUBLIC_LINK_SURFACE_PATHS = ACTIVE_PRESENTATION_PATHS + (EVIDENCE_ARCHITECTURE_PATH,)
 PRIVATE_PATH_PATTERN = re.compile(
     r"(?i)(?:(?<![a-z0-9+.-])[a-z]:[\\/]|file://|\\\\)[^\s<>'\"]+"
 )
@@ -162,14 +286,32 @@ TRACKING_PATTERN = re.compile(
     r"(?i)(google-analytics|googletagmanager|gtag\s*\(|matomo|plausible\.io|"
     r"segment\.com|mixpanel|hotjar|dataLayer\s*=)"
 )
-TOKEN_PATTERN = re.compile(r"[a-z0-9_]+(?:-[a-z0-9_]+)*")
-
-# Repository-private organization/customer identifiers are represented only by
-# SHA-256 token digests so the validation source is safe to publish and scan.
-EMPLOYER_CUSTOMER_TOKEN_DIGESTS = {
-    "36aa04f4333ebc94260a496b27815226e288d9f946e5eca92362e42c09626290",
-    "423d16ce8c066ceb5714dbb2f9d16eaa59e3571d0318367039755e7e64ceb32f",
-}
+PRIVATE_COMMIT_HASH_PATTERN = re.compile(r"(?i)\b[0-9a-f]{40}\b")
+PRIVATE_CONTEXT_PATTERN = re.compile(
+    r"(?i)\b(?:customer|employer|employee)(?:[_ -](?:name|id|metadata))?\b|"
+    r"\breferences[_-]local\b"
+)
+INTERNAL_IDENTIFIER_PREFIXES = (
+    "request",
+    "attempt",
+    "authority",
+    "decision",
+    "failure",
+    "process",
+)
+INTERNAL_IDENTIFIER_PATTERN = re.compile(
+    r"(?i)\b(?:" + "|".join(INTERNAL_IDENTIFIER_PREFIXES) + r")[_ -]?(?:id|class)\b"
+)
+ROADMAP_LINK_PATTERN = re.compile(
+    r"(?i)(?:href\s*=\s*['\"][^'\"]*roadmap[^'\"]*['\"]|"
+    r"\[[^\]]*\]\([^)]*roadmap[^)]*\)|#roadmap\b)"
+)
+LIMITATIONS_HEADING_PATTERN = re.compile(
+    r"(?i)\b(?:limitations?|missing\s+features?|current\s+blockers?|"
+    r"not\s+yet\s+implemented)\b"
+)
+MATHEMATICA_PRODUCT_PATTERN = re.compile(r"(?i)\b(?:mathematica|wolfram)\b")
+SCIENTIFIC_IMAGE_SUFFIXES = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".svg", ".webp"}
 
 REPEATED_NEGATIVE_PATTERNS = (
     re.compile(r"\bnot\s+production\s+ready\b", re.IGNORECASE),
@@ -183,9 +325,17 @@ REPEATED_NEGATIVE_PATTERNS = (
 UNSUPPORTED_CLAIM_PATTERNS = (
     re.compile(r"\b(?:certified|certification)\b", re.IGNORECASE),
     re.compile(r"\bexternally\s+validated\b", re.IGNORECASE),
-    re.compile(r"\bcommercial(?:ly)?\s+(?:available|availability)\b", re.IGNORECASE),
+    re.compile(r"\bcommercial(?:ly)?\s+validated\b", re.IGNORECASE),
+    re.compile(r"\bindustry\s+validated\b", re.IGNORECASE),
+    re.compile(r"\bmeasurement[- ]validated\b", re.IGNORECASE),
+    re.compile(r"\bproduction[- ]ready\b", re.IGNORECASE),
     re.compile(r"\b(?:production\s+(?:approved|approval|deployment)|approved\s+for\s+production)\b", re.IGNORECASE),
     re.compile(r"\bmeasur(?:ed|ement(?:-validated)?)\s+accuracy\b", re.IGNORECASE),
+    re.compile(r"\b(?:a\s+)?(?:complete|full)\s+(?:replacement\s+for\s+)?(?:hfss|cst|comsol)\b", re.IGNORECASE),
+    re.compile(r"\b(?:hfss|cst|comsol)\s+replacement\b", re.IGNORECASE),
+    re.compile(r"\bcomplete\s+arbitrary[- ]pcb\s+s-?parameter\s+solver\b", re.IGNORECASE),
+    re.compile(r"\bcomplete\s+broadband\s+modal[- ]port\b", re.IGNORECASE),
+    re.compile(r"\bcomplete\s+real\s+s[- ]matrix\s+from\s+arbitrary\s+3d\s+geometry\b", re.IGNORECASE),
     re.compile(r"\b(?:complete|full)\s+s-?parameter\s+extraction\b", re.IGNORECASE),
     re.compile(r"\b(?:complete|full)\s+pcb\s+authoring\b", re.IGNORECASE),
     re.compile(r"\b(?:complete|full)\s+end-to-end\s+simulation\b", re.IGNORECASE),
@@ -210,7 +360,10 @@ class PageParser(HTMLParser):
         self.meta: list[dict[str, str | None]] = []
         self.links: list[dict[str, str | None]] = []
         self.headings: list[str] = []
+        self.heading_records: list[tuple[str, str, str | None]] = []
         self.title = ""
+        self.all_text_parts: list[str] = []
+        self.section_text_parts: dict[str, list[str]] = {}
         self.workbench_text_parts: list[str] = []
         self.workbench_figures: list[dict[str, object]] = []
 
@@ -220,8 +373,11 @@ class PageParser(HTMLParser):
         self._caption_depth = 0
         self._heading_depth = 0
         self._heading_parts: list[str] = []
+        self._heading_tag = ""
+        self._heading_section: str | None = None
         self._title_depth = 0
         self._title_parts: list[str] = []
+        self._suppressed_text_depth = 0
 
     @staticmethod
     def _attrs(attrs: list[tuple[str, str | None]]) -> dict[str, str | None]:
@@ -231,14 +387,22 @@ class PageParser(HTMLParser):
     def inside_workbench(self) -> bool:
         return "workbench" in self._section_stack
 
+    def section_text(self, section_id: str) -> str:
+        return normalized(" ".join(self.section_text_parts.get(section_id, [])))
+
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         tag = tag.lower()
         data = self._attrs(attrs)
+        if tag in {"script", "style"}:
+            self._suppressed_text_depth += 1
         if value := data.get("id"):
             self.ids.append(value)
 
         if tag == "section":
-            self._section_stack.append(data.get("id"))
+            section_key = data.get("id") or data.get("aria-labelledby")
+            self._section_stack.append(section_key)
+            if section_key:
+                self.section_text_parts.setdefault(section_key, [])
         elif tag == "a":
             self._anchor_stack.append(data)
             if href := data.get("href"):
@@ -258,6 +422,11 @@ class PageParser(HTMLParser):
             self._heading_depth += 1
             if self._heading_depth == 1:
                 self._heading_parts = []
+                self._heading_tag = tag
+                self._heading_section = next(
+                    (section for section in reversed(self._section_stack) if section),
+                    None,
+                )
         elif tag == "title":
             self._title_depth += 1
             if self._title_depth == 1:
@@ -301,6 +470,8 @@ class PageParser(HTMLParser):
 
     def handle_endtag(self, tag: str) -> None:
         tag = tag.lower()
+        if tag in {"script", "style"}:
+            self._suppressed_text_depth = max(0, self._suppressed_text_depth - 1)
         if tag == "a" and self._anchor_stack:
             self._anchor_stack.pop()
         elif tag == "figcaption" and self._caption_depth:
@@ -314,13 +485,22 @@ class PageParser(HTMLParser):
         elif tag in {"h1", "h2", "h3", "h4", "h5", "h6"} and self._heading_depth:
             self._heading_depth -= 1
             if self._heading_depth == 0:
-                self.headings.append(normalized(" ".join(self._heading_parts)))
+                heading = normalized(" ".join(self._heading_parts))
+                self.headings.append(heading)
+                self.heading_records.append(
+                    (self._heading_tag, heading, self._heading_section)
+                )
         elif tag == "title" and self._title_depth:
             self._title_depth -= 1
             if self._title_depth == 0:
                 self.title = normalized(" ".join(self._title_parts))
 
     def handle_data(self, data: str) -> None:
+        if not self._suppressed_text_depth and data.strip():
+            self.all_text_parts.append(data)
+            for section in self._section_stack:
+                if section:
+                    self.section_text_parts.setdefault(section, []).append(data)
         if self.inside_workbench and data.strip():
             self.workbench_text_parts.append(data)
         if self._caption_depth and self._figure_stack and data.strip():
@@ -507,10 +687,50 @@ def staged_raw_incoming_paths() -> list[str]:
     ]
 
 
+def added_scientific_image_paths() -> list[str]:
+    diff_result = subprocess.run(
+        ["git", "diff", "HEAD", "--name-only", "--diff-filter=A", "--"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    untracked_result = subprocess.run(
+        ["git", "ls-files", "--others", "--exclude-standard"],
+        cwd=ROOT,
+        check=True,
+        capture_output=True,
+        text=True,
+        encoding="utf-8",
+    )
+    paths = {
+        line.strip().replace("\\", "/")
+        for output in (diff_result.stdout, untracked_result.stdout)
+        for line in output.splitlines()
+        if line.strip()
+    }
+    return sorted(
+        path
+        for path in paths
+        if path.startswith("assets/")
+        and Path(path).suffix.casefold() in SCIENTIFIC_IMAGE_SUFFIXES
+    )
+
+
 def validate_manifest_and_images(failures: list[str]) -> tuple[int, int, dict[str, str]]:
     metadata_chunk_count = 0
     published_count = 0
     actual_digests: dict[str, str] = {}
+
+    actual_canonical_png_names = tuple(
+        sorted(path.name for path in CANONICAL_DIR.glob("*.png") if path.is_file())
+    )
+    if actual_canonical_png_names != tuple(sorted(EXPECTED_FILENAMES)):
+        fail(
+            failures,
+            "Canonical-Yee directory must contain exactly the four approved PNG files",
+        )
 
     if not MANIFEST_PATH.is_file():
         fail(failures, f"missing Canonical-Yee manifest: {MANIFEST_PATH.relative_to(ROOT)}")
@@ -672,10 +892,10 @@ def validate_manifest_and_images(failures: list[str]) -> tuple[int, int, dict[st
 
 def validate_homepage(
     failures: list[str], actual_digests: dict[str, str]
-) -> tuple[PageParser, int, int, int, bool]:
+) -> tuple[PageParser, int, int, int, bool, bool, int]:
     if not INDEX_PATH.is_file():
         fail(failures, "missing index.html")
-        return PageParser(), 0, 0, 0, False
+        return PageParser(), 0, 0, 0, False, False, 0
     index_text = INDEX_PATH.read_text(encoding="utf-8")
     parser = parse_html(INDEX_PATH)
 
@@ -684,16 +904,84 @@ def validate_homepage(
         fail(failures, f"duplicate HTML ids: {', '.join(duplicates)}")
     if "workbench" not in parser.ids:
         fail(failures, "index.html must preserve the workbench section anchor")
-    if SECTION_HEADING not in parser.headings:
-        fail(failures, f"index.html is missing the exact heading: {SECTION_HEADING}")
+    required_section_ids = {
+        "capabilities",
+        "workbench",
+        "evidence",
+        "architecture",
+        "about",
+        "materials",
+        "contact",
+    }
+    missing_section_ids = sorted(required_section_ids - set(parser.ids))
+    if missing_section_ids:
+        fail(failures, f"index.html is missing section anchors: {', '.join(missing_section_ids)}")
     if parser.title != SITE_TITLE:
-        fail(failures, "HTML title does not match the Canonical-Yee page title")
+        fail(failures, "HTML title does not match the current Workbench page title")
+
+    hero_headings = tuple(
+        heading
+        for tag, heading, section in parser.heading_records
+        if tag == "h1" and section == "hero-title"
+    )
+    hero_text = parser.section_text("hero-title")
+    hero_checks = (
+        hero_headings == (HERO_HEADLINE,),
+        normalized(HERO_TAGLINE) in hero_text,
+        all(normalized(item) in hero_text for item in HERO_PROOF_ITEMS),
+        bool(
+            re.search(
+                r"<ul\b[^>]*\bclass\s*=\s*['\"][^'\"]*\bcapability-strip\b[^'\"]*['\"]",
+                index_text,
+                re.IGNORECASE,
+            )
+        ),
+    )
+    if not hero_checks[0]:
+        fail(failures, "homepage hero must contain the exact current capability headline")
+    if not hero_checks[1]:
+        fail(failures, "homepage hero must contain the exact current capability tagline")
+    if not hero_checks[2]:
+        fail(failures, "homepage hero proof strip is missing one or more required items")
+    if not hero_checks[3]:
+        fail(failures, "homepage hero is missing the semantic capability proof strip")
+
+    capability_headings = tuple(
+        heading
+        for tag, heading, section in parser.heading_records
+        if tag == "h3" and section == "capabilities"
+    )
+    capability_text = parser.section_text("capabilities")
+    capability_checks = (
+        CAPABILITY_SECTION_HEADING in parser.headings,
+        normalized(CAPABILITY_SECTION_PARAGRAPH) in capability_text,
+        capability_headings == CAPABILITY_HEADINGS,
+        all(normalized(label) in capability_text for label in CAPABILITY_STATUS_LABELS),
+        all(normalized(paragraph) in capability_text for paragraph in CAPABILITY_REQUIRED_COPY),
+        all(metric in capability_text for metric in ("4,096", "5", "2 × 4,096 samples")),
+    )
+    if not capability_checks[0]:
+        fail(failures, "homepage is missing the exact implemented-capability section heading")
+    if not capability_checks[1]:
+        fail(failures, "implemented-capability section is missing its scope paragraph")
+    if not capability_checks[2]:
+        fail(failures, "homepage capability-card headings do not match the seven approved groups")
+    if not capability_checks[3]:
+        fail(failures, "homepage capability cards are missing one or more scope labels")
+    if not capability_checks[4]:
+        fail(failures, "homepage capability cards are missing required implemented-capability copy")
+    if not capability_checks[5]:
+        fail(failures, "homepage reference-case metrics are incomplete")
+
+    presentation_pass = all(hero_checks) and all(capability_checks)
 
     workbench_text = normalized(" ".join(parser.workbench_text_parts))
-    for paragraph in INTRO_PARAGRAPHS:
+    if WORKBENCH_SECTION_HEADING not in parser.headings:
+        fail(failures, f"index.html is missing the exact heading: {WORKBENCH_SECTION_HEADING}")
+    for paragraph in WORKBENCH_INTRO_PARAGRAPHS:
         if normalized(paragraph) not in workbench_text:
             fail(failures, "Canonical-Yee section is missing one required capability paragraph")
-    for capability in CAPABILITIES:
+    for capability in WORKBENCH_CAPABILITIES:
         if normalized(capability).casefold() not in workbench_text.casefold():
             fail(failures, f"Canonical-Yee capability summary is missing: {capability}")
 
@@ -767,14 +1055,14 @@ def validate_homepage(
         ("name", "description"): SITE_DESCRIPTION,
         ("property", "og:type"): "website",
         ("property", "og:title"): SITE_TITLE,
-        ("property", "og:description"): SITE_DESCRIPTION,
+        ("property", "og:description"): SOCIAL_DESCRIPTION,
         ("property", "og:image"): PRIMARY_URL,
         ("property", "og:image:width"): str(EXPECTED_SEQUENCE[1]["width"]),
         ("property", "og:image:height"): str(EXPECTED_SEQUENCE[1]["height"]),
         ("property", "og:image:alt"): EXPECTED_SEQUENCE[1]["alt"],
         ("name", "twitter:card"): "summary_large_image",
         ("name", "twitter:title"): SITE_TITLE,
-        ("name", "twitter:description"): SITE_DESCRIPTION,
+        ("name", "twitter:description"): SOCIAL_DESCRIPTION,
         ("name", "twitter:image"): PRIMARY_URL,
         ("name", "twitter:image:alt"): EXPECTED_SEQUENCE[1]["alt"],
     }
@@ -791,15 +1079,35 @@ def validate_homepage(
         fail(failures, "canonical URL must be exactly https://www.dadlabs.de/")
 
     broken_images = 0
+    approved_image_sources = {
+        f"assets/images/dad-fieldworks/canonical-yee/{filename}"
+        for filename in EXPECTED_FILENAMES
+    }
+    unexpected_scientific_images: set[str] = set()
     for image in parser.images:
         src = str(image.get("src") or "")
         if not src or not local_target_exists(INDEX_PATH, src):
             broken_images += 1
             fail(failures, f"missing index.html image target: {src or '<empty>'}")
+        parts = urlsplit(src)
+        normalized_src = unquote(parts.path).lstrip("/").replace("\\", "/")
+        if (
+            normalized_src
+            and not parts.scheme
+            and Path(normalized_src).suffix.casefold() in SCIENTIFIC_IMAGE_SUFFIXES
+            and normalized_src not in approved_image_sources
+        ):
+            unexpected_scientific_images.add(normalized_src)
         if not normalized(str(image.get("alt") or "")):
             missing_alt_count += 1
             accessibility_pass = False
             fail(failures, f"index.html image has empty alt text: {src or '<empty>'}")
+    if unexpected_scientific_images:
+        fail(
+            failures,
+            "homepage references an image outside the four approved Canonical-Yee assets: "
+            + ", ".join(sorted(unexpected_scientific_images)),
+        )
 
     broken_links = 0
     for href in parser.hrefs:
@@ -827,16 +1135,48 @@ def validate_homepage(
     # The digest argument is used below in the inventory checks and retained in
     # this signature to keep homepage/manifest integration explicit.
     del actual_digests
-    return parser, broken_images, broken_links, external_assets, accessibility_pass
+    return (
+        parser,
+        broken_images,
+        broken_links,
+        external_assets,
+        accessibility_pass,
+        presentation_pass,
+        len(unexpected_scientific_images),
+    )
 
 
-def validate_readme_and_inventory(failures: list[str], actual_digests: dict[str, str]) -> None:
+def markdown_headings(text: str, level: int) -> tuple[str, ...]:
+    marker = "#" * level
+    return tuple(
+        normalized(match)
+        for match in re.findall(rf"(?m)^{re.escape(marker)}\s+(.+?)\s*$", text)
+    )
+
+
+def validate_readme_and_inventory(
+    failures: list[str], actual_digests: dict[str, str]
+) -> bool:
     if not README_PATH.is_file():
         fail(failures, "missing README.md")
-        return
+        return False
     readme_text = README_PATH.read_text(encoding="utf-8")
-    if f"## {SECTION_HEADING}" not in readme_text:
+    level_two_headings = markdown_headings(readme_text, 2)
+    level_three_headings = markdown_headings(readme_text, 3)
+    readme_checks = (
+        "Implemented Engineering Capabilities" in level_two_headings,
+        README_WORKBENCH_HEADING in level_two_headings,
+        level_three_headings == CAPABILITY_HEADINGS,
+        normalized(README_PRODUCT_PARAGRAPH) in normalized(readme_text),
+    )
+    if not readme_checks[0]:
+        fail(failures, "README is missing the implemented-capability heading")
+    if not readme_checks[1]:
         fail(failures, "README is missing the Canonical-Yee showcase heading")
+    if not readme_checks[2]:
+        fail(failures, "README capability headings do not match the seven approved groups")
+    if not readme_checks[3]:
+        fail(failures, "README is missing the current product capability paragraph")
 
     paths = [f"assets/images/dad-fieldworks/canonical-yee/{name}" for name in EXPECTED_FILENAMES]
     positions = [readme_text.find(path) for path in paths]
@@ -854,7 +1194,7 @@ def validate_readme_and_inventory(failures: list[str], actual_digests: dict[str,
 
     if not ASSET_INVENTORY_PATH.is_file():
         fail(failures, "missing assets/asset_manifest.md")
-        return
+        return False
     inventory_text = ASSET_INVENTORY_PATH.read_text(encoding="utf-8")
     for expected in EXPECTED_SEQUENCE:
         filename = str(expected["filename"])
@@ -867,10 +1207,75 @@ def validate_readme_and_inventory(failures: list[str], actual_digests: dict[str,
         # and their owner without duplicating mutable hash data.
     if inventory_text.count(COPYRIGHT_OWNER) < 4:
         fail(failures, "asset inventory does not record the requested owner for all four images")
+    return all(readme_checks)
 
 
-def validate_site_links_and_dependencies(failures: list[str]) -> tuple[int, int]:
+def validate_current_capability_docs(failures: list[str]) -> bool:
+    checks: list[bool] = []
+    if not CURRENT_CAPABILITIES_PATH.is_file():
+        fail(failures, "missing docs/current_public_status.md")
+        checks.append(False)
+    else:
+        current_text = CURRENT_CAPABILITIES_PATH.read_text(encoding="utf-8")
+        current_h1 = markdown_headings(current_text, 1)
+        current_h2 = markdown_headings(current_text, 2)
+        current_checks = (
+            current_h1 == ("Current Implemented Capabilities",),
+            current_h2 == CAPABILITY_HEADINGS,
+            normalized(CURRENT_CAPABILITIES_INTRO) in normalized(current_text),
+        )
+        checks.extend(current_checks)
+        if not current_checks[0]:
+            fail(failures, "current capability document has an unexpected title")
+        if not current_checks[1]:
+            fail(failures, "current capability document does not contain the seven approved groups")
+        if not current_checks[2]:
+            fail(failures, "current capability document is missing its evidence-scope introduction")
+
+    if not DOCS_INDEX_PATH.is_file():
+        fail(failures, "missing docs/README.md")
+        checks.append(False)
+    else:
+        docs_index_text = DOCS_INDEX_PATH.read_text(encoding="utf-8")
+        docs_index_checks = (
+            "[Current implemented capabilities](current_public_status.md)" in docs_index_text,
+            "[Claim boundaries](claim_boundaries.md)" in docs_index_text,
+        )
+        checks.extend(docs_index_checks)
+        if not all(docs_index_checks):
+            fail(failures, "documentation index is missing current capability references")
+
+    if not CLAIM_BOUNDARIES_PATH.is_file():
+        fail(failures, "missing docs/claim_boundaries.md")
+        checks.append(False)
+    else:
+        claim_text = CLAIM_BOUNDARIES_PATH.read_text(encoding="utf-8")
+        claim_checks = (
+            "## Supported Capability Scope" in claim_text,
+            "## Internally Exercised Reference Scope" in claim_text,
+            "## Publication Rule" in claim_text,
+            all(
+                term in claim_text
+                for term in (
+                    "full-vector 3D time-domain electromagnetic core",
+                    "Yee-aware temporal alignment",
+                    "S-parameter model",
+                    "wxWidgets desktop integration",
+                    "quasi-TEM cross-section foundations",
+                    "immutable evidence packages",
+                )
+            ),
+        )
+        checks.extend(claim_checks)
+        if not all(claim_checks):
+            fail(failures, "claim-boundary document is missing current capability scope")
+
+    return bool(checks) and all(checks)
+
+
+def validate_site_links_and_dependencies(failures: list[str]) -> tuple[int, int, int]:
     broken_links = 0
+    broken_images = 0
     external_assets = 0
     for html_path in sorted(ROOT.glob("*.html")):
         if html_path.resolve() == INDEX_PATH.resolve():
@@ -891,12 +1296,14 @@ def validate_site_links_and_dependencies(failures: list[str]) -> tuple[int, int]
                 external_assets += 1
                 fail(failures, f"external {kind} dependency in {html_path.name}: {target}")
             elif not local_target_exists(html_path, target):
+                if kind == "img":
+                    broken_images += 1
                 fail(failures, f"missing local {kind} dependency in {html_path.name}: {target}")
 
     css_path = ROOT / "styles.css"
     if not css_path.is_file():
         fail(failures, "missing styles.css")
-        return broken_links, external_assets
+        return broken_links, broken_images, external_assets
     css_text = css_path.read_text(encoding="utf-8")
     css_external = re.findall(r"(?i)(?:@import\s+|url\(\s*)['\"]?https?://", css_text)
     if css_external:
@@ -929,45 +1336,101 @@ def validate_site_links_and_dependencies(failures: list[str]) -> tuple[int, int]
             fail(failures, f"external runtime dependency appears in {js_path.relative_to(ROOT)}")
         if TRACKING_PATTERN.search(js_text):
             fail(failures, f"tracking or analytics code appears in {js_path.relative_to(ROOT)}")
-    return broken_links, external_assets
+    return broken_links, broken_images, external_assets
 
 
-def validate_public_safety(failures: list[str]) -> tuple[int, int, int, int]:
+def read_existing_text(paths: tuple[Path, ...]) -> str:
+    return "\n".join(
+        path.read_text(encoding="utf-8", errors="replace")
+        for path in paths
+        if path.is_file()
+    )
+
+
+def validate_public_safety(failures: list[str]) -> dict[str, int | bool]:
     public_files = iter_public_text_files()
     absolute_private_path_count = 0
-    employer_customer_count = 0
+    internal_identifier_count = 0
+    private_context_count = 0
     for path in public_files:
         if path.name != "CNAME" and path.suffix.lower() not in SAFETY_SCAN_SUFFIXES:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
-        matches = PRIVATE_PATH_PATTERN.findall(text)
-        absolute_private_path_count += len(matches)
-        tokens = TOKEN_PATTERN.findall(text.casefold())
-        employer_customer_count += sum(
-            hashlib.sha256(token.encode("utf-8")).hexdigest() in EMPLOYER_CUSTOMER_TOKEN_DIGESTS
-            for token in tokens
-        )
+        absolute_private_path_count += len(PRIVATE_PATH_PATTERN.findall(text))
+        internal_identifier_count += len(INTERNAL_IDENTIFIER_PATTERN.findall(text))
+        private_context_count += len(PRIVATE_CONTEXT_PATTERN.findall(text))
     if absolute_private_path_count:
         fail(failures, f"absolute Windows/UNC path count in public text: {absolute_private_path_count}")
-    if employer_customer_count:
-        fail(failures, f"private organization/customer token digest count: {employer_customer_count}")
+    if internal_identifier_count:
+        fail(failures, f"internal identifier count in public text: {internal_identifier_count}")
+    if private_context_count:
+        fail(failures, f"private personnel/customer context count in public text: {private_context_count}")
 
-    public_copy = "\n".join(
-        path.read_text(encoding="utf-8", errors="replace")
-        for path in PUBLIC_COPY_PATHS
-        if path.is_file()
-    )
+    public_copy = read_existing_text(CLAIM_COPY_PATHS)
+    claim_assertion_copy = read_existing_text(UNSUPPORTED_CLAIM_COPY_PATHS)
+    active_copy = read_existing_text(ACTIVE_PRESENTATION_PATHS)
+    public_link_copy = read_existing_text(PUBLIC_LINK_SURFACE_PATHS)
     repeated_negative_count = sum(
         len(pattern.findall(public_copy)) for pattern in REPEATED_NEGATIVE_PATTERNS
     )
     unsupported_claim_count = sum(
-        len(pattern.findall(public_copy)) for pattern in UNSUPPORTED_CLAIM_PATTERNS
+        len(pattern.findall(claim_assertion_copy)) for pattern in UNSUPPORTED_CLAIM_PATTERNS
     )
+    en_dash_count = active_copy.count("\u2013") + len(
+        re.findall(r"&ndash;", active_copy, re.IGNORECASE)
+    )
+    em_dash_count = active_copy.count("\u2014") + len(
+        re.findall(r"&mdash;", active_copy, re.IGNORECASE)
+    )
+    roadmap_link_count = len(ROADMAP_LINK_PATTERN.findall(public_link_copy))
+    mathematica_product_path_count = len(MATHEMATICA_PRODUCT_PATTERN.findall(active_copy))
+    private_commit_hash_count = len(PRIVATE_COMMIT_HASH_PATTERN.findall(active_copy))
+
+    presentation_headings: list[str] = []
+    if INDEX_PATH.is_file():
+        presentation_headings.extend(parse_html(INDEX_PATH).headings)
+    for path in ACTIVE_PRESENTATION_PATHS:
+        if path.suffix.casefold() == ".md" and path.is_file():
+            text = path.read_text(encoding="utf-8", errors="replace")
+            presentation_headings.extend(
+                normalized(item)
+                for item in re.findall(r"(?m)^#{1,6}\s+(.+?)\s*$", text)
+            )
+    limitations_heading_count = sum(
+        bool(LIMITATIONS_HEADING_PATTERN.search(heading))
+        for heading in presentation_headings
+    )
+
     if repeated_negative_count:
         fail(failures, f"repeated negative disclaimer count in showcase copy: {repeated_negative_count}")
     if unsupported_claim_count:
         fail(failures, f"unsupported positive claim count in showcase copy: {unsupported_claim_count}")
-    return absolute_private_path_count, employer_customer_count, repeated_negative_count, unsupported_claim_count
+    if en_dash_count:
+        fail(failures, f"AI-style en dash count in current public presentation: {en_dash_count}")
+    if em_dash_count:
+        fail(failures, f"AI-style em dash count in current public presentation: {em_dash_count}")
+    if roadmap_link_count:
+        fail(failures, f"public roadmap link count in current publication surface: {roadmap_link_count}")
+    if limitations_heading_count:
+        fail(failures, f"public limitations/missing-features heading count: {limitations_heading_count}")
+    if mathematica_product_path_count:
+        fail(failures, f"Mathematica/Wolfram product-path claim count: {mathematica_product_path_count}")
+    if private_commit_hash_count:
+        fail(failures, f"private commit-like hash count in current public copy: {private_commit_hash_count}")
+
+    return {
+        "absolute_private_path_count": absolute_private_path_count,
+        "internal_identifier_count": internal_identifier_count,
+        "private_context_count": private_context_count,
+        "private_commit_hash_count": private_commit_hash_count,
+        "repeated_negative_count": repeated_negative_count,
+        "unsupported_claim_count": unsupported_claim_count,
+        "en_dash_count": en_dash_count,
+        "em_dash_count": em_dash_count,
+        "roadmap_link_count": roadmap_link_count,
+        "limitations_heading_count": limitations_heading_count,
+        "mathematica_product_path_count": mathematica_product_path_count,
+    }
 
 
 def validate_superseded_content(failures: list[str]) -> int:
@@ -992,12 +1455,19 @@ def validate_superseded_content(failures: list[str]) -> int:
 def validate() -> tuple[list[str], dict[str, object]]:
     failures: list[str] = []
     published_count, metadata_chunk_count, actual_digests = validate_manifest_and_images(failures)
-    parser, homepage_broken_images, homepage_broken_links, homepage_external_assets, accessibility_pass = validate_homepage(
-        failures, actual_digests
-    )
-    validate_readme_and_inventory(failures, actual_digests)
-    site_broken_links, site_external_assets = validate_site_links_and_dependencies(failures)
-    private_path_count, employer_count, repeated_negative_count, unsupported_claim_count = validate_public_safety(failures)
+    (
+        parser,
+        homepage_broken_images,
+        homepage_broken_links,
+        homepage_external_assets,
+        accessibility_pass,
+        homepage_presentation_pass,
+        unexpected_homepage_image_count,
+    ) = validate_homepage(failures, actual_digests)
+    readme_presentation_pass = validate_readme_and_inventory(failures, actual_digests)
+    docs_presentation_pass = validate_current_capability_docs(failures)
+    site_broken_links, site_broken_images, site_external_assets = validate_site_links_and_dependencies(failures)
+    safety = validate_public_safety(failures)
     superseded_count = validate_superseded_content(failures)
 
     cname_path = ROOT / "CNAME"
@@ -1017,6 +1487,18 @@ def validate() -> tuple[list[str], dict[str, object]]:
         raw_incoming = []
     if raw_incoming:
         fail(failures, f"raw incoming screenshot staged: {', '.join(raw_incoming)}")
+
+    try:
+        added_scientific_images = added_scientific_image_paths()
+    except (OSError, subprocess.CalledProcessError, UnicodeError) as exc:
+        fail(failures, f"could not inspect newly added public image paths: {exc}")
+        added_scientific_images = []
+    if added_scientific_images:
+        fail(
+            failures,
+            "new scientific/decorative image assets were added in this update: "
+            + ", ".join(added_scientific_images),
+        )
 
     try:
         diff_check = subprocess.run(
@@ -1039,18 +1521,54 @@ def validate() -> tuple[list[str], dict[str, object]]:
         and Path(urlsplit(str((figure.get("image") or {}).get("src") or "")).path).name in EXPECTED_FILENAMES
     ) == EXPECTED_FILENAMES
     responsive_pass = not any("responsive" in item.lower() or "mobile" in item.lower() for item in failures)
+    current_presentation_pass = (
+        homepage_presentation_pass
+        and readme_presentation_pass
+        and docs_presentation_pass
+    )
+    only_implemented_capabilities = (
+        current_presentation_pass
+        and safety["unsupported_claim_count"] == 0
+        and safety["repeated_negative_count"] == 0
+        and safety["limitations_heading_count"] == 0
+        and safety["roadmap_link_count"] == 0
+    )
+    fabricated_scientific_image_count = (
+        unexpected_homepage_image_count + len(added_scientific_images)
+    )
+    broken_image_count = homepage_broken_images + site_broken_images
+    broken_internal_link_count = homepage_broken_links + site_broken_links
+    private_copy_indicator_count = (
+        safety["absolute_private_path_count"]
+        + safety["internal_identifier_count"]
+        + safety["private_context_count"]
+        + safety["private_commit_hash_count"]
+    )
     summary: dict[str, object] = {
+        "PublicShowcaseCurrentCapabilityPresentationUpdatedQ": current_presentation_pass,
+        "OnlyImplementedCapabilitiesPresentedQ": only_implemented_capabilities,
+        "UnsupportedCapabilityClaimCount": safety["unsupported_claim_count"],
+        "PublicLimitationsSectionAddedQ": safety["limitations_heading_count"] > 0,
+        "PrivateRepositoryMutationCount": "ExternalReadOnlyVerificationRequired",
+        "FabricatedScientificImageCount": fabricated_scientific_image_count,
+        "MathematicaProductPathClaimCount": safety["mathematica_product_path_count"],
+        "BrokenInternalLinkCount": broken_internal_link_count,
+        "BrokenImageCount": broken_image_count,
+        "NewAiStyleEnDashCount": safety["en_dash_count"],
+        "NewAiStyleEmDashCount": safety["em_dash_count"],
+        "CnamePreservedQ": cname_exact,
         "NewCanonicalYeeScreenshotCount": published_count,
         "ChronologicalFrameSequenceQ": chronological,
         "PreviousFeaturedScreenshotSetRemovedQ": superseded_count == 0,
-        "InteractiveCanonicalYeeCapabilityDescriptionUpdatedQ": SECTION_HEADING in parser.headings,
-        "CapabilityFocusedPublicCopyQ": repeated_negative_count == 0 and unsupported_claim_count == 0,
-        "RepeatedNegativeDisclaimerCount": repeated_negative_count,
-        "UnsupportedClaimCount": unsupported_claim_count,
-        "BrokenImageReferenceCount": homepage_broken_images,
-        "BrokenLocalLinkCount": homepage_broken_links + site_broken_links,
+        "InteractiveCanonicalYeeCapabilityDescriptionUpdatedQ": WORKBENCH_SECTION_HEADING in parser.headings,
+        "CapabilityFocusedPublicCopyQ": only_implemented_capabilities,
+        "RepeatedNegativeDisclaimerCount": safety["repeated_negative_count"],
+        "UnsupportedClaimCount": safety["unsupported_claim_count"],
+        "PublicRoadmapLinkCount": safety["roadmap_link_count"],
+        "PublicCopyPrivatePathOrIdentifierCount": private_copy_indicator_count,
+        "BrokenImageReferenceCount": broken_image_count,
+        "BrokenLocalLinkCount": broken_internal_link_count,
         "ExternalAssetDependencyAddedCount": homepage_external_assets + site_external_assets,
-        "PrivateRepositoryModifiedPathCount": private_path_count + employer_count,
         "CnameUnchangedQ": cname_exact,
         "LegalPagesPreservedQ": legal_preserved,
         "AccessibilityValidationPassQ": accessibility_pass,
@@ -1058,12 +1576,12 @@ def validate() -> tuple[list[str], dict[str, object]]:
         "AncillaryPngMetadataChunkCount": metadata_chunk_count,
         "RawIncomingAssetStagedCount": len(raw_incoming),
     }
+    summary["ValidationPassQ"] = not failures
     return failures, summary
 
 
 def main() -> int:
     failures, summary = validate()
-    print("DecisionClass: DadFieldWorksShowcaseCanonicalYeeFieldVisualizationSequencePublished")
     for key, value in summary.items():
         if isinstance(value, bool):
             value = "True" if value else "False"
@@ -1073,7 +1591,6 @@ def main() -> int:
         for item in failures:
             print(f"- {item}", file=sys.stderr)
         return 1
-    print("ValidationPassQ: True")
     return 0
 
 
