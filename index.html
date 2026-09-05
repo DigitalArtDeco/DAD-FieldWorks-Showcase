@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DAD FieldWorks | Native Electromagnetic Engineering Workbench</title>
-    <meta name="description" content="DAD FieldWorks combines a native True-3D Yee FDTD core, scientific field visualization, RF result processing and evidence-bound engineering in an integrated desktop Workbench.">
+    <title>DAD FieldWorks | PCB and RF Development Workbench</title>
+    <meta name="description" content="A native Windows electromagnetic workbench for PCB and RF development. Set up geometry, run supported simulations and inspect fields and S parameters. Development preview.">
     <meta name="author" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="publisher" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="copyright" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
@@ -12,18 +12,18 @@
     <link rel="canonical" href="https://www.dadlabs.de/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="DAD FieldWorks by DigitalArtDeco Labs UG (haftungsbeschränkt)">
-    <meta property="og:title" content="DAD FieldWorks | Native Electromagnetic Engineering Workbench">
-    <meta property="og:description" content="Native True-3D Yee FDTD, scientific field visualization, RF result processing and evidence-bound engineering in one desktop Workbench.">
+    <meta property="og:title" content="DAD FieldWorks | PCB and RF Development Workbench">
+    <meta property="og:description" content="A native Windows electromagnetic workbench for PCB and RF development. Set up geometry, run supported simulations and inspect fields and S parameters. Development preview.">
     <meta property="og:url" content="https://www.dadlabs.de/">
-    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png">
+    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png">
     <meta property="og:image:width" content="1440">
-    <meta property="og:image:height" content="862">
-    <meta property="og:image:alt" content="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.">
+    <meta property="og:image:height" content="860">
+    <meta property="og:image:alt" content="DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DAD FieldWorks | Native Electromagnetic Engineering Workbench">
-    <meta name="twitter:description" content="Native True-3D Yee FDTD, scientific field visualization, RF result processing and evidence-bound engineering in one desktop Workbench.">
-    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png">
-    <meta name="twitter:image:alt" content="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.">
+    <meta name="twitter:title" content="DAD FieldWorks | PCB and RF Development Workbench">
+    <meta name="twitter:description" content="A native Windows electromagnetic workbench for PCB and RF development. Set up geometry, run supported simulations and inspect fields and S parameters. Development preview.">
+    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png">
+    <meta name="twitter:image:alt" content="DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions.">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -48,231 +48,152 @@
         }
       }
     </script>
+    <link rel="icon" type="image/png" href="assets/brand/dad_fieldworks_kernel_wave_mark.png">
     <link rel="stylesheet" href="styles.css">
   </head>
-  <body>
+  <body class="workflow-showcase">
+    <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="index.html">DAD FieldWorks</a>
-      <nav aria-label="Primary navigation">
-        <a href="#capabilities">Capabilities</a>
-        <a href="#workbench">Field View</a>
-        <a href="#evidence">Evidence</a>
-        <a href="#architecture">Architecture</a>
-        <a href="#contact">Contact</a>
-        <a href="impressum.html">Impressum</a>
-        <a href="datenschutz.html">Datenschutz</a>
-      </nav>
+      <a class="brand" href="index.html"><img src="assets/brand/dad_fieldworks_kernel_wave_mark.png" width="40" height="40" alt="">DAD FieldWorks</a>
+      <nav aria-label="Primary navigation"><a href="#workflow">Workflow</a><a href="#results">Results</a><a href="#examples">Examples</a><a href="#contact">Contact</a></nav>
     </header>
-
-    <main>
-      <section class="landing-hero hero-capability" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="eyebrow">Native electromagnetic engineering software</p>
-          <div class="hero-wordmark" aria-label="DAD FieldWorks">DAD FieldWorks</div>
-          <h1 id="hero-title">Physics-Based Electromagnetic Engineering for PCB and RF Design</h1>
-          <p class="hero-tagline">DAD FieldWorks combines a native True-3D Yee FDTD core, scientific field visualization, RF result processing and evidence-bound engineering in an integrated desktop Workbench.</p>
-          <p>The DAD-owned solver, native visualization and result models use explicit contracts for field data, RF signals and engineering evidence.</p>
-          <div class="hero-actions">
-            <a href="#capabilities">Explore capabilities</a>
-            <a href="#workbench">View field sequence</a>
-            <a href="#evidence">Evidence model</a>
-            <a href="#contact">Contact</a>
-          </div>
-          <ul class="capability-strip" aria-label="Implemented capability highlights">
-            <li>Full-vector Yee fields</li>
-            <li>Native field visualization</li>
-            <li>Port V/I acquisition</li>
-            <li>Direct DFT and pseudowaves</li>
-            <li>Matrix, Cartesian and Smith views</li>
-            <li>Hash-bound experiment provenance</li>
-          </ul>
+    <main id="main-content">
+      <section class="product-hero" aria-labelledby="hero-title">
+        <div class="product-intro">
+          <p class="eyebrow">Native Windows workbench · PCB &amp; RF</p>
+          <h1 id="hero-title">From PCB geometry to fields and S parameters.</h1>
+          <p class="product-lead">Set up a project, define its geometry and ports, then inspect the electromagnetic results in one native workbench.</p>
+          <p class="preview-notice"><strong>Development preview.</strong> External validation is not yet complete. Not released for production use.</p>
+          <div class="product-actions"><a class="button-primary" href="#workflow">Explore the workflow <span aria-hidden="true">&#8595;</span></a><a class="button-secondary" href="#contact">Technical contact</a></div>
+          <p class="capture-date">Actual application captures · September 2026</p>
         </div>
-        <figure class="hero-simulation">
-          <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png" width="1440" height="862" alt="DAD FieldWorks native Workbench showing Canonical-Yee electric-field magnitude on a PCB Z slice at saved frame 3 of 5." loading="eager" decoding="async" fetchpriority="high">
-          <figcaption>Native DAD FieldWorks Workbench with PCB geometry, a saved Canonical-Yee field state and a quantitative V/m color scale.</figcaption>
+        <figure class="product-capture hero-capture">
+          <a class="capture-link" href="views/simulation-results.html" aria-label="Open simulation and results detail">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png" width="1440" height="860" alt="DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions." loading="eager" decoding="async" fetchpriority="high">
+            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
+          </a>
+          <figcaption><strong>Simulation and results</strong><span>The Stepped Impedance Quick Tour project shows its complex S matrix and actions for opening Cartesian, Smith and native field views.</span></figcaption>
         </figure>
       </section>
-
-      <section class="content-section capability-overview" id="capabilities" aria-labelledby="capabilities-title">
+      <section class="product-section" id="workflow" aria-labelledby="workflow-title">
         <div class="section-heading">
-          <p class="eyebrow">Implemented capabilities</p>
-          <h2 id="capabilities-title">Implemented foundations for native fields, scientific views and engineering results.</h2>
-          <p>The current implementation combines full-vector time-domain computation, scientific visualization and structured RF processing. Each capability is presented at the scope supported by current code, focused tests or an internally exercised reference case.</p>
+          <p class="eyebrow">One connected workflow</p>
+          <h2 id="workflow-title">Build the model. Run the calculation.<br>Keep the result in context.</h2>
+          <p>Move from editable PCB geometry to a compiled solver representation, then inspect complex S parameters and saved field values from supported simulation jobs.</p>
         </div>
-        <div class="capability-card-grid">
-          <article class="capability-card capability-card-featured">
-            <p class="capability-status">Implemented and internally exercised</p>
-            <h3>Native True-3D Electromagnetic Simulation</h3>
-            <p>DAD FieldWorks contains a DAD-owned full-vector 3D time-domain electromagnetic core based on the spatially staggered Yee method. Ex, Ey, Ez, Hx, Hy and Hz are represented at their native lattice positions and advanced through explicit leapfrog updates.</p>
-            <ul class="capability-details">
-              <li>Component-native material mapping</li>
-              <li>Electric PEC enforcement and source coupling</li>
-              <li>Material-aware CPML infrastructure</li>
-              <li>Native field snapshots and two-port V/I acquisition</li>
+        <ol class="workflow-steps">
+          <li><span class="step-number" aria-hidden="true">01</span><h3>Define the project</h3><p>Choose materials, order the stackup and edit the supported conductor geometry. Inspect the compiled geometry before calculation.</p></li>
+          <li><span class="step-number" aria-hidden="true">02</span><h3>Configure and calculate</h3><p>Define ports and frequencies, configure the simulation and run the independent excitations through the native electromagnetic solver.</p></li>
+          <li><span class="step-number" aria-hidden="true">03</span><h3>Inspect and retain</h3><p>Read the complex matrix, open result windows and save project-linked results. Reopen matching saved jobs or export supported complete results as Touchstone.</p></li>
+        </ol>
+        <div class="geometry-feature">
+          <div class="geometry-copy">
+            <p class="eyebrow">Before the simulation</p><h3>See what the solver will use.</h3>
+            <p>The editable design and compiled conductor volumes are distinct views. Inspect the geometry list, solver grid and compilation information alongside the 3D representation.</p>
+            <p class="muted">Shown here: Stepped Impedance Quick Tour.</p>
+          </div>
+          <figure class="product-capture geometry-capture">
+          <a class="capture-link" href="views/compiled-geometry.html" aria-label="Open compiled solver geometry detail">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/compiled-geometry.png" width="1440" height="860" alt="Compiled 3D conductor geometry of the Stepped Impedance Quick Tour, partially outside the original viewport." loading="lazy" decoding="async">
+            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
+          </a>
+          <figcaption><strong>Compiled solver geometry</strong><span>Inspect the compiled conductor volumes beside the editable geometry list. The shielded structure extends beyond the original view; its color is a geometry display, not a metal-loss result.</span></figcaption>
+        </figure>
+        </div>
+      </section>
+      <section class="product-section" id="results" aria-labelledby="results-title">
+        <div class="section-heading">
+          <p class="eyebrow">Inspect the results</p><h2 id="results-title">A window for each question.</h2>
+          <p>Open Cartesian traces, a Smith chart and native fields in separate, resizable windows. Keep the project available while you inspect a frequency sample or a saved field slice.</p>
+        </div>
+        <div class="result-gallery">
+          <figure class="product-capture results-capture">
+          <a class="capture-link" href="views/cartesian-s-parameters.html" aria-label="Open cartesian s parameters detail">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/cartesian-s-parameters.png" width="1087" height="713" alt="Separate Cartesian window showing S(1,1) and S(2,1) magnitude in dB at the available frequency samples." loading="lazy" decoding="async">
+            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
+          </a>
+          <figcaption><strong>Cartesian S parameters</strong><span>Select S(1,1) and S(2,1) magnitude traces and a frequency marker. The chart joins the available frequency samples with straight segments.</span></figcaption>
+        </figure>
+          <figure class="product-capture results-capture">
+          <a class="capture-link" href="views/smith-chart.html" aria-label="Open smith chart detail">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Native Smith chart with a blue S(1,1) reflection trace, 900 MHz marker, Gamma and normalized impedance readouts." loading="lazy" decoding="async">
+            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
+          </a>
+          <figcaption><strong>Smith chart</strong><span>Inspect diagonal S(1,1) reflection with a 900 MHz marker, Gamma and normalized impedance. Its selected frequency need not match the matrix view.</span></figcaption>
+        </figure>
+        </div>
+        <div class="field-context">
+          <h3>Fields at their saved time steps</h3>
+          <p>Hy and Ez below are signed components at native Yee coordinates, not field images at the S-parameter marker frequency. Their components, slices and color scales differ. They are separate inspection views, not a time sequence or a shared normalization.</p>
+        </div>
+        <div class="result-gallery">
+          <figure class="product-capture results-capture">
+          <a class="capture-link" href="views/native-hy-field.html" aria-label="Open native magnetic field detail">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Native field window showing signed Hy in A/m at saved step 8192 on Z slice 9, with axes and a signed color scale." loading="lazy" decoding="async">
+            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
+          </a>
+          <figcaption><strong>Native magnetic field</strong><span>Signed Hy in A/m at saved step 8192 on Z slice 9. Select the job, field component, saved step and slice in a separate native window.</span></figcaption>
+        </figure>
+          <figure class="product-capture results-capture">
+          <a class="capture-link" href="views/native-ez-field.html" aria-label="Open native electric field detail">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-ez-field.png" width="1440" height="860" alt="Native field window showing signed Ez in V/m at saved step 768 on Y slice 10, with axes and a signed color scale." loading="lazy" decoding="async">
+            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
+          </a>
+          <figcaption><strong>Native electric field</strong><span>Signed Ez in V/m at saved step 768 on Y slice 10. This saved time-domain view has its own component, slice and color scale.</span></figcaption>
+        </figure>
+        </div>
+      </section>
+      <section class="product-section" id="examples" aria-labelledby="examples-title">
+        <div class="section-heading">
+          <p class="eyebrow">Examples and materials</p><h2 id="examples-title">Start with a defined structure.</h2>
+          <p>Parametric demo projects provide an editable starting point for the supported workflows. The screenshots on this page show the Stepped Impedance Quick Tour, not all five families.</p>
+        </div>
+        <div class="examples-layout">
+          <div><h3>Five implemented demo families</h3>
+            <ul class="demo-list">
+              <li><span>01</span>Stepped Impedance Quick Tour</li>
+              <li><span>02</span>Uniform Shielded TEM Reference Line</li>
+              <li><span>03</span>Coupled Line Modal Demo</li>
+              <li><span>04</span>Via Transition</li>
+              <li><span>05</span>Symmetric Four Port Junction</li>
             </ul>
-            <div class="reference-case" aria-label="Internally exercised PCB reference case">
-              <p>Internally exercised PCB reference case</p>
-              <dl class="reference-metrics">
-                <div><dt>Transient steps</dt><dd>4,096</dd></div>
-                <div><dt>Full-vector field states</dt><dd>5</dd></div>
-                <div><dt>Raw port traces</dt><dd>2 × 4,096 samples</dd></div>
-              </dl>
-            </div>
-          </article>
-          <article class="capability-card">
-            <p class="capability-status">Scientific visualization implemented</p>
-            <h3>Scientific Field Visualization</h3>
-            <p>The native Workbench embeds VTK inside its wxWidgets desktop interface. Its scientific view combines DAD-owned PCB geometry with field datasets and supports component-native signed scalar slices, derived collocated vector magnitude, vector glyphs, magnitude isosurfaces, engineering units, axes, camera controls, clipping, picking and explicit frame selection.</p>
-            <p>Native staggered samples remain distinct from derived presentation data.</p>
-          </article>
-          <article class="capability-card">
-            <p class="capability-status">RF core implemented</p>
-            <h3>Port Signals and RF Processing</h3>
-            <p>DAD FieldWorks records port voltage from native electric-field paths and current from native magnetic-field contours. Its downstream RF core provides Yee-aware temporal alignment, deterministic direct Fourier transformation, real-reference power-normalized pseudowaves and structured one-port and two-port processing.</p>
-            <p>Reciprocity, passivity and losslessness diagnostics classify supported result datasets.</p>
-          </article>
-          <article class="capability-card">
-            <p class="capability-status">Result Workbench implemented</p>
-            <h3>S-Parameter Result Workbench</h3>
-            <p>The native Result Workbench presents versioned complex S-parameter datasets through Matrix, Cartesian and Smith-chart views. The Matrix view exposes response and excitation entries at a selected frequency. Cartesian views provide selectable complex traces and exact markers. The Smith-chart view presents diagonal reflection traces with gamma and normalized-impedance readout.</p>
-            <p>Reference impedance, reference plane and dataset provenance remain explicit throughout the result model.</p>
-            <p>The data model uses response-port and excitation-port indexing for bounded matrix dimensions. Invalid samples remain visible as gaps, while incomplete or inconsistent payloads fail closed.</p>
-          </article>
-          <article class="capability-card">
-            <p class="capability-status">Internal numerical foundation implemented</p>
-            <h3>Quasi-TEM Cross-Section Analysis</h3>
-            <p>DAD FieldWorks implements evidence-bound C++ foundations for lossless two-conductor quasi-TEM cross-section analysis. Paired electrostatic and vacuum-companion magnetic formulations record iterations, residuals, convergence thresholds and finite-value checks.</p>
-            <p>Consistency checks connect voltage, charge, current, flux, energy and native staggered fields. Within this bounded formulation, canonical parallel-plate TEM references have passed internal numerical checks across multiple grids, frequencies and propagation directions.</p>
-          </article>
-          <article class="capability-card capability-card-wide capability-card-evidence">
-            <p class="capability-status">Evidence architecture implemented</p>
-            <h3>Evidence-Bound Engineering</h3>
-            <p>Every controlled computation is treated as a traceable engineering experiment. DAD FieldWorks binds model inputs, solver identity, executable state, execution context, numerical payloads and evaluation results into a versioned evidence chain.</p>
-            <p>Immutable package identities, process journals, transactional payload handling, convergence records and claim boundaries connect each supported engineering statement to the computation that produced it. Incomplete or contradictory evidence fails closed.</p>
-          </article>
-          <article class="capability-card capability-card-wide">
-            <p class="capability-status">Native desktop architecture implemented</p>
-            <h3>Native Engineering Workbench</h3>
-            <p>DAD FieldWorks uses wxWidgets for its native desktop shell, DAD-owned engineering models and a dedicated PCB canvas. VTK provides the scientific visualization backend. Project, solver, result and presentation contracts remain explicitly separated so the computational core stays independent from the desktop presentation layer.</p>
-          </article>
+          </div>
+          <div class="material-note">
+            <p class="eyebrow">Explicit material definitions</p><h3>Materials stay with the project.</h3>
+            <p>Use canonical PEC and lossless dielectric definitions, manage your own materials and retain project-bound material snapshots.</p>
+            <p>The supported dielectric definitions are scalar, isotropic and nondispersive. The library is not a manufacturer database and does not imply supplied copper-loss or roughness models.</p>
+          </div>
         </div>
       </section>
-
-      <section class="content-section workbench-preview" id="workbench" aria-labelledby="workbench-title">
-        <div class="section-heading">
-          <p class="eyebrow">Internally exercised reference case</p>
-          <h2 id="workbench-title">Canonical-Yee Field Visualization in the Native Workbench</h2>
-          <p>A five-state Canonical-Yee reference package has been exercised internally for magnitude, slice, camera and saved-frame inspection in the native GUI. The Scientific Field View combines PCB geometry with derived cell-centred electric-field magnitude in V/m while retaining the native full-vector field package as its source.</p>
-          <p>The four published captures show progressively later saved states on the same Z-oriented slice and with the same quantitative V/m color scale. Their fixed geometry and scale make the spatial field evolution along the microstrip directly comparable.</p>
-        </div>
-
-        <ul class="workbench-capabilities" aria-label="Canonical-Yee field visualization capabilities">
-          <li>Five saved full-vector field states from one internally exercised PCB reference run.</li>
-          <li>PCB geometry and stored field data presented together in a native 3D view.</li>
-          <li>Derived cell-centred electric-field magnitude with quantitative V/m units.</li>
-          <li>Selectable X, Y and Z slices with explicit source placement.</li>
-          <li>Camera, clipping, slice positioning and deterministic frame navigation.</li>
-          <li>Native Windows desktop integration using wxWidgets and VTK.</li>
-        </ul>
-
-        <div class="workbench-gallery">
-          <figure class="workbench-card">
-            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png" aria-label="Open full-resolution Canonical-Yee saved frame 2 of 5, step 924">
-              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png" width="1440" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 2 of 5, step 924.">
-            </a>
-            <figcaption><strong>Frame 2/5: Step 924</strong><span>An early saved field state showing the electric-field magnitude on the selected Z slice through the microstrip PCB geometry.</span></figcaption>
-          </figure>
-
-          <figure class="workbench-card workbench-card-primary">
-            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png" aria-label="Open full-resolution Canonical-Yee saved frame 3 of 5, step 1109">
-              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png" width="1440" height="862" loading="eager" decoding="async" fetchpriority="high" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.">
-            </a>
-            <figcaption><strong>Frame 3/5: Step 1109 <span class="primary-marker">Primary view</span></strong><span>The field concentration develops along the trace while the geometry, slice position and quantitative V/m scale remain directly inspectable.</span></figcaption>
-          </figure>
-
-          <figure class="workbench-card">
-            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png" aria-label="Open full-resolution Canonical-Yee saved frame 4 of 5, step 1294">
-              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png" width="1439" height="861" loading="lazy" decoding="async" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 4 of 5, step 1294.">
-            </a>
-            <figcaption><strong>Frame 4/5: Step 1294</strong><span>A later saved state of the evolving electric-field distribution, displayed on the same common scale for visual comparison.</span></figcaption>
-          </figure>
-
-          <figure class="workbench-card">
-            <a class="workbench-image-link" href="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png" aria-label="Open full-resolution Canonical-Yee saved frame 5 of 5, step 4095">
-              <img src="assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png" width="1440" height="863" loading="lazy" decoding="async" alt="DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 5 of 5, step 4095.">
-            </a>
-            <figcaption><strong>Frame 5/5: Step 4095</strong><span>The final stored state in this sequence, showing the late-time spatial field distribution across the PCB structure.</span></figcaption>
-          </figure>
+      <section class="product-section" id="result-context" aria-labelledby="context-title">
+        <div class="section-heading"><p class="eyebrow">Traceable work</p><h2 id="context-title">Know which inputs a result belongs to.</h2></div>
+        <div class="context-grid">
+          <article><h3>Current means input-matched</h3><p>The application marks results as current when they match the project inputs. A simulation-relevant input change makes existing results stale and blocks their export until a new matching calculation is available. This status is not a validation certificate.</p></article>
+          <article><h3>Save and reopen</h3><p>Retain project data, result references and viewer selections. Reopen matching saved results without rerunning the solver when their saved job data remains available.</p></article>
+          <article><h3>Export within scope</h3><p>Touchstone export supports complete, valid single-terminal TEM or quasi-TEM results with one channel per physical port and a common, constant positive real reference impedance. Coupled multimode datasets are outside this export scope.</p><a href="docs/current_public_status.md#supported-touchstone-export">Read the supported export scope <span aria-hidden="true">&#8599;</span></a></article>
         </div>
       </section>
-
-      <section class="content-section evidence-section" id="evidence" aria-labelledby="evidence-title">
-        <div class="section-heading">
-          <p class="eyebrow">Evidence-bound engineering</p>
-          <h2 id="evidence-title">Each result carries the record needed to understand what produced it.</h2>
-          <p>Controlled computations bind source inputs, executable provenance, execution context, numerical payloads and evaluation results into a traceable engineering record. The evidence chain identifies the configuration and solver state behind a result, then records the engineering statements that result supports.</p>
+      <section class="product-section development-section" id="development" aria-labelledby="development-title">
+        <div><p class="eyebrow">Development status</p><h2 id="development-title">Implemented workflows.<br>Bounded claims.</h2>
+          <p>This preview shows the native application's current development workflow. The screenshots document visible functions, not a new software release or completed acceptance. Executable build provenance was not supplied with these captures.</p>
+          <p class="preview-notice"><strong>Development preview.</strong> External validation is not yet complete. Not released for production use.</p>
         </div>
-        <div class="evidence-pipeline" aria-label="Evidence model pipeline">
-          <span>Versioned inputs</span>
-          <span>Guarded execution</span>
-          <span>Immutable payload</span>
-          <span>Numerical evaluation</span>
-          <span>Claim boundary</span>
-        </div>
-        <div class="evidence-proof-grid">
-          <article><h3>Hash-closed identity</h3><p>Input and output package identities preserve the exact evidence set associated with a controlled computation.</p></article>
-          <article><h3>Execution journals</h3><p>Process and boundary journals record the execution path, while transactional persistence protects the payload transition.</p></article>
-          <article><h3>Fail-closed claims</h3><p>Missing, incomplete or contradictory evidence does not silently promote a result beyond its recorded scope.</p></article>
-        </div>
+        <nav class="technical-links" aria-label="Technical documentation">
+          <a href="docs/current_public_status.md">Current capabilities <span aria-hidden="true">&#8599;</span></a>
+          <a href="docs/claim_boundaries.md">Claim boundaries <span aria-hidden="true">&#8599;</span></a>
+          <a href="docs/native_workflow_screenshot_provenance.md">Screenshot provenance <span aria-hidden="true">&#8599;</span></a>
+          <a href="assets/images/dad-fieldworks/native-workflow-2026-09/manifest.json">Image manifest <span aria-hidden="true">&#8599;</span></a>
+          <a href="docs/evidence_contract_architecture.md">Evidence contract architecture <span aria-hidden="true">&#8599;</span></a>
+          <a href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase">Public showcase repository <span aria-hidden="true">&#8599;</span></a>
+        </nav>
       </section>
-
-      <section class="content-section architecture-section" id="architecture" aria-labelledby="architecture-title">
-        <div class="section-heading">
-          <p class="eyebrow">Native desktop architecture</p>
-          <h2 id="architecture-title">Engineering models remain separate from the presentation toolkit.</h2>
-          <p>The Workbench connects native desktop interaction, DAD-owned project models, field visualization and technical result views without coupling the numerical core to a single presentation backend.</p>
-        </div>
-        <div class="architecture-grid">
-          <article><span>01</span><h3>wxWidgets shell</h3><p>Native Windows interface, docking, selection and Workbench lifecycle.</p></article>
-          <article><span>02</span><h3>DAD-owned models</h3><p>Project contracts, PCB canvas and engineering data stay product-owned.</p></article>
-          <article><span>03</span><h3>VTK visualization</h3><p>Scientific 3D rendering for geometry, fields, slices, glyphs and isosurfaces.</p></article>
-          <article><span>04</span><h3>Framework-neutral core</h3><p>Solver, result and evidence contracts remain independent from desktop widgets.</p></article>
-        </div>
-      </section>
-
-      <section class="content-section" id="about" aria-labelledby="about-title">
-        <div class="section-heading">
-          <p class="eyebrow">Company</p>
-          <h2 id="about-title">Electromagnetic engineering software from DigitalArtDeco Labs.</h2>
+      <section class="product-section company-contact" id="contact" aria-labelledby="contact-title">
+        <div><p class="eyebrow">DigitalArtDeco Labs</p><h2 id="contact-title">Let's discuss your technical workflow.</h2>
           <p>DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). The company combines software engineering, computational electromagnetics, RF design, signal integrity and evidence-bound technical workflows.</p>
-          
         </div>
-      </section>
-
-      <section class="links-section" id="materials" aria-labelledby="materials-title">
-        <p class="eyebrow">Technical materials</p>
-        <h2 id="materials-title">Public technical references for the current site.</h2>
-        <div class="material-grid">
-          <a class="material-card" href="docs/evidence_contract_architecture.md"><span class="material-card-title">Evidence Contract Architecture</span><span class="material-card-description">Companion notes for evidence structure.</span></a>
-          <a class="material-card" href="docs/current_public_status.md"><span class="material-card-title">Current Implemented Capabilities</span><span class="material-card-description">Public capability summary tied to current implementation evidence.</span></a>
-          <a class="material-card" href="docs/claim_boundaries.md"><span class="material-card-title">Claim Boundaries</span><span class="material-card-description">What the public material does and does not claim.</span></a>
-          <a class="material-card" href="assets/images/dad-fieldworks/canonical-yee/manifest.json"><span class="material-card-title">Canonical-Yee Screenshot Manifest</span><span class="material-card-description">Dimensions, identities and publication roles for the saved-field sequence.</span></a>
-          <a class="material-card" href="docs/canonical_yee_field_visualization_provenance.md"><span class="material-card-title">Canonical-Yee Visualization Provenance</span><span class="material-card-description">Capture mapping and lossless publication method for the native Workbench sequence.</span></a>
-          <a class="material-card" href="assets/asset_manifest.md"><span class="material-card-title">Asset Manifest</span><span class="material-card-description">Creation method and claim boundary for public assets.</span></a>
-          <a class="material-card" href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"><span class="material-card-title">GitHub Repository</span><span class="material-card-description">Public showcase repository.</span></a>
-        </div>
-      </section>
-
-      <section class="content-section" id="contact" aria-labelledby="contact-title">
-        <div class="section-heading">
-          <p class="eyebrow">Contact</p>
-          <h2 id="contact-title">Technical contact for DAD FieldWorks.</h2>
-          <p><a class="contact-link" href="mailto:info@dadlabs.de">info@dadlabs.de</a></p>
-          <p>Phone: <a class="text-link" href="tel:+4917648296275">+49 176 48296275</a></p>
-        </div>
+        <div class="contact-details"><a class="contact-link" href="mailto:info@dadlabs.de">info@dadlabs.de</a><p>Phone: <a href="tel:+4917648296275">+49 176 48296275</a></p></div>
       </section>
     </main>
-
     <footer>
       <p>&copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.</p>
       <p>DAD FieldWorks &middot; <a href="mailto:info@dadlabs.de">info@dadlabs.de</a></p>

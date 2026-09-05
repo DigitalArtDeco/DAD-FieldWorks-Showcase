@@ -1,5 +1,25 @@
 # Asset Manifest
 
+## Current homepage assets: September 2026
+
+The active presentation uses six approved native workflow screenshots and two responsive PNG previews. The [current image manifest](images/dad-fieldworks/native-workflow-2026-09/manifest.json) is the authority for their source identities, crops, derivative hashes, dimensions, roles and captions. See the [processing record](../docs/native_workflow_screenshot_provenance.md).
+
+The hero and social preview use Simulation and results. Compiled geometry, Cartesian S parameters, Smith reflection, signed Hy and signed Ez support the workflow and result sections. No scientific image was generated. The current publication is a development preview, not external validation or a software production release.
+
+## Current browser icon
+
+- Asset: `favicon.ico`, 16, 32 and 48 pixel icon sizes, 6,033 bytes.
+- Source: existing DAD brand mark `assets/brand/dad_fieldworks_kernel_wave_mark.png`.
+- Source SHA-256: `410e6874da3d6f37bf02836c2ae107be27489f7db93421fb6a29b91af1210bb9`.
+- Icon SHA-256: `ae41a3988a5e832f30c484765370d6f66da9ae391d7a88b955995fb0b80f71ba`.
+- Method: proportional downscaling into an ICO container, without generative processing or retouching. The original brand mark remains unchanged.
+- Role: browser fallback icon, including direct full-size PNG views. This is branding, not scientific data.
+- Owner: DigitalArtDeco Labs UG (haftungsbeschränkt).
+
+## Historical inventory context
+
+The entries below preserve earlier public asset records. Their former homepage, hero or primary-showcase roles describe historical publication states. In particular, the retained Canonical-Yee sequence is not the current product demonstration. Original historical image files, manifests, hashes and provenance documents remain unchanged.
+
 ## assets/diagrams/evidence_contract_layer.svg
 
 - Asset type: SVG diagram

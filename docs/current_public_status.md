@@ -1,37 +1,66 @@
-# Current Implemented Capabilities
+# Current capabilities
+
+Reviewed for the September 2026 development preview.
 
 Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved, except where an asset manifest identifies a different copyright owner.
 
-DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). The current public presentation is based on implemented code, focused tests and internally exercised engineering reference cases.
+Development preview. External validation is not yet complete. Not released for production use.
 
-## Native True-3D Electromagnetic Simulation
+## Native project workflow
 
-The DAD-owned C++ time-domain core represents Ex, Ey, Ez, Hx, Hy and Hz on their native staggered Yee lattice positions. Explicit leapfrog updates advance the full-vector field state. The solver architecture includes component-native material mapping, electric PEC enforcement, source coupling, material-aware CPML infrastructure, native field snapshots and two-port voltage and current acquisition.
+DAD FieldWorks is a native Windows electromagnetic workbench for PCB and RF development. Supported projects connect ordered materials and stackup, editable conductor geometry, compiled solver geometry, ports and frequencies, simulation jobs, complex S parameters and saved native fields.
 
-One internally exercised PCB reference case completed 4,096 transient steps, saved five full-vector field states and produced two raw Port V/I traces with 4,096 samples each.
+The editable geometry and its solver representation are separate. Grid, material and PEC compilation retain geometry approximations and topology checks. These are implementation capabilities, not universal geometric or scientific applicability.
 
-## Scientific Field Visualization
+The native simulation workflow configures time-domain jobs and independent excitations. Its complex matrix is computed from actual solver job data in the supported development scope. Invalid frequencies remain visible; missing cells are not silently filled by interpolation or reciprocity.
 
-The native wxWidgets Workbench embeds VTK for scientific 3D views. Implemented presentation modes include component-native signed scalar slices, derived collocated vector magnitude, vector glyphs and magnitude isosurfaces. The view also handles units, color scales, axes, camera controls, clipping, picking and explicit frame selection.
+## Result inspection and persistence
 
-The published Canonical-Yee sequence shows four states from a five-state reference package on one common Z-oriented slice and V/m scale.
+Matrix, Cartesian, Smith and Native Field views expose different parts of a project-linked result. Cartesian, Smith and field viewers are separate resizable native windows. Cartesian traces connect available samples with straight segments. Smith readouts use diagonal reflection for Gamma and normalized impedance.
 
-## Port Signals and RF Processing
+Saved field components retain native Yee coordinates, component units, saved step and slice selection. The current screenshots show signed Hy in A/m at step 8192 on Z slice 9, and signed Ez in V/m at step 768 on Y slice 10. These time-domain views do not represent the S-parameter marker frequency. They do not share a normalization or form a sequence.
 
-Port voltage is acquired from native electric-field paths and current from native magnetic-field contours. The RF layer provides Yee-aware temporal alignment, deterministic direct Fourier transformation and real-reference power-normalized pseudowaves. Supported one-port and two-port result datasets can be classified with reciprocity, passivity and losslessness diagnostics.
+Projects can preserve result references and viewer selections. Reopening checks saved source identity and reuses matching job data without rerunning the solver when those files remain available. Physical input or material changes invalidate current result association and disable current-result export. A name-only edit with unchanged physical inputs can retain a matching result.
 
-## S-Parameter Result Workbench
+CURRENT means input-matched. It is not evidence of external validation, a promoted software release or completed acceptance.
 
-The Result Workbench uses a versioned product-owned complex S-parameter model. The Matrix view exposes response and excitation entries at a selected frequency. Cartesian views provide selectable complex traces and exact markers. The Smith-chart view presents diagonal reflection traces with gamma and normalized-impedance readout. Reference-impedance, reference-plane and package provenance remain explicit. Invalid samples remain visible as gaps, and inconsistent or incomplete payloads fail closed.
+## Parametric demos and materials
 
-## Quasi-TEM Cross-Section Analysis
+The five implemented demo families are:
 
-DAD FieldWorks implements C++ foundations for lossless two-conductor quasi-TEM cross-section analysis. Paired electrostatic and vacuum-companion magnetic formulations record iteration, residual, convergence and finite-value diagnostics. Consistency checks connect voltage, charge, current, flux, energy and native staggered fields.
+- Stepped Impedance Quick Tour
+- Uniform Shielded TEM Reference Line
+- Coupled Line Modal Demo
+- Via Transition
+- Symmetric Four Port Junction
 
-## Evidence-Bound Engineering
+The public screenshots show the Stepped Impedance Quick Tour. Demo templates open as editable project copies. No precomputed bundled results or public software download is offered by this site.
 
-Controlled computations bind versioned inputs, solver and executable provenance, execution context, immutable numerical payloads, evaluation records and claim boundaries into a traceable evidence chain. Process journals and transactional payload handling support deterministic, single-use execution records.
+The material workflow includes immutable canonical PEC and lossless dielectric definitions, user-owned versioned records and independent project-bound snapshots. Dielectric definitions in the shown lossless workflow are scalar, isotropic and nondispersive. PEC is an ideal boundary, not a high-conductivity copper model. The library does not supply manufacturer FR4, Rogers, copper-loss or roughness models.
 
-## Native Engineering Workbench
+Stored descriptions do not make unsupported material physics active. Via and port behavior likewise remain within their implemented family and backend limits.
 
-wxWidgets provides the native desktop shell. DAD-owned engineering models and a dedicated PCB canvas remain separate from VTK visualization and from solver, result and evidence contracts. This keeps the computational core independent from the desktop presentation layer.
+## Supported Touchstone export
+
+The current native interface exports a bounded complete-result subset. It requires:
+
+- A complete valid actual S matrix and available, verified source job data.
+- One single-terminal TEM or quasi-TEM channel per physical port.
+- One identical, constant positive real reference impedance for all channels.
+- The canonical Touchstone 2.1 subset with Hz frequencies, S parameters, real/imaginary values and a full matrix.
+
+The export does not silently renormalize references, interpolate missing results or fill by reciprocity. The Coupled Line Modal Demo's neutral multimode channels are outside this physical-port export subset. General Touchstone import in the native user interface is not claimed.
+
+## Evidence used for this preview
+
+The review separates three sources:
+
+1. User-supplied original captures from 5 September 2026 establish visible UI states and controls.
+2. Targeted read-only inspection of local implementation, usage notes and existing internal test reports supports the additional workflow, demo, material and export summaries.
+3. Public companion documentation provides background where it remains consistent with that scope.
+
+No solver, native application, acceptance campaign or private test was run for this website update. No private code or internal reports were copied into this repository. Internal test counts are not published as accuracy metrics.
+
+The screenshot package has no supplied executable build provenance. Its captures are therefore not attributed to a specific product commit, accepted candidate or software release.
+
+See [claim boundaries](claim_boundaries.md) and [image provenance](native_workflow_screenshot_provenance.md).

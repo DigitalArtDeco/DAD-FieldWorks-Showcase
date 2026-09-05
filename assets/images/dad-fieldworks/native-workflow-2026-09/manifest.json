@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "asset_set": "Native workflow development preview, September 2026",
+  "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+  "source_date": "2026-09-05",
+  "publication_scope": "User-authorized development preview. File identity does not establish software acceptance or physical accuracy.",
+  "executable_provenance": "Not supplied with the screenshots; no association with a product commit or promoted software release is asserted.",
+  "processing": "Rectangular crops remove the taskbar or isolate the complete Cartesian foreground window. Full-size PNG crop pixels are preserved. Metadata is omitted. 720-pixel downscaled PNG website previews are retained only when smaller in bytes than the full PNG.",
+  "scientific_content_changed": false,
+  "generated_scientific_images": 0,
+  "images": [
+    {
+      "id": "simulation-results",
+      "title": "Simulation and results",
+      "source_filename": "01-main-current-viewer-actions.png",
+      "source_sha256": "6b95656a17d6a91c1d3f27ed9a746012b9401dd52bad29d93b360db6cbb47685",
+      "source_width": 1440,
+      "source_height": 900,
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 860,
+        "coordinates": "right and bottom exclusive"
+      },
+      "role": "hero and workflow overview",
+      "caption": "The Stepped Impedance Quick Tour project shows its complex S matrix and actions for opening Cartesian, Smith and native field views.",
+      "alt": "DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions.",
+      "derivatives": [
+        {
+          "kind": "full",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png",
+          "format": "PNG",
+          "width": 1440,
+          "height": 860,
+          "bytes": 74650,
+          "sha256": "b58e1f170d01ee18344b82c91e8c17dc2ae90a8c39a2e990426811f72cb64007",
+          "rgba_pixel_sha256": "02786c90ebfd62bf911ac06a19e739b0a48d5cc699c810149125762f3524312f"
+        }
+      ]
+    },
+    {
+      "id": "compiled-geometry",
+      "title": "Compiled solver geometry",
+      "source_filename": "Screenshot (13).png",
+      "source_sha256": "0d94acff436fbace43dd7869068a66fe7458949bd08226aa18edac1c8be82844",
+      "source_width": 1440,
+      "source_height": 900,
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 860,
+        "coordinates": "right and bottom exclusive"
+      },
+      "role": "project workflow",
+      "caption": "Inspect the compiled conductor volumes beside the editable geometry list. The shielded structure extends beyond the original view; its color is a geometry display, not a metal-loss result.",
+      "alt": "Compiled 3D conductor geometry of the Stepped Impedance Quick Tour, partially outside the original viewport.",
+      "derivatives": [
+        {
+          "kind": "full",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/compiled-geometry.png",
+          "format": "PNG",
+          "width": 1440,
+          "height": 860,
+          "bytes": 57525,
+          "sha256": "78e74df217aec67f0df84cfc99ad4cd87c06ee3eea05c8d6e32aef767ea41bcd",
+          "rgba_pixel_sha256": "f8cddaa836377919f01d3626398af4e4e0182e3a1c73878394aa998213ccac40"
+        }
+      ]
+    },
+    {
+      "id": "cartesian-s-parameters",
+      "title": "Cartesian S parameters",
+      "source_filename": "Screenshot (10).png",
+      "source_sha256": "91ee16c20814ec6e49ed78c75dae4805253d3271d0fdfc5e31cc9e30392f3799",
+      "source_width": 1440,
+      "source_height": 900,
+      "crop": {
+        "left": 30,
+        "top": 24,
+        "right": 1117,
+        "bottom": 737,
+        "coordinates": "right and bottom exclusive"
+      },
+      "role": "result inspection",
+      "caption": "Select S(1,1) and S(2,1) magnitude traces and a frequency marker. The chart joins the available frequency samples with straight segments.",
+      "alt": "Separate Cartesian window showing S(1,1) and S(2,1) magnitude in dB at the available frequency samples.",
+      "derivatives": [
+        {
+          "kind": "full",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/cartesian-s-parameters.png",
+          "format": "PNG",
+          "width": 1087,
+          "height": 713,
+          "bytes": 38162,
+          "sha256": "07eae098fb0ff8058c9a222e0329fcc56b624abdc114503123206959bd5b79f6",
+          "rgba_pixel_sha256": "f366fffeb9a4bc8aed577e2c9f4b225a1ee6b14467f882fd0b6beb1a59c8fea9"
+        }
+      ]
+    },
+    {
+      "id": "smith-chart",
+      "title": "Smith chart",
+      "source_filename": "Screenshot (4).png",
+      "source_sha256": "dcf5b40b9ae627ae0a95009d63e8b9e9d2d85e1b97bf66f99678ca695efcc2b6",
+      "source_width": 1440,
+      "source_height": 900,
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 860,
+        "coordinates": "right and bottom exclusive"
+      },
+      "role": "result inspection",
+      "caption": "Inspect diagonal S(1,1) reflection with a 900 MHz marker, Gamma and normalized impedance. Its selected frequency need not match the matrix view.",
+      "alt": "Native Smith chart with a blue S(1,1) reflection trace, 900 MHz marker, Gamma and normalized impedance readouts.",
+      "derivatives": [
+        {
+          "kind": "full",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png",
+          "format": "PNG",
+          "width": 1440,
+          "height": 860,
+          "bytes": 108941,
+          "sha256": "d8c9f0a640ef02d3646a99634cd8256e52e885da6b2f4d3c7db94a1800a8709b",
+          "rgba_pixel_sha256": "407cffbf9f3e572ddfdc1be582b9eb149adc24c2daa421426924c57a3de5a876"
+        },
+        {
+          "kind": "preview",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart-720.png",
+          "format": "PNG",
+          "width": 720,
+          "height": 430,
+          "bytes": 92093,
+          "sha256": "91deed7ecf98a436e0de1a83242de1f4a061e12beb50207b5d61bea2ef9419c7",
+          "rgba_pixel_sha256": "b0e0472165c0ac71872bec156e8997e49a8ecd1c5be7d9ce45855b3e8d6e6fc3"
+        }
+      ]
+    },
+    {
+      "id": "native-hy-field",
+      "title": "Native magnetic field",
+      "source_filename": "Screenshot (7).png",
+      "source_sha256": "516c67c4ca5585f1ea552510b4a31eabf7be3153e4e53677bd03944e2f49d1fb",
+      "source_width": 1440,
+      "source_height": 900,
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 860,
+        "coordinates": "right and bottom exclusive"
+      },
+      "role": "saved native field inspection",
+      "caption": "Signed Hy in A/m at saved step 8192 on Z slice 9. Select the job, field component, saved step and slice in a separate native window.",
+      "alt": "Native field window showing signed Hy in A/m at saved step 8192 on Z slice 9, with axes and a signed color scale.",
+      "derivatives": [
+        {
+          "kind": "full",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png",
+          "format": "PNG",
+          "width": 1440,
+          "height": 860,
+          "bytes": 104892,
+          "sha256": "3abbe8649bf1e9e600dda69cb10ccc21af473dbf82bfa830242fff70427f7bfa",
+          "rgba_pixel_sha256": "61fba3fcfb055f082e392f6b9850d6508d0987e9dcde15e0d188e2edb8e0e251"
+        },
+        {
+          "kind": "preview",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field-720.png",
+          "format": "PNG",
+          "width": 720,
+          "height": 430,
+          "bytes": 102044,
+          "sha256": "77d374535696859b04b2c53ddaf39b7641b66b33c2442fa8c63313aacd60e05c",
+          "rgba_pixel_sha256": "d0dcbc907d4b6eddbefa5ca006aacac267a5aca721ba9fc4972f7eb19c5ee23a"
+        }
+      ]
+    },
+    {
+      "id": "native-ez-field",
+      "title": "Native electric field",
+      "source_filename": "Screenshot (6).png",
+      "source_sha256": "e0b7a02ed164e84fa5edb220c367a2cb25f20287e8890447b5223f9eb92df116",
+      "source_width": 1440,
+      "source_height": 900,
+      "crop": {
+        "left": 0,
+        "top": 0,
+        "right": 1440,
+        "bottom": 860,
+        "coordinates": "right and bottom exclusive"
+      },
+      "role": "saved native field inspection",
+      "caption": "Signed Ez in V/m at saved step 768 on Y slice 10. This saved time-domain view has its own component, slice and color scale.",
+      "alt": "Native field window showing signed Ez in V/m at saved step 768 on Y slice 10, with axes and a signed color scale.",
+      "derivatives": [
+        {
+          "kind": "full",
+          "path": "assets/images/dad-fieldworks/native-workflow-2026-09/native-ez-field.png",
+          "format": "PNG",
+          "width": 1440,
+          "height": 860,
+          "bytes": 52879,
+          "sha256": "e99b5ea9ce608f0c2ac1a471dc6f07699c2f6af8c410a1954c516079772ba7c8",
+          "rgba_pixel_sha256": "c48078471d3560fe967965eb4e5a05162bd1b5d7d6090730e7170c745d47e2c4"
+        }
+      ]
+    }
+  ]
+}

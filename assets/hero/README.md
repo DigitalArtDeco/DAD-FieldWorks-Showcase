@@ -1,9 +1,11 @@
-# Homepage Visual Assets
+# Homepage visual assets
 
-The active homepage visual is the approved Canonical-Yee Workbench capture at `assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png`. Its dimensions, decoded-pixel identity, source mapping and publication role are recorded in the [Canonical-Yee image manifest](../images/dad-fieldworks/canonical-yee/manifest.json) and [visualization provenance](../../docs/canonical_yee_field_visualization_provenance.md).
+The active homepage visual is the approved September 2026 Simulation and results capture at `assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png`. The [current image manifest](../images/dad-fieldworks/native-workflow-2026-09/manifest.json) records source identity, crop, derivative hashes, dimensions, captions and publication roles. See the [screenshot provenance](../../docs/native_workflow_screenshot_provenance.md).
 
-The GIF, poster and supporting files in this directory remain approved public visualization artifacts. They are not used as the active homepage visual in the current capability presentation.
+The six current captures document native project and result workflows. They are not a field animation or a shared-scale sequence.
 
-No new scientific image was created for this update.
+The existing GIFs, posters and historical supporting files in this directory remain unchanged. They are not used as active homepage visuals. Earlier visual records are catalogued in the [documentation index](../../docs/README.md#historical-visual-records).
+
+No scientific image was generated or retouched for this update.
 
 Copyright (c) 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

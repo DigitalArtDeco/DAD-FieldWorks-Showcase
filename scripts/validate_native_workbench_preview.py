@@ -1,17 +1,15 @@
 #!/usr/bin/env python3
-"""Validate the current implemented-capability DAD FieldWorks showcase.
+"""Offline public-site validator for the September 2026 native workflow preview.
 
-The validator is intentionally standard-library only and offline.  It checks
-the four losslessly published screenshots, their manifest and chronological
-presentation, the implemented-capability narrative, accessibility and
-metadata requirements, local link integrity, and the bounded public-copy
-contract requested for this publication tranche.
+Retains PNG decoding/CRC validation and public-data guards from the previous
+validator. Replaces only the superseded four-frame/copy contract with six
+approved screenshots and their documented derivatives. No private imports,
+network, file writes, solver calls or application execution.
 """
-
 from __future__ import annotations
-
 import hashlib
 import json
+import os
 import re
 import struct
 import subprocess
@@ -21,264 +19,111 @@ from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import unquote, urlsplit
 
-
 ROOT = Path(__file__).resolve().parents[1]
-CANONICAL_DIR = ROOT / "assets" / "images" / "dad-fieldworks" / "canonical-yee"
-MANIFEST_PATH = CANONICAL_DIR / "manifest.json"
-INDEX_PATH = ROOT / "index.html"
-README_PATH = ROOT / "README.md"
-ASSET_INVENTORY_PATH = ROOT / "assets" / "asset_manifest.md"
-DOCS_INDEX_PATH = ROOT / "docs" / "README.md"
-CURRENT_CAPABILITIES_PATH = ROOT / "docs" / "current_public_status.md"
-CLAIM_BOUNDARIES_PATH = ROOT / "docs" / "claim_boundaries.md"
-HERO_README_PATH = ROOT / "assets" / "hero" / "README.md"
-EVIDENCE_ARCHITECTURE_PATH = ROOT / "docs" / "evidence_contract_architecture.md"
-
-SITE_TITLE = "DAD FieldWorks | Native Electromagnetic Engineering Workbench"
-SITE_DESCRIPTION = (
-    "DAD FieldWorks combines a native True-3D Yee FDTD core, scientific field "
-    "visualization, RF result processing and evidence-bound engineering in an "
-    "integrated desktop Workbench."
-)
-SOCIAL_DESCRIPTION = (
-    "Native True-3D Yee FDTD, scientific field visualization, RF result "
-    "processing and evidence-bound engineering in one desktop Workbench."
-)
-HERO_HEADLINE = "Physics-Based Electromagnetic Engineering for PCB and RF Design"
-HERO_TAGLINE = SITE_DESCRIPTION
-CAPABILITY_SECTION_HEADING = (
-    "Implemented foundations for native fields, scientific views and engineering results."
-)
-CAPABILITY_SECTION_PARAGRAPH = (
-    "The current implementation combines full-vector time-domain computation, "
-    "scientific visualization and structured RF processing. Each capability is "
-    "presented at the scope supported by current code, focused tests or an "
-    "internally exercised reference case."
-)
-WORKBENCH_SECTION_HEADING = "Canonical-Yee Field Visualization in the Native Workbench"
-README_WORKBENCH_HEADING = "Canonical-Yee Field Visualization"
-COPYRIGHT_OWNER = "DigitalArtDeco Labs UG (haftungsbeschränkt)"
-README_PRODUCT_PARAGRAPH = (
-    "DAD FieldWorks combines a DAD-owned full-vector 3D Yee FDTD core, scientific "
-    "field visualization, RF result processing and evidence-bound engineering in "
-    "an integrated native desktop Workbench."
-)
-CURRENT_CAPABILITIES_INTRO = (
-    "DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). "
-    "The current public presentation is based on implemented code, focused tests "
-    "and internally exercised engineering reference cases."
-)
-
-HERO_PROOF_ITEMS = (
-    "Full-vector Yee fields",
-    "Native field visualization",
-    "Port V/I acquisition",
-    "Direct DFT and pseudowaves",
-    "Matrix, Cartesian and Smith views",
-    "Hash-bound experiment provenance",
-)
-
-CAPABILITY_HEADINGS = (
-    "Native True-3D Electromagnetic Simulation",
-    "Scientific Field Visualization",
-    "Port Signals and RF Processing",
-    "S-Parameter Result Workbench",
-    "Quasi-TEM Cross-Section Analysis",
-    "Evidence-Bound Engineering",
-    "Native Engineering Workbench",
-)
-
-CAPABILITY_STATUS_LABELS = (
-    "Implemented and internally exercised",
-    "Scientific visualization implemented",
-    "RF core implemented",
-    "Result Workbench implemented",
-    "Internal numerical foundation implemented",
-    "Evidence architecture implemented",
-    "Native desktop architecture implemented",
-)
-
-CAPABILITY_REQUIRED_COPY = (
-    (
-        "DAD FieldWorks contains a DAD-owned full-vector 3D time-domain "
-        "electromagnetic core based on the spatially staggered Yee method. Ex, Ey, "
-        "Ez, Hx, Hy and Hz are represented at their native lattice positions and "
-        "advanced through explicit leapfrog updates."
-    ),
-    (
-        "The native Workbench embeds VTK inside its wxWidgets desktop interface. "
-        "Its scientific view combines DAD-owned PCB geometry with field datasets "
-        "and supports component-native signed scalar slices, derived collocated "
-        "vector magnitude, vector glyphs, magnitude isosurfaces, engineering units, "
-        "axes, camera controls, clipping, picking and explicit frame selection."
-    ),
-    (
-        "DAD FieldWorks records port voltage from native electric-field paths and "
-        "current from native magnetic-field contours. Its downstream RF core "
-        "provides Yee-aware temporal alignment, deterministic direct Fourier "
-        "transformation, real-reference power-normalized pseudowaves and structured "
-        "one-port and two-port processing."
-    ),
-    (
-        "The native Result Workbench presents versioned complex S-parameter "
-        "datasets through Matrix, Cartesian and Smith-chart views. The Matrix view "
-        "exposes response and excitation entries at a selected frequency. Cartesian "
-        "views provide selectable complex traces and exact markers. The Smith-chart "
-        "view presents diagonal reflection traces with gamma and normalized-impedance "
-        "readout."
-    ),
-    (
-        "DAD FieldWorks implements evidence-bound C++ foundations for lossless "
-        "two-conductor quasi-TEM cross-section analysis. Paired electrostatic and "
-        "vacuum-companion magnetic formulations record iterations, residuals, "
-        "convergence thresholds and finite-value checks."
-    ),
-    (
-        "Every controlled computation is treated as a traceable engineering "
-        "experiment. DAD FieldWorks binds model inputs, solver identity, executable "
-        "state, execution context, numerical payloads and evaluation results into a "
-        "versioned evidence chain."
-    ),
-    (
-        "DAD FieldWorks uses wxWidgets for its native desktop shell, DAD-owned "
-        "engineering models and a dedicated PCB canvas. VTK provides the scientific "
-        "visualization backend. Project, solver, result and presentation contracts "
-        "remain explicitly separated so the computational core stays independent "
-        "from the desktop presentation layer."
-    ),
-)
-
-WORKBENCH_INTRO_PARAGRAPHS = (
-    (
-        "A five-state Canonical-Yee reference package has been exercised internally "
-        "for magnitude, slice, camera and saved-frame inspection in the native GUI. "
-        "The Scientific Field View combines PCB geometry with derived cell-centred "
-        "electric-field magnitude in V/m while retaining the native full-vector "
-        "field package as its source."
-    ),
-    (
-        "The four published captures show progressively later saved states on the "
-        "same Z-oriented slice and with the same quantitative V/m color scale. Their "
-        "fixed geometry and scale make the spatial field evolution along the "
-        "microstrip directly comparable."
-    ),
-)
-
-WORKBENCH_CAPABILITIES = (
-    "Five saved full-vector field states from one internally exercised PCB reference run.",
-    "PCB geometry and stored field data presented together in a native 3D view.",
-    "Derived cell-centred electric-field magnitude with quantitative V/m units.",
-    "Selectable X, Y and Z slices with explicit source placement.",
-    "Camera, clipping, slice positioning and deterministic frame navigation.",
-    "Native Windows desktop integration using wxWidgets and VTK.",
-)
-
-EXPECTED_SEQUENCE = (
-    {
-        "filename": "canonical-yee-z-slice-frame-02.png",
-        "source": "canonical yee Z 11.PNG",
-        "frame": 2,
-        "step": 924,
-        "width": 1440,
-        "height": 861,
-        "pixel_sha256": "88c0576bfe16916c2d6ce164aa806ab66312e80628874e29699dc4b8c5fa170f",
-        "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 2 of 5, step 924.",
-        "caption_title": "Frame 2/5: Step 924",
-        "caption_body": (
-            "An early saved field state showing the electric-field magnitude on the "
-            "selected Z slice through the microstrip PCB geometry."
-        ),
-        "role": "Supporting sequence image — saved state 2/5",
-    },
-    {
-        "filename": "canonical-yee-z-slice-frame-03.png",
-        "source": "canonical yee Z 12.PNG",
-        "frame": 3,
-        "step": 1109,
-        "width": 1440,
-        "height": 862,
-        "pixel_sha256": "414c9ed272bd2dff7d72462096c99e4eab2d559466386462e5d19a7e6f94f4f1",
-        "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 3 of 5, step 1109.",
-        "caption_title": "Frame 3/5: Step 1109",
-        "caption_body": (
-            "The field concentration develops along the trace while the geometry, "
-            "slice position and quantitative V/m scale remain directly inspectable."
-        ),
-        "role": "Primary showcase and social-preview image — saved state 3/5",
-    },
-    {
-        "filename": "canonical-yee-z-slice-frame-04.png",
-        "source": "canonical yee Z 13.PNG",
-        "frame": 4,
-        "step": 1294,
-        "width": 1439,
-        "height": 861,
-        "pixel_sha256": "9b96e8e040efeebe8859361c30b2d1c2cc0fb8d86d34b2bfac0a305629f7a8e0",
-        "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 4 of 5, step 1294.",
-        "caption_title": "Frame 4/5: Step 1294",
-        "caption_body": (
-            "A later saved state of the evolving electric-field distribution, "
-            "displayed on the same common scale for visual comparison."
-        ),
-        "role": "Supporting sequence image — saved state 4/5",
-    },
-    {
-        "filename": "canonical-yee-z-slice-frame-05.png",
-        "source": "canonical yee Z 14.PNG",
-        "frame": 5,
-        "step": 4095,
-        "width": 1440,
-        "height": 863,
-        "pixel_sha256": "5bcdb2394bfa9f80ec367074f691ef300c30a36676dd50e9549247013b4663c3",
-        "alt": "DAD FieldWorks Canonical-Yee electric-field magnitude, Z slice, saved frame 5 of 5, step 4095.",
-        "caption_title": "Frame 5/5: Step 4095",
-        "caption_body": (
-            "The final stored state in this sequence, showing the late-time spatial "
-            "field distribution across the PCB structure."
-        ),
-        "role": "Supporting sequence image — saved state 5/5",
-    },
-)
-
-EXPECTED_FILENAMES = tuple(item["filename"] for item in EXPECTED_SEQUENCE)
-PRIMARY_FILENAME = EXPECTED_SEQUENCE[1]["filename"]
-PRIMARY_URL = f"https://www.dadlabs.de/assets/images/dad-fieldworks/canonical-yee/{PRIMARY_FILENAME}"
-
-SUPERSEDED_DIR = ROOT / "assets" / "screenshots" / "native_workbench_preview"
-
-TEXT_SUFFIXES = {
-    ".css",
-    ".html",
-    ".js",
-    ".json",
-    ".md",
-    ".py",
-    ".txt",
-    ".xml",
-    ".yml",
-    ".yaml",
+ASSET_DIR = "assets/images/dad-fieldworks/native-workflow-2026-09"
+NOTICE = "Development preview. External validation is not yet complete. Not released for production use."
+OWNER = "DigitalArtDeco Labs UG (haftungsbeschränkt)"
+PROTECTED = {
+    "CNAME": "a0fcc58c50dbc063e7b42af68f9dce31ea6448863474fbb7848feae732245b4e",
+    "COPYRIGHT.md": "17ef284402988e72a6150331b74e14928f0052f1c160aae9027f515b9f23b624",
+    "LICENSE_NOTICE.md": "69a949a8032a3181a9ffaf168d0785610b3bd858549fc28a060033095863b739",
+    "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-02.png": "f7f69083156dff0c9fa094f28b744523630cd580263b0c9ae6a7bc5cb47b200b",
+    "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-03.png": "6bb7ab23ab9386aa42ff96a822d2cd27be25a586e0c1339cf10d1a125f76e729",
+    "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png": "e836192e7a6fdf9a4c28d04f58a02a7b77805f0f7f0da69264eb5c04a280ab8e",
+    "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png": "d4d1702c5c3078daf1336f59421e6de6bad9b0d09f0b5171488305132ae301f3",
+    "assets/images/dad-fieldworks/canonical-yee/manifest.json": "d60de43e39de8eef9bd4a31c5584ae9f54490f288f167a37af843f0515015947",
+    "datenschutz.html": "8f90de5a0d97827e7b416844aeb32acbdbfde0032a05e294f12a618011e0c01f",
+    "docs/canonical_yee_field_visualization_provenance.md": "b4c14064bd1272bfb8d5b507400c39d892c848d2fa645a04b227e404edf4fee1",
+    "docs/legal_site_identity_audit.md": "fbb8f102aace809fda29fcfb8a50162bc24750fdadecce746aa02c703983bf4d",
+    "impressum.html": "3a04a92a45e28cc32a5346c550ceeb2541c25e2a534dd22768e6d7ae94b58c0e"
 }
-SAFETY_SCAN_SUFFIXES = TEXT_SUFFIXES - {".py"}
-ACTIVE_PRESENTATION_PATHS = (
-    INDEX_PATH,
-    README_PATH,
-    DOCS_INDEX_PATH,
-    CURRENT_CAPABILITIES_PATH,
-    CLAIM_BOUNDARIES_PATH,
-    HERO_README_PATH,
-)
-CLAIM_COPY_PATHS = ACTIVE_PRESENTATION_PATHS + (
-    ROOT / "docs" / "canonical_yee_field_visualization_provenance.md",
-    MANIFEST_PATH,
-)
-UNSUPPORTED_CLAIM_COPY_PATHS = (
-    INDEX_PATH,
-    README_PATH,
-    CURRENT_CAPABILITIES_PATH,
-    HERO_README_PATH,
-    ROOT / "docs" / "canonical_yee_field_visualization_provenance.md",
-)
-PUBLIC_LINK_SURFACE_PATHS = ACTIVE_PRESENTATION_PATHS + (EVIDENCE_ARCHITECTURE_PATH,)
+APPROVED = {
+    "simulation-results": {
+        "source": "01-main-current-viewer-actions.png",
+        "source_sha256": "6b95656a17d6a91c1d3f27ed9a746012b9401dd52bad29d93b360db6cbb47685",
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "pixels": {
+            "full": "02786c90ebfd62bf911ac06a19e739b0a48d5cc699c810149125762f3524312f"
+        }
+    },
+    "compiled-geometry": {
+        "source": "Screenshot (13).png",
+        "source_sha256": "0d94acff436fbace43dd7869068a66fe7458949bd08226aa18edac1c8be82844",
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "pixels": {
+            "full": "f8cddaa836377919f01d3626398af4e4e0182e3a1c73878394aa998213ccac40"
+        }
+    },
+    "cartesian-s-parameters": {
+        "source": "Screenshot (10).png",
+        "source_sha256": "91ee16c20814ec6e49ed78c75dae4805253d3271d0fdfc5e31cc9e30392f3799",
+        "crop": [
+            30,
+            24,
+            1117,
+            737
+        ],
+        "pixels": {
+            "full": "f366fffeb9a4bc8aed577e2c9f4b225a1ee6b14467f882fd0b6beb1a59c8fea9"
+        }
+    },
+    "smith-chart": {
+        "source": "Screenshot (4).png",
+        "source_sha256": "dcf5b40b9ae627ae0a95009d63e8b9e9d2d85e1b97bf66f99678ca695efcc2b6",
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "pixels": {
+            "full": "407cffbf9f3e572ddfdc1be582b9eb149adc24c2daa421426924c57a3de5a876",
+            "preview": "b0e0472165c0ac71872bec156e8997e49a8ecd1c5be7d9ce45855b3e8d6e6fc3"
+        }
+    },
+    "native-hy-field": {
+        "source": "Screenshot (7).png",
+        "source_sha256": "516c67c4ca5585f1ea552510b4a31eabf7be3153e4e53677bd03944e2f49d1fb",
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "pixels": {
+            "full": "61fba3fcfb055f082e392f6b9850d6508d0987e9dcde15e0d188e2edb8e0e251",
+            "preview": "d0dcbc907d4b6eddbefa5ca006aacac267a5aca721ba9fc4972f7eb19c5ee23a"
+        }
+    },
+    "native-ez-field": {
+        "source": "Screenshot (6).png",
+        "source_sha256": "e0b7a02ed164e84fa5edb220c367a2cb25f20287e8890447b5223f9eb92df116",
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "pixels": {
+            "full": "c48078471d3560fe967965eb4e5a05162bd1b5d7d6090730e7170c745d47e2c4"
+        }
+    }
+}
+ACTIVE = ["index.html", "README.md", "docs/current_public_status.md",
+          "docs/claim_boundaries.md", "assets/hero/README.md",
+          "docs/native_workflow_screenshot_provenance.md"]
+NEW_DOCS = ["docs/README.md", "docs/showcase_refresh_2026_09.md"]
+TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".md", ".txt", ".xml", ".yml", ".yaml"}
 PRIVATE_PATH_PATTERN = re.compile(
     r"(?i)(?:(?<![a-z0-9+.-])[a-z]:[\\/]|file://|\\\\)[^\s<>'\"]+"
 )
@@ -306,22 +151,9 @@ ROADMAP_LINK_PATTERN = re.compile(
     r"(?i)(?:href\s*=\s*['\"][^'\"]*roadmap[^'\"]*['\"]|"
     r"\[[^\]]*\]\([^)]*roadmap[^)]*\)|#roadmap\b)"
 )
-LIMITATIONS_HEADING_PATTERN = re.compile(
-    r"(?i)\b(?:limitations?|missing\s+features?|current\s+blockers?|"
-    r"not\s+yet\s+implemented)\b"
-)
 MATHEMATICA_PRODUCT_PATTERN = re.compile(r"(?i)\b(?:mathematica|wolfram)\b")
 SCIENTIFIC_IMAGE_SUFFIXES = {".avif", ".gif", ".jpeg", ".jpg", ".png", ".svg", ".webp"}
 
-REPEATED_NEGATIVE_PATTERNS = (
-    re.compile(r"\bnot\s+production\s+ready\b", re.IGNORECASE),
-    re.compile(r"\bnot\s+production\s+authorized\b", re.IGNORECASE),
-    re.compile(r"\bnot\s+externally\s+validated\b", re.IGNORECASE),
-    re.compile(r"\binternal\s+only\b", re.IGNORECASE),
-    re.compile(r"\bprototype\s+only\b", re.IGNORECASE),
-    re.compile(r"\bincomplete\s+product\b", re.IGNORECASE),
-    re.compile(r"\blimitations?\b", re.IGNORECASE),
-)
 UNSUPPORTED_CLAIM_PATTERNS = (
     re.compile(r"\b(?:certified|certification)\b", re.IGNORECASE),
     re.compile(r"\bexternally\s+validated\b", re.IGNORECASE),
@@ -342,180 +174,121 @@ UNSUPPORTED_CLAIM_PATTERNS = (
 )
 
 
-def normalized(value: str) -> str:
-    """Collapse human-readable text to a stable comparison form."""
 
-    return " ".join(value.replace("\u00a0", " ").split())
+# New preview notices are required, not treated as forbidden negative wording.
+UNSUPPORTED_CLAIM_PATTERNS += (
+    re.compile(r"\b(?:revolutionary|game-changing|unparalleled)\b", re.I),
+    re.compile(r"\b(?:buy now|download the software|bundled results included)\b", re.I),
+    re.compile(r"\breleased for production use\b", re.I),
+)
+TOKEN_PATTERN = re.compile(r"(?:gh[pousr]_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]{20,}|AKIA[A-Z0-9]{16}|-----BEGIN [A-Z ]*PRIVATE KEY-----)")
+FORBIDDEN_SUFFIXES = {".exe", ".dll", ".pdb", ".cpp", ".hpp", ".h", ".c", ".obj", ".lib", ".zip", ".7z"}
+FAILURES = []
 
+def check(condition, message):
+    if not condition:
+        FAILURES.append(message)
 
-class PageParser(HTMLParser):
-    """Collect enough semantic structure to validate a static HTML page."""
+def sha(path):
+    return hashlib.sha256(path.read_bytes()).hexdigest()
 
-    def __init__(self) -> None:
+def git(*args):
+    result = subprocess.run(["git", *args], cwd=ROOT, capture_output=True,
+                            text=True, encoding="utf-8", check=True,
+                            env={**os.environ, "GIT_OPTIONAL_LOCKS": "0"})
+    return result.stdout
+
+def public_files():
+    return sorted(set(git("ls-files", "-z", "--cached", "--others", "--exclude-standard").split("\0")) - {""})
+
+def unsupported(text):
+    findings = []
+    for pattern in UNSUPPORTED_CLAIM_PATTERNS:
+        for match in pattern.finditer(text):
+            prefix = text[max(0, match.start()-55):match.start()]
+            if not re.search(r"\b(?:not|no|never|without)\s+(?:[\w-]+\s+){0,3}$", prefix, re.I):
+                findings.append(match.group())
+    return findings
+
+class Page(HTMLParser):
+    def __init__(self, text):
         super().__init__(convert_charrefs=True)
-        self.ids: list[str] = []
-        self.hrefs: list[str] = []
-        self.images: list[dict[str, str | None]] = []
-        self.resources: list[tuple[str, str]] = []
-        self.meta: list[dict[str, str | None]] = []
-        self.links: list[dict[str, str | None]] = []
-        self.headings: list[str] = []
-        self.heading_records: list[tuple[str, str, str | None]] = []
-        self.title = ""
-        self.all_text_parts: list[str] = []
-        self.section_text_parts: dict[str, list[str]] = {}
-        self.workbench_text_parts: list[str] = []
-        self.workbench_figures: list[dict[str, object]] = []
-
-        self._section_stack: list[str | None] = []
-        self._anchor_stack: list[dict[str, str | None]] = []
-        self._figure_stack: list[dict[str, object]] = []
-        self._caption_depth = 0
-        self._heading_depth = 0
-        self._heading_parts: list[str] = []
-        self._heading_tag = ""
-        self._heading_section: str | None = None
-        self._title_depth = 0
-        self._title_parts: list[str] = []
-        self._suppressed_text_depth = 0
-
-    @staticmethod
-    def _attrs(attrs: list[tuple[str, str | None]]) -> dict[str, str | None]:
-        return {key.lower(): value for key, value in attrs}
-
-    @property
-    def inside_workbench(self) -> bool:
-        return "workbench" in self._section_stack
-
-    def section_text(self, section_id: str) -> str:
-        return normalized(" ".join(self.section_text_parts.get(section_id, [])))
-
-    def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        tag = tag.lower()
-        data = self._attrs(attrs)
-        if tag in {"script", "style"}:
-            self._suppressed_text_depth += 1
-        if value := data.get("id"):
-            self.ids.append(value)
-
-        if tag == "section":
-            section_key = data.get("id") or data.get("aria-labelledby")
-            self._section_stack.append(section_key)
-            if section_key:
-                self.section_text_parts.setdefault(section_key, [])
-        elif tag == "a":
-            self._anchor_stack.append(data)
-            if href := data.get("href"):
-                self.hrefs.append(href)
-        elif tag == "figure":
-            self._figure_stack.append(
-                {
-                    "inside_workbench": self.inside_workbench,
-                    "classes": set((data.get("class") or "").split()),
-                    "caption_parts": [],
-                    "image": None,
-                }
-            )
-        elif tag == "figcaption" and self._figure_stack:
-            self._caption_depth += 1
-        elif tag in {"h1", "h2", "h3", "h4", "h5", "h6"}:
-            self._heading_depth += 1
-            if self._heading_depth == 1:
-                self._heading_parts = []
-                self._heading_tag = tag
-                self._heading_section = next(
-                    (section for section in reversed(self._section_stack) if section),
-                    None,
-                )
-        elif tag == "title":
-            self._title_depth += 1
-            if self._title_depth == 1:
-                self._title_parts = []
-
+        self.ids, self.hrefs, self.resources, self.images = set(), [], [], []
+        self.tags, self.data, self.scripts, self.metas = [], [], [], {}
+        self.figures, self._figure_stack = [], []
+        self.feed(text)
+        self.close()
+    def handle_starttag(self, tag, attrs):
+        a = dict(attrs)
+        self.tags.append((tag, a))
+        if tag == "figure":
+            check(not self._figure_stack, "Nested figure elements")
+            self._figure_stack.append({"images": [], "data": []})
+        if "id" in a:
+            check(a["id"] not in self.ids, "Duplicate HTML ID: " + a["id"])
+            self.ids.add(a["id"])
+        for key in a:
+            check(not key.startswith("on"), "Executable inline event attribute: " + key)
+        if tag == "a":
+            self.hrefs.append(a.get("href", ""))
         if tag == "img":
-            anchor = self._anchor_stack[-1] if self._anchor_stack else {}
-            record = {
-                "src": data.get("src"),
-                "alt": data.get("alt"),
-                "width": data.get("width"),
-                "height": data.get("height"),
-                "loading": data.get("loading"),
-                "decoding": data.get("decoding"),
-                "fetchpriority": data.get("fetchpriority"),
-                "anchor_href": anchor.get("href"),
-                "anchor_label": anchor.get("aria-label"),
-            }
-            self.images.append(record)
+            self.images.append(a)
             if self._figure_stack:
-                self._figure_stack[-1]["image"] = record
-            if src := data.get("src"):
-                self.resources.append(("img", src))
-        elif tag == "script":
-            if src := data.get("src"):
-                self.resources.append(("script", src))
-        elif tag in {"source", "video", "audio", "iframe"}:
-            if src := data.get("src"):
-                self.resources.append((tag, src))
-        elif tag == "meta":
-            self.meta.append(data)
-        elif tag == "link":
-            self.links.append(data)
-            rel_tokens = set((data.get("rel") or "").lower().split())
-            if rel_tokens & {"stylesheet", "icon", "preload", "modulepreload"}:
-                if href := data.get("href"):
-                    self.resources.append(("link", href))
+                self._figure_stack[-1]["images"].append(a)
+            self.resources.append(a.get("src", ""))
+            for entry in a.get("srcset", "").split(","):
+                if entry.strip():
+                    self.resources.append(entry.strip().split()[0])
+        if tag in {"iframe", "embed", "object", "form", "video", "audio"}:
+            check(False, "Unexpected active/embed/form element: " + tag)
+        if tag == "script":
+            self.scripts.append(a)
+            check(a.get("type") == "application/ld+json" and "src" not in a,
+                  "Executable page JavaScript is not authorized")
+        if tag == "link" and a.get("rel") in {"stylesheet", "icon", "preload"}:
+            self.resources.append(a.get("href", ""))
+        if tag == "meta":
+            self.metas[a.get("name", a.get("property", ""))] = a.get("content", "")
+    def handle_data(self, data):
+        self.data.append(data)
+        if self._figure_stack:
+            self._figure_stack[-1]["data"].append(data)
+    def handle_endtag(self, tag):
+        if tag == "figure" and self._figure_stack:
+            self.figures.append(self._figure_stack.pop())
+    @property
+    def text(self):
+        return re.sub(r"\s+", " ", " ".join(self.data)).strip()
 
-    def handle_startendtag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
-        self.handle_starttag(tag, attrs)
+def local_target(source, target):
+    u = urlsplit(target)
+    if u.scheme or target.startswith("//"):
+        return None, u.fragment
+    p = source if not u.path else ((ROOT / unquote(u.path).lstrip("/")) if u.path.startswith("/") else (source.parent / unquote(u.path)))
+    p = p.resolve()
+    check(p.is_relative_to(ROOT), "Local link escapes website: " + target)
+    return p, u.fragment
 
-    def handle_endtag(self, tag: str) -> None:
-        tag = tag.lower()
-        if tag in {"script", "style"}:
-            self._suppressed_text_depth = max(0, self._suppressed_text_depth - 1)
-        if tag == "a" and self._anchor_stack:
-            self._anchor_stack.pop()
-        elif tag == "figcaption" and self._caption_depth:
-            self._caption_depth -= 1
-        elif tag == "figure" and self._figure_stack:
-            figure = self._figure_stack.pop()
-            if figure.get("inside_workbench"):
-                self.workbench_figures.append(figure)
-        elif tag == "section" and self._section_stack:
-            self._section_stack.pop()
-        elif tag in {"h1", "h2", "h3", "h4", "h5", "h6"} and self._heading_depth:
-            self._heading_depth -= 1
-            if self._heading_depth == 0:
-                heading = normalized(" ".join(self._heading_parts))
-                self.headings.append(heading)
-                self.heading_records.append(
-                    (self._heading_tag, heading, self._heading_section)
-                )
-        elif tag == "title" and self._title_depth:
-            self._title_depth -= 1
-            if self._title_depth == 0:
-                self.title = normalized(" ".join(self._title_parts))
+def markdown_ids(text):
+    return {re.sub(r"[^\w -]", "", line.lower()).replace(" ", "-")
+            for line in re.findall(r"(?m)^#{1,6}\s+(.+?)\s*$", text)}
 
-    def handle_data(self, data: str) -> None:
-        if not self._suppressed_text_depth and data.strip():
-            self.all_text_parts.append(data)
-            for section in self._section_stack:
-                if section:
-                    self.section_text_parts.setdefault(section, []).append(data)
-        if self.inside_workbench and data.strip():
-            self.workbench_text_parts.append(data)
-        if self._caption_depth and self._figure_stack and data.strip():
-            caption_parts = self._figure_stack[-1]["caption_parts"]
-            assert isinstance(caption_parts, list)
-            caption_parts.append(data)
-        if self._heading_depth and data.strip():
-            self._heading_parts.append(data)
-        if self._title_depth and data.strip():
-            self._title_parts.append(data)
-
-
-def fail(failures: list[str], message: str) -> None:
-    failures.append(message)
-
+def link_check(source, target, resource=False):
+    check(bool(target), "Empty link/resource in " + source.name)
+    check(not PRIVATE_PATH_PATTERN.search(target), "Private link in " + source.name)
+    u = urlsplit(target)
+    check(u.scheme.lower() not in {"javascript", "data", "file"}, "Unsafe link scheme")
+    if resource:
+        check(not u.scheme and not target.startswith("//"), "External runtime asset: " + target)
+    p, fragment = local_target(source, target)
+    if p is None:
+        return
+    check(p.is_file(), "Missing local target: " + str(p.relative_to(ROOT)) if p.is_relative_to(ROOT) else "Escaping target")
+    if p.is_file() and fragment:
+        if p.suffix == ".html":
+            check(fragment in Page(p.read_text(encoding="utf-8")).ids, "Missing HTML anchor: " + target)
+        elif p.suffix == ".md":
+            check(fragment in markdown_ids(p.read_text(encoding="utf-8")), "Missing Markdown anchor: " + target)
 
 def paeth_predictor(left: int, above: int, upper_left: int) -> int:
     estimate = left + above - upper_left
@@ -618,7 +391,9 @@ def read_png(path: Path) -> dict[str, object]:
         pixels.extend(reconstructed)
         previous = reconstructed
 
+    rgba = pixels if bytes_per_pixel == 4 else bytearray(channel for pos in range(0, len(pixels), 3) for channel in (*pixels[pos:pos+3], 255))
     return {
+        "rgba_pixel_sha256": hashlib.sha256(rgba).hexdigest(),
         "width": width,
         "height": height,
         "bit_depth": bit_depth,
@@ -628,971 +403,196 @@ def read_png(path: Path) -> dict[str, object]:
     }
 
 
-def local_target_exists(source_file: Path, target: str) -> bool:
-    parts = urlsplit(target)
-    if parts.scheme or target.startswith(("//", "mailto:", "tel:")):
-        return True
-    if not parts.path:
-        return True
-    decoded = unquote(parts.path)
-    candidate = (ROOT / decoded.lstrip("/")) if decoded.startswith("/") else (source_file.parent / decoded)
-    candidate = candidate.resolve()
-    try:
-        candidate.relative_to(ROOT)
-    except ValueError:
-        return False
-    return candidate.exists()
 
+def validate():
+    paths = public_files()
+    manifest = json.loads((ROOT / ASSET_DIR / "manifest.json").read_text(encoding="utf-8"))
+    check(manifest["owner"] == OWNER, "Screenshot copyright owner changed")
+    check(manifest["source_date"] == "2026-09-05", "Capture date changed")
+    check(manifest["scientific_content_changed"] is False and manifest["generated_scientific_images"] == 0,
+          "Scientific asset processing authority changed")
+    check("Not supplied" in manifest["executable_provenance"], "Missing executable provenance boundary")
+    check([i["id"] for i in manifest["images"]] == list(APPROVED), "Approved six-view selection/order changed")
+    allowed_images, full_images = set(), {}
+    total_bytes = 0
+    for item in manifest["images"]:
+        approved = APPROVED[item["id"]]
+        check(item["source_filename"] == approved["source"] and item["source_sha256"] == approved["source_sha256"],
+              "Unapproved source identity: " + item["id"])
+        check((item["source_width"], item["source_height"]) == (1440, 900), "Original dimensions changed")
+        c = item["crop"]
+        check([c["left"], c["top"], c["right"], c["bottom"]] == approved["crop"], "Unapproved crop: " + item["id"])
+        check(c["coordinates"] == "right and bottom exclusive", "Crop convention changed")
+        check(all(item.get(k) for k in ("role", "caption", "alt", "title")), "Missing caption/role/alt")
+        check([v["kind"] for v in item["derivatives"]] == list(approved["pixels"]), "Unexpected derivative selection")
+        for v in item["derivatives"]:
+            rel = v["path"]
+            expected_name = item["id"] + ("-720" if v["kind"] == "preview" else "") + ".png"
+            check(rel == ASSET_DIR + "/" + expected_name, "Derivative path not authorized")
+            allowed_images.add(rel)
+            p = ROOT / rel
+            check(p.is_file() and not p.is_symlink(), "Missing or linked image " + rel)
+            if not p.is_file():
+                continue
+            png = read_png(p)
+            check(sha(p) == v["sha256"] and p.stat().st_size == v["bytes"], "File identity mismatch: " + rel)
+            check(png["rgba_pixel_sha256"] == v["rgba_pixel_sha256"] == approved["pixels"][v["kind"]],
+                  "Approved pixel identity mismatch: " + rel)
+            check(set(png["chunks"]) == {"IHDR", "IDAT", "IEND"}, "PNG metadata or unexpected chunk: " + rel)
+            width = c["right"] - c["left"]
+            height = c["bottom"] - c["top"]
+            expected = (width, height) if v["kind"] == "full" else (720, round(height*720/width))
+            check((png["width"], png["height"]) == (v["width"], v["height"]) == expected, "Image dimensions: " + rel)
+            if v["kind"] == "preview":
+                check(v["bytes"] < item["derivatives"][0]["bytes"], "Preview larger than full PNG")
+            else:
+                full_images[item["id"]] = v
+            total_bytes += v["bytes"]
+    actual_images = {p.relative_to(ROOT).as_posix() for p in (ROOT / ASSET_DIR).glob("*.png")}
+    check(actual_images == allowed_images, "Unmanifested or missing current PNG")
+    check(len(allowed_images) == 8, "Expected six full crops and two smaller previews")
 
-def iter_public_text_files() -> list[Path]:
-    files: list[Path] = []
-    for path in ROOT.rglob("*"):
-        if not path.is_file():
+    for rel, expected in PROTECTED.items():
+        check((ROOT / rel).is_file() and sha(ROOT / rel) == expected, "Protected bytes changed: " + rel)
+    check((ROOT / "CNAME").read_text().strip() == "www.dadlabs.de", "Public domain changed")
+    check(sha(ROOT / "favicon.ico") == "ae41a3988a5e832f30c484765370d6f66da9ae391d7a88b955995fb0b80f71ba", "Unapproved browser icon")
+    check(sha(ROOT / "assets/brand/dad_fieldworks_kernel_wave_mark.png") == "410e6874da3d6f37bf02836c2ae107be27489f7db93421fb6a29b91af1210bb9", "Original brand mark changed")
+    legal = (ROOT / "impressum.html").read_text(encoding="utf-8")
+    check("HRB 43034" in legal and "Amtsgericht Augsburg" in legal and "1260195" not in legal,
+          "Verified legal identity not preserved")
+
+    active = ACTIVE + ["views/" + key + ".html" for key in APPROVED]
+    for rel in active + NEW_DOCS:
+        text = (ROOT / rel).read_text(encoding="utf-8")
+        check(not re.search(r"[\u2013\u2014]|&(?:ndash|mdash);", text), "En/em dash in new public copy: " + rel)
+        check(not unsupported(text), "Unsupported positive claim in " + rel + ": " + str(unsupported(text)))
+        check(not PRIVATE_COMMIT_HASH_PATTERN.search(text), "Private commit-like ID in active copy: " + rel)
+        check(not ROADMAP_LINK_PATTERN.search(text), "Active roadmap link: " + rel)
+        check(not MATHEMATICA_PRODUCT_PATTERN.search(text), "Unsupported product path: " + rel)
+        if rel in active:
+            check("canonical-yee/" not in text and "canonical-yee-z-slice-frame" not in text,
+                  "Active historical image reference: " + rel)
+
+    check(not unsupported("Not externally validated. Not production-ready. Not released for production use."),
+          "Negated claim regression")
+    check(len(unsupported("Externally validated and production-ready.")) == 2, "Positive claim guard regression")
+    for rel in paths:
+        p = ROOT / rel
+        check(not p.is_symlink(), "Public filesystem link: " + rel)
+        if p.suffix.lower() in FORBIDDEN_SUFFIXES:
+            check(False, "Private code/binary/archive in public set: " + rel)
+        check(not any(part.lower() in {"references_local", "private", "internal", "_incoming", ".local_temp", ".local_private_assets"}
+                      for part in p.relative_to(ROOT).parts), "Private/raw publication path: " + rel)
+        if p.is_file() and (p.suffix.lower() in TEXT_SUFFIXES or p.name == "CNAME"):
+            text = p.read_text(encoding="utf-8", errors="replace")
+            for label, pattern in [("private path", PRIVATE_PATH_PATTERN), ("internal identifier", INTERNAL_IDENTIFIER_PATTERN),
+                                   ("private context", PRIVATE_CONTEXT_PATTERN), ("tracking", TRACKING_PATTERN),
+                                   ("credential", TOKEN_PATTERN)]:
+                check(not pattern.search(text), label + " in public text: " + rel)
+    changed = set(git("diff", "HEAD", "--name-only").splitlines()) | set(git("ls-files", "--others", "--exclude-standard").splitlines())
+    allowed_changes = set(ACTIVE + NEW_DOCS + [".gitignore", "styles.css", "favicon.ico", "assets/asset_manifest.md",
+                    "scripts/prepare_showcase_screenshots.py", "scripts/validate_native_workbench_preview.py",
+                    ASSET_DIR + "/manifest.json"]) | allowed_images | {"views/" + key + ".html" for key in APPROVED}
+    check(changed <= allowed_changes, "Changes outside allowlist: " + str(sorted(changed - allowed_changes)))
+    source_names = {a["source"].lower() for a in APPROVED.values()} | {"source-manifest.json", "screenshot (8).png", "screenshot (11).png"}
+    for rel in changed | set(git("diff", "--cached", "--name-only").splitlines()):
+        check(Path(rel).name.lower() not in source_names, "Raw original staged/published: " + rel)
+        if Path(rel).suffix.lower() in SCIENTIFIC_IMAGE_SUFFIXES:
+            check(rel in allowed_images, "Unapproved new/changed scientific image: " + rel)
+
+    html_count = image_count = 0
+    for rel in paths:
+        if not rel.endswith(".html"):
             continue
-        relative = path.relative_to(ROOT)
-        if relative.parts and relative.parts[0] in {".git", ".local_temp", ".local_private_assets"}:
-            continue
-        if path.name == "CNAME" or path.suffix.lower() in TEXT_SUFFIXES:
-            files.append(path)
-    return files
-
-
-def parse_html(path: Path) -> PageParser:
-    parser = PageParser()
-    parser.feed(path.read_text(encoding="utf-8"))
-    parser.close()
-    return parser
-
-
-def is_external(target: str) -> bool:
-    parts = urlsplit(target)
-    return parts.scheme.lower() in {"http", "https"} or target.startswith("//")
-
-
-def staged_raw_incoming_paths() -> list[str]:
-    result = subprocess.run(
-        ["git", "diff", "--cached", "--name-only", "--diff-filter=ACMR"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    source_names = {str(item["source"]).casefold() for item in EXPECTED_SEQUENCE}
-    paths = [line.strip().replace("\\", "/") for line in result.stdout.splitlines() if line.strip()]
-    return [
-        path
-        for path in paths
-        if path.startswith("_incoming/") or Path(path).name.casefold() in source_names
-    ]
-
-
-def added_scientific_image_paths() -> list[str]:
-    diff_result = subprocess.run(
-        ["git", "diff", "HEAD", "--name-only", "--diff-filter=A", "--"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    untracked_result = subprocess.run(
-        ["git", "ls-files", "--others", "--exclude-standard"],
-        cwd=ROOT,
-        check=True,
-        capture_output=True,
-        text=True,
-        encoding="utf-8",
-    )
-    paths = {
-        line.strip().replace("\\", "/")
-        for output in (diff_result.stdout, untracked_result.stdout)
-        for line in output.splitlines()
-        if line.strip()
-    }
-    return sorted(
-        path
-        for path in paths
-        if path.startswith("assets/")
-        and Path(path).suffix.casefold() in SCIENTIFIC_IMAGE_SUFFIXES
-    )
-
-
-def validate_manifest_and_images(failures: list[str]) -> tuple[int, int, dict[str, str]]:
-    metadata_chunk_count = 0
-    published_count = 0
-    actual_digests: dict[str, str] = {}
-
-    actual_canonical_png_names = tuple(
-        sorted(path.name for path in CANONICAL_DIR.glob("*.png") if path.is_file())
-    )
-    if actual_canonical_png_names != tuple(sorted(EXPECTED_FILENAMES)):
-        fail(
-            failures,
-            "Canonical-Yee directory must contain exactly the four approved PNG files",
-        )
-
-    if not MANIFEST_PATH.is_file():
-        fail(failures, f"missing Canonical-Yee manifest: {MANIFEST_PATH.relative_to(ROOT)}")
-        return published_count, metadata_chunk_count, actual_digests
-    try:
-        manifest = json.loads(MANIFEST_PATH.read_text(encoding="utf-8"))
-    except (OSError, UnicodeError, json.JSONDecodeError) as exc:
-        fail(failures, f"Canonical-Yee manifest is not valid UTF-8 JSON: {exc}")
-        return published_count, metadata_chunk_count, actual_digests
-
-    if not isinstance(manifest, dict):
-        fail(failures, "Canonical-Yee manifest root must be an object")
-        return published_count, metadata_chunk_count, actual_digests
-    required_top = {"schema_id", "asset_set", "owner", "processing", "images"}
-    missing_top = sorted(required_top - set(manifest))
-    if missing_top:
-        fail(failures, f"Canonical-Yee manifest missing top-level keys: {', '.join(missing_top)}")
-    if manifest.get("schema_id") != "DAD_FIELDWORKS_CANONICAL_YEE_IMAGE_MANIFEST_V1":
-        fail(failures, "Canonical-Yee manifest schema_id mismatch")
-    if manifest.get("asset_set") != "Canonical-Yee Z-slice saved-frame sequence":
-        fail(failures, "Canonical-Yee manifest asset_set mismatch")
-    if manifest.get("owner") != COPYRIGHT_OWNER:
-        fail(failures, "Canonical-Yee manifest copyright owner mismatch")
-    processing = manifest.get("processing")
-    if not isinstance(processing, dict):
-        fail(failures, "Canonical-Yee manifest processing must be an object")
-    else:
-        if not normalized(str(processing.get("method") or "")):
-            fail(failures, "Canonical-Yee manifest processing method is empty")
-        expected_processing_flags = {
-            "metadata_stripped": True,
-            "decoded_pixels_preserved": True,
-            "visual_edits": False,
-        }
-        for key, expected_value in expected_processing_flags.items():
-            if processing.get(key) is not expected_value:
-                fail(failures, f"Canonical-Yee manifest processing.{key} mismatch")
-    assets = manifest.get("images")
-    if not isinstance(assets, list):
-        fail(failures, "Canonical-Yee manifest Assets must be an array")
-        assets = []
-    if len(assets) != 4:
-        fail(failures, f"Canonical-Yee manifest must contain 4 assets, found {len(assets)}")
-
-    records: dict[str, dict[str, object]] = {}
-    manifest_order: list[str] = []
-    primary_count = 0
-    for index, record in enumerate(assets):
-        if not isinstance(record, dict):
-            fail(failures, f"Canonical-Yee manifest asset {index + 1} is not an object")
-            continue
-        required_record_keys = {
-            "path",
-            "source_filename",
-            "sha256",
-            "bytes",
-            "width",
-            "height",
-            "description",
-            "owner",
-            "usage_role",
-            "saved_state",
-            "solver_step",
-            "slice_axis",
-            "quantity",
-            "unit",
-            "primary",
-        }
-        missing_record = sorted(required_record_keys - set(record))
-        if missing_record:
-            fail(
-                failures,
-                f"Canonical-Yee manifest asset {index + 1} missing keys: {', '.join(missing_record)}",
-            )
-        relative_value = record.get("path")
-        filename = Path(str(relative_value or "")).name
-        if not filename:
-            fail(failures, f"Canonical-Yee manifest asset {index + 1} has no filename/path")
-            continue
-        if filename in records:
-            fail(failures, f"duplicate Canonical-Yee manifest filename: {filename}")
-        records[filename] = record
-        manifest_order.append(filename)
-
-    if tuple(manifest_order) != EXPECTED_FILENAMES:
-        fail(failures, "Canonical-Yee manifest assets are not in chronological 2/5-to-5/5 order")
-    if set(records) != set(EXPECTED_FILENAMES):
-        fail(failures, "Canonical-Yee manifest filenames do not match the four normalized public filenames")
-
-    for expected in EXPECTED_SEQUENCE:
-        filename = str(expected["filename"])
-        path = CANONICAL_DIR / filename
-        record = records.get(filename, {})
-        if not path.is_file():
-            fail(failures, f"missing public Canonical-Yee screenshot: {path.relative_to(ROOT)}")
-            continue
-        published_count += 1
-        try:
-            png = read_png(path)
-        except (OSError, ValueError, UnicodeError, zlib.error) as exc:
-            fail(failures, f"{filename} is not a structurally valid PNG: {exc}")
-            continue
-
-        dimensions = (png["width"], png["height"])
-        expected_dimensions = (expected["width"], expected["height"])
-        if dimensions != expected_dimensions:
-            fail(failures, f"{filename} dimensions {dimensions} != {expected_dimensions}")
-        if png["pixel_sha256"] != expected["pixel_sha256"]:
-            fail(failures, f"{filename} decoded pixels differ from the supplied screenshot")
-        chunks = png["chunks"]
-        assert isinstance(chunks, list)
-        ancillary = [chunk for chunk in chunks if chunk not in {"IHDR", "IDAT", "IEND"}]
-        metadata_chunk_count += len(ancillary)
-        if ancillary:
-            fail(failures, f"{filename} contains ancillary PNG chunks: {', '.join(ancillary)}")
-
-        size = path.stat().st_size
-        digest = hashlib.sha256(path.read_bytes()).hexdigest()
-        actual_digests[filename] = digest
-        relative = path.relative_to(ROOT).as_posix()
-        if record.get("path") != relative:
-            fail(failures, f"{filename} manifest public relative path mismatch")
-        if record.get("source_filename") != expected["source"]:
-            fail(failures, f"{filename} manifest source attachment filename mismatch")
-        if record.get("sha256") != digest:
-            fail(failures, f"{filename} manifest SHA-256 mismatch")
-        if record.get("bytes") != size:
-            fail(failures, f"{filename} manifest byte size mismatch")
-        if (record.get("width"), record.get("height")) != dimensions:
-            fail(failures, f"{filename} manifest dimensions mismatch")
-        description = record.get("description")
-        if not isinstance(description, str) or not normalized(description):
-            fail(failures, f"{filename} manifest description is empty")
-        if record.get("owner") != COPYRIGHT_OWNER:
-            fail(failures, f"{filename} manifest copyright owner mismatch")
-        role = record.get("usage_role")
-        if not isinstance(role, str) or normalized(role).casefold() != str(expected["role"]).casefold():
-            fail(failures, f"{filename} manifest usage role mismatch")
-        if record.get("saved_state") != f"{expected['frame']}/5":
-            fail(failures, f"{filename} manifest saved-frame mapping mismatch")
-        if record.get("solver_step") != expected["step"]:
-            fail(failures, f"{filename} manifest solver-step mapping mismatch")
-        if record.get("slice_axis") != "Z":
-            fail(failures, f"{filename} manifest slice axis must be Z")
-        if record.get("quantity") != "Derived cell-centred electric-field magnitude":
-            fail(failures, f"{filename} manifest quantity mismatch")
-        if record.get("unit") != "V/m":
-            fail(failures, f"{filename} manifest unit mismatch")
-        if record.get("primary") is not (filename == PRIMARY_FILENAME):
-            fail(failures, f"{filename} manifest primary flag mismatch")
-        if record.get("primary") is True:
-            primary_count += 1
-
-    if primary_count != 1:
-        fail(failures, f"Canonical-Yee manifest must mark exactly one primary image, found {primary_count}")
-
-    return published_count, metadata_chunk_count, actual_digests
-
-
-def validate_homepage(
-    failures: list[str], actual_digests: dict[str, str]
-) -> tuple[PageParser, int, int, int, bool, bool, int]:
-    if not INDEX_PATH.is_file():
-        fail(failures, "missing index.html")
-        return PageParser(), 0, 0, 0, False, False, 0
-    index_text = INDEX_PATH.read_text(encoding="utf-8")
-    parser = parse_html(INDEX_PATH)
-
-    duplicates = sorted({value for value in parser.ids if parser.ids.count(value) > 1})
-    if duplicates:
-        fail(failures, f"duplicate HTML ids: {', '.join(duplicates)}")
-    if "workbench" not in parser.ids:
-        fail(failures, "index.html must preserve the workbench section anchor")
-    required_section_ids = {
-        "capabilities",
-        "workbench",
-        "evidence",
-        "architecture",
-        "about",
-        "materials",
-        "contact",
-    }
-    missing_section_ids = sorted(required_section_ids - set(parser.ids))
-    if missing_section_ids:
-        fail(failures, f"index.html is missing section anchors: {', '.join(missing_section_ids)}")
-    if parser.title != SITE_TITLE:
-        fail(failures, "HTML title does not match the current Workbench page title")
-
-    hero_headings = tuple(
-        heading
-        for tag, heading, section in parser.heading_records
-        if tag == "h1" and section == "hero-title"
-    )
-    hero_text = parser.section_text("hero-title")
-    hero_checks = (
-        hero_headings == (HERO_HEADLINE,),
-        normalized(HERO_TAGLINE) in hero_text,
-        all(normalized(item) in hero_text for item in HERO_PROOF_ITEMS),
-        bool(
-            re.search(
-                r"<ul\b[^>]*\bclass\s*=\s*['\"][^'\"]*\bcapability-strip\b[^'\"]*['\"]",
-                index_text,
-                re.IGNORECASE,
-            )
-        ),
-    )
-    if not hero_checks[0]:
-        fail(failures, "homepage hero must contain the exact current capability headline")
-    if not hero_checks[1]:
-        fail(failures, "homepage hero must contain the exact current capability tagline")
-    if not hero_checks[2]:
-        fail(failures, "homepage hero proof strip is missing one or more required items")
-    if not hero_checks[3]:
-        fail(failures, "homepage hero is missing the semantic capability proof strip")
-
-    capability_headings = tuple(
-        heading
-        for tag, heading, section in parser.heading_records
-        if tag == "h3" and section == "capabilities"
-    )
-    capability_text = parser.section_text("capabilities")
-    capability_checks = (
-        CAPABILITY_SECTION_HEADING in parser.headings,
-        normalized(CAPABILITY_SECTION_PARAGRAPH) in capability_text,
-        capability_headings == CAPABILITY_HEADINGS,
-        all(normalized(label) in capability_text for label in CAPABILITY_STATUS_LABELS),
-        all(normalized(paragraph) in capability_text for paragraph in CAPABILITY_REQUIRED_COPY),
-        all(metric in capability_text for metric in ("4,096", "5", "2 × 4,096 samples")),
-    )
-    if not capability_checks[0]:
-        fail(failures, "homepage is missing the exact implemented-capability section heading")
-    if not capability_checks[1]:
-        fail(failures, "implemented-capability section is missing its scope paragraph")
-    if not capability_checks[2]:
-        fail(failures, "homepage capability-card headings do not match the seven approved groups")
-    if not capability_checks[3]:
-        fail(failures, "homepage capability cards are missing one or more scope labels")
-    if not capability_checks[4]:
-        fail(failures, "homepage capability cards are missing required implemented-capability copy")
-    if not capability_checks[5]:
-        fail(failures, "homepage reference-case metrics are incomplete")
-
-    presentation_pass = all(hero_checks) and all(capability_checks)
-
-    workbench_text = normalized(" ".join(parser.workbench_text_parts))
-    if WORKBENCH_SECTION_HEADING not in parser.headings:
-        fail(failures, f"index.html is missing the exact heading: {WORKBENCH_SECTION_HEADING}")
-    for paragraph in WORKBENCH_INTRO_PARAGRAPHS:
-        if normalized(paragraph) not in workbench_text:
-            fail(failures, "Canonical-Yee section is missing one required capability paragraph")
-    for capability in WORKBENCH_CAPABILITIES:
-        if normalized(capability).casefold() not in workbench_text.casefold():
-            fail(failures, f"Canonical-Yee capability summary is missing: {capability}")
-
-    figures_by_filename: dict[str, dict[str, object]] = {}
-    chronological_files: list[str] = []
-    for figure in parser.workbench_figures:
-        image = figure.get("image")
-        if not isinstance(image, dict):
-            continue
-        src = str(image.get("src") or "")
-        filename = Path(urlsplit(src).path).name
-        if filename in EXPECTED_FILENAMES:
-            chronological_files.append(filename)
-            figures_by_filename[filename] = figure
-
-    if tuple(chronological_files) != EXPECTED_FILENAMES:
-        fail(failures, "homepage Canonical-Yee figures are not in chronological 2/5-to-5/5 order")
-    if len(figures_by_filename) != 4:
-        fail(failures, f"homepage must contain 4 distinct Canonical-Yee figures, found {len(figures_by_filename)}")
-
-    missing_alt_count = 0
-    accessibility_pass = True
-    for expected in EXPECTED_SEQUENCE:
-        filename = str(expected["filename"])
-        figure = figures_by_filename.get(filename)
-        if not figure:
-            continue
-        image = figure.get("image")
-        assert isinstance(image, dict)
-        expected_src = f"assets/images/dad-fieldworks/canonical-yee/{filename}"
-        if image.get("src") != expected_src:
-            fail(failures, f"{filename} homepage source path mismatch")
-        if image.get("alt") != expected["alt"]:
-            fail(failures, f"{filename} homepage alt text mismatch")
-            missing_alt_count += 1
-            accessibility_pass = False
-        if image.get("width") != str(expected["width"]) or image.get("height") != str(expected["height"]):
-            fail(failures, f"{filename} homepage width/height attributes mismatch")
-        if image.get("decoding") != "async":
-            fail(failures, f"{filename} must use decoding=async")
-        if filename == PRIMARY_FILENAME:
-            if image.get("loading") not in {None, "eager"}:
-                fail(failures, f"primary image {filename} must not be lazy-loaded")
-            if image.get("loading") == "eager" and image.get("fetchpriority") not in {None, "high"}:
-                fail(failures, f"primary image {filename} has an unexpected fetch priority")
-            classes = figure.get("classes")
-            if not isinstance(classes, set) or "workbench-card-primary" not in classes:
-                fail(failures, f"primary image {filename} must be the featured Workbench card")
-        elif image.get("loading") != "lazy":
-            fail(failures, f"supporting image {filename} must use loading=lazy")
-        if image.get("anchor_href") != expected_src:
-            fail(failures, f"{filename} must link to its full-resolution PNG")
-            accessibility_pass = False
-        if not normalized(str(image.get("anchor_label") or "")):
-            # The image alt still gives the anchor an accessible name, but an
-            # explicit action label is the established site convention.
-            fail(failures, f"{filename} full-resolution link needs an aria-label")
-            accessibility_pass = False
-        caption_parts = figure.get("caption_parts")
-        caption = normalized(" ".join(caption_parts if isinstance(caption_parts, list) else []))
-        if normalized(str(expected["caption_title"])) not in caption or normalized(str(expected["caption_body"])) not in caption:
-            fail(failures, f"{filename} homepage caption does not match its frame/step description")
-
-    meta_lookup: dict[tuple[str, str], str | None] = {}
-    for item in parser.meta:
-        if item.get("property"):
-            meta_lookup[("property", item["property"] or "")] = item.get("content")
-        if item.get("name"):
-            meta_lookup[("name", item["name"] or "")] = item.get("content")
-    expected_meta = {
-        ("name", "description"): SITE_DESCRIPTION,
-        ("property", "og:type"): "website",
-        ("property", "og:title"): SITE_TITLE,
-        ("property", "og:description"): SOCIAL_DESCRIPTION,
-        ("property", "og:image"): PRIMARY_URL,
-        ("property", "og:image:width"): str(EXPECTED_SEQUENCE[1]["width"]),
-        ("property", "og:image:height"): str(EXPECTED_SEQUENCE[1]["height"]),
-        ("property", "og:image:alt"): EXPECTED_SEQUENCE[1]["alt"],
-        ("name", "twitter:card"): "summary_large_image",
-        ("name", "twitter:title"): SITE_TITLE,
-        ("name", "twitter:description"): SOCIAL_DESCRIPTION,
-        ("name", "twitter:image"): PRIMARY_URL,
-        ("name", "twitter:image:alt"): EXPECTED_SEQUENCE[1]["alt"],
-    }
-    for key, expected in expected_meta.items():
-        if meta_lookup.get(key) != expected:
-            fail(failures, f"homepage metadata mismatch for {key[1]}")
-
-    canonical = [
-        item.get("href")
-        for item in parser.links
-        if "canonical" in set((item.get("rel") or "").lower().split())
-    ]
-    if canonical != ["https://www.dadlabs.de/"]:
-        fail(failures, "canonical URL must be exactly https://www.dadlabs.de/")
-
-    broken_images = 0
-    approved_image_sources = {
-        f"assets/images/dad-fieldworks/canonical-yee/{filename}"
-        for filename in EXPECTED_FILENAMES
-    }
-    unexpected_scientific_images: set[str] = set()
-    for image in parser.images:
-        src = str(image.get("src") or "")
-        if not src or not local_target_exists(INDEX_PATH, src):
-            broken_images += 1
-            fail(failures, f"missing index.html image target: {src or '<empty>'}")
-        parts = urlsplit(src)
-        normalized_src = unquote(parts.path).lstrip("/").replace("\\", "/")
-        if (
-            normalized_src
-            and not parts.scheme
-            and Path(normalized_src).suffix.casefold() in SCIENTIFIC_IMAGE_SUFFIXES
-            and normalized_src not in approved_image_sources
-        ):
-            unexpected_scientific_images.add(normalized_src)
-        if not normalized(str(image.get("alt") or "")):
-            missing_alt_count += 1
-            accessibility_pass = False
-            fail(failures, f"index.html image has empty alt text: {src or '<empty>'}")
-    if unexpected_scientific_images:
-        fail(
-            failures,
-            "homepage references an image outside the four approved Canonical-Yee assets: "
-            + ", ".join(sorted(unexpected_scientific_images)),
-        )
-
-    broken_links = 0
-    for href in parser.hrefs:
-        if not local_target_exists(INDEX_PATH, href):
-            broken_links += 1
-            fail(failures, f"missing index.html link target: {href}")
-        parts = urlsplit(href)
-        if parts.fragment and not parts.scheme and not parts.path and parts.fragment not in parser.ids:
-            broken_links += 1
-            fail(failures, f"unresolved homepage fragment: #{parts.fragment}")
-
-    external_assets = 0
-    for kind, target in parser.resources:
-        if is_external(target):
-            external_assets += 1
-            fail(failures, f"external {kind} dependency in index.html: {target}")
-        elif not local_target_exists(INDEX_PATH, target):
-            fail(failures, f"missing local {kind} dependency in index.html: {target}")
-
-    if TRACKING_PATTERN.search(index_text):
-        fail(failures, "tracking or analytics code appears in index.html")
-    if "impressum.html" not in parser.hrefs or "datenschutz.html" not in parser.hrefs:
-        fail(failures, "homepage must retain links to both legal pages")
-
-    # The digest argument is used below in the inventory checks and retained in
-    # this signature to keep homepage/manifest integration explicit.
-    del actual_digests
-    return (
-        parser,
-        broken_images,
-        broken_links,
-        external_assets,
-        accessibility_pass,
-        presentation_pass,
-        len(unexpected_scientific_images),
-    )
-
-
-def markdown_headings(text: str, level: int) -> tuple[str, ...]:
-    marker = "#" * level
-    return tuple(
-        normalized(match)
-        for match in re.findall(rf"(?m)^{re.escape(marker)}\s+(.+?)\s*$", text)
-    )
-
-
-def validate_readme_and_inventory(
-    failures: list[str], actual_digests: dict[str, str]
-) -> bool:
-    if not README_PATH.is_file():
-        fail(failures, "missing README.md")
-        return False
-    readme_text = README_PATH.read_text(encoding="utf-8")
-    level_two_headings = markdown_headings(readme_text, 2)
-    level_three_headings = markdown_headings(readme_text, 3)
-    readme_checks = (
-        "Implemented Engineering Capabilities" in level_two_headings,
-        README_WORKBENCH_HEADING in level_two_headings,
-        level_three_headings == CAPABILITY_HEADINGS,
-        normalized(README_PRODUCT_PARAGRAPH) in normalized(readme_text),
-    )
-    if not readme_checks[0]:
-        fail(failures, "README is missing the implemented-capability heading")
-    if not readme_checks[1]:
-        fail(failures, "README is missing the Canonical-Yee showcase heading")
-    if not readme_checks[2]:
-        fail(failures, "README capability headings do not match the seven approved groups")
-    if not readme_checks[3]:
-        fail(failures, "README is missing the current product capability paragraph")
-
-    paths = [f"assets/images/dad-fieldworks/canonical-yee/{name}" for name in EXPECTED_FILENAMES]
-    positions = [readme_text.find(path) for path in paths]
-    if any(position < 0 for position in positions) or positions != sorted(positions):
-        fail(failures, "README Canonical-Yee sequence is missing or not chronological")
-    for path in paths:
-        if readme_text.count(path) < 2:
-            fail(failures, f"README image is not clickable to its full-size asset: {path}")
-
-    markdown_targets = re.findall(r"!?\[[^\]]*\]\(([^)]+)\)", readme_text)
-    for target in markdown_targets:
-        clean_target = target.strip().split(maxsplit=1)[0].strip("<>")
-        if not local_target_exists(README_PATH, clean_target):
-            fail(failures, f"missing README link/image target: {clean_target}")
-
-    if not ASSET_INVENTORY_PATH.is_file():
-        fail(failures, "missing assets/asset_manifest.md")
-        return False
-    inventory_text = ASSET_INVENTORY_PATH.read_text(encoding="utf-8")
-    for expected in EXPECTED_SEQUENCE:
-        filename = str(expected["filename"])
-        relative = f"assets/images/dad-fieldworks/canonical-yee/{filename}"
-        digest = actual_digests.get(filename, "")
-        if relative not in inventory_text:
-            fail(failures, f"asset inventory is missing {relative}")
-        # The machine-readable per-image manifest is the hash authority.  The
-        # site-wide Markdown inventory must at least list all four public paths
-        # and their owner without duplicating mutable hash data.
-    if inventory_text.count(COPYRIGHT_OWNER) < 4:
-        fail(failures, "asset inventory does not record the requested owner for all four images")
-    return all(readme_checks)
-
-
-def validate_current_capability_docs(failures: list[str]) -> bool:
-    checks: list[bool] = []
-    if not CURRENT_CAPABILITIES_PATH.is_file():
-        fail(failures, "missing docs/current_public_status.md")
-        checks.append(False)
-    else:
-        current_text = CURRENT_CAPABILITIES_PATH.read_text(encoding="utf-8")
-        current_h1 = markdown_headings(current_text, 1)
-        current_h2 = markdown_headings(current_text, 2)
-        current_checks = (
-            current_h1 == ("Current Implemented Capabilities",),
-            current_h2 == CAPABILITY_HEADINGS,
-            normalized(CURRENT_CAPABILITIES_INTRO) in normalized(current_text),
-        )
-        checks.extend(current_checks)
-        if not current_checks[0]:
-            fail(failures, "current capability document has an unexpected title")
-        if not current_checks[1]:
-            fail(failures, "current capability document does not contain the seven approved groups")
-        if not current_checks[2]:
-            fail(failures, "current capability document is missing its evidence-scope introduction")
-
-    if not DOCS_INDEX_PATH.is_file():
-        fail(failures, "missing docs/README.md")
-        checks.append(False)
-    else:
-        docs_index_text = DOCS_INDEX_PATH.read_text(encoding="utf-8")
-        docs_index_checks = (
-            "[Current implemented capabilities](current_public_status.md)" in docs_index_text,
-            "[Claim boundaries](claim_boundaries.md)" in docs_index_text,
-        )
-        checks.extend(docs_index_checks)
-        if not all(docs_index_checks):
-            fail(failures, "documentation index is missing current capability references")
-
-    if not CLAIM_BOUNDARIES_PATH.is_file():
-        fail(failures, "missing docs/claim_boundaries.md")
-        checks.append(False)
-    else:
-        claim_text = CLAIM_BOUNDARIES_PATH.read_text(encoding="utf-8")
-        claim_checks = (
-            "## Supported Capability Scope" in claim_text,
-            "## Internally Exercised Reference Scope" in claim_text,
-            "## Publication Rule" in claim_text,
-            all(
-                term in claim_text
-                for term in (
-                    "full-vector 3D time-domain electromagnetic core",
-                    "Yee-aware temporal alignment",
-                    "S-parameter model",
-                    "wxWidgets desktop integration",
-                    "quasi-TEM cross-section foundations",
-                    "immutable evidence packages",
-                )
-            ),
-        )
-        checks.extend(claim_checks)
-        if not all(claim_checks):
-            fail(failures, "claim-boundary document is missing current capability scope")
-
-    return bool(checks) and all(checks)
-
-
-def validate_site_links_and_dependencies(failures: list[str]) -> tuple[int, int, int]:
-    broken_links = 0
-    broken_images = 0
-    external_assets = 0
-    for html_path in sorted(ROOT.glob("*.html")):
-        if html_path.resolve() == INDEX_PATH.resolve():
-            continue
-        parser = parse_html(html_path)
+        p = ROOT / rel
+        parser = Page(p.read_text(encoding="utf-8"))
+        html_count += 1
         for href in parser.hrefs:
-            if not local_target_exists(html_path, href):
-                broken_links += 1
-                fail(failures, f"missing local link in {html_path.name}: {href}")
-            parts = urlsplit(href)
-            if parts.fragment and not parts.scheme:
-                target_path = html_path if not parts.path else (html_path.parent / unquote(parts.path)).resolve()
-                if target_path == html_path and parts.fragment not in parser.ids:
-                    broken_links += 1
-                    fail(failures, f"unresolved fragment in {html_path.name}: #{parts.fragment}")
-        for kind, target in parser.resources:
-            if is_external(target):
-                external_assets += 1
-                fail(failures, f"external {kind} dependency in {html_path.name}: {target}")
-            elif not local_target_exists(html_path, target):
-                if kind == "img":
-                    broken_images += 1
-                fail(failures, f"missing local {kind} dependency in {html_path.name}: {target}")
-
-    css_path = ROOT / "styles.css"
-    if not css_path.is_file():
-        fail(failures, "missing styles.css")
-        return broken_links, broken_images, external_assets
-    css_text = css_path.read_text(encoding="utf-8")
-    css_external = re.findall(r"(?i)(?:@import\s+|url\(\s*)['\"]?https?://", css_text)
-    if css_external:
-        external_assets += len(css_external)
-        fail(failures, "external URL dependency appears in styles.css")
-    for selector in (".workbench-gallery", ".workbench-card", ".workbench-card-primary"):
-        if selector not in css_text:
-            fail(failures, f"styles.css is missing Canonical-Yee gallery selector: {selector}")
-    responsive_checks = (
-        "@media" in css_text,
-        bool(
-            re.search(
-                r"@media[^{}]*\{(?:(?!@media)[\s\S])*?\.workbench-gallery\s*\{[^}]*"
-                r"grid-template-columns\s*:\s*(?:minmax\(0,\s*)?1fr",
-                css_text,
-            )
-        ),
-        bool(re.search(r"\.workbench-(?:card|image-link)\s+img\s*\{[^}]*width\s*:\s*100%", css_text, re.DOTALL)),
-        "height: auto" in css_text,
-    )
-    if not all(responsive_checks):
-        fail(failures, "styles.css lacks the required one-column/mobile aspect-ratio treatment")
-
-    for js_path in sorted(ROOT.rglob("*.js")):
-        if ".git" in js_path.parts:
-            continue
-        js_text = js_path.read_text(encoding="utf-8", errors="replace")
-        if re.search(r"(?i)(?:import\s*\(|from\s+|fetch\s*\(|new\s+Worker\s*\()\s*['\"]https?://", js_text):
-            external_assets += 1
-            fail(failures, f"external runtime dependency appears in {js_path.relative_to(ROOT)}")
-        if TRACKING_PATTERN.search(js_text):
-            fail(failures, f"tracking or analytics code appears in {js_path.relative_to(ROOT)}")
-    return broken_links, broken_images, external_assets
-
-
-def read_existing_text(paths: tuple[Path, ...]) -> str:
-    return "\n".join(
-        path.read_text(encoding="utf-8", errors="replace")
-        for path in paths
-        if path.is_file()
-    )
-
-
-def validate_public_safety(failures: list[str]) -> dict[str, int | bool]:
-    public_files = iter_public_text_files()
-    absolute_private_path_count = 0
-    internal_identifier_count = 0
-    private_context_count = 0
-    for path in public_files:
-        if path.name != "CNAME" and path.suffix.lower() not in SAFETY_SCAN_SUFFIXES:
-            continue
-        text = path.read_text(encoding="utf-8", errors="replace")
-        absolute_private_path_count += len(PRIVATE_PATH_PATTERN.findall(text))
-        internal_identifier_count += len(INTERNAL_IDENTIFIER_PATTERN.findall(text))
-        private_context_count += len(PRIVATE_CONTEXT_PATTERN.findall(text))
-    if absolute_private_path_count:
-        fail(failures, f"absolute Windows/UNC path count in public text: {absolute_private_path_count}")
-    if internal_identifier_count:
-        fail(failures, f"internal identifier count in public text: {internal_identifier_count}")
-    if private_context_count:
-        fail(failures, f"private personnel/customer context count in public text: {private_context_count}")
-
-    public_copy = read_existing_text(CLAIM_COPY_PATHS)
-    claim_assertion_copy = read_existing_text(UNSUPPORTED_CLAIM_COPY_PATHS)
-    active_copy = read_existing_text(ACTIVE_PRESENTATION_PATHS)
-    public_link_copy = read_existing_text(PUBLIC_LINK_SURFACE_PATHS)
-    repeated_negative_count = sum(
-        len(pattern.findall(public_copy)) for pattern in REPEATED_NEGATIVE_PATTERNS
-    )
-    unsupported_claim_count = sum(
-        len(pattern.findall(claim_assertion_copy)) for pattern in UNSUPPORTED_CLAIM_PATTERNS
-    )
-    en_dash_count = active_copy.count("\u2013") + len(
-        re.findall(r"&ndash;", active_copy, re.IGNORECASE)
-    )
-    em_dash_count = active_copy.count("\u2014") + len(
-        re.findall(r"&mdash;", active_copy, re.IGNORECASE)
-    )
-    roadmap_link_count = len(ROADMAP_LINK_PATTERN.findall(public_link_copy))
-    mathematica_product_path_count = len(MATHEMATICA_PRODUCT_PATTERN.findall(active_copy))
-    private_commit_hash_count = len(PRIVATE_COMMIT_HASH_PATTERN.findall(active_copy))
-
-    presentation_headings: list[str] = []
-    if INDEX_PATH.is_file():
-        presentation_headings.extend(parse_html(INDEX_PATH).headings)
-    for path in ACTIVE_PRESENTATION_PATHS:
-        if path.suffix.casefold() == ".md" and path.is_file():
-            text = path.read_text(encoding="utf-8", errors="replace")
-            presentation_headings.extend(
-                normalized(item)
-                for item in re.findall(r"(?m)^#{1,6}\s+(.+?)\s*$", text)
-            )
-    limitations_heading_count = sum(
-        bool(LIMITATIONS_HEADING_PATTERN.search(heading))
-        for heading in presentation_headings
-    )
-
-    if repeated_negative_count:
-        fail(failures, f"repeated negative disclaimer count in showcase copy: {repeated_negative_count}")
-    if unsupported_claim_count:
-        fail(failures, f"unsupported positive claim count in showcase copy: {unsupported_claim_count}")
-    if en_dash_count:
-        fail(failures, f"AI-style en dash count in current public presentation: {en_dash_count}")
-    if em_dash_count:
-        fail(failures, f"AI-style em dash count in current public presentation: {em_dash_count}")
-    if roadmap_link_count:
-        fail(failures, f"public roadmap link count in current publication surface: {roadmap_link_count}")
-    if limitations_heading_count:
-        fail(failures, f"public limitations/missing-features heading count: {limitations_heading_count}")
-    if mathematica_product_path_count:
-        fail(failures, f"Mathematica/Wolfram product-path claim count: {mathematica_product_path_count}")
-    if private_commit_hash_count:
-        fail(failures, f"private commit-like hash count in current public copy: {private_commit_hash_count}")
-
-    return {
-        "absolute_private_path_count": absolute_private_path_count,
-        "internal_identifier_count": internal_identifier_count,
-        "private_context_count": private_context_count,
-        "private_commit_hash_count": private_commit_hash_count,
-        "repeated_negative_count": repeated_negative_count,
-        "unsupported_claim_count": unsupported_claim_count,
-        "en_dash_count": en_dash_count,
-        "em_dash_count": em_dash_count,
-        "roadmap_link_count": roadmap_link_count,
-        "limitations_heading_count": limitations_heading_count,
-        "mathematica_product_path_count": mathematica_product_path_count,
-    }
-
-
-def validate_superseded_content(failures: list[str]) -> int:
-    remaining = 0
-    if SUPERSEDED_DIR.exists():
-        remaining += 1
-        fail(failures, f"superseded screenshot directory remains: {SUPERSEDED_DIR.relative_to(ROOT)}")
-    superseded_prefix = SUPERSEDED_DIR.relative_to(ROOT).as_posix()
-    for path in iter_public_text_files():
-        if path.resolve() == Path(__file__).resolve():
-            continue
-        count = path.read_text(encoding="utf-8", errors="replace").count(superseded_prefix)
-        if count:
-            remaining += count
-            fail(
-                failures,
-                f"superseded screenshot-directory reference remains in {path.relative_to(ROOT)}",
-            )
-    return remaining
-
-
-def validate() -> tuple[list[str], dict[str, object]]:
-    failures: list[str] = []
-    published_count, metadata_chunk_count, actual_digests = validate_manifest_and_images(failures)
-    (
-        parser,
-        homepage_broken_images,
-        homepage_broken_links,
-        homepage_external_assets,
-        accessibility_pass,
-        homepage_presentation_pass,
-        unexpected_homepage_image_count,
-    ) = validate_homepage(failures, actual_digests)
-    readme_presentation_pass = validate_readme_and_inventory(failures, actual_digests)
-    docs_presentation_pass = validate_current_capability_docs(failures)
-    site_broken_links, site_broken_images, site_external_assets = validate_site_links_and_dependencies(failures)
-    safety = validate_public_safety(failures)
-    superseded_count = validate_superseded_content(failures)
-
-    cname_path = ROOT / "CNAME"
-    cname_exact = cname_path.is_file() and cname_path.read_bytes() == b"www.dadlabs.de\r\n"
-    if not cname_exact:
-        fail(failures, "CNAME bytes must remain exactly www.dadlabs.de followed by CRLF")
-    legal_preserved = all((ROOT / name).is_file() for name in ("impressum.html", "datenschutz.html"))
-    if not legal_preserved:
-        fail(failures, "one or both required legal pages are missing")
-    if not (ROOT / "assets" / "hero" / "pcb2d_microstrip_field_scientific_v2_hero.gif").is_file():
-        fail(failures, "required unrelated hero animation is missing")
-
-    try:
-        raw_incoming = staged_raw_incoming_paths()
-    except (OSError, subprocess.CalledProcessError, UnicodeError) as exc:
-        fail(failures, f"could not inspect staged paths: {exc}")
-        raw_incoming = []
-    if raw_incoming:
-        fail(failures, f"raw incoming screenshot staged: {', '.join(raw_incoming)}")
-
-    try:
-        added_scientific_images = added_scientific_image_paths()
-    except (OSError, subprocess.CalledProcessError, UnicodeError) as exc:
-        fail(failures, f"could not inspect newly added public image paths: {exc}")
-        added_scientific_images = []
-    if added_scientific_images:
-        fail(
-            failures,
-            "new scientific/decorative image assets were added in this update: "
-            + ", ".join(added_scientific_images),
-        )
-
-    try:
-        diff_check = subprocess.run(
-            ["git", "diff", "--check"],
-            cwd=ROOT,
-            check=False,
-            capture_output=True,
-            text=True,
-            encoding="utf-8",
-        )
-        if diff_check.returncode:
-            fail(failures, "git diff --check failed")
-    except (OSError, UnicodeError) as exc:
-        fail(failures, f"could not run git diff --check: {exc}")
-
-    chronological = tuple(
-        Path(urlsplit(str((figure.get("image") or {}).get("src") or "")).path).name
-        for figure in parser.workbench_figures
-        if isinstance(figure.get("image"), dict)
-        and Path(urlsplit(str((figure.get("image") or {}).get("src") or "")).path).name in EXPECTED_FILENAMES
-    ) == EXPECTED_FILENAMES
-    responsive_pass = not any("responsive" in item.lower() or "mobile" in item.lower() for item in failures)
-    current_presentation_pass = (
-        homepage_presentation_pass
-        and readme_presentation_pass
-        and docs_presentation_pass
-    )
-    only_implemented_capabilities = (
-        current_presentation_pass
-        and safety["unsupported_claim_count"] == 0
-        and safety["repeated_negative_count"] == 0
-        and safety["limitations_heading_count"] == 0
-        and safety["roadmap_link_count"] == 0
-    )
-    fabricated_scientific_image_count = (
-        unexpected_homepage_image_count + len(added_scientific_images)
-    )
-    broken_image_count = homepage_broken_images + site_broken_images
-    broken_internal_link_count = homepage_broken_links + site_broken_links
-    private_copy_indicator_count = (
-        safety["absolute_private_path_count"]
-        + safety["internal_identifier_count"]
-        + safety["private_context_count"]
-        + safety["private_commit_hash_count"]
-    )
-    summary: dict[str, object] = {
-        "PublicShowcaseCurrentCapabilityPresentationUpdatedQ": current_presentation_pass,
-        "OnlyImplementedCapabilitiesPresentedQ": only_implemented_capabilities,
-        "UnsupportedCapabilityClaimCount": safety["unsupported_claim_count"],
-        "PublicLimitationsSectionAddedQ": safety["limitations_heading_count"] > 0,
-        "PrivateRepositoryMutationCount": "ExternalReadOnlyVerificationRequired",
-        "FabricatedScientificImageCount": fabricated_scientific_image_count,
-        "MathematicaProductPathClaimCount": safety["mathematica_product_path_count"],
-        "BrokenInternalLinkCount": broken_internal_link_count,
-        "BrokenImageCount": broken_image_count,
-        "NewAiStyleEnDashCount": safety["en_dash_count"],
-        "NewAiStyleEmDashCount": safety["em_dash_count"],
-        "CnamePreservedQ": cname_exact,
-        "NewCanonicalYeeScreenshotCount": published_count,
-        "ChronologicalFrameSequenceQ": chronological,
-        "PreviousFeaturedScreenshotSetRemovedQ": superseded_count == 0,
-        "InteractiveCanonicalYeeCapabilityDescriptionUpdatedQ": WORKBENCH_SECTION_HEADING in parser.headings,
-        "CapabilityFocusedPublicCopyQ": only_implemented_capabilities,
-        "RepeatedNegativeDisclaimerCount": safety["repeated_negative_count"],
-        "UnsupportedClaimCount": safety["unsupported_claim_count"],
-        "PublicRoadmapLinkCount": safety["roadmap_link_count"],
-        "PublicCopyPrivatePathOrIdentifierCount": private_copy_indicator_count,
-        "BrokenImageReferenceCount": broken_image_count,
-        "BrokenLocalLinkCount": broken_internal_link_count,
-        "ExternalAssetDependencyAddedCount": homepage_external_assets + site_external_assets,
-        "CnameUnchangedQ": cname_exact,
-        "LegalPagesPreservedQ": legal_preserved,
-        "AccessibilityValidationPassQ": accessibility_pass,
-        "ResponsiveLayoutValidationPassQ": responsive_pass,
-        "AncillaryPngMetadataChunkCount": metadata_chunk_count,
-        "RawIncomingAssetStagedCount": len(raw_incoming),
-    }
-    summary["ValidationPassQ"] = not failures
-    return failures, summary
-
-
-def main() -> int:
-    failures, summary = validate()
-    for key, value in summary.items():
-        if isinstance(value, bool):
-            value = "True" if value else "False"
-        print(f"{key}: {value}")
-    if failures:
-        print("\nVALIDATION FAILED", file=sys.stderr)
-        for item in failures:
-            print(f"- {item}", file=sys.stderr)
-        return 1
-    return 0
-
+            link_check(p, href)
+        for resource in parser.resources:
+            link_check(p, resource, True)
+        for a in parser.images:
+            image_count += 1
+            check("alt" in a and (a["alt"] or "assets/brand/" in a.get("src", "")), "Missing descriptive alt in " + rel)
+            check(a.get("width", "").isdigit() and a.get("height", "").isdigit(), "Missing intrinsic dimensions in " + rel)
+        if rel == "index.html" or rel.startswith("views/"):
+            check(NOTICE in parser.text, "Visible preview notice missing: " + rel)
+            check(sum(tag == "h1" for tag, _ in parser.tags) == 1, "Expected one H1: " + rel)
+            check(any(tag == "html" and a.get("lang") == "en" for tag, a in parser.tags), "English language missing")
+    home = Page((ROOT / "index.html").read_text(encoding="utf-8"))
+    check({"workflow","results","examples","result-context","development","contact","main-content"} <= home.ids, "Workflow anchors missing")
+    check("mailto:info@dadlabs.de" in home.hrefs and "tel:+4917648296275" in home.hrefs, "Contact action changed")
+    homepage_captures = [a for a in home.images if ASSET_DIR in a["src"]]
+    check(len(homepage_captures) == 6 and {a["src"] for a in homepage_captures} == {v["path"] for v in full_images.values()},
+          "Expected the exact six distinct homepage captures")
+    hero = [a for a in home.images if "simulation-results.png" in a["src"]][0]
+    check(hero.get("loading") == "eager" and hero.get("fetchpriority") == "high", "Hero priority regressed")
+    check(home.metas.get("og:image") == "https://www.dadlabs.de/" + full_images["simulation-results"]["path"], "Stale social image")
+    check(home.metas.get("twitter:image") == home.metas.get("og:image"), "Social images differ")
+    check(home.metas.get("og:image:height") == "860", "Social dimensions changed")
+    check(home.metas.get("og:image:width") == "1440", "Social width changed")
+    hero_alt = manifest["images"][0]["alt"]
+    check(home.metas.get("og:image:alt") == home.metas.get("twitter:image:alt") == hero_alt, "Social alt not hero-backed")
+    check([a.get("href") for tag, a in home.tags if tag == "link" and a.get("rel") == "canonical"] == ["https://www.dadlabs.de/"], "Homepage canonical URL changed")
+    check(home.metas.get("og:url") == "https://www.dadlabs.de/", "Social page URL changed")
+    check(home.metas.get("og:title") == home.metas.get("twitter:title") == "DAD FieldWorks | PCB and RF Development Workbench", "Social title mismatch")
+    check(home.metas.get("description") == home.metas.get("og:description") == home.metas.get("twitter:description") and "Development preview." in home.metas.get("description", ""), "Description metadata differs or omits preview status")
+    for item in manifest["images"]:
+        link = "views/" + item["id"] + ".html"
+        check(link in home.hrefs, "Missing detail link: " + link)
+        detail_text = (ROOT / link).read_text(encoding="utf-8")
+        check(item["caption"] in detail_text and item["alt"] in detail_text, "Detail caption/alt not manifest-backed")
+        detail = Page(detail_text)
+        check([a.get("href") for tag, a in detail.tags if tag == "link" and a.get("rel") == "canonical"] == ["https://www.dadlabs.de/" + link], "Detail canonical URL changed")
+        full = full_images[item["id"]]
+        check("../" + full["path"] in detail.hrefs, "No full-resolution zoom link")
+        for label, page, prefix in [("homepage", home, ""), ("detail", detail, "../")]:
+            matches = [fig for fig in page.figures if any(a.get("src") == prefix + full["path"] for a in fig["images"])]
+            check(len(matches) == 1, "Missing or duplicated figure on " + label + ": " + item["id"])
+            if not matches:
+                continue
+            figure = matches[0]
+            check(len(figure["images"]) == 1, "Unexpected images in figure")
+            a = figure["images"][0]
+            check(a.get("alt") == item["alt"] and a.get("width") == str(full["width"]) and a.get("height") == str(full["height"]),
+                  "Displayed alt/dimensions differ from manifest on " + label + ": " + item["id"])
+            text = re.sub(r"\s+", " ", " ".join(figure["data"]))
+            check(item["caption"] in text, "Caption belongs to wrong figure on " + label + ": " + item["id"])
+            expected_srcset = ", ".join(v["path"] + " " + str(v["width"]) + "w" for v in reversed(item["derivatives"])) if len(item["derivatives"]) > 1 else ""
+            check(a.get("srcset", "") == (expected_srcset if label == "homepage" else ""), "Unexpected responsive scientific source")
+    raw_home = (ROOT / "index.html").read_text(encoding="utf-8")
+    org = json.loads(re.search(r'<script type="application/ld\+json">\s*([\s\S]*?)</script>', raw_home).group(1))
+    check(org.get("@type") == "Organization" and org.get("name") == OWNER and org.get("legalName") == OWNER, "Organization identity changed")
+    check(org.get("url") == "https://www.dadlabs.de/" and org.get("@id") == "https://www.dadlabs.de/#organization" and org.get("brand") == {"@type":"Brand","name":"DAD FieldWorks"}, "Organization URL or brand changed")
+    check(org.get("logo") == "https://www.dadlabs.de/assets/brand/dad_fieldworks_kernel_wave_mark.png", "Organization logo changed")
+    check(org.get("email") == "info@dadlabs.de" and org.get("telephone") == "+4917648296275", "Organization contact changed")
+    check(org.get("address") == {"@type":"PostalAddress","streetAddress":"Sperberweg 27","postalCode":"86609","addressLocality":"Donauwörth","addressCountry":"Deutschland"}, "Organization address changed")
+    for rel in ACTIVE + NEW_DOCS + ["assets/asset_manifest.md"]:
+        p = ROOT / rel
+        if p.suffix == ".md":
+            for href in re.findall(r"\]\(([^)\s]+)(?:\s+[^)]*)?\)", p.read_text(encoding="utf-8")):
+                link_check(p, href)
+    css = (ROOT / "styles.css").read_text(encoding="utf-8")
+    check(not re.search(r"(?i)(?:@import\s+|url\(\s*)['\"]?(?:https?:)?//", css), "External CSS/font dependency")
+    check(all(s in css for s in [".workflow-showcase", ".result-gallery", "height: auto", ":focus-visible",
+                                "@media (max-width: 720px)", "grid-template-columns: 1fr"]), "Responsive/focus contract missing")
+    for url in re.findall(r"url\(\s*['\"]?([^)'\"\s]+)", css):
+        link_check(ROOT / "styles.css", url, True)
+    check("Historical" in (ROOT/"assets/asset_manifest.md").read_text(), "Historical inventory context missing")
+    check("Historical visual records" in (ROOT/"docs/README.md").read_text(), "Historical documentation context missing")
+    diff_check = subprocess.run(["git", "diff", "--check"], cwd=ROOT, capture_output=True, text=True,
+                                env={**os.environ, "GIT_OPTIONAL_LOCKS":"0"})
+    check(diff_check.returncode == 0, "Whitespace diff check failed: " + diff_check.stdout)
+    return {"status": "PASS" if not FAILURES else "FAIL", "approved_captures": len(APPROVED),
+            "published_pngs": len(allowed_images), "png_bytes": total_bytes,
+            "protected_files": len(PROTECTED), "html_pages": html_count, "html_images": image_count,
+            "public_files_scanned": len(paths), "changed_paths": sorted(changed),
+            "failures": FAILURES, "private_writes": 0, "solver_runs": 0, "network_requests": 0}
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        result = validate()
+    except Exception as error:
+        result = {"status":"FAIL", "error": str(error), "failures":FAILURES}
+    print(json.dumps(result, indent=2, ensure_ascii=True))
+    sys.exit(0 if result["status"] == "PASS" else 1)

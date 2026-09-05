@@ -60,6 +60,7 @@ __pycache__/
 !scripts/generate_eigenpair_residual_evidence_gate.py
 !scripts/generate_pec_cavity_convergence_plot.py
 !scripts/validate_native_workbench_preview.py
+!scripts/prepare_showcase_screenshots.py
 *.ipynb
 *.log
 *.wl
