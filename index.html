@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DAD FieldWorks | PCB and RF Development Workbench</title>
-    <meta name="description" content="A native Windows electromagnetic workbench for PCB and RF development. Set up geometry, run supported simulations and inspect fields and S parameters. Development preview.">
+    <title>DAD FieldWorks | Electromagnetic Simulation for PCB and RF</title>
+    <meta name="description" content="A Windows application for RF and PCB engineers to investigate reflection, transmission and saved field distributions in supported structures. Development preview.">
     <meta name="author" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="publisher" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="copyright" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
@@ -12,18 +12,18 @@
     <link rel="canonical" href="https://www.dadlabs.de/">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="DAD FieldWorks by DigitalArtDeco Labs UG (haftungsbeschränkt)">
-    <meta property="og:title" content="DAD FieldWorks | PCB and RF Development Workbench">
-    <meta property="og:description" content="A native Windows electromagnetic workbench for PCB and RF development. Set up geometry, run supported simulations and inspect fields and S parameters. Development preview.">
+    <meta property="og:title" content="DAD FieldWorks | Electromagnetic Simulation for PCB and RF">
+    <meta property="og:description" content="A Windows application for RF and PCB engineers to investigate reflection, transmission and saved field distributions in supported structures. Development preview.">
     <meta property="og:url" content="https://www.dadlabs.de/">
     <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png">
     <meta property="og:image:width" content="1440">
     <meta property="og:image:height" content="860">
-    <meta property="og:image:alt" content="DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions.">
+    <meta property="og:image:alt" content="Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DAD FieldWorks | PCB and RF Development Workbench">
-    <meta name="twitter:description" content="A native Windows electromagnetic workbench for PCB and RF development. Set up geometry, run supported simulations and inspect fields and S parameters. Development preview.">
+    <meta name="twitter:title" content="DAD FieldWorks | Electromagnetic Simulation for PCB and RF">
+    <meta name="twitter:description" content="A Windows application for RF and PCB engineers to investigate reflection, transmission and saved field distributions in supported structures. Development preview.">
     <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png">
-    <meta name="twitter:image:alt" content="DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions.">
+    <meta name="twitter:image:alt" content="Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views.">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -55,101 +55,114 @@
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
       <a class="brand" href="index.html"><img src="assets/brand/dad_fieldworks_kernel_wave_mark.png" width="40" height="40" alt="">DAD FieldWorks</a>
-      <nav aria-label="Primary navigation"><a href="#workflow">Workflow</a><a href="#results">Results</a><a href="#examples">Examples</a><a href="#contact">Contact</a></nav>
+      <nav aria-label="Primary navigation"><a href="#questions">Questions</a><a href="#results">Results</a><a href="#examples">Examples</a><a href="#contact">Contact</a></nav>
     </header>
     <main id="main-content">
       <section class="product-hero" aria-labelledby="hero-title">
         <div class="product-intro">
-          <p class="eyebrow">Native Windows workbench · PCB &amp; RF</p>
-          <h1 id="hero-title">From PCB geometry to fields and S parameters.</h1>
-          <p class="product-lead">Set up a project, define its geometry and ports, then inspect the electromagnetic results in one native workbench.</p>
+          <p class="eyebrow">Electromagnetic simulation for PCB &amp; RF</p>
+          <h1 id="hero-title">Understand reflection, transmission and field behavior.</h1>
+          <p class="product-lead">DAD FieldWorks is a Windows application for RF and PCB engineers. Model supported structures, calculate their response and inspect S parameters and field distributions within the same project.</p>
           <p class="preview-notice"><strong>Development preview.</strong> External validation is not yet complete. Not released for production use.</p>
-          <div class="product-actions"><a class="button-primary" href="#workflow">Explore the workflow <span aria-hidden="true">&#8595;</span></a><a class="button-secondary" href="#contact">Technical contact</a></div>
-          <p class="capture-date">Actual application captures · September 2026</p>
+          <div class="product-actions"><a class="button-primary" href="#results">Explore the results <span aria-hidden="true">&#8595;</span></a><a class="button-secondary" href="#contact">Discuss a technical use case</a></div>
+          <p class="capture-date">Application screenshots · September 2026</p>
         </div>
         <figure class="product-capture hero-capture">
-          <a class="capture-link" href="views/simulation-results.html" aria-label="Open simulation and results detail">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png" width="1440" height="860" alt="DAD FieldWorks project window with a complex two-port S matrix and separate result-viewer actions." loading="eager" decoding="async" fetchpriority="high">
+          <a class="capture-link" href="views/simulation-results.html" aria-label="Inspect the complex port response">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png" width="1440" height="860" alt="Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views." loading="eager" decoding="async" fetchpriority="high">
             <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
           </a>
-          <figcaption><strong>Simulation and results</strong><span>The Stepped Impedance Quick Tour project shows its complex S matrix and actions for opening Cartesian, Smith and native field views.</span></figcaption>
+          <figcaption><strong>The response between ports</strong><span>Review the complex S matrix at each calculated frequency, then open the corresponding plots from the same project.</span></figcaption>
         </figure>
+      </section>
+      <section class="product-section" id="questions" aria-labelledby="questions-title">
+        <div class="section-heading">
+          <p class="eyebrow">Questions behind the layout</p>
+          <h2 id="questions-title">What happens to the signal?</h2>
+          <p>For RF, microwave, signal integrity and PCB engineers investigating supported structures. Begin with the response you need to understand.</p>
+        </div>
+        <div class="question-grid">
+          <article><h3>How much is reflected or transmitted?</h3><p>Inspect reflection and transmission terms to understand a discontinuity's response. Compare their magnitudes in the Cartesian plots and their complex values in the matrix.</p></article>
+          <article><h3>How does the input match vary with frequency?</h3><p>Follow input reflection over the calculated frequencies on a Smith chart. Read normalized impedance at a selected sample to examine the match.</p></article>
+          <article><h3>What changes with the geometry?</h3><p>Adjust supported dimensions, such as conductor width or spacing, and rerun the calculation. Inspect the new response to investigate the effect of that change.</p></article>
+          <article><h3>Where do the fields concentrate?</h3><p>Inspect electric or magnetic field components on a saved slice. Locate regions of stronger field and examine their spatial distribution within the structure.</p></article>
+        </div>
       </section>
       <section class="product-section" id="workflow" aria-labelledby="workflow-title">
         <div class="section-heading">
-          <p class="eyebrow">One connected workflow</p>
-          <h2 id="workflow-title">Build the model. Run the calculation.<br>Keep the result in context.</h2>
-          <p>Move from editable PCB geometry to a compiled solver representation, then inspect complex S parameters and saved field values from supported simulation jobs.</p>
+          <p class="eyebrow">From model to result</p>
+          <h2 id="workflow-title">Keep the model and its results together.</h2>
+          <p>Geometry, simulation settings and results remain connected within one project. You can inspect the structure used for a calculation alongside its response.</p>
         </div>
         <ol class="workflow-steps">
-          <li><span class="step-number" aria-hidden="true">01</span><h3>Define the project</h3><p>Choose materials, order the stackup and edit the supported conductor geometry. Inspect the compiled geometry before calculation.</p></li>
-          <li><span class="step-number" aria-hidden="true">02</span><h3>Configure and calculate</h3><p>Define ports and frequencies, configure the simulation and run the independent excitations through the native electromagnetic solver.</p></li>
-          <li><span class="step-number" aria-hidden="true">03</span><h3>Inspect and retain</h3><p>Read the complex matrix, open result windows and save project-linked results. Reopen matching saved jobs or export supported complete results as Touchstone.</p></li>
+          <li><span class="step-number" aria-hidden="true">01</span><h3>Build the structure</h3><p>Define materials, stackup, geometry, ports and frequencies. Inspect the model before using it for a calculation.</p></li>
+          <li><span class="step-number" aria-hidden="true">02</span><h3>Run the calculation</h3><p>Run the configured electromagnetic simulation to obtain field and port results within the supported development scope.</p></li>
+          <li><span class="step-number" aria-hidden="true">03</span><h3>Interpret the response</h3><p>Examine the complex matrix, frequency traces, Smith chart and saved fields. Choose the view that helps answer your engineering question.</p></li>
         </ol>
         <div class="geometry-feature">
           <div class="geometry-copy">
-            <p class="eyebrow">Before the simulation</p><h3>See what the solver will use.</h3>
-            <p>The editable design and compiled conductor volumes are distinct views. Inspect the geometry list, solver grid and compilation information alongside the 3D representation.</p>
+            <p class="eyebrow">Before the simulation</p><h3>Check the geometry before you calculate.</h3>
+            <p>Compare the editable model with the geometry used by the solver. Review the grid and geometry approximations before interpreting a result.</p>
             <p class="muted">Shown here: Stepped Impedance Quick Tour.</p>
           </div>
           <figure class="product-capture geometry-capture">
-          <a class="capture-link" href="views/compiled-geometry.html" aria-label="Open compiled solver geometry detail">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/compiled-geometry.png" width="1440" height="860" alt="Compiled 3D conductor geometry of the Stepped Impedance Quick Tour, partially outside the original viewport." loading="lazy" decoding="async">
+          <a class="capture-link" href="views/compiled-geometry.html" aria-label="Inspect the geometry used for calculation">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/compiled-geometry.png" width="1440" height="860" alt="3D conductor volumes and editable geometry list for the shielded Stepped Impedance Quick Tour structure." loading="lazy" decoding="async">
             <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
           </a>
-          <figcaption><strong>Compiled solver geometry</strong><span>Inspect the compiled conductor volumes beside the editable geometry list. The shielded structure extends beyond the original view; its color is a geometry display, not a metal-loss result.</span></figcaption>
+          <figcaption><strong>The geometry used for calculation</strong><span>Inspect the conductor volumes used by the solver alongside the editable geometry list before running a calculation.</span></figcaption>
         </figure>
         </div>
       </section>
       <section class="product-section" id="results" aria-labelledby="results-title">
         <div class="section-heading">
-          <p class="eyebrow">Inspect the results</p><h2 id="results-title">A window for each question.</h2>
-          <p>Open Cartesian traces, a Smith chart and native fields in separate, resizable windows. Keep the project available while you inspect a frequency sample or a saved field slice.</p>
+          <p class="eyebrow">Inspect the results</p><h2 id="results-title">Read the port response. Inspect the fields.</h2>
+          <p>Open plots and field views in separate, resizable windows while keeping the project in view. Each presents a different aspect of the calculated response.</p>
         </div>
         <div class="result-gallery">
           <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/cartesian-s-parameters.html" aria-label="Open cartesian s parameters detail">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/cartesian-s-parameters.png" width="1087" height="713" alt="Separate Cartesian window showing S(1,1) and S(2,1) magnitude in dB at the available frequency samples." loading="lazy" decoding="async">
+          <a class="capture-link" href="views/cartesian-s-parameters.html" aria-label="Inspect reflection and transmission traces">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/cartesian-s-parameters.png" width="1087" height="713" alt="Cartesian plot of S(1,1) reflection and S(2,1) transmission magnitude in dB, with three frequency samples joined by straight segments." loading="lazy" decoding="async">
             <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
           </a>
-          <figcaption><strong>Cartesian S parameters</strong><span>Select S(1,1) and S(2,1) magnitude traces and a frequency marker. The chart joins the available frequency samples with straight segments.</span></figcaption>
+          <figcaption><strong>Reflection and transmission</strong><span>Compare input reflection S(1,1) and forward transmission S(2,1) magnitude in dB across the available frequency samples.</span></figcaption>
         </figure>
           <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/smith-chart.html" aria-label="Open smith chart detail">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Native Smith chart with a blue S(1,1) reflection trace, 900 MHz marker, Gamma and normalized impedance readouts." loading="lazy" decoding="async">
+          <a class="capture-link" href="views/smith-chart.html" aria-label="Inspect input reflection and impedance">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Smith chart showing the S(1,1) reflection trace with a 900 MHz marker, Gamma and normalized impedance readouts." loading="lazy" decoding="async">
             <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
           </a>
-          <figcaption><strong>Smith chart</strong><span>Inspect diagonal S(1,1) reflection with a 900 MHz marker, Gamma and normalized impedance. Its selected frequency need not match the matrix view.</span></figcaption>
+          <figcaption><strong>Input reflection and impedance</strong><span>Follow diagonal reflection S(1,1) on the Smith chart and read Gamma and normalized input impedance at the selected frequency.</span></figcaption>
         </figure>
-        </div>
-        <div class="field-context">
-          <h3>Fields at their saved time steps</h3>
-          <p>Hy and Ez below are signed components at native Yee coordinates, not field images at the S-parameter marker frequency. Their components, slices and color scales differ. They are separate inspection views, not a time sequence or a shared normalization.</p>
         </div>
         <div class="result-gallery">
           <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/native-hy-field.html" aria-label="Open native magnetic field detail">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Native field window showing signed Hy in A/m at saved step 8192 on Z slice 9, with axes and a signed color scale." loading="lazy" decoding="async">
+          <a class="capture-link" href="views/native-hy-field.html" aria-label="Inspect the magnetic field component Hy">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Magnetic field viewer displaying signed Hy in A/m at saved step 8192 on Z slice 9, with axes and a signed color scale." loading="lazy" decoding="async">
             <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
           </a>
-          <figcaption><strong>Native magnetic field</strong><span>Signed Hy in A/m at saved step 8192 on Z slice 9. Select the job, field component, saved step and slice in a separate native window.</span></figcaption>
+          <figcaption><strong>Magnetic field component Hy</strong><span>Inspect where the signed Hy component varies across the structure. Shown in A/m at saved step 8192 on Z slice 9.</span></figcaption>
         </figure>
           <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/native-ez-field.html" aria-label="Open native electric field detail">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-ez-field.png" width="1440" height="860" alt="Native field window showing signed Ez in V/m at saved step 768 on Y slice 10, with axes and a signed color scale." loading="lazy" decoding="async">
+          <a class="capture-link" href="views/native-ez-field.html" aria-label="Inspect the electric field component Ez">
+            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-ez-field.png" width="1440" height="860" alt="Electric field viewer displaying signed Ez in V/m at saved step 768 on Y slice 10, with axes and a signed color scale." loading="lazy" decoding="async">
             <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
           </a>
-          <figcaption><strong>Native electric field</strong><span>Signed Ez in V/m at saved step 768 on Y slice 10. This saved time-domain view has its own component, slice and color scale.</span></figcaption>
+          <figcaption><strong>Electric field component Ez</strong><span>Locate the concentration of the signed Ez component in a cross-section. Shown in V/m at saved step 768 on Y slice 10.</span></figcaption>
         </figure>
         </div>
+        <aside class="field-context" aria-label="How to read the field views">
+          <h3>Reading the field images</h3>
+          <p>These are saved time-domain components, not fields at the S-parameter marker frequency. Their slices and scales differ; they are not a shared-scale animation.</p>
+        </aside>
       </section>
       <section class="product-section" id="examples" aria-labelledby="examples-title">
         <div class="section-heading">
-          <p class="eyebrow">Examples and materials</p><h2 id="examples-title">Start with a defined structure.</h2>
-          <p>Parametric demo projects provide an editable starting point for the supported workflows. The screenshots on this page show the Stepped Impedance Quick Tour, not all five families.</p>
+          <p class="eyebrow">Editable examples</p><h2 id="examples-title">Start from an editable example.</h2>
+          <p>Use a defined structure as a starting point. Change its parameters to regenerate the geometry, then calculate the new response.</p>
         </div>
         <div class="examples-layout">
-          <div><h3>Five implemented demo families</h3>
+          <div><h3>Available starting points</h3>
             <ul class="demo-list">
               <li><span>01</span>Stepped Impedance Quick Tour</li>
               <li><span>02</span>Uniform Shielded TEM Reference Line</li>
@@ -157,39 +170,38 @@
               <li><span>04</span>Via Transition</li>
               <li><span>05</span>Symmetric Four Port Junction</li>
             </ul>
+            <p class="muted">Relevant changes mark earlier results stale. These examples are development cases, not externally validated benchmarks. The screenshots show the Stepped Impedance Quick Tour.</p>
           </div>
           <div class="material-note">
-            <p class="eyebrow">Explicit material definitions</p><h3>Materials stay with the project.</h3>
-            <p>Use canonical PEC and lossless dielectric definitions, manage your own materials and retain project-bound material snapshots.</p>
-            <p>The supported dielectric definitions are scalar, isotropic and nondispersive. The library is not a manufacturer database and does not imply supplied copper-loss or roughness models.</p>
+            <p class="eyebrow">Project materials</p><h3>Keep material definitions with the project.</h3>
+            <p>Start with built-in ideal definitions or create your own material entries. Project snapshots prevent later library edits from silently changing an existing model.</p>
+            <p>The current preview supports PEC and scalar, isotropic, nondispersive, lossless dielectrics. The library is not a manufacturer database.</p>
           </div>
         </div>
       </section>
       <section class="product-section" id="result-context" aria-labelledby="context-title">
-        <div class="section-heading"><p class="eyebrow">Traceable work</p><h2 id="context-title">Know which inputs a result belongs to.</h2></div>
+        <div class="section-heading"><p class="eyebrow">Working with saved results</p><h2 id="context-title">Avoid mixing old results with a changed model.</h2></div>
         <div class="context-grid">
-          <article><h3>Current means input-matched</h3><p>The application marks results as current when they match the project inputs. A simulation-relevant input change makes existing results stale and blocks their export until a new matching calculation is available. This status is not a validation certificate.</p></article>
-          <article><h3>Save and reopen</h3><p>Retain project data, result references and viewer selections. Reopen matching saved results without rerunning the solver when their saved job data remains available.</p></article>
-          <article><h3>Export within scope</h3><p>Touchstone export supports complete, valid single-terminal TEM or quasi-TEM results with one channel per physical port and a common, constant positive real reference impedance. Coupled multimode datasets are outside this export scope.</p><a href="docs/current_public_status.md#supported-touchstone-export">Read the supported export scope <span aria-hidden="true">&#8599;</span></a></article>
+          <article><h3>Recognize outdated results</h3><p>Relevant changes to geometry, materials, ports, frequencies or simulation settings mark earlier results stale. Export is blocked so old results cannot be passed on as current.</p></article>
+          <article><h3>Return to a saved investigation</h3><p>Save the project with result references and viewer selections. Reopen matching results without recalculating when their saved job data is available.</p></article>
+          <article><h3>Exchange supported results</h3><p>Export complete, valid results as Touchstone within the supported single-terminal TEM or quasi-TEM subset. Multimode datasets are excluded; the capability notes specify the reference-impedance requirements.</p></article>
         </div>
       </section>
       <section class="product-section development-section" id="development" aria-labelledby="development-title">
-        <div><p class="eyebrow">Development status</p><h2 id="development-title">Implemented workflows.<br>Bounded claims.</h2>
-          <p>This preview shows the native application's current development workflow. The screenshots document visible functions, not a new software release or completed acceptance. Executable build provenance was not supplied with these captures.</p>
+        <div><p class="eyebrow">Development status</p><h2 id="development-title">Current development scope</h2>
+          <p>The application supports a defined range of structures, materials and port configurations. It is not intended for production sign-off. This site does not offer a software download.</p>
           <p class="preview-notice"><strong>Development preview.</strong> External validation is not yet complete. Not released for production use.</p>
         </div>
         <nav class="technical-links" aria-label="Technical documentation">
           <a href="docs/current_public_status.md">Current capabilities <span aria-hidden="true">&#8599;</span></a>
           <a href="docs/claim_boundaries.md">Claim boundaries <span aria-hidden="true">&#8599;</span></a>
           <a href="docs/native_workflow_screenshot_provenance.md">Screenshot provenance <span aria-hidden="true">&#8599;</span></a>
-          <a href="assets/images/dad-fieldworks/native-workflow-2026-09/manifest.json">Image manifest <span aria-hidden="true">&#8599;</span></a>
-          <a href="docs/evidence_contract_architecture.md">Evidence contract architecture <span aria-hidden="true">&#8599;</span></a>
-          <a href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase">Public showcase repository <span aria-hidden="true">&#8599;</span></a>
+          <a href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase">Public repository <span aria-hidden="true">&#8599;</span></a>
         </nav>
       </section>
       <section class="product-section company-contact" id="contact" aria-labelledby="contact-title">
-        <div><p class="eyebrow">DigitalArtDeco Labs</p><h2 id="contact-title">Let's discuss your technical workflow.</h2>
-          <p>DAD FieldWorks is developed by DigitalArtDeco Labs UG (haftungsbeschränkt). The company combines software engineering, computational electromagnetics, RF design, signal integrity and evidence-bound technical workflows.</p>
+        <div><p class="eyebrow">DigitalArtDeco Labs</p><h2 id="contact-title">Discuss a PCB or RF modeling case.</h2>
+          <p>Have a structure you would like to investigate? Contact DigitalArtDeco Labs UG (haftungsbeschränkt) to discuss a technical use case, geometry family or validation case.</p>
         </div>
         <div class="contact-details"><a class="contact-link" href="mailto:info@dadlabs.de">info@dadlabs.de</a><p>Phone: <a href="tel:+4917648296275">+49 176 48296275</a></p></div>
       </section>

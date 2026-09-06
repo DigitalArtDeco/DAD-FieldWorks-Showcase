@@ -1,6 +1,6 @@
 # Current capabilities
 
-Reviewed for the September 2026 development preview.
+Reviewed for the September 2026 development preview. Capability descriptions were checked against the completed implementation on 6 September 2026.
 
 Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved, except where an asset manifest identifies a different copyright owner.
 
@@ -34,9 +34,11 @@ The five implemented demo families are:
 - Via Transition
 - Symmetric Four Port Junction
 
-The public screenshots show the Stepped Impedance Quick Tour. Demo templates open as editable project copies. No precomputed bundled results or public software download is offered by this site.
+The public screenshots show the Stepped Impedance Quick Tour. Demo templates open as editable project copies. Changing supported template parameters regenerates project geometry, stackup and ports. Replacing manual edits requires confirmation. Relevant input changes mark earlier results stale.
 
-The material workflow includes immutable canonical PEC and lossless dielectric definitions, user-owned versioned records and independent project-bound snapshots. Dielectric definitions in the shown lossless workflow are scalar, isotropic and nondispersive. PEC is an ideal boundary, not a high-conductivity copper model. The library does not supply manufacturer FR4, Rogers, copper-loss or roughness models.
+No precomputed bundled results or public software download is offered by this site.
+
+The material workflow includes immutable canonical PEC and lossless dielectric definitions, user-owned versioned records and independent project-bound snapshots. Later library changes do not silently modify those snapshots. Dielectric definitions in the shown lossless workflow are scalar, isotropic and nondispersive. PEC is an ideal boundary, not a high-conductivity copper model. The library does not supply manufacturer FR4, Rogers, copper-loss or roughness models.
 
 Stored descriptions do not make unsupported material physics active. Via and port behavior likewise remain within their implemented family and backend limits.
 
@@ -56,7 +58,7 @@ The export does not silently renormalize references, interpolate missing results
 The review separates three sources:
 
 1. User-supplied original captures from 5 September 2026 establish visible UI states and controls.
-2. Targeted read-only inspection of local implementation, usage notes and existing internal test reports supports the additional workflow, demo, material and export summaries.
+2. Targeted read-only inspection of the completed implementation, usage notes and existing internal test reports supports the additional workflow, demo, material and export summaries. The committed scope records internal completion of the five demos, material snapshots and separate result windows; this is not external validation or production authorization.
 3. Public companion documentation provides background where it remains consistent with that scope.
 
 No solver, native application, acceptance campaign or private test was run for this website update. No private code or internal reports were copied into this repository. Internal test counts are not published as accuracy metrics.

@@ -6,7 +6,8 @@ This directory contains public companion notes for the DAD FieldWorks Showcase.
 
 - [Current capabilities](current_public_status.md)
 - [Claim boundaries](claim_boundaries.md)
-- [Native workflow screenshot provenance](native_workflow_screenshot_provenance.md)
+- [Screenshot provenance](native_workflow_screenshot_provenance.md)
+- [Product communication review, 6 September 2026](product_communication_review_2026_09.md)
 - [September 2026 website refresh review](showcase_refresh_2026_09.md)
 - [Evidence contract architecture](evidence_contract_architecture.md)
 - [Legal site identity audit](legal_site_identity_audit.md)

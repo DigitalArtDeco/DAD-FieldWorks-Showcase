@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Offline public-site validator for the September 2026 native workflow preview.
+"""Offline asset, public-copy and safety validator for the September preview.
 
 Retains PNG decoding/CRC validation and public-data guards from the previous
 validator. Replaces only the superseded four-frame/copy contract with six
@@ -21,9 +21,11 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = "assets/images/dad-fieldworks/native-workflow-2026-09"
+PRESENTATION = ASSET_DIR + "/presentation.json"
 NOTICE = "Development preview. External validation is not yet complete. Not released for production use."
 OWNER = "DigitalArtDeco Labs UG (haftungsbeschränkt)"
 PROTECTED = {
+    ASSET_DIR + "/manifest.json": "3c9e43454a59e1e2e5758f16c067c5d3cb90ba1d2875c21f517fbbe54fbee5e5",
     "CNAME": "a0fcc58c50dbc063e7b42af68f9dce31ea6448863474fbb7848feae732245b4e",
     "COPYRIGHT.md": "17ef284402988e72a6150331b74e14928f0052f1c160aae9027f515b9f23b624",
     "LICENSE_NOTICE.md": "69a949a8032a3181a9ffaf168d0785610b3bd858549fc28a060033095863b739",
@@ -122,7 +124,8 @@ APPROVED = {
 ACTIVE = ["index.html", "README.md", "docs/current_public_status.md",
           "docs/claim_boundaries.md", "assets/hero/README.md",
           "docs/native_workflow_screenshot_provenance.md"]
-NEW_DOCS = ["docs/README.md", "docs/showcase_refresh_2026_09.md"]
+NEW_DOCS = ["docs/README.md", "docs/showcase_refresh_2026_09.md",
+            "docs/product_communication_review_2026_09.md", PRESENTATION]
 TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".md", ".txt", ".xml", ".yml", ".yaml"}
 PRIVATE_PATH_PATTERN = re.compile(
     r"(?i)(?:(?<![a-z0-9+.-])[a-z]:[\\/]|file://|\\\\)[^\s<>'\"]+"
@@ -404,6 +407,64 @@ def read_png(path: Path) -> dict[str, object]:
 
 
 
+def copy_quality_audit(raw):
+    """Count reader-facing copy, not stable URLs, asset IDs or screenshot pixels."""
+    clean = re.sub(r"<script\b[^>]*>[\s\S]*?</script>", "", raw, flags=re.I)
+    body = re.search(r"<body\b[^>]*>([\s\S]*?)</body>", clean, re.I).group(1)
+    page, visible = Page(clean), Page(body).text
+    metadata = " ".join(page.metas.get(k, "") for k in
+                        ("description", "og:title", "og:description", "og:image:alt",
+                         "twitter:title", "twitter:description", "twitter:image:alt"))
+    metadata += " " + re.search(r"<title>(.*?)</title>", clean).group(1)
+    labels = " ".join(a.get(k, "") for _, a in page.tags for k in ("alt", "aria-label"))
+    surfaces = {"visible": visible, "metadata": metadata, "alt_aria": labels}
+    semantic = " ".join(surfaces.values())
+    forbidden = ("DAD-owned", "component-native", "explicit contracts", "evidence-bound",
+                 "current-state authority", "source authority", "North Star",
+                 "DecisionClass", "FailureClass")
+    counts = {term: len(re.findall(r"\b" + re.escape(term) + r"\b", semantic, re.I))
+              for term in forbidden + ("native", "evidence-controlled")}
+    check(all(counts[t] == 0 for t in forbidden), "Internal terminology in homepage copy")
+    check(counts["native"] <= 2 and counts["evidence-controlled"] <= 1,
+          "Homepage terminology budget exceeded")
+    banned = re.findall(
+        r"\b(?:powerful|seamless|cutting-edge|revolutionary|next-generation|game-changing|"
+        r"unmatched|unparalleled|professional|HFSS|CST|Sonnet|COMSOL|"
+        r"coax(?:ial)?|patch\s+antenna|far[- ]fields?|antenna\s+gain)\b", semantic, re.I)
+    check(not banned, "Hype, comparison or future feature in homepage: " + str(banned))
+    check(not re.search(r"[\u2013\u2014]", semantic), "En/em dash in homepage copy")
+    check(not re.search(r"\b(?:faster|cheaper|more accurate|market leader|"
+                        r"save[s]?\s+\d+|reduce[s]?\s+.{0,15}(?:time|cost))\b", semantic, re.I),
+          "Unsubstantiated comparative or quantified benefit")
+    hero = Page(re.search(r'<section class="product-hero"[\s\S]*?</section>', clean).group()).text
+    questions_html = re.search(r'<section[^>]+id="questions"[\s\S]*?</section>', clean).group()
+    questions = [Page(x).text for x in re.findall(r"<h3>(.*?)</h3>", questions_html)]
+    check(len(questions) >= 3 and all(q.endswith("?") for q in questions),
+          "At least three concrete engineering questions required")
+    check("Windows application for RF and PCB engineers" in hero and NOTICE in hero,
+          "First section must identify application, audience and development status")
+    check("within the same project" in hero, "Connected-project benefit missing from hero")
+    check("mailto:info@dadlabs.de" in page.hrefs and "#contact" in page.hrefs,
+          "Clear contact route missing")
+    check("not fields at the S-parameter marker frequency" in visible and
+          "not a shared-scale animation" in visible, "Shared field interpretation note missing")
+    expected_docs = {
+        "docs/current_public_status.md", "docs/claim_boundaries.md",
+        "docs/native_workflow_screenshot_provenance.md",
+        "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"
+    }
+    technical = Page(re.search(r'<nav class="technical-links"[\s\S]*?</nav>', clean).group())
+    check(set(technical.hrefs) == expected_docs, "Compact technical link set changed")
+    check("docs/evidence_contract_architecture.md" not in page.hrefs,
+          "Architecture document must not be a primary homepage product link")
+    return {"status": "PASS" if not FAILURES else "FAIL", "term_counts": counts,
+            "native_by_surface": {k: len(re.findall(r"\bnative\b", v, re.I))
+                                  for k, v in surfaces.items()},
+            "visible_words": len(visible.split()), "engineering_questions": questions,
+            "hero_audience_and_preview": True, "contact_route": True,
+            "manual_review": "docs/product_communication_review_2026_09.md"}
+
+
 def validate():
     paths = public_files()
     manifest = json.loads((ROOT / ASSET_DIR / "manifest.json").read_text(encoding="utf-8"))
@@ -413,6 +474,15 @@ def validate():
           "Scientific asset processing authority changed")
     check("Not supplied" in manifest["executable_provenance"], "Missing executable provenance boundary")
     check([i["id"] for i in manifest["images"]] == list(APPROVED), "Approved six-view selection/order changed")
+    presentation = json.loads((ROOT / PRESENTATION).read_text(encoding="utf-8"))
+    check(presentation.get("source_manifest") == "manifest.json", "Presentation source changed")
+    check([i["id"] for i in presentation["images"]] == list(APPROVED), "Presentation selection differs")
+    current_copy = {i["id"]: i for i in presentation["images"]}
+    for item in current_copy.values():
+        check(set(item) == {"id", "title", "caption", "alt", "detail"},
+              "Editorial copy cannot override provenance or derivatives")
+        check(all(isinstance(item.get(k), str) and item[k].strip()
+                  for k in ("title", "caption", "alt", "detail")), "Missing editorial screenshot copy")
     allowed_images, full_images = set(), {}
     total_bytes = 0
     for item in manifest["images"]:
@@ -490,9 +560,12 @@ def validate():
                                    ("credential", TOKEN_PATTERN)]:
                 check(not pattern.search(text), label + " in public text: " + rel)
     changed = set(git("diff", "HEAD", "--name-only").splitlines()) | set(git("ls-files", "--others", "--exclude-standard").splitlines())
-    allowed_changes = set(ACTIVE + NEW_DOCS + [".gitignore", "styles.css", "favicon.ico", "assets/asset_manifest.md",
-                    "scripts/prepare_showcase_screenshots.py", "scripts/validate_native_workbench_preview.py",
-                    ASSET_DIR + "/manifest.json"]) | allowed_images | {"views/" + key + ".html" for key in APPROVED}
+    # Editorial tranche: no image, provenance, legal or historical-file changes.
+    allowed_changes = {
+        "index.html", "README.md", "styles.css", "docs/current_public_status.md",
+        "docs/README.md", "docs/product_communication_review_2026_09.md",
+        "scripts/validate_native_workbench_preview.py", PRESENTATION
+    } | {"views/" + key + ".html" for key in APPROVED}
     check(changed <= allowed_changes, "Changes outside allowlist: " + str(sorted(changed - allowed_changes)))
     source_names = {a["source"].lower() for a in APPROVED.values()} | {"source-manifest.json", "screenshot (8).png", "screenshot (11).png"}
     for rel in changed | set(git("diff", "--cached", "--name-only").splitlines()):
@@ -520,7 +593,7 @@ def validate():
             check(sum(tag == "h1" for tag, _ in parser.tags) == 1, "Expected one H1: " + rel)
             check(any(tag == "html" and a.get("lang") == "en" for tag, a in parser.tags), "English language missing")
     home = Page((ROOT / "index.html").read_text(encoding="utf-8"))
-    check({"workflow","results","examples","result-context","development","contact","main-content"} <= home.ids, "Workflow anchors missing")
+    check({"questions","workflow","results","examples","result-context","development","contact","main-content"} <= home.ids, "Workflow anchors missing")
     check("mailto:info@dadlabs.de" in home.hrefs and "tel:+4917648296275" in home.hrefs, "Contact action changed")
     homepage_captures = [a for a in home.images if ASSET_DIR in a["src"]]
     check(len(homepage_captures) == 6 and {a["src"] for a in homepage_captures} == {v["path"] for v in full_images.values()},
@@ -531,17 +604,19 @@ def validate():
     check(home.metas.get("twitter:image") == home.metas.get("og:image"), "Social images differ")
     check(home.metas.get("og:image:height") == "860", "Social dimensions changed")
     check(home.metas.get("og:image:width") == "1440", "Social width changed")
-    hero_alt = manifest["images"][0]["alt"]
+    hero_alt = current_copy["simulation-results"]["alt"]
     check(home.metas.get("og:image:alt") == home.metas.get("twitter:image:alt") == hero_alt, "Social alt not hero-backed")
     check([a.get("href") for tag, a in home.tags if tag == "link" and a.get("rel") == "canonical"] == ["https://www.dadlabs.de/"], "Homepage canonical URL changed")
     check(home.metas.get("og:url") == "https://www.dadlabs.de/", "Social page URL changed")
-    check(home.metas.get("og:title") == home.metas.get("twitter:title") == "DAD FieldWorks | PCB and RF Development Workbench", "Social title mismatch")
+    check(home.metas.get("og:title") == home.metas.get("twitter:title") == "DAD FieldWorks | Electromagnetic Simulation for PCB and RF", "Social title mismatch")
     check(home.metas.get("description") == home.metas.get("og:description") == home.metas.get("twitter:description") and "Development preview." in home.metas.get("description", ""), "Description metadata differs or omits preview status")
-    for item in manifest["images"]:
+    for source_item in manifest["images"]:
+        item = {**source_item, **current_copy[source_item["id"]]}
         link = "views/" + item["id"] + ".html"
         check(link in home.hrefs, "Missing detail link: " + link)
         detail_text = (ROOT / link).read_text(encoding="utf-8")
-        check(item["caption"] in detail_text and item["alt"] in detail_text, "Detail caption/alt not manifest-backed")
+        check(all(item[k] in detail_text for k in ("title", "caption", "alt", "detail")),
+              "Detail title/caption/alt/explanation not presentation-backed")
         detail = Page(detail_text)
         check([a.get("href") for tag, a in detail.tags if tag == "link" and a.get("rel") == "canonical"] == ["https://www.dadlabs.de/" + link], "Detail canonical URL changed")
         full = full_images[item["id"]]
@@ -555,12 +630,13 @@ def validate():
             check(len(figure["images"]) == 1, "Unexpected images in figure")
             a = figure["images"][0]
             check(a.get("alt") == item["alt"] and a.get("width") == str(full["width"]) and a.get("height") == str(full["height"]),
-                  "Displayed alt/dimensions differ from manifest on " + label + ": " + item["id"])
+                   "Displayed alt/dimensions differ from approved presentation on " + label + ": " + item["id"])
             text = re.sub(r"\s+", " ", " ".join(figure["data"]))
             check(item["caption"] in text, "Caption belongs to wrong figure on " + label + ": " + item["id"])
             expected_srcset = ", ".join(v["path"] + " " + str(v["width"]) + "w" for v in reversed(item["derivatives"])) if len(item["derivatives"]) > 1 else ""
             check(a.get("srcset", "") == (expected_srcset if label == "homepage" else ""), "Unexpected responsive scientific source")
     raw_home = (ROOT / "index.html").read_text(encoding="utf-8")
+    copy_audit = copy_quality_audit(raw_home)
     org = json.loads(re.search(r'<script type="application/ld\+json">\s*([\s\S]*?)</script>', raw_home).group(1))
     check(org.get("@type") == "Organization" and org.get("name") == OWNER and org.get("legalName") == OWNER, "Organization identity changed")
     check(org.get("url") == "https://www.dadlabs.de/" and org.get("@id") == "https://www.dadlabs.de/#organization" and org.get("brand") == {"@type":"Brand","name":"DAD FieldWorks"}, "Organization URL or brand changed")
@@ -587,6 +663,7 @@ def validate():
             "published_pngs": len(allowed_images), "png_bytes": total_bytes,
             "protected_files": len(PROTECTED), "html_pages": html_count, "html_images": image_count,
             "public_files_scanned": len(paths), "changed_paths": sorted(changed),
+            "copy_audit": copy_audit,
             "failures": FAILURES, "private_writes": 0, "solver_runs": 0, "network_requests": 0}
 
 if __name__ == "__main__":

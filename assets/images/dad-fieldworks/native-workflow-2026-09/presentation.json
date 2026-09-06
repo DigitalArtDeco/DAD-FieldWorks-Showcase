@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "reviewed": "2026-09-06",
+  "source_manifest": "manifest.json",
+  "scope": "Editorial titles, captions and alternative text only. The original capture manifest, image files, crops and scientific content are unchanged.",
+  "images": [
+    {
+      "id": "simulation-results",
+      "title": "The response between ports",
+      "caption": "Review the complex S matrix at each calculated frequency, then open the corresponding plots from the same project.",
+      "alt": "Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views.",
+      "detail": "Each matrix cell relates an outgoing port response to a configured excitation. The screenshot shows the selected 2.8 GHz sample."
+    },
+    {
+      "id": "compiled-geometry",
+      "title": "The geometry used for calculation",
+      "caption": "Inspect the conductor volumes used by the solver alongside the editable geometry list before running a calculation.",
+      "alt": "3D conductor volumes and editable geometry list for the shielded Stepped Impedance Quick Tour structure.",
+      "detail": "The shielded structure extends beyond the original viewport. Its color identifies geometry; it does not represent a metal-loss calculation."
+    },
+    {
+      "id": "cartesian-s-parameters",
+      "title": "Reflection and transmission",
+      "caption": "Compare input reflection S(1,1) and forward transmission S(2,1) magnitude in dB across the available frequency samples.",
+      "alt": "Cartesian plot of S(1,1) reflection and S(2,1) transmission magnitude in dB, with three frequency samples joined by straight segments.",
+      "detail": "Straight segments connect the available samples. Invalid samples remain visible gaps, not interpolated results."
+    },
+    {
+      "id": "smith-chart",
+      "title": "Input reflection and impedance",
+      "caption": "Follow diagonal reflection S(1,1) on the Smith chart and read Gamma and normalized input impedance at the selected frequency.",
+      "alt": "Smith chart showing the S(1,1) reflection trace with a 900 MHz marker, Gamma and normalized impedance readouts.",
+      "detail": "The selected marker is 900 MHz. Normalized impedance readouts apply only to diagonal reflection terms. This capture and the matrix use different selected frequencies."
+    },
+    {
+      "id": "native-hy-field",
+      "title": "Magnetic field component Hy",
+      "caption": "Inspect where the signed Hy component varies across the structure. Shown in A/m at saved step 8192 on Z slice 9.",
+      "alt": "Magnetic field viewer displaying signed Hy in A/m at saved step 8192 on Z slice 9, with axes and a signed color scale.",
+      "detail": "Select a saved job, component, time step and slice to inspect the spatial distribution. This image shows a magnetic field component, not total field magnitude."
+    },
+    {
+      "id": "native-ez-field",
+      "title": "Electric field component Ez",
+      "caption": "Locate the concentration of the signed Ez component in a cross-section. Shown in V/m at saved step 768 on Y slice 10.",
+      "alt": "Electric field viewer displaying signed Ez in V/m at saved step 768 on Y slice 10, with axes and a signed color scale.",
+      "detail": "Select a saved job, component, time step and slice to inspect the spatial distribution. This image shows an electric field component, not total field magnitude."
+    }
+  ]
+}

@@ -76,7 +76,7 @@ nav a:hover,
 }
 
 /* September 2026 product workflow. Scoped to keep legal pages unchanged. */
-.workflow-showcase { overflow-x: clip; }
+.workflow-showcase { background: var(--bg); }
 .workflow-showcase .site-header { padding: 18px max(24px, calc((100vw - 1400px) / 2)); position: relative; flex-direction: row; }
 .workflow-showcase .brand { display: inline-flex; align-items: center; gap: 10px; }
 .workflow-showcase .brand img { width: 40px; height: 40px; object-fit: contain; }
@@ -88,12 +88,12 @@ nav a:hover,
 .workflow-showcase .product-hero,
 .workflow-showcase .product-section { max-width: 1480px; margin: 0 auto; padding: 88px 40px; }
 .workflow-showcase .product-hero { display: grid; grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr); align-items: center; gap: 48px; padding-top: 72px; padding-bottom: 72px; }
-.workflow-showcase h1 { font-size: clamp(2.6rem, 4.15vw, 4rem); line-height: 1.06; letter-spacing: -.035em; }
+.workflow-showcase h1 { font-size: clamp(2.4rem, 3.7vw, 3.6rem); line-height: 1.12; letter-spacing: -.03em; }
 .workflow-showcase h2 { font-size: clamp(1.9rem, 2.8vw, 2.8rem); line-height: 1.15; letter-spacing: -.025em; }
 .workflow-showcase h3 { font-size: 1.25rem; line-height: 1.35; margin: 0 0 14px; }
 .workflow-showcase p { font-size: 1rem; }
 .workflow-showcase .product-lead { color: var(--muted); font-size: 1.14rem; line-height: 1.65; margin: 24px 0; }
-.workflow-showcase .eyebrow { font-size: .78rem; letter-spacing: .09em; margin-bottom: 16px; }
+.workflow-showcase .eyebrow { font-size: .875rem; letter-spacing: .06em; margin-bottom: 16px; }
 .workflow-showcase .preview-notice { border-left: 3px solid var(--warm); background: #151b21; color: #ccd5dd; padding: 14px 18px; font-size: .94rem; line-height: 1.6; margin: 24px 0; }
 .workflow-showcase .preview-notice strong { color: #f5bb83; }
 .workflow-showcase .product-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin: 28px 0 18px; }
@@ -102,17 +102,21 @@ nav a:hover,
 .workflow-showcase .product-actions .button-primary:hover { background: #5dcceb; }
 .workflow-showcase .product-actions .button-secondary:hover { border-color: var(--accent); }
 .workflow-showcase .button-primary span { margin-left: 10px; }
-.workflow-showcase .capture-date { color: var(--muted); font-size: .8rem; margin: 0; }
+.workflow-showcase .capture-date { color: var(--muted); font-size: .875rem; margin: 0; }
 .workflow-showcase .product-capture { margin: 0; min-width: 0; border: 1px solid var(--line); background: var(--panel); border-radius: 6px; overflow: clip; }
 .workflow-showcase .capture-link { display: block; text-decoration: none; }
 .workflow-showcase .capture-link img { display: block; width: 100%; height: auto; object-fit: contain; }
 .workflow-showcase .capture-link:focus-visible { outline-offset: -4px; }
-.workflow-showcase .capture-open { display: flex; justify-content: space-between; padding: 10px 16px; font-size: .8rem; color: var(--accent); border-bottom: 1px solid var(--line); }
+.workflow-showcase .capture-open { display: flex; justify-content: space-between; padding: 10px 16px; font-size: .875rem; color: var(--accent); border-bottom: 1px solid var(--line); }
 .workflow-showcase .capture-link:hover .capture-open { color: white; background: #152838; }
 .workflow-showcase .product-capture figcaption { display: grid; gap: 6px; color: var(--muted); padding: 18px 20px 20px; font-size: .88rem; line-height: 1.6; }
 .workflow-showcase .product-capture figcaption strong { color: var(--text); font-size: 1rem; }
 .workflow-showcase .product-section { border-top: 1px solid var(--line); }
-.workflow-showcase .section-heading { margin: 0 0 40px; max-width: 800px; }
+.workflow-showcase .section-heading { margin: 0 0 40px; max-width: 740px; }
+.workflow-showcase .question-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 36px 64px; }
+.workflow-showcase .question-grid article { border-top: 1px solid var(--line); padding-top: 24px; }
+.workflow-showcase .question-grid p { color: var(--muted); max-width: 58ch; margin-bottom: 0; }
+.workflow-showcase .examples-layout .muted { color: var(--muted); max-width: 58ch; margin-top: 24px; }
 .workflow-showcase .section-heading > p:last-child { color: var(--muted); font-size: 1.08rem; margin: 20px 0 0; }
 .workflow-showcase .workflow-steps { list-style: none; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); padding: 0; margin: 0 0 64px; gap: 36px; }
 .workflow-showcase .workflow-steps li { border-top: 1px solid var(--line); padding-top: 24px; }
@@ -128,7 +132,8 @@ nav a:hover,
 .workflow-showcase .geometry-copy .eyebrow { color: var(--accent); }
 .workflow-showcase .geometry-copy .muted { font-size: .85rem; }
 .workflow-showcase .result-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; gap: 28px; }
-.workflow-showcase .field-context { margin: 48px 0 26px; max-width: 880px; }
+.workflow-showcase .field-context { margin: 28px 0 0; max-width: 760px; padding-left: 20px; border-left: 2px solid var(--line); }
+.workflow-showcase .result-gallery + .result-gallery { margin-top: 28px; }
 .workflow-showcase .field-context p { color: var(--muted); margin-bottom: 0; }
 .workflow-showcase .examples-layout { display: grid; grid-template-columns: 1.15fr 1fr; gap: 80px; }
 .workflow-showcase .demo-list { list-style: none; padding: 0; margin: 24px 0 0; }
@@ -142,13 +147,13 @@ nav a:hover,
 .workflow-showcase .development-section .eyebrow { color: var(--accent); }
 .workflow-showcase .development-section .preview-notice { color: #ccd5dd; }
 .workflow-showcase .technical-links { display: block; padding-top: 12px; }
-.workflow-showcase .technical-links a { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); color: var(--text); font-size: .96rem; }
+.workflow-showcase .technical-links a { display: flex; justify-content: space-between; gap: 20px; padding: 17px 0; border-bottom: 1px solid var(--line); border-radius: 0; color: var(--text); font-size: .96rem; }
 .workflow-showcase .technical-links a:hover { color: var(--accent); }
 .workflow-showcase .technical-links span { color: var(--accent); }
 .workflow-showcase .company-contact { display: grid; grid-template-columns: 1.5fr 1fr; gap: 80px; align-items: center; }
 .workflow-showcase .company-contact .eyebrow { color: var(--accent); }
 .workflow-showcase .contact-details { justify-self: end; }
-.workflow-showcase .contact-link { font-size: clamp(1.35rem, 2.5vw, 2rem); text-underline-offset: 6px; }
+.workflow-showcase .contact-link { font-size: clamp(1.35rem, 2.5vw, 2rem); text-underline-offset: 6px; background: none; border: 0; border-radius: 0; box-shadow: none; padding: 0; }
 .workflow-showcase footer { border-top: 1px solid var(--line); padding: 30px 24px; }
 .workflow-showcase .detail-close { font-size: .9rem; color: var(--accent); text-underline-offset: 4px; }
 .workflow-showcase .detail-main { max-width: 1520px; margin: 0 auto; padding: 48px 40px 60px; }
@@ -159,7 +164,7 @@ nav a:hover,
 .workflow-showcase .detail-figure figcaption { color: var(--text); font-size: 1rem; padding: 20px 0; }
 .workflow-showcase .detail-tools { display: flex; flex-wrap: wrap; gap: 20px 32px; }
 .workflow-showcase .detail-tools a { color: var(--accent); text-underline-offset: 4px; padding: 8px 0; }
-.workflow-showcase .detail-help { color: var(--muted); font-size: .9rem; max-width: 960px; }
+.workflow-showcase .detail-help { color: var(--muted); font-size: 1rem; max-width: 76ch; }
 @media (max-width: 1050px) {
   .workflow-showcase .product-hero { grid-template-columns: 1fr; gap: 36px; }
   .workflow-showcase .product-intro { max-width: 760px; }
@@ -177,16 +182,16 @@ nav a:hover,
 @media (max-width: 720px) {
   .workflow-showcase .site-header { padding: 14px 20px; gap: 14px; flex-wrap: wrap; }
   .workflow-showcase .site-header nav { justify-content: flex-start; gap: 24px; }
-  .workflow-showcase .site-header nav a { font-size: .87rem; }
+  .workflow-showcase .site-header nav a { font-size: .875rem; }
   .workflow-showcase .product-hero, .workflow-showcase .product-section { padding: 52px 20px; }
   .workflow-showcase .product-hero { padding-top: 40px; }
-  .workflow-showcase .product-actions { display: grid; grid-template-columns: 1fr auto; gap: 8px; }
-  .workflow-showcase .product-actions a { font-size: .83rem; padding: 12px 10px; text-align: center; }
-  .workflow-showcase h1 { font-size: clamp(2.5rem, 9vw, 3.6rem); }
+  .workflow-showcase .product-actions { display: flex; align-items: stretch; gap: 10px; }
+  .workflow-showcase .product-actions a { font-size: .875rem; padding: 12px 14px; text-align: center; }
+  .workflow-showcase h1 { font-size: clamp(2.35rem, 8.7vw, 3.6rem); }
   .workflow-showcase h2 { font-size: 1.95rem; }
   .workflow-showcase .workflow-steps, .workflow-showcase .context-grid,
   .workflow-showcase .result-gallery, .workflow-showcase .examples-layout,
-  .workflow-showcase .development-section { grid-template-columns: 1fr; gap: 28px; }
+  .workflow-showcase .development-section, .workflow-showcase .question-grid { grid-template-columns: 1fr; gap: 28px; }
   .workflow-showcase .workflow-steps { margin-bottom: 40px; }
   .workflow-showcase .step-number { margin-bottom: 12px; }
   .workflow-showcase .material-note { padding: 24px; }
