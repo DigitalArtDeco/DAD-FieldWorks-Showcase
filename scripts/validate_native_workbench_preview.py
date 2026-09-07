@@ -37,7 +37,7 @@ PROTECTED = {
     "datenschutz.html": "8f90de5a0d97827e7b416844aeb32acbdbfde0032a05e294f12a618011e0c01f",
     "docs/canonical_yee_field_visualization_provenance.md": "b4c14064bd1272bfb8d5b507400c39d892c848d2fa645a04b227e404edf4fee1",
     "docs/legal_site_identity_audit.md": "fbb8f102aace809fda29fcfb8a50162bc24750fdadecce746aa02c703983bf4d",
-    "impressum.html": "3a04a92a45e28cc32a5346c550ceeb2541c25e2a534dd22768e6d7ae94b58c0e"
+    "impressum.html": "da538a3f66b8570fa3d8dd5ec60b58ad12879188465b1713797fd306e83367c8"
 }
 APPROVED = {
     "simulation-results": {
@@ -530,6 +530,8 @@ def validate():
     legal = (ROOT / "impressum.html").read_text(encoding="utf-8")
     check("HRB 43034" in legal and "Amtsgericht Augsburg" in legal and "1260195" not in legal,
           "Verified legal identity not preserved")
+    check("USt-IdNr.: DE464701318" in Page(legal).text,
+          "User-supplied VAT identification number not preserved")
 
     active = ACTIVE + ["views/" + key + ".html" for key in APPROVED]
     for rel in active + NEW_DOCS:
@@ -560,11 +562,11 @@ def validate():
                                    ("credential", TOKEN_PATTERN)]:
                 check(not pattern.search(text), label + " in public text: " + rel)
     changed = set(git("diff", "HEAD", "--name-only").splitlines()) | set(git("ls-files", "--others", "--exclude-standard").splitlines())
-    # Editorial tranche: no image, provenance, legal or historical-file changes.
+    # Editorial paths plus the authorized VAT-ID addition; protected hashes still apply.
     allowed_changes = {
         "index.html", "README.md", "styles.css", "docs/current_public_status.md",
         "docs/README.md", "docs/product_communication_review_2026_09.md",
-        "scripts/validate_native_workbench_preview.py", PRESENTATION
+        "scripts/validate_native_workbench_preview.py", PRESENTATION, "impressum.html"
     } | {"views/" + key + ".html" for key in APPROVED}
     check(changed <= allowed_changes, "Changes outside allowlist: " + str(sorted(changed - allowed_changes)))
     source_names = {a["source"].lower() for a in APPROVED.values()} | {"source-manifest.json", "screenshot (8).png", "screenshot (11).png"}
