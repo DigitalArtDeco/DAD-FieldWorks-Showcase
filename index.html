@@ -3,27 +3,27 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DAD FieldWorks | Electromagnetic Simulation for PCB and RF</title>
-    <meta name="description" content="A Windows application for RF and PCB engineers to investigate reflection, transmission and saved field distributions in supported structures. Development preview.">
+    <title>DigitalArtDeco Labs | Electromagnetic Simulation Software</title>
+    <meta name="description" content="DigitalArtDeco Labs develops scientific software for electromagnetic simulation and RF engineering. Discover our work and DAD FieldWorks.">
     <meta name="author" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="publisher" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="copyright" content="DigitalArtDeco Labs UG (haftungsbeschränkt)">
     <meta name="contact" content="info@dadlabs.de">
     <link rel="canonical" href="https://www.dadlabs.de/">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="DAD FieldWorks by DigitalArtDeco Labs UG (haftungsbeschränkt)">
-    <meta property="og:title" content="DAD FieldWorks | Electromagnetic Simulation for PCB and RF">
-    <meta property="og:description" content="A Windows application for RF and PCB engineers to investigate reflection, transmission and saved field distributions in supported structures. Development preview.">
+    <meta property="og:site_name" content="DigitalArtDeco Labs">
+    <meta property="og:title" content="DigitalArtDeco Labs | Electromagnetic Simulation Software">
+    <meta property="og:description" content="DigitalArtDeco Labs develops scientific software for electromagnetic simulation and RF engineering. Discover our work and DAD FieldWorks.">
     <meta property="og:url" content="https://www.dadlabs.de/">
-    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png">
-    <meta property="og:image:width" content="1440">
-    <meta property="og:image:height" content="860">
-    <meta property="og:image:alt" content="Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views.">
+    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/application-2026-09-09/pcb-geometry.png">
+    <meta property="og:image:width" content="1091">
+    <meta property="og:image:height" content="732">
+    <meta property="og:image:alt" content="Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DAD FieldWorks | Electromagnetic Simulation for PCB and RF">
-    <meta name="twitter:description" content="A Windows application for RF and PCB engineers to investigate reflection, transmission and saved field distributions in supported structures. Development preview.">
-    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png">
-    <meta name="twitter:image:alt" content="Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views.">
+    <meta name="twitter:title" content="DigitalArtDeco Labs | Electromagnetic Simulation Software">
+    <meta name="twitter:description" content="DigitalArtDeco Labs develops scientific software for electromagnetic simulation and RF engineering. Discover our work and DAD FieldWorks.">
+    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/application-2026-09-09/pcb-geometry.png">
+    <meta name="twitter:image:alt" content="Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -34,7 +34,6 @@
         "url": "https://www.dadlabs.de/",
         "email": "info@dadlabs.de",
         "telephone": "+4917648296275",
-        "logo": "https://www.dadlabs.de/assets/brand/dad_fieldworks_kernel_wave_mark.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Sperberweg 27",
@@ -48,168 +47,109 @@
         }
       }
     </script>
-    <link rel="icon" type="image/png" href="assets/brand/dad_fieldworks_kernel_wave_mark.png">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico?v=field-sculpture" sizes="16x16 32x32 48x48 64x64">
   </head>
-  <body class="workflow-showcase">
+  <body class="company-site">
     <a class="skip-link" href="#main-content">Skip to content</a>
     <header class="site-header">
-      <a class="brand" href="index.html"><img src="assets/brand/dad_fieldworks_kernel_wave_mark.png" width="40" height="40" alt="">DAD FieldWorks</a>
-      <nav aria-label="Primary navigation"><a href="#questions">Questions</a><a href="#results">Results</a><a href="#examples">Examples</a><a href="#contact">Contact</a></nav>
+      <a class="brand" href="index.html"><img src="assets/brand/dad_fieldworks_blue_field_sculpture-256.png" width="256" height="256" alt=""><span class="brand-name">DigitalArtDeco <span>Labs</span></span></a>
+      <nav aria-label="Primary navigation">
+        <a href="#company">Company</a>
+        <a href="#focus">Focus</a>
+        <a href="#fieldworks">DAD FieldWorks</a>
+        <a href="#outlook">Outlook</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
     <main id="main-content">
-      <section class="product-hero" aria-labelledby="hero-title">
-        <div class="product-intro">
-          <p class="eyebrow">Electromagnetic simulation for PCB &amp; RF</p>
-          <h1 id="hero-title">Understand reflection, transmission and field behavior.</h1>
-          <p class="product-lead">DAD FieldWorks is a Windows application for RF and PCB engineers. Model supported structures, calculate their response and inspect S parameters and field distributions within the same project.</p>
-          <p class="preview-notice"><strong>Development preview.</strong> External validation is not yet complete. Not released for production use.</p>
-          <div class="product-actions"><a class="button-primary" href="#results">Explore the results <span aria-hidden="true">&#8595;</span></a><a class="button-secondary" href="#contact">Discuss a technical use case</a></div>
-          <p class="capture-date">Application screenshots · September 2026</p>
-        </div>
-        <figure class="product-capture hero-capture">
-          <a class="capture-link" href="views/simulation-results.html" aria-label="Inspect the complex port response">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/simulation-results.png" width="1440" height="860" alt="Stepped Impedance Quick Tour project showing a complex two-port S matrix and buttons for Cartesian, Smith and field views." loading="eager" decoding="async" fetchpriority="high">
-            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
-          </a>
-          <figcaption><strong>The response between ports</strong><span>Review the complex S matrix at each calculated frequency, then open the corresponding plots from the same project.</span></figcaption>
-        </figure>
+      <section id="company" class="company-hero" aria-labelledby="hero-title">
+        <p class="eyebrow">DigitalArtDeco Labs · Scientific software</p>
+        <h1 id="hero-title">We develop software for electromagnetic simulation.</h1>
+        <p class="lead">DigitalArtDeco Labs develops scientific software for RF engineering and electromagnetic analysis. We connect numerical methods with practical engineering workflows and clear technical visualization.</p>
+        <div class="actions"><a class="button" href="#contact">Contact us</a><a class="button secondary" href="#fieldworks">Discover DAD FieldWorks</a></div>
+        <p class="hero-context">Our work is directed at RF, microwave, signal integrity and PCB engineers who need to understand how a structure affects a signal.</p>
       </section>
-      <section class="product-section" id="questions" aria-labelledby="questions-title">
-        <div class="section-heading">
-          <p class="eyebrow">Questions behind the layout</p>
-          <h2 id="questions-title">What happens to the signal?</h2>
-          <p>For RF, microwave, signal integrity and PCB engineers investigating supported structures. Begin with the response you need to understand.</p>
-        </div>
-        <div class="question-grid">
-          <article><h3>How much is reflected or transmitted?</h3><p>Inspect reflection and transmission terms to understand a discontinuity's response. Compare their magnitudes in the Cartesian plots and their complex values in the matrix.</p></article>
-          <article><h3>How does the input match vary with frequency?</h3><p>Follow input reflection over the calculated frequencies on a Smith chart. Read normalized impedance at a selected sample to examine the match.</p></article>
-          <article><h3>What changes with the geometry?</h3><p>Adjust supported dimensions, such as conductor width or spacing, and rerun the calculation. Inspect the new response to investigate the effect of that change.</p></article>
-          <article><h3>Where do the fields concentrate?</h3><p>Inspect electric or magnetic field components on a saved slice. Locate regions of stronger field and examine their spatial distribution within the structure.</p></article>
+
+      <section id="focus" class="section soft" aria-labelledby="focus-title">
+        <div class="section-heading"><p class="eyebrow">Our focus</p><h2 id="focus-title">Tools for engineering questions.</h2>
+          <p>We develop software around the relationship between a physical model and its calculated response. The aim is to make that relationship easier to inspect, discuss and revisit.</p></div>
+        <div class="focus-grid">
+          <article><h3>Electromagnetic simulation</h3><p>We work on numerical tools for investigating how electric and magnetic fields behave in PCB and RF structures.</p></article>
+          <article><h3>PCB and RF workflows</h3><p>We bring model construction, calculation settings and results into a connected project, so engineers can keep the inputs alongside their results.</p></article>
+          <article><h3>Scientific visualization</h3><p>We develop views for examining port responses and field distributions. Different views help engineers ask different questions about the same calculation.</p></article>
         </div>
       </section>
-      <section class="product-section" id="workflow" aria-labelledby="workflow-title">
+
+      <section id="fieldworks" class="section" aria-labelledby="product-title">
         <div class="section-heading">
-          <p class="eyebrow">From model to result</p>
-          <h2 id="workflow-title">Keep the model and its results together.</h2>
-          <p>Geometry, simulation settings and results remain connected within one project. You can inspect the structure used for a calculation alongside its response.</p>
+          <p class="eyebrow product-label"><img src="assets/brand/dad_fieldworks_blue_field_sculpture-256.png" width="256" height="256" loading="lazy" alt="Abstract blue mesh sculpture, a product illustration rather than simulation data.">Our software project</p>
+          <h2 id="product-title">DAD FieldWorks</h2>
+          <p>DAD FieldWorks brings PCB geometry editing, material and layer definitions, electromagnetic calculations and result inspection into a Windows desktop workspace.</p>
+          <p>Edit supported structures, inspect them in 3D and configure ports and calculations. Review calculated port responses and saved field components while managing projects and their associated results.</p>
+          <p class="product-status">DAD FieldWorks is in development. The images show the current application.</p>
         </div>
-        <ol class="workflow-steps">
-          <li><span class="step-number" aria-hidden="true">01</span><h3>Build the structure</h3><p>Define materials, stackup, geometry, ports and frequencies. Inspect the model before using it for a calculation.</p></li>
-          <li><span class="step-number" aria-hidden="true">02</span><h3>Run the calculation</h3><p>Run the configured electromagnetic simulation to obtain field and port results within the supported development scope.</p></li>
-          <li><span class="step-number" aria-hidden="true">03</span><h3>Interpret the response</h3><p>Examine the complex matrix, frequency traces, Smith chart and saved fields. Choose the view that helps answer your engineering question.</p></li>
-        </ol>
-        <div class="geometry-feature">
-          <div class="geometry-copy">
-            <p class="eyebrow">Before the simulation</p><h3>Check the geometry before you calculate.</h3>
-            <p>Compare the editable model with the geometry used by the solver. Review the grid and geometry approximations before interpreting a result.</p>
-            <p class="muted">Shown here: Stepped Impedance Quick Tour.</p>
-          </div>
-          <figure class="product-capture geometry-capture">
-          <a class="capture-link" href="views/compiled-geometry.html" aria-label="Inspect the geometry used for calculation">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/compiled-geometry.png" width="1440" height="860" alt="3D conductor volumes and editable geometry list for the shielded Stepped Impedance Quick Tour structure." loading="lazy" decoding="async">
-            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
-          </a>
-          <figcaption><strong>The geometry used for calculation</strong><span>Inspect the conductor volumes used by the solver alongside the editable geometry list before running a calculation.</span></figcaption>
-        </figure>
-        </div>
-      </section>
-      <section class="product-section" id="results" aria-labelledby="results-title">
-        <div class="section-heading">
-          <p class="eyebrow">Inspect the results</p><h2 id="results-title">Read the port response. Inspect the fields.</h2>
-          <p>Open plots and field views in separate, resizable windows while keeping the project in view. Each presents a different aspect of the calculated response.</p>
-        </div>
+          <figure class="featured-view">
+            <a class="image-link" href="views/pcb-geometry.html" aria-label="Enlarge: PCB geometry in 3D">
+              <img src="assets/images/dad-fieldworks/application-2026-09-09/pcb-geometry.png" width="1091" height="732" loading="lazy" decoding="async" alt="Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.">
+            </a>
+            <figcaption><h3>PCB geometry in 3D</h3><p>Tuto: inspect the editable PCB structure in a 3D view.</p><a href="views/pcb-geometry.html">View image<span class="sr-only">: PCB geometry in 3D</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+        <div class="gallery-heading"><h2>Selected application views</h2><p>The Tuto example shows construction. The Via Transition example shows results from a different project.</p></div>
         <div class="result-gallery">
-          <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/cartesian-s-parameters.html" aria-label="Inspect reflection and transmission traces">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/cartesian-s-parameters.png" width="1087" height="713" alt="Cartesian plot of S(1,1) reflection and S(2,1) transmission magnitude in dB, with three frequency samples joined by straight segments." loading="lazy" decoding="async">
-            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
-          </a>
-          <figcaption><strong>Reflection and transmission</strong><span>Compare input reflection S(1,1) and forward transmission S(2,1) magnitude in dB across the available frequency samples.</span></figcaption>
-        </figure>
-          <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/smith-chart.html" aria-label="Inspect input reflection and impedance">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/smith-chart.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Smith chart showing the S(1,1) reflection trace with a 900 MHz marker, Gamma and normalized impedance readouts." loading="lazy" decoding="async">
-            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
-          </a>
-          <figcaption><strong>Input reflection and impedance</strong><span>Follow diagonal reflection S(1,1) on the Smith chart and read Gamma and normalized input impedance at the selected frequency.</span></figcaption>
-        </figure>
+          <figure>
+            <a class="image-link" href="views/rf-sketcher.html" aria-label="Enlarge: Dimensioned geometry">
+              <img src="assets/images/dad-fieldworks/application-2026-09-09/rf-sketcher.png" width="1440" height="859" loading="lazy" decoding="async" alt="Tuto RF sketcher showing a 40 mm by 20 mm outline, a trace and dimensional relations. Constraints are not evaluated.">
+            </a>
+            <figcaption><h3>Dimensioned geometry</h3><p>Tuto: define geometry and dimensional relations in the RF sketcher.</p><a href="views/rf-sketcher.html">View image<span class="sr-only">: Dimensioned geometry</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="views/cartesian-s-parameters.html" aria-label="Enlarge: Reflection and transmission">
+              <img src="assets/images/dad-fieldworks/application-2026-09-09/cartesian-s-parameters.png" width="1440" height="859" loading="lazy" decoding="async" alt="Via Transition Cartesian plot of four S-parameter traces in linear magnitude, with a marker at 1.700 GHz.">
+            </a>
+            <figcaption><h3>Reflection and transmission</h3><p>Via Transition: compare reflection and transmission magnitudes at the available frequency samples.</p><a href="views/cartesian-s-parameters.html">View image<span class="sr-only">: Reflection and transmission</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="views/smith-chart.html" aria-label="Enlarge: Reflection and impedance">
+              <img src="assets/images/dad-fieldworks/application-2026-09-09/smith-chart.png" width="1440" height="860" loading="lazy" decoding="async" alt="Via Transition Smith chart for S(2,2), with reflection and input impedance readouts at 2.800 GHz.">
+            </a>
+            <figcaption><h3>Reflection and impedance</h3><p>Via Transition: inspect S(2,2) reflection and impedance readouts on a Smith chart.</p><a href="views/smith-chart.html">View image<span class="sr-only">: Reflection and impedance</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="views/magnetic-field.html" aria-label="Enlarge: A saved magnetic field">
+              <img src="assets/images/dad-fieldworks/application-2026-09-09/magnetic-field.png" width="1440" height="859" loading="lazy" decoding="async" alt="Via Transition magnetic field component H_z in A/m at saved step 12288 on Z slice 16, with its signed color scale.">
+            </a>
+            <figcaption><h3>A saved magnetic field</h3><p>Via Transition: locate a signed magnetic field component at a saved time step.</p><a href="views/magnetic-field.html">View image<span class="sr-only">: A saved magnetic field</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
         </div>
-        <div class="result-gallery">
-          <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/native-hy-field.html" aria-label="Inspect the magnetic field component Hy">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png" srcset="assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field-720.png 720w, assets/images/dad-fieldworks/native-workflow-2026-09/native-hy-field.png 1440w" sizes="(max-width: 720px) calc(100vw - 40px), (max-width: 1480px) calc((100vw - 100px) / 2), 676px" width="1440" height="860" alt="Magnetic field viewer displaying signed Hy in A/m at saved step 8192 on Z slice 9, with axes and a signed color scale." loading="lazy" decoding="async">
-            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
-          </a>
-          <figcaption><strong>Magnetic field component Hy</strong><span>Inspect where the signed Hy component varies across the structure. Shown in A/m at saved step 8192 on Z slice 9.</span></figcaption>
-        </figure>
-          <figure class="product-capture results-capture">
-          <a class="capture-link" href="views/native-ez-field.html" aria-label="Inspect the electric field component Ez">
-            <img src="assets/images/dad-fieldworks/native-workflow-2026-09/native-ez-field.png" width="1440" height="860" alt="Electric field viewer displaying signed Ez in V/m at saved step 768 on Y slice 10, with axes and a signed color scale." loading="lazy" decoding="async">
-            <span class="capture-open" aria-hidden="true">Open detailed view <span>&#8599;</span></span>
-          </a>
-          <figcaption><strong>Electric field component Ez</strong><span>Locate the concentration of the signed Ez component in a cross-section. Shown in V/m at saved step 768 on Y slice 10.</span></figcaption>
-        </figure>
-        </div>
-        <aside class="field-context" aria-label="How to read the field views">
-          <h3>Reading the field images</h3>
-          <p>These are saved time-domain components, not fields at the S-parameter marker frequency. Their slices and scales differ; they are not a shared-scale animation.</p>
-        </aside>
+        <p class="image-note">The field image is a saved time-domain view, not a field at the frequency selected in either plot. The Cartesian plot shows linear magnitude, not dB.</p>
+        <p class="detail-link">For the supported scope and validation limits, see the <a href="docs/current_public_status.html">technical product notes</a>.</p>
       </section>
-      <section class="product-section" id="examples" aria-labelledby="examples-title">
-        <div class="section-heading">
-          <p class="eyebrow">Editable examples</p><h2 id="examples-title">Start from an editable example.</h2>
-          <p>Use a defined structure as a starting point. Change its parameters to regenerate the geometry, then calculate the new response.</p>
-        </div>
-        <div class="examples-layout">
-          <div><h3>Available starting points</h3>
-            <ul class="demo-list">
-              <li><span>01</span>Stepped Impedance Quick Tour</li>
-              <li><span>02</span>Uniform Shielded TEM Reference Line</li>
-              <li><span>03</span>Coupled Line Modal Demo</li>
-              <li><span>04</span>Via Transition</li>
-              <li><span>05</span>Symmetric Four Port Junction</li>
-            </ul>
-            <p class="muted">Relevant changes mark earlier results stale. These examples are development cases, not externally validated benchmarks. The screenshots show the Stepped Impedance Quick Tour.</p>
-          </div>
-          <div class="material-note">
-            <p class="eyebrow">Project materials</p><h3>Keep material definitions with the project.</h3>
-            <p>Start with built-in ideal definitions or create your own material entries. Project snapshots prevent later library edits from silently changing an existing model.</p>
-            <p>The current preview supports PEC and scalar, isotropic, nondispersive, lossless dielectrics. The library is not a manufacturer database.</p>
-          </div>
+
+      <section id="outlook" class="section soft" aria-labelledby="outlook-title">
+        <div class="outlook-layout">
+          <div><p class="eyebrow">Development direction</p><h2 id="outlook-title">What we are building toward.</h2>
+            <p>We plan to extend the range of structures and investigations supported by our software. These are development goals, not a list of capabilities available today.</p></div>
+          <ul class="direction-list">
+            <li>Broader construction of multilayer PCB and planar RF structures.</li>
+            <li>Investigation of transitions, coupling and larger multiport systems.</li>
+            <li>Further development of material and loss models.</li>
+            <li>Printed antennas and additional antenna-related workflows.</li>
+            <li>More support for parameter studies, comparisons and technical result presentation.</li>
+          </ul>
         </div>
       </section>
-      <section class="product-section" id="result-context" aria-labelledby="context-title">
-        <div class="section-heading"><p class="eyebrow">Working with saved results</p><h2 id="context-title">Avoid mixing old results with a changed model.</h2></div>
-        <div class="context-grid">
-          <article><h3>Recognize outdated results</h3><p>Relevant changes to geometry, materials, ports, frequencies or simulation settings mark earlier results stale. Export is blocked so old results cannot be passed on as current.</p></article>
-          <article><h3>Return to a saved investigation</h3><p>Save the project with result references and viewer selections. Reopen matching results without recalculating when their saved job data is available.</p></article>
-          <article><h3>Exchange supported results</h3><p>Export complete, valid results as Touchstone within the supported single-terminal TEM or quasi-TEM subset. Multimode datasets are excluded; the capability notes specify the reference-impedance requirements.</p></article>
-        </div>
-      </section>
-      <section class="product-section development-section" id="development" aria-labelledby="development-title">
-        <div><p class="eyebrow">Development status</p><h2 id="development-title">Current development scope</h2>
-          <p>The application supports a defined range of structures, materials and port configurations. It is not intended for production sign-off. This site does not offer a software download.</p>
-          <p class="preview-notice"><strong>Development preview.</strong> External validation is not yet complete. Not released for production use.</p>
-        </div>
-        <nav class="technical-links" aria-label="Technical documentation">
-          <a href="docs/current_public_status.md">Current capabilities <span aria-hidden="true">&#8599;</span></a>
-          <a href="docs/claim_boundaries.md">Claim boundaries <span aria-hidden="true">&#8599;</span></a>
-          <a href="docs/native_workflow_screenshot_provenance.md">Screenshot provenance <span aria-hidden="true">&#8599;</span></a>
-          <a href="https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase">Public repository <span aria-hidden="true">&#8599;</span></a>
-        </nav>
-      </section>
-      <section class="product-section company-contact" id="contact" aria-labelledby="contact-title">
-        <div><p class="eyebrow">DigitalArtDeco Labs</p><h2 id="contact-title">Discuss a PCB or RF modeling case.</h2>
-          <p>Have a structure you would like to investigate? Contact DigitalArtDeco Labs UG (haftungsbeschränkt) to discuss a technical use case, geometry family or validation case.</p>
-        </div>
-        <div class="contact-details"><a class="contact-link" href="mailto:info@dadlabs.de">info@dadlabs.de</a><p>Phone: <a href="tel:+4917648296275">+49 176 48296275</a></p></div>
+
+      <section id="contact" class="section contact-section" aria-labelledby="contact-title">
+        <div><p class="eyebrow">Contact</p><h2 id="contact-title">What would you like to investigate?</h2>
+          <p>We welcome conversations about PCB and RF modeling, scientific software and potential collaboration. Tell us about your technical interests, a structure you are studying or a validation case.</p>
+          <p>This is an invitation to discuss our work, not an offer of immediate software access.</p></div>
+        <address><strong>DigitalArtDeco Labs UG (haftungsbeschränkt)</strong><a href="mailto:info@dadlabs.de">info@dadlabs.de</a><a href="tel:+4917648296275">+49 176 48296275</a><span>Donauwörth, Germany</span></address>
       </section>
     </main>
     <footer>
-      <p>&copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.</p>
-      <p>DAD FieldWorks &middot; <a href="mailto:info@dadlabs.de">info@dadlabs.de</a></p>
-      <p><a href="impressum.html">Impressum</a> &middot; <a href="datenschutz.html">Datenschutz</a></p>
+      <p>© 2026 DigitalArtDeco Labs UG (haftungsbeschränkt)</p>
+      <nav aria-label="Legal and documentation"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a><a href="docs/index.html">Documentation</a></nav>
     </footer>
   </body>
 </html>

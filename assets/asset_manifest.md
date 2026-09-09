@@ -1,12 +1,31 @@
 # Asset Manifest
 
-## Current homepage assets: September 2026
+## Current company website assets: 9 September 2026
+
+Five user-supplied application images are published as lossless PNG crops. The [current manifest](images/dad-fieldworks/application-2026-09-09/manifest.json) records source basenames, hashes, dimensions, crop rectangles, pixel hashes, captions and uses. The [source selection](images/dad-fieldworks/application-2026-09-09/source-selection.json) is the reproducible preparation recipe. See [processing notes](../docs/company_screenshot_provenance.md).
+
+The main product image and social preview show Tuto authoring geometry with the private left-hand project path excluded. Four other images show Tuto sketching, Via Transition linear S-parameter magnitude, S(2,2) Smith readouts and a saved magnetic H_z component in A/m. The two projects are not a continuous example.
+
+DigitalArtDeco Labs uses a typographic wordmark accompanied by the user-requested blue mesh sculpture. The artwork also appears in the FieldWorks product section and browser icon. It is abstract brand artwork, not simulation data. Its [separate generation record](brand/blue_field_sculpture_manifest.json) includes the prompt and hashes. The former FieldWorks graphics and browser icon are retained as historical assets.
+
+## Historical homepage assets: 5 and 6 September 2026
+
+The following two paragraphs preserve the earlier presentation description; their “active” and “current” references refer to that earlier website version.
 
 The active presentation uses six approved native workflow screenshots and two responsive PNG previews. The [current image manifest](images/dad-fieldworks/native-workflow-2026-09/manifest.json) is the authority for their source identities, crops, derivative hashes, dimensions, roles and captions. See the [processing record](../docs/native_workflow_screenshot_provenance.md).
 
 The hero and social preview use Simulation and results. Compiled geometry, Cartesian S parameters, Smith reflection, signed Hy and signed Ez support the workflow and result sections. No scientific image was generated. The current publication is a development preview, not external validation or a software production release.
 
-## Current browser icon
+## Current browser icon: blue field sculpture
+
+- Asset: `favicon.ico`, sizes 16, 32, 48 and 64 pixels, 7,118 bytes.
+- Source: the generated blue mesh brand illustration, proportionally reduced into an ICO container.
+- SHA-256: `3e54457e7d6308c5688bf87d613952a461216d73be08264f1aa782e9defa6b6a`.
+- Role: user-requested browser tab symbol. Decorative artwork, not scientific evidence.
+
+## Historical browser icon: before 9 September 2026
+
+The earlier icon described below is now preserved unchanged at `assets/brand/legacy_kernel_wave_favicon.ico`.
 
 - Asset: `favicon.ico`, 16, 32 and 48 pixel icon sizes, 6,033 bytes.
 - Source: existing DAD brand mark `assets/brand/dad_fieldworks_kernel_wave_mark.png`.

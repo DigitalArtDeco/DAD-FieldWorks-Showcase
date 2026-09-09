@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>DAD FieldWorks: current capabilities | DigitalArtDeco Labs</title>
+    <meta name="description" content="The current DAD FieldWorks development scope, result views and exchange limits.">
+    <link rel="canonical" href="https://www.dadlabs.de/docs/current_public_status.html">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../favicon.ico?v=field-sculpture" sizes="16x16 32x32 48x48 64x64">
+  </head>
+  <body class="company-site">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img src="../assets/brand/dad_fieldworks_blue_field_sculpture-256.png" width="256" height="256" alt=""><span class="brand-name">DigitalArtDeco <span>Labs</span></span></a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html#company">Company</a>
+        <a href="../index.html#focus">Focus</a>
+        <a href="../index.html#fieldworks">DAD FieldWorks</a>
+        <a href="../index.html#outlook">Outlook</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <main id="main-content" class="docs-page">
+      <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Company</a><span aria-hidden="true">/</span><a href="index.html">Documentation</a><span aria-hidden="true">/</span><span>Product scope</span></nav>
+      <div class="docs-heading"><p class="eyebrow">DAD FieldWorks · Technical notes</p><h1>DAD FieldWorks: current capabilities</h1><p class="lead">The current DAD FieldWorks development scope, result views and exchange limits.</p></div>
+      <div class="docs-layout">
+        <aside class="docs-sidebar"><details open><summary>On this page</summary><nav aria-label="On this page"><a href="#project-workflow">Project workflow</a><a href="#result-inspection-and-persistence">Result inspection and persistence</a><a href="#parametric-demos-and-materials">Parametric demos and materials</a><a href="#supported-touchstone-export">Supported Touchstone export</a><a href="#evidence-used-for-this-preview">Evidence used for this preview</a></nav></details><a class="docs-back" href="index.html">All documentation</a></aside>
+        <article class="document-content"><p>Product notes for the DigitalArtDeco Labs company website, updated 9 September 2026. The implementation scope below was reviewed on 6 September 2026; the new user-supplied screenshots document visible application states. The company website’s development direction describes future goals, not additions to this implemented scope.</p>
+<p>Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved, except where an asset manifest identifies a different copyright owner.</p>
+<p>Development preview. External validation is not yet complete. Not released for production use.</p>
+<h2 id="project-workflow">Project workflow</h2>
+<p>DAD FieldWorks is a native Windows electromagnetic workbench for PCB and RF development. Supported projects connect ordered materials and stackup, editable conductor geometry, compiled solver geometry, ports and frequencies, simulation jobs, complex S parameters and saved native fields.</p>
+<p>The editable geometry and its solver representation are separate. Grid, material and PEC compilation retain geometry approximations and topology checks. These are implementation capabilities, not universal geometric or scientific applicability.</p>
+<p>The native simulation workflow configures time-domain jobs and independent excitations. Its complex matrix is computed from actual solver job data in the supported development scope. Invalid frequencies remain visible; missing cells are not silently filled by interpolation or reciprocity.</p>
+<h2 id="result-inspection-and-persistence">Result inspection and persistence</h2>
+<p>Matrix, Cartesian, Smith and Native Field views expose different parts of a project-linked result. Cartesian, Smith and field viewers are separate resizable native windows. Cartesian traces connect available samples with straight segments. Smith readouts use diagonal reflection for Gamma and normalized impedance.</p>
+<p>Saved field components retain native Yee coordinates, component units, saved step and slice selection. The current field screenshot shows the Via Transition example: signed H_z in A/m at saved step 12288 on Z slice 16. This is a time-domain state, not a field at the S-parameter marker frequency. The earlier Hy and Ez captures remain historical records, not the current presentation.</p>
+<p>Projects can preserve result references and viewer selections. Reopening checks saved source identity and reuses matching job data without rerunning the solver when those files remain available. Physical input or material changes invalidate current result association and disable current-result export. A name-only edit with unchanged physical inputs can retain a matching result.</p>
+<p>CURRENT means input-matched. It is not evidence of external validation, a promoted software release or completed acceptance.</p>
+<h2 id="parametric-demos-and-materials">Parametric demos and materials</h2>
+<p>The five implemented demo families are:</p>
+<ul>
+<li>Stepped Impedance Quick Tour</li>
+<li>Uniform Shielded TEM Reference Line</li>
+<li>Coupled Line Modal Demo</li>
+<li>Via Transition</li>
+<li>Symmetric Four Port Junction</li>
+</ul>
+<p>The current images show the Tuto construction example and results from the separate Via Transition example. They do not establish a successful calculation of the Tuto geometry. Demo templates open as editable project copies. Changing supported template parameters regenerates project geometry, stackup and ports. Replacing manual edits requires confirmation. Relevant input changes mark earlier results stale.</p>
+<p>No precomputed bundled results or public software download is offered by this site.</p>
+<p>The material workflow includes immutable canonical PEC and lossless dielectric definitions, user-owned versioned records and independent project-bound snapshots. Later library changes do not silently modify those snapshots. Dielectric definitions in the shown lossless workflow are scalar, isotropic and nondispersive. PEC is an ideal boundary, not a high-conductivity copper model. The library does not supply manufacturer FR4, Rogers, copper-loss or roughness models.</p>
+<p>Stored descriptions do not make unsupported material physics active. Via and port behavior likewise remain within their implemented family and backend limits.</p>
+<h2 id="supported-touchstone-export">Supported Touchstone export</h2>
+<p>The current native interface exports a bounded complete-result subset. It requires:</p>
+<ul>
+<li>A complete valid actual S matrix and available, verified source job data.</li>
+<li>One single-terminal TEM or quasi-TEM channel per physical port.</li>
+<li>One identical, constant positive real reference impedance for all channels.</li>
+<li>The canonical Touchstone 2.1 subset with Hz frequencies, S parameters, real/imaginary values and a full matrix.</li>
+</ul>
+<p>The export does not silently renormalize references, interpolate missing results or fill by reciprocity. The Coupled Line Modal Demo's neutral multimode channels are outside this physical-port export subset. General Touchstone import in the native user interface is not claimed.</p>
+<h2 id="evidence-used-for-this-preview">Evidence used for this preview</h2>
+<p>The review separates three sources:</p>
+<ol>
+<li>Five user-supplied captures for the 9 September 2026 company presentation establish the visible construction and result views. The earlier 5 September captures remain historical records.</li>
+<li>Targeted read-only inspection of the completed implementation, usage notes and existing internal test reports supports the additional workflow, demo, material and export summaries. The committed scope records internal completion of the five demos, material snapshots and separate result windows; this is not external validation or production authorization.</li>
+<li>Public companion documentation provides background where it remains consistent with that scope.</li>
+</ol>
+<p>No solver, native application, acceptance campaign or private test was run for this website update. No private code or internal reports were copied into this repository. Internal test counts are not published as accuracy metrics.</p>
+<p>The screenshot package has no supplied executable build provenance. Its captures are therefore not attributed to a specific product commit, accepted candidate or software release.</p>
+<p>See <a href="claim_boundaries.html">claim boundaries</a>, <a href="company_screenshot_provenance.html">current image provenance</a> and the <a href="index.html#historical-visual-records">historical documentation index</a>.</p>
+
+          <p class="source-link"><a href="current_public_status.md">Read the Markdown source</a></p>
+        </article>
+      </div>
+    </main>
+    <footer>
+      <p>© 2026 DigitalArtDeco Labs UG (haftungsbeschränkt)</p>
+      <nav aria-label="Legal and documentation"><a href="../impressum.html">Impressum</a><a href="../datenschutz.html">Datenschutz</a><a href="index.html">Documentation</a></nav>
+    </footer>
+  </body>
+</html>

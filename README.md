@@ -1,40 +1,31 @@
-# DAD FieldWorks
+# DigitalArtDeco Labs
 
-DAD FieldWorks is a Windows application for RF and PCB engineers investigating supported electromagnetic structures. Model a structure, calculate its response and inspect reflection, transmission and saved field distributions.
+DigitalArtDeco Labs develops scientific software for electromagnetic simulation and RF engineering. Our work connects numerical methods, PCB and RF workflows, and technical visualization.
 
-Geometry, simulation settings and results stay together in one project.
+[Company website](https://www.dadlabs.de/) · [Contact](mailto:info@dadlabs.de)
 
-Development preview. External validation is not yet complete. Not released for production use.
+## DAD FieldWorks
 
-[See the application](https://www.dadlabs.de/) · [Discuss a technical use case](mailto:info@dadlabs.de)
+DAD FieldWorks is our software project for PCB and RF simulation. The Windows application combines supported geometry editing, material and layer definitions, calculations and result inspection.
 
-## What you can investigate
+The current company presentation uses five supplied images: Tuto construction and sketching, plus Via Transition port responses and a saved magnetic field. They document different projects, not one continuous modeling example.
 
-- Reflection and transmission between configured ports, using the complex S matrix and Cartesian frequency traces.
-- Input reflection and normalized impedance on a Smith chart, for diagonal reflection terms.
-- Electric and magnetic field components at saved time steps and selected slices.
-- The response after changing supported geometry parameters and recalculating.
+DAD FieldWorks is in development. External validation is not yet complete, and it is not released for production use. The website's outlook describes future goals, not capabilities available today. This repository provides neither the application nor a software download.
 
-The five editable examples cover a stepped-impedance structure, a shielded TEM reference line, coupled lines, a via transition and a symmetric four-port junction. Project material snapshots retain ideal PEC or supported lossless dielectric definitions independently of later library changes.
+## Public documentation
 
-Relevant input changes mark earlier results stale and block their export as current. Save and reopen matching project results, or export complete results within the documented Touchstone subset.
-
-## Scope and documentation
-
-This repository publishes the static product showcase, not the application or a software download. It contains approved screenshots, public notes and website checks.
-
-- [Current capabilities and export limits](docs/current_public_status.md)
-- [Claim boundaries](docs/claim_boundaries.md)
-- [Screenshot provenance](docs/native_workflow_screenshot_provenance.md)
-- [Documentation index](docs/README.md)
-
-The field screenshots are saved time-domain components, not fields at the S-parameter marker frequency. Their different components and scales do not form a common animation. Screenshot identity does not establish physical accuracy or an executable version.
+- [Current product scope](docs/current_public_status.md)
+- [Technical claim boundaries](docs/claim_boundaries.md)
+- [Current screenshot provenance](docs/company_screenshot_provenance.md)
+- [Documentation and historical records](docs/README.md)
 
 ## Website checks and publication
 
-Run `python scripts/validate_native_workbench_preview.py` for offline link, image, metadata, copy, privacy and legal checks. The site uses static HTML and CSS, local images and Organization JSON-LD. It has no executable page JavaScript or external runtime assets.
+Run `python scripts/validate_native_workbench_preview.py` for offline image-integrity, link, metadata, copy, privacy and legal checks. After editing the current Markdown notes, run `python scripts/render_public_notes.py` to refresh their styled HTML pages using the existing markdown-it-py development dependency. No browser dependency is introduced.
 
-The configured release branch publishes the repository root through GitHub Pages. See [publication notes](docs/publication_notes.md) and the [communication review](docs/product_communication_review_2026_09.md). A website publication is not a software production release.
+The site uses static HTML, CSS, local images and Organization JSON-LD. It has no executable page JavaScript or external runtime assets. A user-requested abstract product illustration is documented separately from the unchanged application screenshots.
+
+The existing `main` branch and its configured upstream publish the repository root through GitHub Pages. Domain and hosting configuration are unchanged. See [publication notes](docs/publication_notes.md). A website publication is not a software release.
 
 ## Contact and legal
 
@@ -42,4 +33,4 @@ The configured release branch publishes the repository root through GitHub Pages
 
 [Impressum](impressum.html) · [Datenschutz](datenschutz.html) · [Copyright](COPYRIGHT.md) · [License notice](LICENSE_NOTICE.md)
 
-Copyright &copy; 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
+Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

@@ -1,10 +1,7 @@
 #!/usr/bin/env python3
-"""Offline asset, public-copy and safety validator for the September preview.
-
-Retains PNG decoding/CRC validation and public-data guards from the previous
-validator. Replaces only the superseded four-frame/copy contract with six
-approved screenshots and their documented derivatives. No private imports,
-network, file writes, solver calls or application execution.
+"""Offline company-site, screenshot-integrity and publication-safety checks.
+Historical PNG, CRC, pixel, privacy and legal guards remain enforced.
+No network, file writes, private imports or application execution.
 """
 from __future__ import annotations
 import hashlib
@@ -34,10 +31,8 @@ PROTECTED = {
     "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-04.png": "e836192e7a6fdf9a4c28d04f58a02a7b77805f0f7f0da69264eb5c04a280ab8e",
     "assets/images/dad-fieldworks/canonical-yee/canonical-yee-z-slice-frame-05.png": "d4d1702c5c3078daf1336f59421e6de6bad9b0d09f0b5171488305132ae301f3",
     "assets/images/dad-fieldworks/canonical-yee/manifest.json": "d60de43e39de8eef9bd4a31c5584ae9f54490f288f167a37af843f0515015947",
-    "datenschutz.html": "8f90de5a0d97827e7b416844aeb32acbdbfde0032a05e294f12a618011e0c01f",
     "docs/canonical_yee_field_visualization_provenance.md": "b4c14064bd1272bfb8d5b507400c39d892c848d2fa645a04b227e404edf4fee1",
-    "docs/legal_site_identity_audit.md": "fbb8f102aace809fda29fcfb8a50162bc24750fdadecce746aa02c703983bf4d",
-    "impressum.html": "da538a3f66b8570fa3d8dd5ec60b58ad12879188465b1713797fd306e83367c8"
+    "docs/legal_site_identity_audit.md": "fbb8f102aace809fda29fcfb8a50162bc24750fdadecce746aa02c703983bf4d"
 }
 APPROVED = {
     "simulation-results": {
@@ -121,11 +116,17 @@ APPROVED = {
         }
     }
 }
-ACTIVE = ["index.html", "README.md", "docs/current_public_status.md",
-          "docs/claim_boundaries.md", "assets/hero/README.md",
-          "docs/native_workflow_screenshot_provenance.md"]
-NEW_DOCS = ["docs/README.md", "docs/showcase_refresh_2026_09.md",
-            "docs/product_communication_review_2026_09.md", PRESENTATION]
+CURRENT_DIR = "assets/images/dad-fieldworks/application-2026-09-09"
+PRODUCT_NOTICE = "DAD FieldWorks is in development. The images show the current application."
+BRAND_IMAGES = {
+    "assets/brand/dad_fieldworks_blue_field_sculpture.png": "7b96ba79717d49f29df838e390e249c171511b4f0d912272c7cba50ddce2001d",
+    "assets/brand/dad_fieldworks_blue_field_sculpture-256.png": "4a7ed4ec5892eb3bbc0b6e3c4e0ef78e19e99f89702edd80d40c353729c7224d"
+}
+CURRENT_NOTES = ["current_public_status", "claim_boundaries", "company_screenshot_provenance", "publication_notes"]
+ACTIVE = ["index.html", "README.md", "docs/current_public_status.md", "docs/claim_boundaries.md",
+          "docs/company_screenshot_provenance.md", "assets/hero/README.md"]
+NEW_DOCS = ["docs/README.md", "assets/asset_manifest.md"]
+LEGACY_VIEWS = ["simulation-results", "compiled-geometry", "native-hy-field", "native-ez-field"]
 TEXT_SUFFIXES = {".html", ".css", ".js", ".json", ".md", ".txt", ".xml", ".yml", ".yaml"}
 PRIVATE_PATH_PATTERN = re.compile(
     r"(?i)(?:(?<![a-z0-9+.-])[a-z]:[\\/]|file://|\\\\)[^\s<>'\"]+"
@@ -407,66 +408,125 @@ def read_png(path: Path) -> dict[str, object]:
 
 
 
-def copy_quality_audit(raw):
-    """Count reader-facing copy, not stable URLs, asset IDs or screenshot pixels."""
-    clean = re.sub(r"<script\b[^>]*>[\s\S]*?</script>", "", raw, flags=re.I)
-    body = re.search(r"<body\b[^>]*>([\s\S]*?)</body>", clean, re.I).group(1)
-    page, visible = Page(clean), Page(body).text
-    metadata = " ".join(page.metas.get(k, "") for k in
-                        ("description", "og:title", "og:description", "og:image:alt",
-                         "twitter:title", "twitter:description", "twitter:image:alt"))
-    metadata += " " + re.search(r"<title>(.*?)</title>", clean).group(1)
-    labels = " ".join(a.get(k, "") for _, a in page.tags for k in ("alt", "aria-label"))
-    surfaces = {"visible": visible, "metadata": metadata, "alt_aria": labels}
-    semantic = " ".join(surfaces.values())
-    forbidden = ("DAD-owned", "component-native", "explicit contracts", "evidence-bound",
-                 "current-state authority", "source authority", "North Star",
-                 "DecisionClass", "FailureClass")
-    counts = {term: len(re.findall(r"\b" + re.escape(term) + r"\b", semantic, re.I))
-              for term in forbidden + ("native", "evidence-controlled")}
-    check(all(counts[t] == 0 for t in forbidden), "Internal terminology in homepage copy")
-    check(counts["native"] <= 2 and counts["evidence-controlled"] <= 1,
-          "Homepage terminology budget exceeded")
-    banned = re.findall(
-        r"\b(?:powerful|seamless|cutting-edge|revolutionary|next-generation|game-changing|"
-        r"unmatched|unparalleled|professional|HFSS|CST|Sonnet|COMSOL|"
-        r"coax(?:ial)?|patch\s+antenna|far[- ]fields?|antenna\s+gain)\b", semantic, re.I)
-    check(not banned, "Hype, comparison or future feature in homepage: " + str(banned))
-    check(not re.search(r"[\u2013\u2014]", semantic), "En/em dash in homepage copy")
-    check(not re.search(r"\b(?:faster|cheaper|more accurate|market leader|"
-                        r"save[s]?\s+\d+|reduce[s]?\s+.{0,15}(?:time|cost))\b", semantic, re.I),
-          "Unsubstantiated comparative or quantified benefit")
-    hero = Page(re.search(r'<section class="product-hero"[\s\S]*?</section>', clean).group()).text
-    questions_html = re.search(r'<section[^>]+id="questions"[\s\S]*?</section>', clean).group()
-    questions = [Page(x).text for x in re.findall(r"<h3>(.*?)</h3>", questions_html)]
-    check(len(questions) >= 3 and all(q.endswith("?") for q in questions),
-          "At least three concrete engineering questions required")
-    check("Windows application for RF and PCB engineers" in hero and NOTICE in hero,
-          "First section must identify application, audience and development status")
-    check("within the same project" in hero, "Connected-project benefit missing from hero")
-    check("mailto:info@dadlabs.de" in page.hrefs and "#contact" in page.hrefs,
-          "Clear contact route missing")
-    check("not fields at the S-parameter marker frequency" in visible and
-          "not a shared-scale animation" in visible, "Shared field interpretation note missing")
-    expected_docs = {
-        "docs/current_public_status.md", "docs/claim_boundaries.md",
-        "docs/native_workflow_screenshot_provenance.md",
-        "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase"
+CURRENT_APPROVED = {
+    "pcb-geometry": {
+        "id": "pcb-geometry",
+        "original": "Screenshot (43).png",
+        "source_sha256": "db0f6b05ed09e9a31ee1e099164cbbebe55b4705482bfcf9c24bee42622d51e0",
+        "source_size": [
+            1440,
+            857
+        ],
+        "crop": [
+            347,
+            103,
+            1438,
+            835
+        ],
+        "width": 1091,
+        "height": 732,
+        "sha256": "eeb442d017e5b6095fcf71391380915cb2ebfebcd3ec98384664195548c25461",
+        "rgba_sha256": "f272d2549b72cf74b6ef79ca8d45b81f80cfccf0fe426ac04bcaecc952eb049d"
+    },
+    "rf-sketcher": {
+        "id": "rf-sketcher",
+        "original": "Screenshot (42).png",
+        "source_sha256": "35d42cfadecbac3d2f66c3730ac9ba4283999e787fba2ea8f1744ff3eb1e4c85",
+        "source_size": [
+            1440,
+            859
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            859
+        ],
+        "width": 1440,
+        "height": 859,
+        "sha256": "9c66d61f632c019b0ce0ff96d0fe63b248e18cbbe3febbad5a4aa20ec48a5e72",
+        "rgba_sha256": "f45f466b003f2a5f606047a7d6e0a6dc7899899c761a19a55bc84a01828e3107"
+    },
+    "cartesian-s-parameters": {
+        "id": "cartesian-s-parameters",
+        "original": "Screenshot (37).png",
+        "source_sha256": "2ec17eb66b08f038b5e97c472c99ee200116e3c5201a7748f03285ad5190f28a",
+        "source_size": [
+            1440,
+            859
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            859
+        ],
+        "width": 1440,
+        "height": 859,
+        "sha256": "774611335baf1274b37fca57ba96d30a5d601510cd37ef7a73b27cad4921ebde",
+        "rgba_sha256": "eeab3ffc5714f8451c1a8ef703e168ec48bfe142cd3becca09f2eedf5a4511c5"
+    },
+    "smith-chart": {
+        "id": "smith-chart",
+        "original": "Screenshot (38).png",
+        "source_sha256": "3f23148ab4dc0888e1882807dee7b19247bbb2a4950e7eb6eb46565e384490f9",
+        "source_size": [
+            1440,
+            860
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "width": 1440,
+        "height": 860,
+        "sha256": "f9ab24ba81f98cb278dbf903d5957680ecc873df4d0c4af5163b2310e8593469",
+        "rgba_sha256": "c9890d38bff5c89b077dea06c5195c31e5e2588c46d26df62d1d56cbf8be2a27"
+    },
+    "magnetic-field": {
+        "id": "magnetic-field",
+        "original": "Screenshot (41).png",
+        "source_sha256": "86c70545710cb95664bce50a4e532d23321cfb8e6ac286b22b735a6133d434b9",
+        "source_size": [
+            1440,
+            859
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            859
+        ],
+        "width": 1440,
+        "height": 859,
+        "sha256": "edf54bf1f39bc9f0cf672c4fbc8d13064afb0db2040178e2502c20a2a4caf264",
+        "rgba_sha256": "fa88662a56ee5e0349c96ce33df389554c0f0892cd7a685d7f63bf59bd878b90"
     }
-    technical = Page(re.search(r'<nav class="technical-links"[\s\S]*?</nav>', clean).group())
-    check(set(technical.hrefs) == expected_docs, "Compact technical link set changed")
-    check("docs/evidence_contract_architecture.md" not in page.hrefs,
-          "Architecture document must not be a primary homepage product link")
-    return {"status": "PASS" if not FAILURES else "FAIL", "term_counts": counts,
-            "native_by_surface": {k: len(re.findall(r"\bnative\b", v, re.I))
-                                  for k, v in surfaces.items()},
-            "visible_words": len(visible.split()), "engineering_questions": questions,
-            "hero_audience_and_preview": True, "contact_route": True,
-            "manual_review": "docs/product_communication_review_2026_09.md"}
+}
 
+PROTECTED.update({
+    "assets/images/dad-fieldworks/native-workflow-2026-09/presentation.json": "71e5380c66c01e864c98bbdb7810dba021523cb37340a594baa158ec4513f9b6",
+    "docs/native_workflow_screenshot_provenance.md": "32e113c4c505f7bd968aa5fcdea9cde6f4390aeec85d6e39732dad9279347898",
+    "docs/showcase_refresh_2026_09.md": "1f7e4db55785fe07d95f24efab1eb96ff2ca00a6befb063921e3a9e1d8714e28",
+    "docs/product_communication_review_2026_09.md": "b2f0c87ef09834adb7e36633401f28ae2f6eb207b200b1f0c24973be481cb706"
+})
 
-def validate():
-    paths = public_files()
+def legal_core(raw, name):
+    text = re.search(r'<div class="legal-panel">([\s\S]*?)</div>', raw).group(1)
+    if name == "impressum.html":
+        text = re.sub(r'<h3>Hinweis zur Website</h3>\s*<p>[\s\S]*?</p>', '', text)
+    else:
+        text = re.sub(r'(<h2>Allgemeine Hinweise</h2>\s*<p>)[\s\S]*?(Personenbezogene Daten)', r'\1\2', text, count=1)
+    return hashlib.sha256(text.replace('\r\n','\n').encode('utf-8')).hexdigest()
+
+LEGAL_CORE_HASHES = {
+    "impressum.html": "a20f448912742fa2082300fb307305aabf9cd719b1670359c5b10966857d8fda",
+    "datenschutz.html": "7593ade5791f52504c9b5d7a27657aec024a10866e4f69e3297fede01bf83f60"
+}
+
+def validate_historical():
     manifest = json.loads((ROOT / ASSET_DIR / "manifest.json").read_text(encoding="utf-8"))
     check(manifest["owner"] == OWNER, "Screenshot copyright owner changed")
     check(manifest["source_date"] == "2026-09-05", "Capture date changed")
@@ -522,156 +582,247 @@ def validate():
     check(actual_images == allowed_images, "Unmanifested or missing current PNG")
     check(len(allowed_images) == 8, "Expected six full crops and two smaller previews")
 
-    for rel, expected in PROTECTED.items():
-        check((ROOT / rel).is_file() and sha(ROOT / rel) == expected, "Protected bytes changed: " + rel)
-    check((ROOT / "CNAME").read_text().strip() == "www.dadlabs.de", "Public domain changed")
-    check(sha(ROOT / "favicon.ico") == "ae41a3988a5e832f30c484765370d6f66da9ae391d7a88b955995fb0b80f71ba", "Unapproved browser icon")
-    check(sha(ROOT / "assets/brand/dad_fieldworks_kernel_wave_mark.png") == "410e6874da3d6f37bf02836c2ae107be27489f7db93421fb6a29b91af1210bb9", "Original brand mark changed")
-    legal = (ROOT / "impressum.html").read_text(encoding="utf-8")
-    check("HRB 43034" in legal and "Amtsgericht Augsburg" in legal and "1260195" not in legal,
-          "Verified legal identity not preserved")
-    check("USt-IdNr.: DE464701318" in Page(legal).text,
-          "User-supplied VAT identification number not preserved")
+    return {"captures": len(APPROVED), "pngs": len(allowed_images), "bytes": total_bytes}
 
-    active = ACTIVE + ["views/" + key + ".html" for key in APPROVED]
-    for rel in active + NEW_DOCS:
-        text = (ROOT / rel).read_text(encoding="utf-8")
-        check(not re.search(r"[\u2013\u2014]|&(?:ndash|mdash);", text), "En/em dash in new public copy: " + rel)
-        check(not unsupported(text), "Unsupported positive claim in " + rel + ": " + str(unsupported(text)))
-        check(not PRIVATE_COMMIT_HASH_PATTERN.search(text), "Private commit-like ID in active copy: " + rel)
-        check(not ROADMAP_LINK_PATTERN.search(text), "Active roadmap link: " + rel)
-        check(not MATHEMATICA_PRODUCT_PATTERN.search(text), "Unsupported product path: " + rel)
-        if rel in active:
-            check("canonical-yee/" not in text and "canonical-yee-z-slice-frame" not in text,
-                  "Active historical image reference: " + rel)
 
-    check(not unsupported("Not externally validated. Not production-ready. Not released for production use."),
-          "Negated claim regression")
-    check(len(unsupported("Externally validated and production-ready.")) == 2, "Positive claim guard regression")
-    for rel in paths:
-        p = ROOT / rel
-        check(not p.is_symlink(), "Public filesystem link: " + rel)
-        if p.suffix.lower() in FORBIDDEN_SUFFIXES:
-            check(False, "Private code/binary/archive in public set: " + rel)
-        check(not any(part.lower() in {"references_local", "private", "internal", "_incoming", ".local_temp", ".local_private_assets"}
-                      for part in p.relative_to(ROOT).parts), "Private/raw publication path: " + rel)
-        if p.is_file() and (p.suffix.lower() in TEXT_SUFFIXES or p.name == "CNAME"):
-            text = p.read_text(encoding="utf-8", errors="replace")
-            for label, pattern in [("private path", PRIVATE_PATH_PATTERN), ("internal identifier", INTERNAL_IDENTIFIER_PATTERN),
-                                   ("private context", PRIVATE_CONTEXT_PATTERN), ("tracking", TRACKING_PATTERN),
-                                   ("credential", TOKEN_PATTERN)]:
-                check(not pattern.search(text), label + " in public text: " + rel)
-    changed = set(git("diff", "HEAD", "--name-only").splitlines()) | set(git("ls-files", "--others", "--exclude-standard").splitlines())
-    # Editorial paths plus the authorized VAT-ID addition; protected hashes still apply.
-    allowed_changes = {
-        "index.html", "README.md", "styles.css", "docs/current_public_status.md",
-        "docs/README.md", "docs/product_communication_review_2026_09.md",
-        "scripts/validate_native_workbench_preview.py", PRESENTATION, "impressum.html"
-    } | {"views/" + key + ".html" for key in APPROVED}
-    check(changed <= allowed_changes, "Changes outside allowlist: " + str(sorted(changed - allowed_changes)))
-    source_names = {a["source"].lower() for a in APPROVED.values()} | {"source-manifest.json", "screenshot (8).png", "screenshot (11).png"}
-    for rel in changed | set(git("diff", "--cached", "--name-only").splitlines()):
-        check(Path(rel).name.lower() not in source_names, "Raw original staged/published: " + rel)
-        if Path(rel).suffix.lower() in SCIENTIFIC_IMAGE_SUFFIXES:
-            check(rel in allowed_images, "Unapproved new/changed scientific image: " + rel)
+def section(raw, name):
+    match = re.search(r'<section[^>]*id="' + re.escape(name) + r'"[\s\S]*?</section>', raw)
+    check(bool(match), "Missing section: " + name)
+    return Page(match.group()).text if match else ""
 
-    html_count = image_count = 0
-    for rel in paths:
-        if not rel.endswith(".html"):
+def document_source_audit(source, rendered, stem):
+    """Preserve paragraphs, list items and table cells, including limitations."""
+    for line in source.splitlines():
+        line=line.strip()
+        if not line or re.fullmatch(r"[| :\-]+",line):
             continue
-        p = ROOT / rel
-        parser = Page(p.read_text(encoding="utf-8"))
-        html_count += 1
-        for href in parser.hrefs:
-            link_check(p, href)
-        for resource in parser.resources:
-            link_check(p, resource, True)
-        for a in parser.images:
-            image_count += 1
-            check("alt" in a and (a["alt"] or "assets/brand/" in a.get("src", "")), "Missing descriptive alt in " + rel)
-            check(a.get("width", "").isdigit() and a.get("height", "").isdigit(), "Missing intrinsic dimensions in " + rel)
-        if rel == "index.html" or rel.startswith("views/"):
-            check(NOTICE in parser.text, "Visible preview notice missing: " + rel)
-            check(sum(tag == "h1" for tag, _ in parser.tags) == 1, "Expected one H1: " + rel)
-            check(any(tag == "html" and a.get("lang") == "en" for tag, a in parser.tags), "English language missing")
-    home = Page((ROOT / "index.html").read_text(encoding="utf-8"))
-    check({"questions","workflow","results","examples","result-context","development","contact","main-content"} <= home.ids, "Workflow anchors missing")
-    check("mailto:info@dadlabs.de" in home.hrefs and "tel:+4917648296275" in home.hrefs, "Contact action changed")
-    homepage_captures = [a for a in home.images if ASSET_DIR in a["src"]]
-    check(len(homepage_captures) == 6 and {a["src"] for a in homepage_captures} == {v["path"] for v in full_images.values()},
-          "Expected the exact six distinct homepage captures")
-    hero = [a for a in home.images if "simulation-results.png" in a["src"]][0]
-    check(hero.get("loading") == "eager" and hero.get("fetchpriority") == "high", "Hero priority regressed")
-    check(home.metas.get("og:image") == "https://www.dadlabs.de/" + full_images["simulation-results"]["path"], "Stale social image")
-    check(home.metas.get("twitter:image") == home.metas.get("og:image"), "Social images differ")
-    check(home.metas.get("og:image:height") == "860", "Social dimensions changed")
-    check(home.metas.get("og:image:width") == "1440", "Social width changed")
-    hero_alt = current_copy["simulation-results"]["alt"]
-    check(home.metas.get("og:image:alt") == home.metas.get("twitter:image:alt") == hero_alt, "Social alt not hero-backed")
-    check([a.get("href") for tag, a in home.tags if tag == "link" and a.get("rel") == "canonical"] == ["https://www.dadlabs.de/"], "Homepage canonical URL changed")
-    check(home.metas.get("og:url") == "https://www.dadlabs.de/", "Social page URL changed")
-    check(home.metas.get("og:title") == home.metas.get("twitter:title") == "DAD FieldWorks | Electromagnetic Simulation for PCB and RF", "Social title mismatch")
-    check(home.metas.get("description") == home.metas.get("og:description") == home.metas.get("twitter:description") and "Development preview." in home.metas.get("description", ""), "Description metadata differs or omits preview status")
-    for source_item in manifest["images"]:
-        item = {**source_item, **current_copy[source_item["id"]]}
-        link = "views/" + item["id"] + ".html"
-        check(link in home.hrefs, "Missing detail link: " + link)
-        detail_text = (ROOT / link).read_text(encoding="utf-8")
-        check(all(item[k] in detail_text for k in ("title", "caption", "alt", "detail")),
-              "Detail title/caption/alt/explanation not presentation-backed")
-        detail = Page(detail_text)
-        check([a.get("href") for tag, a in detail.tags if tag == "link" and a.get("rel") == "canonical"] == ["https://www.dadlabs.de/" + link], "Detail canonical URL changed")
-        full = full_images[item["id"]]
-        check("../" + full["path"] in detail.hrefs, "No full-resolution zoom link")
-        for label, page, prefix in [("homepage", home, ""), ("detail", detail, "../")]:
-            matches = [fig for fig in page.figures if any(a.get("src") == prefix + full["path"] for a in fig["images"])]
-            check(len(matches) == 1, "Missing or duplicated figure on " + label + ": " + item["id"])
-            if not matches:
-                continue
-            figure = matches[0]
-            check(len(figure["images"]) == 1, "Unexpected images in figure")
-            a = figure["images"][0]
-            check(a.get("alt") == item["alt"] and a.get("width") == str(full["width"]) and a.get("height") == str(full["height"]),
-                   "Displayed alt/dimensions differ from approved presentation on " + label + ": " + item["id"])
-            text = re.sub(r"\s+", " ", " ".join(figure["data"]))
-            check(item["caption"] in text, "Caption belongs to wrong figure on " + label + ": " + item["id"])
-            expected_srcset = ", ".join(v["path"] + " " + str(v["width"]) + "w" for v in reversed(item["derivatives"])) if len(item["derivatives"]) > 1 else ""
-            check(a.get("srcset", "") == (expected_srcset if label == "homepage" else ""), "Unexpected responsive scientific source")
-    raw_home = (ROOT / "index.html").read_text(encoding="utf-8")
-    copy_audit = copy_quality_audit(raw_home)
-    org = json.loads(re.search(r'<script type="application/ld\+json">\s*([\s\S]*?)</script>', raw_home).group(1))
-    check(org.get("@type") == "Organization" and org.get("name") == OWNER and org.get("legalName") == OWNER, "Organization identity changed")
-    check(org.get("url") == "https://www.dadlabs.de/" and org.get("@id") == "https://www.dadlabs.de/#organization" and org.get("brand") == {"@type":"Brand","name":"DAD FieldWorks"}, "Organization URL or brand changed")
-    check(org.get("logo") == "https://www.dadlabs.de/assets/brand/dad_fieldworks_kernel_wave_mark.png", "Organization logo changed")
-    check(org.get("email") == "info@dadlabs.de" and org.get("telephone") == "+4917648296275", "Organization contact changed")
-    check(org.get("address") == {"@type":"PostalAddress","streetAddress":"Sperberweg 27","postalCode":"86609","addressLocality":"Donauwörth","addressCountry":"Deutschland"}, "Organization address changed")
-    for rel in ACTIVE + NEW_DOCS + ["assets/asset_manifest.md"]:
-        p = ROOT / rel
-        if p.suffix == ".md":
-            for href in re.findall(r"\]\(([^)\s]+)(?:\s+[^)]*)?\)", p.read_text(encoding="utf-8")):
-                link_check(p, href)
-    css = (ROOT / "styles.css").read_text(encoding="utf-8")
-    check(not re.search(r"(?i)(?:@import\s+|url\(\s*)['\"]?(?:https?:)?//", css), "External CSS/font dependency")
-    check(all(s in css for s in [".workflow-showcase", ".result-gallery", "height: auto", ":focus-visible",
-                                "@media (max-width: 720px)", "grid-template-columns: 1fr"]), "Responsive/focus contract missing")
-    for url in re.findall(r"url\(\s*['\"]?([^)'\"\s]+)", css):
-        link_check(ROOT / "styles.css", url, True)
-    check("Historical" in (ROOT/"assets/asset_manifest.md").read_text(), "Historical inventory context missing")
-    check("Historical visual records" in (ROOT/"docs/README.md").read_text(), "Historical documentation context missing")
-    diff_check = subprocess.run(["git", "diff", "--check"], cwd=ROOT, capture_output=True, text=True,
-                                env={**os.environ, "GIT_OPTIONAL_LOCKS":"0"})
-    check(diff_check.returncode == 0, "Whitespace diff check failed: " + diff_check.stdout)
-    return {"status": "PASS" if not FAILURES else "FAIL", "approved_captures": len(APPROVED),
-            "published_pngs": len(allowed_images), "png_bytes": total_bytes,
-            "protected_files": len(PROTECTED), "html_pages": html_count, "html_images": image_count,
-            "public_files_scanned": len(paths), "changed_paths": sorted(changed),
-            "copy_audit": copy_audit,
-            "failures": FAILURES, "private_writes": 0, "solver_runs": 0, "network_requests": 0}
+        line=re.sub(r"^(?:#{1,6}\s+|[-*+]\s+|\d+\.\s+)", "", line)
+        line=re.sub(r"\[([^\]]+)\]\([^)]+\)",r"\1",line).replace(chr(96),"")
+        pieces=line.strip("|").split("|") if line.startswith("|") else [line]
+        for piece in pieces:
+            text=re.sub(r"\s+","",piece)
+            check(not text or text in re.sub(r"\s+","",rendered), "Source content lost: "+stem+"/"+piece[:50])
 
-if __name__ == "__main__":
+def copy_quality_audit(raw):
+    clean = re.sub(r"<script\b[^>]*>[\s\S]*?</script>", "", raw, flags=re.I)
+    body = re.search(r"<body\b[^>]*>([\s\S]*?)</body>", clean, re.I).group(1)
+    visible_body = re.sub(r'<span class="sr-only">[\s\S]*?</span>', "", body)
+    page, visible = Page(clean), Page(visible_body).text
+    labels = " ".join(a.get(k, "") for _, a in page.tags for k in ("alt", "aria-label"))
+    semantic = visible + " " + " ".join(page.metas.values()) + " " + labels
+    forbidden = ("DAD-owned", "component-native", "explicit contracts", "evidence-bound",
+                 "current-state authority", "source authority", "North Star",
+                 "DecisionClass", "FailureClass", "fail-closed")
+    counts = {term: len(re.findall(r"\b"+re.escape(term)+r"\b", semantic, re.I))
+              for term in forbidden + ("native", "evidence-controlled")}
+    check(all(counts[t] == 0 for t in forbidden), "Internal terminology in homepage")
+    check(counts["native"] <= 2 and counts["evidence-controlled"] <= 1, "Homepage terminology budget")
+    check(not re.search(r"\b(?:powerful|seamless|cutting-edge|revolutionary|next-generation|game-changing|unmatched|unparalleled|professional|HFSS|CST|Sonnet|COMSOL)\b", semantic, re.I), "Hype/comparison in homepage")
+    check(not re.search(r"[\u2013\u2014]", semantic), "En/em dash in homepage")
+    check(not re.search(r"\b(?:faster|cheaper|more accurate|market leader|save[s]?\s+\d+|reduce[s]?\s+.{0,15}(?:time|cost))\b", semantic, re.I), "Unsupported benefit")
+    hero = section(raw, "company")
+    product, outlook = section(raw, "fieldworks"), section(raw, "outlook")
+    check("DigitalArtDeco Labs" in hero and "We develop software for electromagnetic simulation." in hero, "Company must lead the hero")
+    check("RF, microwave, signal integrity and PCB engineers" in hero, "Audience missing")
+    check("Windows desktop workspace" in product and PRODUCT_NOTICE in product, "Product/status missing")
+    check(visible.count(PRODUCT_NOTICE) == 1, "Expected one calm product status")
+    check("Tuto example shows construction" in product and "different project" in product, "Examples conflated")
+    check("saved time-domain view, not a field at the frequency" in product and "linear magnitude, not dB" in product, "Scientific interpretation note missing")
+    check("We plan to extend" in outlook and "development goals, not a list of capabilities available today" in outlook, "Future direction not separated")
+    current_sections = hero + section(raw,"focus") + product + section(raw,"contact")
+    check(not re.search(r"\b(?:printed antennas|loss models|far[- ]fields?|antenna gain|optimization|coaxial)\b", current_sections, re.I), "Future capability promoted")
+    check("mailto:info@dadlabs.de" in page.hrefs and "tel:+4917648296275" in page.hrefs, "Contact route changed")
+    check(not any("evidence_contract" in x for x in page.hrefs), "Architecture promoted in homepage")
+    return {"term_counts": counts, "visible_words": len(visible.split()), "company_first": True,
+            "current_future_separated": True, "single_product_status": True}
+
+def validate():
+    paths = public_files()
+    historical = validate_historical()
+    brand_record = json.loads((ROOT/"assets/brand/blue_field_sculpture_manifest.json").read_text(encoding="utf-8"))
+    check("Not scientific data" in brand_record["role"] and "Built-in image generation" in brand_record["method"], "Brand illustration classification missing")
+    for rel, expected in BRAND_IMAGES.items():
+        check(sha(ROOT/rel)==expected==brand_record["files"][Path(rel).name]["sha256"], "Approved brand artwork changed: "+rel)
+    brand_png = read_png(ROOT/"assets/brand/dad_fieldworks_blue_field_sculpture-256.png")
+    check((brand_png["width"],brand_png["height"])==(256,256), "Brand web derivative dimensions")
+    for rel, expected in PROTECTED.items():
+        check((ROOT/rel).is_file() and sha(ROOT/rel)==expected, "Protected historical/domain/license bytes changed: "+rel)
+    check((ROOT/"CNAME").read_text().strip()=="www.dadlabs.de", "Domain changed")
+    check(sha(ROOT/"favicon.ico")==brand_record["browser_icon"]["sha256"]=="3e54457e7d6308c5688bf87d613952a461216d73be08264f1aa782e9defa6b6a", "Approved new browser icon changed")
+    check(sha(ROOT/"assets/brand/legacy_kernel_wave_favicon.ico")=="ae41a3988a5e832f30c484765370d6f66da9ae391d7a88b955995fb0b80f71ba", "Historical browser icon changed")
+    check(sha(ROOT/"assets/brand/dad_fieldworks_kernel_wave_mark.png")=="410e6874da3d6f37bf02836c2ae107be27489f7db93421fb6a29b91af1210bb9", "Product mark changed")
+    for name, expected in LEGAL_CORE_HASHES.items():
+        raw = (ROOT/name).read_text(encoding="utf-8")
+        # Only the reviewed website-purpose paragraph is excluded. The rest of
+        # each legal panel must match its pre-refresh normalized bytes.
+        check(legal_core(raw,name)==expected, "Legal/processing content changed: "+name)
+        check("Unternehmensauftritt" in raw and "DigitalArtDeco" in raw, "Legal branding missing")
+    legal = Page((ROOT/"impressum.html").read_text(encoding="utf-8")).text
+    for value in [OWNER,"Sperberweg 27","86609 Donauwörth","Geschäftsführer Harun Aktas",
+                  "Amtsgericht Augsburg","HRB 43034","USt-IdNr.: DE464701318",
+                  "info@dadlabs.de","+49 176 48296275"]:
+        check(value in legal, "Verified legal fact missing: "+value)
+    check("1260195" not in legal, "Disallowed register identifier")
+
+    manifest = json.loads((ROOT/CURRENT_DIR/"manifest.json").read_text(encoding="utf-8"))
+    recipe = json.loads((ROOT/CURRENT_DIR/"source-selection.json").read_text(encoding="utf-8"))
+    check(manifest["date"]==recipe["date"]=="2026-09-09", "Current selection date")
+    check([e["id"] for e in manifest["captures"]]==list(CURRENT_APPROVED), "Five-view selection/order")
+    check([e["id"] for e in recipe["sources"]]==list(CURRENT_APPROVED), "Recipe selection")
+    check("no resampling" in manifest["processing"] and "not a field at a plot marker frequency" in manifest["context"], "Processing/context boundary missing")
+    allowed_images, current_copy = set(), {}
+    for item, source in zip(manifest["captures"],recipe["sources"]):
+        expected=CURRENT_APPROVED[item["id"]]
+        for key,value in expected.items():
+            check(item.get(key)==value, "Approved image identity changed: "+item["id"]+"/"+key)
+            if key in source: check(source[key]==value, "Preparation recipe changed: "+key)
+        for key,value in source.items(): check(item.get(key)==value, "Manifest/recipe mismatch")
+        check(item["derivative"]==item["id"]+".png" and item["detail"]=="views/"+item["id"]+".html", "Unexpected derivative route")
+        rel=CURRENT_DIR+"/"+item["derivative"]
+        allowed_images.add(rel)
+        png=read_png(ROOT/rel)
+        check(sha(ROOT/rel)==item["sha256"] and (ROOT/rel).stat().st_size==item["bytes"], "PNG file identity: "+rel)
+        check(png["rgba_pixel_sha256"]==item["rgba_sha256"], "PNG pixel identity: "+rel)
+        check((png["width"],png["height"])==(item["width"],item["height"]), "PNG dimensions: "+rel)
+        check(set(png["chunks"])=={"IHDR","IDAT","IEND"}, "PNG metadata: "+rel)
+        check(all(item.get(k) for k in ["caption","alt","title","use","group"]), "Missing image description")
+        current_copy[item["id"]]=item
+    check({p.relative_to(ROOT).as_posix() for p in (ROOT/CURRENT_DIR).glob("*.png")}==allowed_images, "Unapproved current PNG")
+
+    active = ACTIVE + ["views/"+key+".html" for key in CURRENT_APPROVED] + ["docs/"+key+".html" for key in CURRENT_NOTES] + ["docs/index.html"]
+    for rel in active:
+        text=(ROOT/rel).read_text(encoding="utf-8")
+        check(not re.search(r"[\u2013\u2014]|&(?:ndash|mdash);",text), "En/em dash: "+rel)
+        check(not unsupported(text), "Unsupported positive claim in "+rel+": "+str(unsupported(text)))
+        check(not PRIVATE_COMMIT_HASH_PATTERN.search(text), "Private commit-like ID in active text: "+rel)
+        check(not re.search(r"\b(?:Sonnet|HFSS|CST|COMSOL)\b",Page(text).text if rel.endswith(".html") else text,re.I), "Competitor in new copy: "+rel)
+        check("canonical-yee/" not in text and ASSET_DIR+"/" not in text, "Historical image in current presentation: "+rel)
+    check(not unsupported("Not externally validated. Not production-ready. Not released for production use."), "Negated-claim regression")
+    check(len(unsupported("Externally validated and production-ready."))==2, "Positive-claim regression")
+
+    for rel in paths:
+        p=ROOT/rel
+        check(not p.is_symlink(), "Public filesystem link: "+rel)
+        check(p.suffix.lower() not in FORBIDDEN_SUFFIXES, "Private code/binary/archive: "+rel)
+        check(not any(part.lower() in {"references_local","private","internal","_incoming",".local_temp",".local_private_assets"} for part in p.relative_to(ROOT).parts), "Private publication path: "+rel)
+        if p.is_file() and (p.suffix.lower() in TEXT_SUFFIXES or p.name=="CNAME"):
+            text=p.read_text(encoding="utf-8",errors="replace")
+            for label,pattern in [("private path",PRIVATE_PATH_PATTERN),("internal identifier",INTERNAL_IDENTIFIER_PATTERN),("private context",PRIVATE_CONTEXT_PATTERN),("tracking",TRACKING_PATTERN),("credential",TOKEN_PATTERN)]:
+                check(not pattern.search(text), label+" in public text: "+rel)
+    changed=set(git("diff","HEAD","--name-only").splitlines())|set(git("ls-files","--others","--exclude-standard").splitlines())
+    allowed_changes=set(ACTIVE+NEW_DOCS+[
+        ".gitignore","styles.css","impressum.html","datenschutz.html",
+        "scripts/validate_native_workbench_preview.py","scripts/prepare_company_screenshots.py","scripts/render_public_notes.py",
+        CURRENT_DIR+"/manifest.json",CURRENT_DIR+"/source-selection.json","docs/index.html",
+        "assets/brand/README.md","assets/brand/blue_field_sculpture_manifest.json", "favicon.ico", "assets/brand/legacy_kernel_wave_favicon.ico"
+    ])|allowed_images|set(BRAND_IMAGES)|{"views/"+key+".html" for key in list(CURRENT_APPROVED)+LEGACY_VIEWS}|{"docs/"+key+".html" for key in CURRENT_NOTES}
+    check(changed<=allowed_changes,"Changes outside website allowlist: "+str(sorted(changed-allowed_changes)))
+    for rel in changed|set(git("diff","--cached","--name-only").splitlines()):
+        check(Path(rel).name not in {e["original"] for e in CURRENT_APPROVED.values()}, "Raw source published: "+rel)
+        if Path(rel).suffix.lower() in SCIENTIFIC_IMAGE_SUFFIXES:
+            check(rel in allowed_images or rel in BRAND_IMAGES,"Unapproved image change: "+rel)
+
+    html_count=image_count=0
+    for rel in paths:
+        if not rel.endswith(".html"): continue
+        p=ROOT/rel
+        raw=p.read_text(encoding="utf-8")
+        page=Page(raw); html_count+=1
+        for href in page.hrefs: link_check(p,href)
+        for resource in page.resources: link_check(p,resource,True)
+        for a in page.images:
+            image_count+=1
+            check("alt" in a and (a["alt"] or "assets/brand/" in a.get("src","")), "Missing descriptive alt: "+rel)
+            check(a.get("width","").isdigit() and a.get("height","").isdigit(), "Missing image dimensions: "+rel)
+            if "assets/brand/" not in a.get("src",""):
+                target,_=local_target(p,a["src"])
+                check(target.relative_to(ROOT).as_posix() in allowed_images, "Old or unapproved active image: "+rel)
+        check(sum(t=="h1" for t,_ in page.tags)==1,"Expected one H1: "+rel)
+        lang="de" if rel in {"impressum.html","datenschutz.html"} else "en"
+        check(any(t=="html" and a.get("lang")==lang for t,a in page.tags),"Language missing: "+rel)
+        check(page.metas.get("description"),"Meta description missing: "+rel)
+        check(any("impressum.html" in h for h in page.hrefs) and any("datenschutz.html" in h for h in page.hrefs),"Legal links missing: "+rel)
+        if rel.startswith("views/"): check(NOTICE in page.text,"Detail preview boundary missing: "+rel)
+        if rel.startswith("docs/"):
+            check('class="docs-page"' in raw and "DigitalArtDeco" in page.text,"Styled documentation missing: "+rel)
+
+    raw_home=(ROOT/"index.html").read_text(encoding="utf-8")
+    home=Page(raw_home)
+    brand_views=[a for a in home.images if "assets/brand/" in a.get("src","")]
+    check(len(brand_views)==2 and all(a.get("src")=="assets/brand/dad_fieldworks_blue_field_sculpture-256.png" for a in brand_views), "Current header/product illustration missing")
+    check(any("rather than simulation data" in a.get("alt","") for a in brand_views), "Brand artwork must be distinguished from data")
+    check({"company","focus","fieldworks","outlook","contact","main-content"}<=home.ids,"Company anchors missing")
+    captures=[a for a in home.images if CURRENT_DIR in a["src"]]
+    check(len(captures)==5 and {a["src"] for a in captures}==allowed_images,"Exact current gallery missing")
+    check(all(a.get("loading")=="lazy" for a in captures),"Below-fold images should lazy-load")
+    social=current_copy["pcb-geometry"]
+    check(home.metas.get("og:image")==home.metas.get("twitter:image")=="https://www.dadlabs.de/"+CURRENT_DIR+"/pcb-geometry.png","Stale social image")
+    check(home.metas.get("og:image:width")=="1091" and home.metas.get("og:image:height")=="732","Social dimensions")
+    check(home.metas.get("og:image:alt")==home.metas.get("twitter:image:alt")==social["alt"],"Social image description")
+    title="DigitalArtDeco Labs | Electromagnetic Simulation Software"
+    check(home.metas.get("og:title")==home.metas.get("twitter:title")==title and "<title>"+title+"</title>" in raw_home,"Company metadata title")
+    check(home.metas.get("description")==home.metas.get("og:description")==home.metas.get("twitter:description") and "DigitalArtDeco Labs develops" in home.metas["description"],"Company descriptions")
+    check(home.metas.get("og:site_name")=="DigitalArtDeco Labs","Company site name")
+    check([a.get("href") for t,a in home.tags if t=="link" and a.get("rel")=="canonical"]==["https://www.dadlabs.de/"],"Canonical domain")
+    check(home.metas.get("og:url")=="https://www.dadlabs.de/","OG domain")
+    check(not any(h.endswith(".md") for h in home.hrefs),"Homepage should use styled documentation")
+    for item in current_copy.values():
+        link=item["detail"]
+        check(link in home.hrefs,"Missing image detail: "+link)
+        raw=(ROOT/link).read_text(encoding="utf-8"); detail=Page(raw)
+        facts={
+            "pcb-geometry": ["Tuto construction", "not a simulation result", "excludes the private project path"],
+            "rf-sketcher": ["Tuto construction", "40 mm by 20 mm", "constraints are not evaluated", "no results"],
+            "cartesian-s-parameters": ["linear magnitude, not dB", "S(1,1)", "S(1,2)", "S(2,1)", "S(2,2)", "1.700 GHz"],
+            "smith-chart": ["S(2,2)", "2.800 GHz", "Gamma", "50 ohm reference", "not a measurement"],
+            "magnetic-field": ["H_z in A/m", "step 12288", "3.071875e-09 s", "Z slice 16", "not a field at"]
+        }
+        check(all(fact in detail.text for fact in facts[item["id"]]), "Scientific detail boundary changed: "+item["id"])
+        full=CURRENT_DIR+"/"+item["derivative"]
+        check("../"+full in detail.hrefs,"Full-resolution link missing")
+        check([a.get("href") for t,a in detail.tags if t=="link" and a.get("rel")=="canonical"]==["https://www.dadlabs.de/"+link],"Detail canonical")
+        for name,page,prefix in [("home",home,""),("detail",detail,"../")]:
+            figures=[f for f in page.figures if any(a.get("src")==prefix+full for a in f["images"])]
+            check(len(figures)==1,"Figure missing/duplicated: "+name+"/"+item["id"])
+            if figures:
+                image=figures[0]["images"][0]
+                check(image.get("alt")==item["alt"] and image.get("width")==str(item["width"]) and image.get("height")==str(item["height"]),"Figure description/dimensions: "+item["id"])
+                check(item["caption"] in " ".join(figures[0]["data"]),"Incorrect figure caption: "+item["id"])
+    org=json.loads(re.search(r'<script type="application/ld\+json">\s*([\s\S]*?)</script>',raw_home).group(1))
+    check(org.get("@type")=="Organization" and org.get("name")==OWNER and org.get("legalName")==OWNER,"Organization identity")
+    check(org.get("url")=="https://www.dadlabs.de/" and org.get("@id")=="https://www.dadlabs.de/#organization","Organization domain")
+    check(org.get("brand")=={"@type":"Brand","name":"DAD FieldWorks"} and "logo" not in org,"Product symbol must not become company logo")
+    check(org.get("email")=="info@dadlabs.de" and org.get("telephone")=="+4917648296275","Organization contact")
+    check(org.get("address")=={"@type":"PostalAddress","streetAddress":"Sperberweg 27","postalCode":"86609","addressLocality":"Donauwörth","addressCountry":"Deutschland"},"Organization address")
+    for stem in CURRENT_NOTES:
+        source=(ROOT/"docs"/(stem+".md")).read_text(encoding="utf-8")
+        page=Page((ROOT/"docs"/(stem+".html")).read_text(encoding="utf-8"))
+        check(NOTICE in page.text or stem=="publication_notes","Technical preview boundary lost")
+        document_source_audit(source,page.text,stem)
+    for rel in ACTIVE+NEW_DOCS:
+        p=ROOT/rel
+        if p.suffix==".md":
+            for href in re.findall(r"\]\(([^)\s]+)(?:\s+[^)]*)?\)",p.read_text(encoding="utf-8")): link_check(p,href)
+    css=(ROOT/"styles.css").read_text(encoding="utf-8")
+    check(not re.search(r"(?i)(?:@import\s+|url\(\s*)['\"]?(?:https?:)?//",css),"External CSS/font dependency")
+    check(all(s in css for s in [".result-gallery",".docs-page","height: auto",":focus-visible","@media (max-width: 720px)","grid-template-columns: 1fr"]),"Responsive/focus contract")
+    for url in re.findall(r"url\(\s*['\"]?([^)'\"\s]+)",css): link_check(ROOT/"styles.css",url,True)
+    check("Historical" in (ROOT/"assets/asset_manifest.md").read_text(encoding="utf-8"),"Historical inventory label")
+    check("Historical visual records" in (ROOT/"docs/README.md").read_text(encoding="utf-8"),"Historical notes label")
+    diff=subprocess.run(["git","diff","--check"],cwd=ROOT,capture_output=True,text=True,env={**os.environ,"GIT_OPTIONAL_LOCKS":"0"})
+    check(diff.returncode==0,"Whitespace check: "+diff.stdout)
+    audit=copy_quality_audit(raw_home)
+    return {"status":"PASS" if not FAILURES else "FAIL","current_captures":len(current_copy),
+            "current_png_bytes":sum(e["bytes"] for e in current_copy.values()),"historical":historical,
+            "protected_files":len(PROTECTED),"legal_core_checks":len(LEGAL_CORE_HASHES),
+            "html_pages":html_count,"html_images":image_count,"public_files_scanned":len(paths),
+            "changed_paths":sorted(changed),"copy_audit":audit,"failures":FAILURES,
+            "private_writes":0,"solver_runs":0,"network_requests":0}
+
+if __name__=="__main__":
     try:
-        result = validate()
+        result=validate()
     except Exception as error:
-        result = {"status":"FAIL", "error": str(error), "failures":FAILURES}
-    print(json.dumps(result, indent=2, ensure_ascii=True))
-    sys.exit(0 if result["status"] == "PASS" else 1)
+        result={"status":"FAIL","error":str(error),"failures":FAILURES}
+    print(json.dumps(result,indent=2,ensure_ascii=True))
+    sys.exit(0 if result["status"]=="PASS" else 1)

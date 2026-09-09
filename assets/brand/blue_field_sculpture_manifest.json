@@ -1,0 +1,31 @@
+{
+  "date": "2026-09-09",
+  "role": "Abstract blue mesh artwork for the website header, browser icon and DAD FieldWorks product section, as requested by the user. Not scientific data or a simulation result.",
+  "method": "Built-in image generation, explicitly requested by the user. The 256 pixel web derivative uses proportional Lanczos downscaling only. The browser icon contains proportionally downscaled 16, 32, 48 and 64 pixel versions.",
+  "prompt": "Use case: stylized-concept. Asset type: a restrained small product illustration for DAD FieldWorks, electromagnetic simulation software, on a clean white technical company website. Primary request: a simple blue, finely meshed field sculpture. Create one compact, elegant three-dimensional wave surface with a single soft crest and trough, defined by a regular fine quadrilateral wire mesh. Crisp slender blue lines, open negative space, a recognizable calm silhouette. Restrained medium and deep engineering blues, white background. Orthographic three-quarter view, centered square composition, the sculpture fills roughly 80 percent of the square. Minimal mathematical sculptural aesthetic, no solid shiny metal, no gradients or glowing effects, no particles, no orbit rings, no sphere, no decorative frame, no pedestal, no extra objects. Absolutely no text, letters, numbers, axes, legends, UI, logos, watermark or chart values. This is an abstract brand illustration, not a simulated field result; do not mimic a scientific output screenshot. It should remain identifiable when shown at 56 to 72 pixels, with a simple outer form and fine readable blue mesh.",
+  "files": {
+    "dad_fieldworks_blue_field_sculpture.png": {
+      "sha256": "7b96ba79717d49f29df838e390e249c171511b4f0d912272c7cba50ddce2001d",
+      "bytes": 1377314
+    },
+    "dad_fieldworks_blue_field_sculpture-256.png": {
+      "sha256": "4a7ed4ec5892eb3bbc0b6e3c4e0ef78e19e99f89702edd80d40c353729c7224d",
+      "bytes": 66982
+    }
+  },
+  "browser_icon": {
+    "path": "favicon.ico",
+    "sha256": "3e54457e7d6308c5688bf87d613952a461216d73be08264f1aa782e9defa6b6a",
+    "bytes": 7118,
+    "sizes": [
+      16,
+      32,
+      48,
+      64
+    ]
+  },
+  "historical_icon": {
+    "path": "assets/brand/legacy_kernel_wave_favicon.ico",
+    "sha256": "ae41a3988a5e832f30c484765370d6f66da9ae391d7a88b955995fb0b80f71ba"
+  }
+}

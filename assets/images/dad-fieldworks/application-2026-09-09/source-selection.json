@@ -1,0 +1,106 @@
+{
+  "date": "2026-09-09",
+  "selection": "Company website product preview",
+  "sources": [
+    {
+      "id": "pcb-geometry",
+      "original": "Screenshot (43).png",
+      "source_sha256": "db0f6b05ed09e9a31ee1e099164cbbebe55b4705482bfcf9c24bee42622d51e0",
+      "source_size": [
+        1440,
+        857
+      ],
+      "crop": [
+        347,
+        103,
+        1438,
+        835
+      ],
+      "group": "Tuto construction",
+      "title": "PCB geometry in 3D",
+      "caption": "Tuto: inspect the editable PCB structure in a 3D view.",
+      "alt": "Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.",
+      "use": "Main product image and social preview"
+    },
+    {
+      "id": "rf-sketcher",
+      "original": "Screenshot (42).png",
+      "source_sha256": "35d42cfadecbac3d2f66c3730ac9ba4283999e787fba2ea8f1744ff3eb1e4c85",
+      "source_size": [
+        1440,
+        859
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        859
+      ],
+      "group": "Tuto construction",
+      "title": "Dimensioned geometry",
+      "caption": "Tuto: define geometry and dimensional relations in the RF sketcher.",
+      "alt": "Tuto RF sketcher showing a 40 mm by 20 mm outline, a trace and dimensional relations. Constraints are not evaluated.",
+      "use": "Supporting gallery"
+    },
+    {
+      "id": "cartesian-s-parameters",
+      "original": "Screenshot (37).png",
+      "source_sha256": "2ec17eb66b08f038b5e97c472c99ee200116e3c5201a7748f03285ad5190f28a",
+      "source_size": [
+        1440,
+        859
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        859
+      ],
+      "group": "Via Transition results",
+      "title": "Reflection and transmission",
+      "caption": "Via Transition: compare reflection and transmission magnitudes at the available frequency samples.",
+      "alt": "Via Transition Cartesian plot of four S-parameter traces in linear magnitude, with a marker at 1.700 GHz.",
+      "use": "Supporting gallery"
+    },
+    {
+      "id": "smith-chart",
+      "original": "Screenshot (38).png",
+      "source_sha256": "3f23148ab4dc0888e1882807dee7b19247bbb2a4950e7eb6eb46565e384490f9",
+      "source_size": [
+        1440,
+        860
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        860
+      ],
+      "group": "Via Transition results",
+      "title": "Reflection and impedance",
+      "caption": "Via Transition: inspect S(2,2) reflection and impedance readouts on a Smith chart.",
+      "alt": "Via Transition Smith chart for S(2,2), with reflection and input impedance readouts at 2.800 GHz.",
+      "use": "Supporting gallery"
+    },
+    {
+      "id": "magnetic-field",
+      "original": "Screenshot (41).png",
+      "source_sha256": "86c70545710cb95664bce50a4e532d23321cfb8e6ac286b22b735a6133d434b9",
+      "source_size": [
+        1440,
+        859
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        859
+      ],
+      "group": "Via Transition results",
+      "title": "A saved magnetic field",
+      "caption": "Via Transition: locate a signed magnetic field component at a saved time step.",
+      "alt": "Via Transition magnetic field component H_z in A/m at saved step 12288 on Z slice 16, with its signed color scale.",
+      "use": "Supporting gallery"
+    }
+  ]
+}

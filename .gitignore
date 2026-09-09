@@ -61,6 +61,8 @@ __pycache__/
 !scripts/generate_pec_cavity_convergence_plot.py
 !scripts/validate_native_workbench_preview.py
 !scripts/prepare_showcase_screenshots.py
+!scripts/prepare_company_screenshots.py
+!scripts/render_public_notes.py
 *.ipynb
 *.log
 *.wl
