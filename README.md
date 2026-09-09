@@ -31,6 +31,8 @@ The existing `main` branch and its configured upstream publish the repository ro
 
 [info@dadlabs.de](mailto:info@dadlabs.de) · [+49 176 48296275](tel:+4917648296275)
 
-[Impressum](impressum.html) · [Datenschutz](datenschutz.html) · [Copyright](COPYRIGHT.md) · [License notice](LICENSE_NOTICE.md)
+[Impressum (DE)](impressum.html) · [Legal Notice (EN)](legal-notice.html) · [Datenschutz (DE)](datenschutz.html) · [Copyright](COPYRIGHT.md) · [License notice](LICENSE_NOTICE.md)
+
+The English Legal Notice translates the German Impressum. Keep both versions aligned when company details or legal text change. Both pages remain directly accessible from every website footer.
 
 Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.

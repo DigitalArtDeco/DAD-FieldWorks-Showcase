@@ -62,6 +62,7 @@ def main():
     header = re.sub(r'href="#(?!main-content)([^"]+)"', r'href="../index.html#\1"', header)
     footer = re.search(r'    <footer>[\s\S]*?</footer>', home).group()
     footer = footer.replace('href="impressum.html"', 'href="../impressum.html"').replace('href="datenschutz.html"', 'href="../datenschutz.html"')
+    footer = footer.replace('href="legal-notice.html"', 'href="../legal-notice.html"')
     footer = footer.replace('href="docs/index.html"', 'href="index.html"')
     md = MarkdownIt("commonmark", {"html": False}).enable("table")
     for source, (label, description) in PAGES.items():

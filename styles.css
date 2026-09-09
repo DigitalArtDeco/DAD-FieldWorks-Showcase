@@ -93,6 +93,10 @@ footer nav a { font-size: .875rem; }
 .detail-actions { display: flex; gap: 1rem 2rem; flex-wrap: wrap; margin-top: 1.5rem; }
 .legal-page { max-width: 900px; padding: 3rem; margin: 0 auto; }
 .legal-page h1 { font-size: clamp(2rem, 5vw, 3rem); overflow-wrap: anywhere; }
+.legal-languages { margin-top: 1.5rem; padding-bottom: .75rem; border-bottom: 1px solid var(--line); }
+.legal-languages a { text-decoration: underline; text-underline-offset: .22em; }
+.legal-languages [aria-current="page"] { font-weight: 600; text-decoration: none; }
+.translation-note { margin-top: 1rem; color: var(--muted); font-size: .9375rem; }
 .legal-panel { margin-top: 2rem; }
 .legal-panel h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
 .legal-panel h3 { margin: 1.7rem 0 .8rem; }

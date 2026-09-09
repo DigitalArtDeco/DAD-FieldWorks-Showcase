@@ -526,6 +526,63 @@ LEGAL_CORE_HASHES = {
     "datenschutz.html": "7593ade5791f52504c9b5d7a27657aec024a10866e4f69e3297fede01bf83f60"
 }
 
+def legal_footer_audit(raw, rel):
+    """Both legal languages must be directly linked in every page footer."""
+    match = re.search(r'<footer(?:\s[^>]*)?>([\s\S]*?)</footer>', raw)
+    check(match is not None, "Footer missing: " + rel)
+    if match is None:
+        return
+    footer = Page(match.group(1))
+    targets = {local_target(ROOT / rel, href)[0] for href in footer.hrefs}
+    for name in ["impressum.html", "legal-notice.html", "datenschutz.html"]:
+        check((ROOT / name).resolve() in targets, "Footer legal link missing: " + rel + " -> " + name)
+    for label in ["Impressum (DE)", "Legal Notice (EN)"]:
+        check(label in footer.text, "Footer legal language label missing: " + rel + " -> " + label)
+
+
+def legal_translation_audit(german_raw, english_raw):
+    """Retain verified identity, translated sections and reciprocal language links."""
+    english = Page(english_raw)
+    for value in [OWNER, "Sperberweg 27", "86609 Donauwörth", "Germany",
+                  "Managing Director Harun Aktas", "Amtsgericht Augsburg", "HRB 43034",
+                  "VAT ID: DE464701318", "info@dadlabs.de", "+49 176 48296275",
+                  "Information pursuant to Section 5 DDG",
+                  "English translation of the German Impressum."]:
+        check(value in english.text, "English legal fact missing: " + value)
+    check("1260195" not in english.text, "Disallowed English register identifier")
+    check({"mailto:info@dadlabs.de", "tel:+4917648296275"} <= set(english.hrefs),
+          "English legal contact links changed")
+    headings = [Page(value).text for value in re.findall(r'<h3>(.*?)</h3>', english_raw, re.S)]
+    check(headings == ["Service provider and website operator", "Represented by",
+                      "Commercial register", "VAT identification number", "Contact",
+                      "About this website", "Liability for content", "Liability for links", "Copyright"],
+          "English legal section coverage changed")
+    check(re.search(r'<h1[^>]*>Legal Notice</h1>', english_raw), "English legal title changed")
+    languages = {"de": "impressum.html", "en": "legal-notice.html"}
+    for language, raw in [("de", german_raw), ("en", english_raw)]:
+        rel = languages[language]
+        page = Page(raw)
+        canonical = [a.get("href") for tag, a in page.tags if tag == "link" and a.get("rel") == "canonical"]
+        check(canonical == ["https://www.dadlabs.de/" + rel], "Legal canonical URL changed: " + rel)
+        alternates = {a.get("hreflang"): a.get("href") for tag, a in page.tags
+                      if tag == "link" and a.get("rel") == "alternate"}
+        check(alternates == {lang: "https://www.dadlabs.de/" + name for lang, name in languages.items()},
+              "Legal language metadata missing: " + rel)
+        switch = re.search(r'<nav class="legal-languages"[^>]*>([\s\S]*?)</nav>', raw)
+        check(switch is not None, "Legal language switch missing: " + rel)
+        if switch is None:
+            continue
+        anchors = [a for tag, a in Page(switch.group(1)).tags if tag == "a"]
+        check(len(anchors) == 2, "Expected two legal language links: " + rel)
+        for lang, name in languages.items():
+            matches = [a for a in anchors if a.get("href") == name and a.get("lang") == lang
+                       and a.get("hreflang") == lang]
+            check(len(matches) == 1, "Legal language link missing: " + rel + " -> " + name)
+            if len(matches) == 1:
+                check((matches[0].get("aria-current") == "page") == (language == lang),
+                      "Legal active language incorrect: " + rel)
+
+
 def validate_historical():
     manifest = json.loads((ROOT / ASSET_DIR / "manifest.json").read_text(encoding="utf-8"))
     check(manifest["owner"] == OWNER, "Screenshot copyright owner changed")
@@ -663,6 +720,8 @@ def validate():
                   "info@dadlabs.de","+49 176 48296275"]:
         check(value in legal, "Verified legal fact missing: "+value)
     check("1260195" not in legal, "Disallowed register identifier")
+    legal_translation_audit((ROOT / "impressum.html").read_text(encoding="utf-8"),
+                            (ROOT / "legal-notice.html").read_text(encoding="utf-8"))
 
     manifest = json.loads((ROOT/CURRENT_DIR/"manifest.json").read_text(encoding="utf-8"))
     recipe = json.loads((ROOT/CURRENT_DIR/"source-selection.json").read_text(encoding="utf-8"))
@@ -711,7 +770,7 @@ def validate():
                 check(not pattern.search(text), label+" in public text: "+rel)
     changed=set(git("diff","HEAD","--name-only").splitlines())|set(git("ls-files","--others","--exclude-standard").splitlines())
     allowed_changes=set(ACTIVE+NEW_DOCS+[
-        ".gitignore","styles.css","impressum.html","datenschutz.html",
+        ".gitignore","styles.css","impressum.html","legal-notice.html","datenschutz.html",
         "scripts/validate_native_workbench_preview.py","scripts/prepare_company_screenshots.py","scripts/render_public_notes.py",
         CURRENT_DIR+"/manifest.json",CURRENT_DIR+"/source-selection.json","docs/index.html",
         "assets/brand/README.md","assets/brand/blue_field_sculpture_manifest.json", "favicon.ico", "assets/brand/legacy_kernel_wave_favicon.ico"
@@ -741,7 +800,7 @@ def validate():
         lang="de" if rel in {"impressum.html","datenschutz.html"} else "en"
         check(any(t=="html" and a.get("lang")==lang for t,a in page.tags),"Language missing: "+rel)
         check(page.metas.get("description"),"Meta description missing: "+rel)
-        check(any("impressum.html" in h for h in page.hrefs) and any("datenschutz.html" in h for h in page.hrefs),"Legal links missing: "+rel)
+        legal_footer_audit(raw, rel)
         if rel.startswith("views/"): check(NOTICE in page.text,"Detail preview boundary missing: "+rel)
         if rel.startswith("docs/"):
             check('class="docs-page"' in raw and "DigitalArtDeco" in page.text,"Styled documentation missing: "+rel)
