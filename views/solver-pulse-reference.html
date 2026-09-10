@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Comparing a pulse with a numerical reference | DigitalArtDeco Labs</title>
+    <meta name="description" content="Does the calculated pulse follow the reference response? An internal numerical source check with its original diagnostic plot.">
+    <link rel="canonical" href="https://www.dadlabs.de/views/solver-pulse-reference.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DigitalArtDeco Labs">
+    <meta property="og:title" content="Comparing a pulse with a numerical reference | DigitalArtDeco Labs">
+    <meta property="og:description" content="Does the calculated pulse follow the reference response? An internal numerical source check with its original diagnostic plot.">
+    <meta property="og:url" content="https://www.dadlabs.de/views/solver-pulse-reference.html">
+    <meta property="og:image" content="https://www.dadlabs.de/assets/images/solver-development/pulse-reference.png">
+    <meta property="og:image:width" content="1360">
+    <meta property="og:image:height" content="850">
+    <meta property="og:image:alt" content="Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Comparing a pulse with a numerical reference | DigitalArtDeco Labs">
+    <meta name="twitter:description" content="Does the calculated pulse follow the reference response? An internal numerical source check with its original diagnostic plot.">
+    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/solver-development/pulse-reference.png">
+    <meta name="twitter:image:alt" content="Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice.">
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="icon" href="../favicon.ico?v=field-sculpture" sizes="16x16 32x32 48x48 64x64">
+  </head>
+  <body class="company-site">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="../index.html"><img src="../assets/brand/dad_fieldworks_blue_field_sculpture-256.png" width="256" height="256" alt=""><span class="brand-name">DigitalArtDeco <span>Labs</span></span></a>
+      <nav aria-label="Primary navigation">
+        <a href="../index.html#company">Company</a>
+        <a href="../index.html#focus">Focus</a>
+        <a href="../solver-development.html">Solver Development</a>
+        <a href="../index.html#fieldworks">DAD FieldWorks</a>
+        <a href="../index.html#outlook">Outlook</a>
+        <a href="../index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <main id="main-content" class="detail-page solver-detail">
+      <a class="back-link" href="../solver-development.html#pulse-reference">Back to Solver Development</a>
+      <p class="eyebrow">Uniform TEM source · Internal numerical check</p>
+      <h1>Comparing a pulse with a numerical reference</h1>
+      <p class="detail-intro">The upper panels show the electric field component Ez at one sampling location, first during the pulse and then over the complete saved interval. Blue identifies the 3D calculation and orange the separately implemented scalar reference. The lower panels show area-weighted electric and magnetic error norms at five cross-sections along the line, in V and A respectively. The two numerical implementations use the same defined test conditions; neither is an experimental measurement.</p>
+      <p class="product-status">Development preview. External validation is not yet complete. Not released for production use.</p>
+      <figure class="detail-figure">
+        <a href="../assets/images/solver-development/pulse-reference.png" aria-label="Open full-size image for browser zoom"><img src="../assets/images/solver-development/pulse-reference.png" width="1360" height="850" alt="Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice." decoding="async"></a>
+        <figcaption>The electric pulse from the 3D calculation is overlaid with a separately implemented scalar reference. The lower panels retain the electric and magnetic reference errors.</figcaption>
+      </figure>
+      <div class="detail-actions"><a href="../assets/images/solver-development/pulse-reference.png">Open full-size PNG (1360 × 850)</a><a href="../solver-development.html#pulse-reference">Return to Solver Development</a></div>
+      <p class="detail-notes">The source check concerns a uniform, homogeneous, lossless TEM line with ideal conducting boundaries. The reference uses a separate incident recurrence and the discrete axial operator. This is not a general error bound, a convergence study or a qualification of a coupled multiport device. All axes, original error curves and development notices are retained.</p>
+      <p class="detail-notes">These examples document selected internal numerical checks under defined test conditions. They do not represent external certification or a general accuracy guarantee. <a href="../assets/images/solver-development/manifest.json">Image provenance</a>.</p>
+    </main>
+    <footer>
+      <p>© 2026 DigitalArtDeco Labs UG (haftungsbeschränkt)</p>
+      <nav aria-label="Legal and documentation"><a href="../impressum.html" lang="de" hreflang="de">Impressum (DE)</a><a href="../legal-notice.html" lang="en" hreflang="en">Legal Notice (EN)</a><a href="../datenschutz.html">Datenschutz</a><a href="../docs/index.html">Documentation</a></nav>
+    </footer>
+  </body>
+</html>

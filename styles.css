@@ -101,6 +101,22 @@ footer nav a { font-size: .875rem; }
 .legal-panel h2 { font-size: 1.5rem; margin: 2.5rem 0 1rem; }
 .legal-panel h3 { margin: 1.7rem 0 .8rem; }
 .legal-panel p, .legal-panel li { overflow-wrap: anywhere; }
+
+/* Full-width original diagnostic plots with readable editorial context. */
+.solver-hero h1 { max-width: 23ch; }
+.solver-page .hero-context { max-width: 70ch; }
+.solver-check + .solver-check { margin-top: 3.5rem; padding-top: 3rem; border-top: 1px solid var(--line); }
+.solver-check-heading { display: flex; align-items: flex-start; gap: 1.1rem; margin-bottom: 1.5rem; }
+.solver-check-heading h3 { font-size: clamp(1.4rem, 2vw, 1.8rem); }
+.solver-check-heading p { margin-top: .65rem; color: var(--muted); }
+.check-number { color: var(--blue); border-top: 2px solid #8caebf; padding-top: .3rem; font-size: .875rem; font-weight: 600; }
+.solver-check .image-link { background: white; overflow: visible; }
+.solver-check img, .solver-detail .detail-figure img { width: 100%; height: auto; object-fit: contain; }
+.solver-check figcaption { max-width: 88ch; }
+.solver-context h2 { max-width: 28ch; margin-bottom: 1.5rem; }
+.solver-context > p { max-width: 80ch; }
+.solver-boundary { border-left: 3px solid #7a9dae; padding: 1rem 1.2rem; background: var(--soft); }
+.site-header nav [aria-current="page"] { color: var(--blue); text-decoration: underline; text-underline-offset: .3em; }
 @media (max-width: 1000px) {
   .site-header { align-items: flex-start; flex-direction: column; gap: 1rem; }
   .focus-grid { gap: 1.5rem; }

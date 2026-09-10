@@ -1,0 +1,40 @@
+{
+  "title": "Solver development: selected original numerical diagnostics",
+  "owner": "DigitalArtDeco Labs UG (haftungsbeschränkt)",
+  "publication_date": "2026-09-10",
+  "processing": "Original PNG bytes, dimensions and scientific content preserved. No cropping, resampling, smoothing or generated curves.",
+  "status": "Selected internal numerical checks, not external certification or a general accuracy guarantee.",
+  "context": "Two figures from one uniform TEM pulse-source study, not independent experimental studies. A separately implemented numerical reference is not a measurement.",
+  "images": [
+    {
+      "id": "pulse-reference",
+      "path": "assets/images/solver-development/pulse-reference.png",
+      "sha256": "e74c69498a47209af4f3fd0bbc4104950605ba0e8616ceca65ce8a8d3cf4227e",
+      "width": 1360,
+      "height": 850,
+      "bytes": 82343,
+      "case": "Uniform TEM pulse-source checks",
+      "title": "Comparing a pulse with a numerical reference",
+      "purpose": "Does the calculated pulse follow the reference response?",
+      "caption": "The electric pulse from the 3D calculation is overlaid with a separately implemented scalar reference. The lower panels retain the electric and magnetic reference errors.",
+      "scope": "This checks the selected source, uniform lossless line, grid and observation window. Small remaining differences are visible, not removed.",
+      "alt": "Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice.",
+      "detail": "views/solver-pulse-reference.html"
+    },
+    {
+      "id": "returning-wave-check",
+      "path": "assets/images/solver-development/returning-wave-check.png",
+      "sha256": "b1a21141272ed1dd0acd9e3e88e0dbc714dd55d879aaf82dde835cbbb0195d1a",
+      "width": 1360,
+      "height": 850,
+      "bytes": 147497,
+      "case": "Uniform TEM pulse-source checks",
+      "title": "Checking returning waves",
+      "purpose": "Can a returning pulse cross the source region while it is active?",
+      "caption": "Separate incident, returning and combined calculations are compared in both directions. The lower panels show the remaining superposition difference throughout the saved interval.",
+      "scope": "The combined response is actually calculated, not assembled from the separate curves. This checks the defined source conditions, not an arbitrary PCB layout.",
+      "alt": "Returning TEM pulse crossing an active source in both directions, with returning and combined-minus-incident traces and raw superposition differences.",
+      "detail": "views/solver-returning-wave.html"
+    }
+  ]
+}

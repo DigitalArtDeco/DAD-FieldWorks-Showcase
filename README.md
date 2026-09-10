@@ -14,6 +14,8 @@ DAD FieldWorks is in development. External validation is not yet complete, and i
 
 ## Public documentation
 
+- [Solver Development](solver-development.html): selected internal numerical source checks, with [original image provenance](assets/images/solver-development/manifest.json).
+
 - [Current product scope](docs/current_public_status.md)
 - [Technical claim boundaries](docs/claim_boundaries.md)
 - [Current screenshot provenance](docs/company_screenshot_provenance.md)

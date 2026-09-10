@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Solver Development | DigitalArtDeco Labs</title>
+    <meta name="description" content="How DigitalArtDeco Labs develops FDTD solvers using controlled numerical comparisons, returning-wave checks and traceable results.">
+    <link rel="canonical" href="https://www.dadlabs.de/solver-development.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DigitalArtDeco Labs">
+    <meta property="og:title" content="Solver Development | DigitalArtDeco Labs">
+    <meta property="og:description" content="How DigitalArtDeco Labs develops FDTD solvers using controlled numerical comparisons, returning-wave checks and traceable results.">
+    <meta property="og:url" content="https://www.dadlabs.de/solver-development.html">
+    <meta property="og:image" content="https://www.dadlabs.de/assets/images/solver-development/pulse-reference.png">
+    <meta property="og:image:width" content="1360">
+    <meta property="og:image:height" content="850">
+    <meta property="og:image:alt" content="Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Solver Development | DigitalArtDeco Labs">
+    <meta name="twitter:description" content="How DigitalArtDeco Labs develops FDTD solvers using controlled numerical comparisons, returning-wave checks and traceable results.">
+    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/solver-development/pulse-reference.png">
+    <meta name="twitter:image:alt" content="Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice.">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="favicon.ico?v=field-sculpture" sizes="16x16 32x32 48x48 64x64">
+  </head>
+  <body class="company-site">
+    <a class="skip-link" href="#main-content">Skip to content</a>
+    <header class="site-header">
+      <a class="brand" href="index.html"><img src="assets/brand/dad_fieldworks_blue_field_sculpture-256.png" width="256" height="256" alt=""><span class="brand-name">DigitalArtDeco <span>Labs</span></span></a>
+      <nav aria-label="Primary navigation">
+        <a href="index.html#company">Company</a>
+        <a href="index.html#focus">Focus</a>
+        <a href="solver-development.html" aria-current="page">Solver Development</a>
+        <a href="index.html#fieldworks">DAD FieldWorks</a>
+        <a href="index.html#outlook">Outlook</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </header>
+    <main id="main-content" class="solver-page">
+      <section class="company-hero solver-hero" aria-labelledby="solver-title">
+        <p class="eyebrow">Solver development</p>
+        <h1 id="solver-title">Developing and testing electromagnetic solvers</h1>
+        <p class="lead">DigitalArtDeco Labs develops its own implementations of numerical methods for electromagnetic simulation. Our FDTD work uses the finite difference time domain method.</p>
+        <p class="hero-context">Reference comparisons and controlled cases help us examine how a source launches a pulse, how waves return and where numerical differences remain.</p>
+        <div class="actions"><a class="button" href="#selected-checks">See the numerical checks</a><a class="button secondary" href="index.html#contact">Contact us</a></div>
+      </section>
+      <section class="section soft" aria-labelledby="approach-title">
+        <div class="section-heading"><h2 id="approach-title">How we examine the calculation</h2></div>
+        <div class="focus-grid">
+          <article><h3>Reference comparisons</h3><p>We compare calculated responses with a separately implemented numerical reference. Both use defined inputs; a numerical comparison is not a measurement.</p></article>
+          <article><h3>Controlled test cases</h3><p>We isolate source behaviour in a uniform transmission line. Separate excitations and their combined response let us check a specific question.</p></article>
+          <article><h3>Traceable results</h3><p>We retain the inputs, saved results and evaluation records together. Original plots preserve the differences and the limits of each comparison.</p></article>
+        </div>
+      </section>
+      <section id="selected-checks" class="section solver-checks" aria-labelledby="checks-title">
+        <div class="section-heading"><p class="eyebrow">Selected development checks</p><h2 id="checks-title">Two questions, one controlled test family</h2><p>These figures come from the same uniform TEM pulse-source study. They examine different aspects of that source, not two independent studies.</p></div>
+        <article class="solver-check" id="pulse-reference" aria-labelledby="pulse-reference-title">
+          <div class="solver-check-heading"><span class="check-number" aria-hidden="true">01</span><div><h3 id="pulse-reference-title">Comparing a pulse with a numerical reference</h3><p>Does the calculated pulse follow the reference response?</p></div></div>
+          <figure>
+            <a class="image-link" href="views/solver-pulse-reference.html" aria-label="Enlarge: Comparing a pulse with a numerical reference"><img src="assets/images/solver-development/pulse-reference.png" width="1360" height="850" loading="lazy" decoding="async" alt="Uniform TEM pulse: calculated and independently implemented reference traces, with electric and magnetic error panels and the original development-only notice."></a>
+            <figcaption><p>The electric pulse from the 3D calculation is overlaid with a separately implemented scalar reference. The lower panels retain the electric and magnetic reference errors.</p><p>This checks the selected source, uniform lossless line, grid and observation window. Small remaining differences are visible, not removed.</p><a href="views/solver-pulse-reference.html">View full image and context<span class="sr-only">: Comparing a pulse with a numerical reference</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+        </article>
+        <article class="solver-check" id="returning-wave-check" aria-labelledby="returning-wave-check-title">
+          <div class="solver-check-heading"><span class="check-number" aria-hidden="true">02</span><div><h3 id="returning-wave-check-title">Checking returning waves</h3><p>Can a returning pulse cross the source region while it is active?</p></div></div>
+          <figure>
+            <a class="image-link" href="views/solver-returning-wave.html" aria-label="Enlarge: Checking returning waves"><img src="assets/images/solver-development/returning-wave-check.png" width="1360" height="850" loading="lazy" decoding="async" alt="Returning TEM pulse crossing an active source in both directions, with returning and combined-minus-incident traces and raw superposition differences."></a>
+            <figcaption><p>Separate incident, returning and combined calculations are compared in both directions. The lower panels show the remaining superposition difference throughout the saved interval.</p><p>The combined response is actually calculated, not assembled from the separate curves. This checks the defined source conditions, not an arbitrary PCB layout.</p><a href="views/solver-returning-wave.html">View full image and context<span class="sr-only">: Checking returning waves</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+        </article>
+      </section>
+      <section class="section solver-context" aria-labelledby="context-title">
+        <h2 id="context-title">From numerical checks to application development</h2>
+        <p class="solver-boundary">These examples document selected internal numerical checks under defined test conditions. They do not represent external certification or a general accuracy guarantee.</p>
+        <p>This work supports the company's simulation software, including DAD FieldWorks. A passed source check does not qualify every structure or release the application for production use.</p>
+        <p class="detail-link"><a href="index.html#fieldworks">Discover DAD FieldWorks</a> · <a href="index.html#contact">Discuss a numerical test case</a> · <a href="assets/images/solver-development/manifest.json">Image provenance</a></p>
+      </section>
+    </main>
+    <footer>
+      <p>© 2026 DigitalArtDeco Labs UG (haftungsbeschränkt)</p>
+      <nav aria-label="Legal and documentation"><a href="impressum.html" lang="de" hreflang="de">Impressum (DE)</a><a href="legal-notice.html" lang="en" hreflang="en">Legal Notice (EN)</a><a href="datenschutz.html">Datenschutz</a><a href="docs/index.html">Documentation</a></nav>
+    </footer>
+  </body>
+</html>

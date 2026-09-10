@@ -116,6 +116,25 @@ APPROVED = {
         }
     }
 }
+SOLVER_DIR = "assets/images/solver-development"
+SOLVER_APPROVED = {
+    "pulse-reference": {
+        "sha256": "e74c69498a47209af4f3fd0bbc4104950605ba0e8616ceca65ce8a8d3cf4227e",
+        "width": 1360,
+        "height": 850,
+        "bytes": 82343,
+        "detail": "views/solver-pulse-reference.html"
+    },
+    "returning-wave-check": {
+        "sha256": "b1a21141272ed1dd0acd9e3e88e0dbc714dd55d879aaf82dde835cbbb0195d1a",
+        "width": 1360,
+        "height": 850,
+        "bytes": 147497,
+        "detail": "views/solver-returning-wave.html"
+    }
+}
+SOLVER_PAGES = ["solver-development.html"] + [value["detail"] for value in SOLVER_APPROVED.values()]
+SOLVER_NOTICE = "These examples document selected internal numerical checks under defined test conditions. They do not represent external certification or a general accuracy guarantee."
 CURRENT_DIR = "assets/images/dad-fieldworks/application-2026-09-09"
 PRODUCT_NOTICE = "DAD FieldWorks is in development. The images show the current application."
 BRAND_IMAGES = {
@@ -693,9 +712,81 @@ def copy_quality_audit(raw):
     return {"term_counts": counts, "visible_words": len(visible.split()), "company_first": True,
             "current_future_separated": True, "single_product_status": True}
 
+def validate_solver_development():
+    manifest_path = SOLVER_DIR + "/manifest.json"
+    record = json.loads((ROOT / manifest_path).read_text(encoding="utf-8"))
+    check(record.get("owner") == OWNER, "Solver diagnostic copyright changed")
+    check(record.get("processing") == "Original PNG bytes, dimensions and scientific content preserved. No cropping, resampling, smoothing or generated curves.",
+          "Solver diagnostic original-byte boundary missing")
+    check("not independent experimental studies" in record.get("context", ""), "Related solver figures misrepresented")
+    check([item.get("id") for item in record["images"]] == list(SOLVER_APPROVED), "Solver figure selection changed")
+    raw = (ROOT / "solver-development.html").read_text(encoding="utf-8")
+    main = Page(raw)
+    main_content = Page(re.search(r'<main[^>]*>([\s\S]*?)</main>', raw).group(1)).text
+    words = len(main_content.split())
+    check(300 <= words <= 450, "Solver page should be 300 to 450 words: " + str(words))
+    check(SOLVER_NOTICE in main.text, "Solver verification boundary missing")
+    for phrase in ["FDTD", "finite difference time domain", "not a measurement",
+                   "same uniform TEM pulse-source study", "not two independent studies"]:
+        check(phrase in main.text, "Solver scientific context missing: " + phrase)
+    images = set()
+    for item in record["images"]:
+        approved = SOLVER_APPROVED[item["id"]]
+        rel = SOLVER_DIR + "/" + item["id"] + ".png"
+        images.add(rel)
+        check(item.get("path") == rel, "Unapproved solver asset path")
+        check(set(item) == {"id", "path", "sha256", "width", "height", "bytes", "case", "title",
+                            "purpose", "caption", "scope", "alt", "detail"}, "Private/unexpected solver manifest field")
+        check(item.get("case") == "Uniform TEM pulse-source checks", "Solver case attribution changed")
+        for key, value in approved.items():
+            check(item.get(key) == value, "Solver diagnostic identity changed: " + key)
+        png = read_png(ROOT / rel)
+        check(sha(ROOT / rel) == approved["sha256"] and (ROOT / rel).stat().st_size == approved["bytes"],
+              "Original solver PNG bytes changed: " + rel)
+        check((png["width"], png["height"]) == (approved["width"], approved["height"]), "Solver PNG dimensions")
+        check(all(item.get(key) for key in ["title", "purpose", "caption", "scope", "alt"]), "Solver caption/scope missing")
+        detail = Page((ROOT / item["detail"]).read_text(encoding="utf-8"))
+        check("../solver-development.html#" + item["id"] in detail.hrefs and "../" + rel in detail.hrefs,
+              "Solver image navigation missing")
+        check(SOLVER_NOTICE in detail.text, "Solver detail qualification boundary missing")
+        for page, prefix in [(main, ""), (detail, "../")]:
+            figures = [f for f in page.figures if any(a.get("src") == prefix + rel for a in f["images"])]
+            check(len(figures) == 1, "Solver image missing or duplicated")
+            if figures:
+                a = figures[0]["images"][0]
+                check(a.get("width") == str(approved["width"]) and a.get("height") == str(approved["height"]),
+                      "Solver HTML image proportions changed")
+                check(a.get("alt") == item["alt"] and item["caption"] in " ".join(figures[0]["data"]),
+                      "Solver figure caption/alt differs from public provenance")
+                if prefix == "":
+                    check(a.get("loading") == "lazy", "Below-fold solver plot should lazy-load")
+    check({p.relative_to(ROOT).as_posix() for p in (ROOT / SOLVER_DIR).iterdir()} == images | {manifest_path},
+          "Unexpected file in solver asset publication directory")
+    for rel in SOLVER_PAGES:
+        text = (ROOT / rel).read_text(encoding="utf-8")
+        page = Page(text)
+        title = re.search(r'<title>(.*?)</title>', text).group(1)
+        check(page.metas.get("og:title") == page.metas.get("twitter:title") == title, "Solver social title")
+        check(page.metas.get("og:description") == page.metas.get("twitter:description") == page.metas["description"],
+              "Solver social description")
+        check([a.get("href") for t, a in page.tags if t == "link" and a.get("rel") == "canonical"] ==
+              ["https://www.dadlabs.de/" + rel], "Solver canonical URL")
+        check(page.metas.get("og:url") == "https://www.dadlabs.de/" + rel, "Solver social URL")
+        expected_image = record["images"][0] if rel == SOLVER_PAGES[0] else next(i for i in record["images"] if i["detail"] == rel)
+        check(page.metas.get("og:image") == page.metas.get("twitter:image") == "https://www.dadlabs.de/" + expected_image["path"],
+              "Solver social image")
+        check(page.metas.get("og:image:alt") == page.metas.get("twitter:image:alt") == expected_image["alt"], "Solver social alt")
+        check(page.metas.get("og:image:width") == str(expected_image["width"]) and
+              page.metas.get("og:image:height") == str(expected_image["height"]), "Solver social dimensions")
+        check(not re.search(r"\b(?:FTDT|Feko|fully validated|externally verified|industry leading|unmatched accuracy|DAD-owned|component-native|explicit contracts)\b", page.text, re.I),
+              "Inappropriate solver public claim")
+    return images, {"figures": len(images), "main_words": words, "original_png_bytes": sum(i["bytes"] for i in record["images"])}
+
+
 def validate():
     paths = public_files()
     historical = validate_historical()
+    solver_images, solver_report = validate_solver_development()
     brand_record = json.loads((ROOT/"assets/brand/blue_field_sculpture_manifest.json").read_text(encoding="utf-8"))
     check("Not scientific data" in brand_record["role"] and "Built-in image generation" in brand_record["method"], "Brand illustration classification missing")
     for rel, expected in BRAND_IMAGES.items():
@@ -748,7 +839,7 @@ def validate():
         current_copy[item["id"]]=item
     check({p.relative_to(ROOT).as_posix() for p in (ROOT/CURRENT_DIR).glob("*.png")}==allowed_images, "Unapproved current PNG")
 
-    active = ACTIVE + ["views/"+key+".html" for key in CURRENT_APPROVED] + ["docs/"+key+".html" for key in CURRENT_NOTES] + ["docs/index.html"]
+    active = ACTIVE + SOLVER_PAGES + ["views/"+key+".html" for key in CURRENT_APPROVED] + ["docs/"+key+".html" for key in CURRENT_NOTES] + ["docs/index.html"]
     for rel in active:
         text=(ROOT/rel).read_text(encoding="utf-8")
         check(not re.search(r"[\u2013\u2014]|&(?:ndash|mdash);",text), "En/em dash: "+rel)
@@ -775,11 +866,12 @@ def validate():
         CURRENT_DIR+"/manifest.json",CURRENT_DIR+"/source-selection.json","docs/index.html",
         "assets/brand/README.md","assets/brand/blue_field_sculpture_manifest.json", "favicon.ico", "assets/brand/legacy_kernel_wave_favicon.ico"
     ])|allowed_images|set(BRAND_IMAGES)|{"views/"+key+".html" for key in list(CURRENT_APPROVED)+LEGACY_VIEWS}|{"docs/"+key+".html" for key in CURRENT_NOTES}
+    allowed_changes |= set(SOLVER_PAGES) | solver_images | {SOLVER_DIR + "/manifest.json"}
     check(changed<=allowed_changes,"Changes outside website allowlist: "+str(sorted(changed-allowed_changes)))
     for rel in changed|set(git("diff","--cached","--name-only").splitlines()):
         check(Path(rel).name not in {e["original"] for e in CURRENT_APPROVED.values()}, "Raw source published: "+rel)
         if Path(rel).suffix.lower() in SCIENTIFIC_IMAGE_SUFFIXES:
-            check(rel in allowed_images or rel in BRAND_IMAGES,"Unapproved image change: "+rel)
+            check(rel in allowed_images or rel in BRAND_IMAGES or rel in solver_images,"Unapproved image change: "+rel)
 
     html_count=image_count=0
     for rel in paths:
@@ -795,12 +887,16 @@ def validate():
             check(a.get("width","").isdigit() and a.get("height","").isdigit(), "Missing image dimensions: "+rel)
             if "assets/brand/" not in a.get("src",""):
                 target,_=local_target(p,a["src"])
-                check(target.relative_to(ROOT).as_posix() in allowed_images, "Old or unapproved active image: "+rel)
+                check(target.relative_to(ROOT).as_posix() in allowed_images | solver_images, "Old or unapproved active image: "+rel)
         check(sum(t=="h1" for t,_ in page.tags)==1,"Expected one H1: "+rel)
         lang="de" if rel in {"impressum.html","datenschutz.html"} else "en"
         check(any(t=="html" and a.get("lang")==lang for t,a in page.tags),"Language missing: "+rel)
         check(page.metas.get("description"),"Meta description missing: "+rel)
         legal_footer_audit(raw, rel)
+        if rel not in {"impressum.html", "legal-notice.html", "datenschutz.html"}:
+            header = Page(re.search(r'<header[^>]*>([\s\S]*?)</header>', raw).group(1))
+            check((ROOT / "solver-development.html").resolve() in {local_target(p, h)[0] for h in header.hrefs},
+                  "Solver Development navigation missing: " + rel)
         if rel.startswith("views/"): check(NOTICE in page.text,"Detail preview boundary missing: "+rel)
         if rel.startswith("docs/"):
             check('class="docs-page"' in raw and "DigitalArtDeco" in page.text,"Styled documentation missing: "+rel)
@@ -874,6 +970,7 @@ def validate():
     return {"status":"PASS" if not FAILURES else "FAIL","current_captures":len(current_copy),
             "current_png_bytes":sum(e["bytes"] for e in current_copy.values()),"historical":historical,
             "protected_files":len(PROTECTED),"legal_core_checks":len(LEGAL_CORE_HASHES),
+            "solver_development":solver_report,
             "html_pages":html_count,"html_images":image_count,"public_files_scanned":len(paths),
             "changed_paths":sorted(changed),"copy_audit":audit,"failures":FAILURES,
             "private_writes":0,"solver_runs":0,"network_requests":0}

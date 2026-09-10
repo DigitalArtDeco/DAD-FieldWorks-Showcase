@@ -1,5 +1,9 @@
 # Asset Manifest
 
+## Solver Development diagnostics: 10 September 2026
+
+Two original PNGs document numerical reference comparison and returning-wave superposition from the same uniform TEM source study. Their [public manifest](images/solver-development/manifest.json) records original hashes, dimensions, captions and limited scope. The images support [Solver Development](../solver-development.html), not a general accuracy claim or external certification. No scientific data were recalculated or altered for publication.
+
 ## Current company website assets: 9 September 2026
 
 Five user-supplied application images are published as lossless PNG crops. The [current manifest](images/dad-fieldworks/application-2026-09-09/manifest.json) records source basenames, hashes, dimensions, crop rectangles, pixel hashes, captions and uses. The [source selection](images/dad-fieldworks/application-2026-09-09/source-selection.json) is the reproducible preparation recipe. See [processing notes](../docs/company_screenshot_provenance.md).

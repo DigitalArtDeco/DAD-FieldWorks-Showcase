@@ -58,6 +58,7 @@ def main():
     home = (ROOT / "index.html").read_text(encoding="utf-8")
     header = re.search(r'    <a class="skip-link"[\s\S]*?</header>', home).group()
     header = header.replace('href="index.html"', 'href="../index.html"')
+    header = header.replace('href="solver-development.html"', 'href="../solver-development.html"')
     header = header.replace('src="assets/', 'src="../assets/')
     header = re.sub(r'href="#(?!main-content)([^"]+)"', r'href="../index.html#\1"', header)
     footer = re.search(r'    <footer>[\s\S]*?</footer>', home).group()
