@@ -4,7 +4,17 @@
 
 Two original PNGs document numerical reference comparison and returning-wave superposition from the same uniform TEM source study. Their [public manifest](images/solver-development/manifest.json) records original hashes, dimensions, captions and limited scope. The images support [Solver Development](../solver-development.html), not a general accuracy claim or external certification. No scientific data were recalculated or altered for publication.
 
-## Current company website assets: 9 September 2026
+## Current company website assets: 13 September 2026
+
+Five new supplied captures show model geometry, three signed H_y views and the Smith chart of the Uniform Shielded TEM Reference Line. The field images share saved step 4096, not a time sequence. The Smith view selects S(2,2) at 5.500 GHz with a 50 ohm reference and optional wavelength scales. These are graphical aids, not a line-length or deembedding calculation.
+
+The [series manifest](images/dad-fieldworks/application-2026-09-12/manifest.json) and [crop recipe](images/dad-fieldworks/application-2026-09-12/source-selection.json) record all source and derivative identities. The series name follows the visible desktop date; the capture date was not independently established. See [current processing notes](../docs/company_screenshot_provenance.md).
+
+The large product image and social preview now use the longitudinal H_y viewer excerpt. Three compact supporting views show transverse geometry, contours and the reference model. The new Smith image replaces the former active Via Transition image without overwriting its bytes. Tuto sketching and the Via Transition Cartesian plot remain in the gallery. No private path or desktop taskbar is present in the new derivatives.
+
+## Historical company website selection: 9 September 2026
+
+The following selection description preserves the earlier publication state. Its main-image, social-preview and current-manifest roles refer to that date; original assets and manifest bytes remain unchanged.
 
 Five user-supplied application images are published as lossless PNG crops. The [current manifest](images/dad-fieldworks/application-2026-09-09/manifest.json) records source basenames, hashes, dimensions, crop rectangles, pixel hashes, captions and uses. The [source selection](images/dad-fieldworks/application-2026-09-09/source-selection.json) is the reproducible preparation recipe. See [processing notes](../docs/company_screenshot_provenance.md).
 

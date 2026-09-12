@@ -14,7 +14,7 @@ DOCS = ROOT / "docs"
 PAGES = {
     "current_public_status.md": ("Product scope", "The current DAD FieldWorks development scope, result views and exchange limits."),
     "claim_boundaries.md": ("Technical boundaries", "How to interpret the application views, material assumptions and development claims."),
-    "company_screenshot_provenance.md": ("Image provenance", "The five supplied application images, their crops and their technical context."),
+    "company_screenshot_provenance.md": ("Image provenance", "The current application images, retained earlier views, crops and technical context."),
     "publication_notes.md": ("Website publication", "Public assets and the existing static website publication route.")
 }
 

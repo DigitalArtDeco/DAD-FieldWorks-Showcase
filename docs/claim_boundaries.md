@@ -8,21 +8,24 @@ Development preview. External validation is not yet complete. Not released for p
 
 Public capability wording covers the native Windows project workflow, supported material and stackup authoring, editable and compiled geometry, ports and frequencies, independent solver excitations, actual complex S matrices, separate result viewers, saved native fields, project persistence and bounded Touchstone export.
 
-Five implemented parametric demo families are named in the [current capability summary](current_public_status.md). The five current screenshots show Tuto construction and Via Transition results. They are separate examples. No successful Tuto simulation, material-browser image or additional software feature is inferred from these images.
+Five implemented parametric demo families are named in the [current capability summary](current_public_status.md). The current screenshots show the Uniform Shielded TEM Reference Line, the Tuto RF sketcher and the Via Transition Cartesian plot. They are separate examples. No successful Tuto simulation, material-browser image or unshown software feature is inferred from these images.
 
 Implementation, internal test coverage, screenshot publication permission and physical accuracy are different kinds of evidence. None is silently promoted to another.
 
 ## Reading the screenshots
 
 - CURRENT means associated with the current simulation inputs. It is not external validation or formal acceptance.
-- Tuto shows editable geometry in 3D and in the RF sketcher. The sketcher status reports no results and constraints not evaluated.
-- The Via Transition field is the signed magnetic component H_z in A/m, saved step 12288, time 3.071875e-09 s, Z slice 16.
-- That field is a stored time-domain state at native Yee coordinates, not a field at a Cartesian or Smith marker frequency.
+- The retained Tuto RF sketcher reports no results and constraints not evaluated. Its earlier 3D image remains a historical application view.
+- The three current field views show signed H_y in A/m in the Uniform Shielded TEM Reference Line, saved step 4096, time 1.023875e-09 s. Normal Y at index 10 is longitudinal; normal X at index 21 is transverse.
+- These are different views of one saved time-domain state at native Yee coordinates, not a time sequence or fields at a Cartesian or Smith marker frequency.
+- H_y is a signed component, not the total field magnitude, magnetic flux density, power density or field lines. Transparent surfaces and contours show authoring geometry, not compiled solver cells.
 - Different components, slices and color scales must not be presented as a common-scale temporal sequence.
 - The Cartesian plot shows linear magnitude, not dB. Four selected traces connect available samples with straight segments. This is not evidence of a densely sampled sweep.
-- The Smith image selects S(2,2) at 2.800 GHz, with Gamma and normalized and ohmic input-impedance readouts using a 50 ohm reference. No measurement correlation is claimed.
-- Cartesian and Smith images select different marker frequencies.
+- The Smith image selects S(2,2) of the Uniform Shielded TEM Reference Line at 5.500 GHz, with Gamma and normalized and ohmic input-impedance readouts using a 50 ohm reference. No measurement correlation is claimed.
+- The option Smith: wavelength scales adds graphical generator/load aids for a lossless-line convention. The image is not a separate line-length calculation, deembedding result, VSWR analysis or evidence of new mouse interaction.
+- The retained Via Transition Cartesian plot and the new Smith chart belong to different projects and frequency samples.
 - The 3D image shows authoring geometry, not compiled solver geometry. Its color does not establish finite copper conductivity or computed metal losses.
+- The shielded reference line does not establish open-port, microstrip or antenna support. Screenshots are not new scientific checks or independent validation studies.
 
 ## Material and exchange limits
 

@@ -15,15 +15,15 @@
     <meta property="og:title" content="DigitalArtDeco Labs | Electromagnetic Simulation Software">
     <meta property="og:description" content="DigitalArtDeco Labs develops scientific software for electromagnetic simulation and RF engineering. Discover our work and DAD FieldWorks.">
     <meta property="og:url" content="https://www.dadlabs.de/">
-    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/application-2026-09-09/pcb-geometry.png">
-    <meta property="og:image:width" content="1091">
-    <meta property="og:image:height" content="732">
-    <meta property="og:image:alt" content="Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.">
+    <meta property="og:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal-preview.png">
+    <meta property="og:image:width" content="1412">
+    <meta property="og:image:height" content="481">
+    <meta property="og:image:alt" content="Uniform Shielded TEM Reference Line: signed H_y in A/m on a longitudinal Y-normal slice, with transparent geometry and its color scale.">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="DigitalArtDeco Labs | Electromagnetic Simulation Software">
     <meta name="twitter:description" content="DigitalArtDeco Labs develops scientific software for electromagnetic simulation and RF engineering. Discover our work and DAD FieldWorks.">
-    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/application-2026-09-09/pcb-geometry.png">
-    <meta name="twitter:image:alt" content="Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.">
+    <meta name="twitter:image" content="https://www.dadlabs.de/assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal-preview.png">
+    <meta name="twitter:image:alt" content="Uniform Shielded TEM Reference Line: signed H_y in A/m on a longitudinal Y-normal slice, with transparent geometry and its color scale.">
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -90,40 +90,56 @@
           <p>Edit supported structures, inspect them in 3D and configure ports and calculations. Review calculated port responses and saved field components while managing projects and their associated results.</p>
           <p class="product-status">DAD FieldWorks is in development. The images show the current application.</p>
         </div>
+        <div id="geometry-fields" class="gallery-heading"><h3>Geometry and fields in context</h3><p>Model geometry and saved field components share one view. Transparent surfaces and section contours show where the field distribution lies within the modeled structure.</p></div>
           <figure class="featured-view">
-            <a class="image-link" href="views/pcb-geometry.html" aria-label="Enlarge: PCB geometry in 3D">
-              <img src="assets/images/dad-fieldworks/application-2026-09-09/pcb-geometry.png" width="1091" height="732" loading="lazy" decoding="async" alt="Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.">
+            <a class="image-link" href="views/hy-longitudinal.html" aria-label="Enlarge: Fields within the model">
+              <img src="assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal-preview.png" width="1412" height="481" loading="lazy" decoding="async" alt="Uniform Shielded TEM Reference Line: signed H_y in A/m on a longitudinal Y-normal slice, with transparent geometry and its color scale.">
             </a>
-            <figcaption><h3>PCB geometry in 3D</h3><p>Tuto: inspect the editable PCB structure in a 3D view.</p><a href="views/pcb-geometry.html">View image<span class="sr-only">: PCB geometry in 3D</span> <span aria-hidden="true">↗</span></a></figcaption>
+            <figcaption><h4>Fields within the model</h4><p>Saved H_y field component on a longitudinal slice through the shielded reference line, shown with transparent model geometry.</p><a href="views/hy-longitudinal.html">View image<span class="sr-only">: Fields within the model</span> <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
-        <div class="gallery-heading"><h2>Selected application views</h2><p>The Tuto example shows construction. The Via Transition example shows results from a different project.</p></div>
+        <div class="context-gallery">
+          <figure>
+            <a class="image-link" href="views/hy-transverse.html" aria-label="Enlarge: A section in its spatial context">
+              <img src="assets/images/dad-fieldworks/application-2026-09-12/hy-transverse-preview.png" width="1412" height="481" loading="lazy" decoding="async" alt="Uniform Shielded TEM Reference Line: signed H_y in A/m on a transverse X-normal slice inside transparent model geometry, with its color scale.">
+            </a>
+            <figcaption><h4>A section in its spatial context</h4><p>A transverse H_y slice located within the transparent geometry of the same reference model.</p><a href="views/hy-transverse.html">View image<span class="sr-only">: A section in its spatial context</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="views/hy-contours.html" aria-label="Enlarge: Field distribution and geometry contours">
+              <img src="assets/images/dad-fieldworks/application-2026-09-12/hy-contours-preview.png" width="1412" height="481" loading="lazy" decoding="async" alt="Uniform Shielded TEM Reference Line: signed H_y in A/m on an X-normal cross-section with conductor contours, orientation axes and color scale.">
+            </a>
+            <figcaption><h4>Field distribution and geometry contours</h4><p>Section contours show the conductor boundaries alongside the signed H_y field distribution.</p><a href="views/hy-contours.html">View image<span class="sr-only">: Field distribution and geometry contours</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+          <figure>
+            <a class="image-link" href="views/reference-model.html" aria-label="Enlarge: The reference model">
+              <img src="assets/images/dad-fieldworks/application-2026-09-12/reference-model.png" width="1132" height="750" loading="lazy" decoding="async" alt="Cropped DAD FieldWorks workspace showing the shielded TEM reference model, port labels p1 and p2, and 3D view controls.">
+            </a>
+            <figcaption><h4>The reference model</h4><p>The shielded TEM reference line in the DAD FieldWorks workspace. Cropped application view.</p><a href="views/reference-model.html">View image<span class="sr-only">: The reference model</span> <span aria-hidden="true">↗</span></a></figcaption>
+          </figure>
+        </div>
+        <p class="image-note">Development views from the Uniform Shielded TEM Reference Line. The three field images show signed H_y in A/m at one saved time step in different views, not a time sequence. Their previews are viewer excerpts; open each image for the application controls. The geometry is the editable model, not solver cell occupancy.</p>
+        <div class="gallery-heading"><h3>Sketching and port responses</h3><p>The Tuto example shows construction. The Cartesian plot shows Via Transition. The Smith chart shows the Uniform Shielded TEM Reference Line, a different project.</p></div>
         <div class="result-gallery">
           <figure>
             <a class="image-link" href="views/rf-sketcher.html" aria-label="Enlarge: Dimensioned geometry">
               <img src="assets/images/dad-fieldworks/application-2026-09-09/rf-sketcher.png" width="1440" height="859" loading="lazy" decoding="async" alt="Tuto RF sketcher showing a 40 mm by 20 mm outline, a trace and dimensional relations. Constraints are not evaluated.">
             </a>
-            <figcaption><h3>Dimensioned geometry</h3><p>Tuto: define geometry and dimensional relations in the RF sketcher.</p><a href="views/rf-sketcher.html">View image<span class="sr-only">: Dimensioned geometry</span> <span aria-hidden="true">↗</span></a></figcaption>
+            <figcaption><h4>Dimensioned geometry</h4><p>Tuto: define geometry and dimensional relations in the RF sketcher.</p><a href="views/rf-sketcher.html">View image<span class="sr-only">: Dimensioned geometry</span> <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
           <figure>
             <a class="image-link" href="views/cartesian-s-parameters.html" aria-label="Enlarge: Reflection and transmission">
               <img src="assets/images/dad-fieldworks/application-2026-09-09/cartesian-s-parameters.png" width="1440" height="859" loading="lazy" decoding="async" alt="Via Transition Cartesian plot of four S-parameter traces in linear magnitude, with a marker at 1.700 GHz.">
             </a>
-            <figcaption><h3>Reflection and transmission</h3><p>Via Transition: compare reflection and transmission magnitudes at the available frequency samples.</p><a href="views/cartesian-s-parameters.html">View image<span class="sr-only">: Reflection and transmission</span> <span aria-hidden="true">↗</span></a></figcaption>
+            <figcaption><h4>Reflection and transmission</h4><p>Via Transition: compare reflection and transmission magnitudes at the available frequency samples.</p><a href="views/cartesian-s-parameters.html">View image<span class="sr-only">: Reflection and transmission</span> <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
-          <figure>
+          <figure class="smith-view">
             <a class="image-link" href="views/smith-chart.html" aria-label="Enlarge: Reflection and impedance">
-              <img src="assets/images/dad-fieldworks/application-2026-09-09/smith-chart.png" width="1440" height="860" loading="lazy" decoding="async" alt="Via Transition Smith chart for S(2,2), with reflection and input impedance readouts at 2.800 GHz.">
+              <img src="assets/images/dad-fieldworks/application-2026-09-12/smith-chart.png" width="1440" height="860" loading="lazy" decoding="async" alt="DAD FieldWorks Smith chart for S(2,2) of the Uniform Shielded TEM Reference Line, with a 5.500 GHz marker, 50 ohm reference, reflection and impedance readouts, and generator and load wavelength scales.">
             </a>
-            <figcaption><h3>Reflection and impedance</h3><p>Via Transition: inspect S(2,2) reflection and impedance readouts on a Smith chart.</p><a href="views/smith-chart.html">View image<span class="sr-only">: Reflection and impedance</span> <span aria-hidden="true">↗</span></a></figcaption>
-          </figure>
-          <figure>
-            <a class="image-link" href="views/magnetic-field.html" aria-label="Enlarge: A saved magnetic field">
-              <img src="assets/images/dad-fieldworks/application-2026-09-09/magnetic-field.png" width="1440" height="859" loading="lazy" decoding="async" alt="Via Transition magnetic field component H_z in A/m at saved step 12288 on Z slice 16, with its signed color scale.">
-            </a>
-            <figcaption><h3>A saved magnetic field</h3><p>Via Transition: locate a signed magnetic field component at a saved time step.</p><a href="views/magnetic-field.html">View image<span class="sr-only">: A saved magnetic field</span> <span aria-hidden="true">↗</span></a></figcaption>
+            <figcaption><h4>Reflection and impedance</h4><p>Uniform Shielded TEM Reference Line: S(2,2) in the Smith chart, with reflection and impedance readouts at 5.500 GHz and optional wavelength scales.</p><a href="views/smith-chart.html">View image<span class="sr-only">: Reflection and impedance</span> <span aria-hidden="true">↗</span></a></figcaption>
           </figure>
         </div>
-        <p class="image-note">The field image is a saved time-domain view, not a field at the frequency selected in either plot. The Cartesian plot shows linear magnitude, not dB.</p>
+        <p class="image-note">The field images are saved time-domain views, not fields at the frequency selected in either plot. The Cartesian plot shows linear magnitude, not dB. Its project and frequency samples differ from the Smith view.</p>
         <p class="detail-link">For the supported scope and validation limits, see the <a href="docs/current_public_status.html">technical product notes</a>.</p>
       </section>
 

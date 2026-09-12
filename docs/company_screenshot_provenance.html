@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Current application screenshot provenance | DigitalArtDeco Labs</title>
-    <meta name="description" content="The five supplied application images, their crops and their technical context.">
+    <meta name="description" content="The current application images, retained earlier views, crops and technical context.">
     <link rel="canonical" href="https://www.dadlabs.de/docs/company_screenshot_provenance.html">
     <link rel="stylesheet" href="../styles.css">
     <link rel="icon" href="../favicon.ico?v=field-sculpture" sizes="16x16 32x32 48x48 64x64">
@@ -24,56 +24,73 @@
     </header>
     <main id="main-content" class="docs-page">
       <nav class="breadcrumbs" aria-label="Breadcrumb"><a href="../index.html">Company</a><span aria-hidden="true">/</span><a href="index.html">Documentation</a><span aria-hidden="true">/</span><span>Image provenance</span></nav>
-      <div class="docs-heading"><p class="eyebrow">DAD FieldWorks · Technical notes</p><h1>Current application screenshot provenance</h1><p class="lead">The five supplied application images, their crops and their technical context.</p></div>
+      <div class="docs-heading"><p class="eyebrow">DAD FieldWorks · Technical notes</p><h1>Current application screenshot provenance</h1><p class="lead">The current application images, retained earlier views, crops and technical context.</p></div>
       <div class="docs-layout">
-        <aside class="docs-sidebar"><details open><summary>On this page</summary><nav aria-label="On this page"><a href="#selection-and-processing">Selection and processing</a><a href="#interpretation">Interpretation</a></nav></details><a class="docs-back" href="index.html">All documentation</a></aside>
-        <article class="document-content"><p>Selection date: 9 September 2026. Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt).</p>
-<p>Five user-supplied captures support the compact DAD FieldWorks section of the DigitalArtDeco Labs company website. Publication permission comes from the user's website request. No executable version was supplied; file hashes do not identify a software release or prove scientific accuracy.</p>
-<h2 id="selection-and-processing">Selection and processing</h2>
+        <aside class="docs-sidebar"><details open><summary>On this page</summary><nav aria-label="On this page"><a href="#current-selection-and-processing">Current selection and processing</a><a href="#field-interpretation">Field interpretation</a><a href="#smith-replacement">Smith replacement</a><a href="#retained-views-and-boundaries">Retained views and boundaries</a></nav></details><a class="docs-back" href="index.html">All documentation</a></aside>
+        <article class="document-content"><p>Selection updated 13 September 2026. Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt).</p>
+<p>Five new user-supplied application screenshots show the Uniform Shielded TEM Reference Line. The homepage also retains the Tuto RF sketcher and Via Transition Cartesian plot from the earlier selection. These are different projects, not a continuous modeling or result sequence.</p>
+<p>Publication permission comes from the user's website request. No executable build provenance was supplied. File and pixel hashes identify images, not a software release or a scientific accuracy result.</p>
+<h2 id="current-selection-and-processing">Current selection and processing</h2>
+<p>The original desktop clocks display 12 September 2026. This is recorded as the on-screen date, not an independently established capture date. The folder identifies that supplied series; 13 September is the selection date.</p>
 <table>
 <thead>
 <tr>
-<th>Original</th>
-<th>Public view</th>
-<th>Processing</th>
+<th>View</th>
+<th>Detail crop</th>
+<th>Gallery crop</th>
+<th>Context</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>Screenshot (43).png</td>
-<td>Tuto authoring geometry in 3D</td>
-<td>Viewer crop: (347, 103, 1438, 835), right and bottom exclusive</td>
+<td>Fields within the model</td>
+<td>(0, 0, 1440, 860)</td>
+<td>(14, 321, 1426, 802)</td>
+<td>Signed H_y in A/m; normal Y, index 10; transparent geometry</td>
 </tr>
 <tr>
-<td>Screenshot (42).png</td>
-<td>Tuto RF sketcher</td>
-<td>Full image, 1440 × 859</td>
+<td>A section in its spatial context</td>
+<td>(0, 0, 1440, 860)</td>
+<td>(14, 321, 1426, 802)</td>
+<td>Signed H_y in A/m; normal X, index 21; transparent geometry</td>
 </tr>
 <tr>
-<td>Screenshot (37).png</td>
-<td>Via Transition linear S-parameter magnitude</td>
-<td>Full image, 1440 × 859</td>
+<td>Field distribution and geometry contours</td>
+<td>(0, 0, 1440, 860)</td>
+<td>(14, 321, 1426, 802)</td>
+<td>Signed H_y in A/m; normal X, index 21; section contours</td>
 </tr>
 <tr>
-<td>Screenshot (38).png</td>
-<td>Via Transition S(2,2) Smith readouts</td>
-<td>Full image, 1440 × 860</td>
+<td>The reference model</td>
+<td>(307, 86, 1439, 836)</td>
+<td>Same as detail</td>
+<td>Authoring geometry and port labels</td>
 </tr>
 <tr>
-<td>Screenshot (41).png</td>
-<td>Via Transition saved H_z component in A/m</td>
-<td>Full image, 1440 × 859</td>
+<td>Reflection and impedance</td>
+<td>(0, 0, 1440, 860)</td>
+<td>Same as detail</td>
+<td>S(2,2), 5.500 GHz, 50 ohm reference, Smith wavelength scales</td>
 </tr>
 </tbody>
 </table>
-<p>The 3D crop removes the private project path and unrelated desktop areas. It retains the complete displayed geometry, viewer controls and development labels. The other captures contain no visible personal paths.</p>
-<p>All five PNGs preserve the selected source pixels exactly. No resampling, smoothing, recoloring, retouching or compositing was used. Original files remain unchanged and are not copied into this repository.</p>
-<p>The <a href="../assets/images/dad-fieldworks/application-2026-09-09/manifest.json">manifest</a> records original and derivative SHA-256 identities, dimensions, crops, RGBA pixel hashes, captions and uses. The <a href="../assets/images/dad-fieldworks/application-2026-09-09/source-selection.json">selection recipe</a> can be processed with <code>scripts/prepare_company_screenshots.py</code>. The offline website validator pins both current and retained historical image identities.</p>
-<h2 id="interpretation">Interpretation</h2>
-<p>Tuto documents construction, not a successful simulation. The sketcher reports unevaluated constraints and no results. Via Transition is a separate result example.</p>
-<p>The Cartesian view uses linear magnitude. The Smith view selects S(2,2) at 2.800 GHz. The field view is signed H_z in A/m at saved step 12288, time 3.071875e-09 s, on Z slice 16. It is not a field at either plot's marker frequency.</p>
-<p>Development preview. External validation is not yet complete. Not released for production use. See the <a href="claim_boundaries.html">technical boundaries</a>.</p>
-<p>Earlier image records remain unchanged and are listed as <a href="index.html#historical-visual-records">historical documentation</a>.</p>
+<p>Rectangles use left, top, right and bottom coordinates; right and bottom are exclusive. All five originals are 1440 × 900 pixels. Field and Smith detail images are 1440 × 860; field gallery excerpts are 1412 × 481; the model crop is 1132 × 750.</p>
+<p>The detail crops remove the Windows taskbar. The model crop also excludes the private project path and left inspector. It retains the displayed geometry, port labels, viewer controls and development notices. Field gallery excerpts retain the rendered model, field, axes and full color scale; their captions supply the project and development context. The contours capture already meets the render-area edge in the original; no hidden content was reconstructed.</p>
+<p>Only rectangular cropping and lossless PNG encoding were applied. Every retained pixel is unchanged. No resizing, smoothing, recoloring, retouching, compositing or generative processing was used. The full Smith circle, external scales, central result trace and right-hand readouts remain intact.</p>
+<p>The unchanged originals are retained in an ignored local preparation area excluded from the published Git tree and local preview server. They are not public website assets.</p>
+<p>The <a href="../assets/images/dad-fieldworks/application-2026-09-12/manifest.json">new manifest</a> records supplied basenames, original and derivative hashes, dimensions, crop rectangles, pixel hashes, image roles and captions. The <a href="../assets/images/dad-fieldworks/application-2026-09-12/source-selection.json">selection recipe</a> uses the existing screenshot preparation script with an optional recipe argument.</p>
+<h2 id="field-interpretation">Field interpretation</h2>
+<p>The three field images show the same saved step 4096, time 1.023875e-09 s. They are different slices or display modes, not a time sequence. H_y is a signed magnetic component in A/m, not the total field magnitude, magnetic flux density, power density or field lines.</p>
+<p>Transparent surfaces and section contours locate the field within the authoring model. They do not show compiled cells or a newly generated mesh. This is a shielded TEM reference line, not an open microstrip or antenna example.</p>
+<h2 id="smith-replacement">Smith replacement</h2>
+<p>The active <a href="../views/smith-chart.html">Smith detail page</a> now shows the Uniform Shielded TEM Reference Line, S(2,2), marker 5.500 GHz and a 50 ohm reference. The selected option is Smith: wavelength scales. The outer generator and load scales are graphical aids under the shown lossless-line convention, not a separate physical line-length or deembedding calculation.</p>
+<p>This replaces the earlier active Via Transition Smith screenshot at 2.800 GHz. Its <a href="../assets/images/dad-fieldworks/application-2026-09-09/smith-chart.png">original image</a>, <a href="../assets/images/dad-fieldworks/application-2026-09-09/manifest.json">manifest</a> and <a href="company_screenshot_provenance_2026_09_09.md">dated provenance</a> remain unchanged.</p>
+<p>The Smith marker does not specify the frequency of the saved time-domain field slices. The retained Via Transition Cartesian view has its own project and frequency samples.</p>
+<h2 id="retained-views-and-boundaries">Retained views and boundaries</h2>
+<p>The Tuto RF sketcher still reports unevaluated constraints and no results. The Via Transition Cartesian plot still shows linear magnitude with its marker at 1.700 GHz. Their original assets and descriptions are preserved.</p>
+<p>The earlier Tuto 3D image and Via Transition H_z field have left the active homepage gallery. Their files and detail pages remain available as earlier application views. The numerical diagnostic plots on Solver Development remain separate and unchanged.</p>
+<p>These user-supplied application captures are not a new simulation, measurement, GUI test or validation study performed for the website.</p>
+<p>Development preview. External validation is not yet complete. Not released for production use. See the <a href="claim_boundaries.html">technical boundaries</a> and <a href="index.html#historical-visual-records">historical documentation</a>.</p>
 
           <p class="source-link"><a href="company_screenshot_provenance.md">Read the Markdown source</a></p>
         </article>

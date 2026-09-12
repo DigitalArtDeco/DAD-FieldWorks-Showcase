@@ -8,7 +8,7 @@ DigitalArtDeco Labs develops scientific software for electromagnetic simulation 
 
 DAD FieldWorks is our software project for PCB and RF simulation. The Windows application combines supported geometry editing, material and layer definitions, calculations and result inspection.
 
-The current company presentation uses five supplied images: Tuto construction and sketching, plus Via Transition port responses and a saved magnetic field. They document different projects, not one continuous modeling example.
+The current company presentation combines model geometry, three saved H_y views and a Smith chart from the Uniform Shielded TEM Reference Line. The Tuto RF sketcher and Via Transition Cartesian plot remain separate examples. The field views show one saved step, not a time sequence or fields at the Smith marker frequency.
 
 DAD FieldWorks is in development. External validation is not yet complete, and it is not released for production use. The website's outlook describes future goals, not capabilities available today. This repository provides neither the application nor a software download.
 

@@ -1,0 +1,171 @@
+{
+  "date": "2026-09-13",
+  "date_context": "Selection date. The original desktop clock displays 12 September 2026; the capture date and executable build were not independently supplied.",
+  "context": "The three H_y images show different views of the same saved step, not a time sequence and not a field at a plot marker frequency. Geometry is authoring geometry, not solver cell occupancy. Smith wavelength scales are graphical aids, not a line-length calculation or deembedding result.",
+  "sources": [
+    {
+      "id": "hy-longitudinal",
+      "original": "codex-clipboard-60dbf1bd-80e9-4128-b651-95eca28fb816.png",
+      "source_sha256": "ae655e5e2432fb24a81f8383a79d21efc432a1bb79e576c33800482527b44858",
+      "title": "Fields within the model",
+      "caption": "Saved H_y field component on a longitudinal slice through the shielded reference line, shown with transparent model geometry.",
+      "alt": "Uniform Shielded TEM Reference Line: signed H_y in A/m on a longitudinal Y-normal slice, with transparent geometry and its color scale.",
+      "use": "Main product image; geometry and fields gallery",
+      "slice_normal": "Y",
+      "slice_index": 10,
+      "display_mode": "Field with transparent 3D geometry",
+      "source_size": [
+        1440,
+        900
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        860
+      ],
+      "group": "Uniform Shielded TEM Reference Line",
+      "origin": "user-supplied application screenshot",
+      "source_screen_date": "2026-09-12",
+      "capture_date": null,
+      "view_kind": "Saved signed magnetic field component",
+      "component": "H_y",
+      "unit": "A/m",
+      "saved_step": 4096,
+      "saved_time_s": "1.023875e-09",
+      "preview_crop": [
+        14,
+        321,
+        1426,
+        802
+      ]
+    },
+    {
+      "id": "hy-transverse",
+      "original": "codex-clipboard-24720fbb-25e7-4f79-8967-5ef8366672c8.png",
+      "source_sha256": "e2cdeb3531c9eef65bada96d7327e3cd4f3601f77655689b35aaf59bc8cd3192",
+      "title": "A section in its spatial context",
+      "caption": "A transverse H_y slice located within the transparent geometry of the same reference model.",
+      "alt": "Uniform Shielded TEM Reference Line: signed H_y in A/m on a transverse X-normal slice inside transparent model geometry, with its color scale.",
+      "use": "Geometry and fields supporting gallery",
+      "slice_normal": "X",
+      "slice_index": 21,
+      "display_mode": "Field with transparent 3D geometry",
+      "source_size": [
+        1440,
+        900
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        860
+      ],
+      "group": "Uniform Shielded TEM Reference Line",
+      "origin": "user-supplied application screenshot",
+      "source_screen_date": "2026-09-12",
+      "capture_date": null,
+      "view_kind": "Saved signed magnetic field component",
+      "component": "H_y",
+      "unit": "A/m",
+      "saved_step": 4096,
+      "saved_time_s": "1.023875e-09",
+      "preview_crop": [
+        14,
+        321,
+        1426,
+        802
+      ]
+    },
+    {
+      "id": "hy-contours",
+      "original": "codex-clipboard-9034cd52-5804-48cd-b32c-ecbc6cbcc238.png",
+      "source_sha256": "0b348779c9c9fcaeecb5598a79300a1801758f53721968f83cf007658d573f9c",
+      "title": "Field distribution and geometry contours",
+      "caption": "Section contours show the conductor boundaries alongside the signed H_y field distribution.",
+      "alt": "Uniform Shielded TEM Reference Line: signed H_y in A/m on an X-normal cross-section with conductor contours, orientation axes and color scale.",
+      "use": "Geometry and fields supporting gallery",
+      "slice_normal": "X",
+      "slice_index": 21,
+      "display_mode": "Field with section contours",
+      "source_size": [
+        1440,
+        900
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        860
+      ],
+      "group": "Uniform Shielded TEM Reference Line",
+      "origin": "user-supplied application screenshot",
+      "source_screen_date": "2026-09-12",
+      "capture_date": null,
+      "view_kind": "Saved signed magnetic field component",
+      "component": "H_y",
+      "unit": "A/m",
+      "saved_step": 4096,
+      "saved_time_s": "1.023875e-09",
+      "preview_crop": [
+        14,
+        321,
+        1426,
+        802
+      ]
+    },
+    {
+      "id": "reference-model",
+      "original": "codex-clipboard-585f9d09-ee3b-4b96-8f49-ce0d874b1268.png",
+      "source_sha256": "6d4d724b32c796d26646f2785ed1c9d3e2874227ab4d3e9d87ade3c41f17d114",
+      "title": "The reference model",
+      "caption": "The shielded TEM reference line in the DAD FieldWorks workspace. Cropped application view.",
+      "alt": "Cropped DAD FieldWorks workspace showing the shielded TEM reference model, port labels p1 and p2, and 3D view controls.",
+      "use": "Geometry and fields supporting gallery",
+      "view_kind": "Authoring geometry",
+      "source_size": [
+        1440,
+        900
+      ],
+      "crop": [
+        307,
+        86,
+        1439,
+        836
+      ],
+      "group": "Uniform Shielded TEM Reference Line",
+      "origin": "user-supplied application screenshot",
+      "source_screen_date": "2026-09-12",
+      "capture_date": null
+    },
+    {
+      "id": "smith-chart",
+      "original": "Screenshot (63).png",
+      "source_sha256": "dabc7a1e5c02a69adda5c98dcaf9f7330a0667baa7b76a91f103a9ff75826340",
+      "title": "Reflection and impedance",
+      "caption": "Uniform Shielded TEM Reference Line: S(2,2) in the Smith chart, with reflection and impedance readouts at 5.500 GHz and optional wavelength scales.",
+      "alt": "DAD FieldWorks Smith chart for S(2,2) of the Uniform Shielded TEM Reference Line, with a 5.500 GHz marker, 50 ohm reference, reflection and impedance readouts, and generator and load wavelength scales.",
+      "use": "Active Smith gallery replacement and existing Smith detail page",
+      "view_kind": "Smith chart",
+      "s_parameter": "S(2,2)",
+      "frequency_marker_ghz": "5.500",
+      "reference_impedance_ohm": 50,
+      "display_mode": "Smith: wavelength scales",
+      "replaces": "assets/images/dad-fieldworks/application-2026-09-09/smith-chart.png",
+      "source_size": [
+        1440,
+        900
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        860
+      ],
+      "group": "Uniform Shielded TEM Reference Line",
+      "origin": "user-supplied application screenshot",
+      "source_screen_date": "2026-09-12",
+      "capture_date": null
+    }
+  ]
+}

@@ -50,17 +50,21 @@ nav a:hover { text-decoration: underline; }
 .product-label img { width: 64px; height: 64px; flex-shrink: 0; }
 .product-status { padding: .85rem 1rem; border-left: 3px solid #7a9dae; background: var(--soft); font-size: .9375rem; color: var(--ink) !important; }
 .featured-view { max-width: 1091px; }
-.image-link { display: block; border: 1px solid var(--line); background: #f5f7f9; border-radius: 3px; overflow: hidden; }
+.image-link { display: block; border: 1px solid var(--line); background: #f5f7f9; border-radius: 3px; }
 .image-link:hover { border-color: var(--blue); }
-.image-link img { width: 100%; }
+.image-link img { width: 100%; height: auto; object-fit: contain; }
 figcaption { padding: 1.1rem 0 .3rem; }
-figcaption h3 { font-size: 1.125rem; margin-bottom: .5rem; }
+figcaption h3, figcaption h4 { font-size: 1.125rem; line-height: 1.25; margin: 0 0 .5rem; font-weight: 600; }
 figcaption p { color: var(--muted); }
 figcaption a { display: inline-block; margin-top: .5rem; font-size: .9375rem; }
 .gallery-heading { max-width: 75ch; margin: 3.5rem 0 1.8rem; }
-.gallery-heading h2 { font-size: 1.55rem; margin-bottom: .65rem; }
+.gallery-heading h2, .gallery-heading h3 { font-size: 1.55rem; margin-bottom: .65rem; }
 .gallery-heading p { color: var(--muted); }
 .result-gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.5rem 2rem; }
+.context-gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; margin-top: 2.5rem; }
+.featured-view { max-width: none; }
+.smith-view { grid-column: 1 / -1; }
+.application-detail .detail-figure img { height: auto; object-fit: contain; }
 .image-note, .detail-link { max-width: 88ch; color: var(--muted); font-size: .9375rem; }
 .image-note { margin-top: 2rem; }
 .outlook-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; }
@@ -121,6 +125,7 @@ footer nav a { font-size: .875rem; }
   .site-header { align-items: flex-start; flex-direction: column; gap: 1rem; }
   .focus-grid { gap: 1.5rem; }
   .outlook-layout, .contact-section { gap: 2rem; }
+  .context-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 720px) {
   .site-header, footer { padding: 1.3rem 1.25rem; }
@@ -129,7 +134,7 @@ footer nav a { font-size: .875rem; }
   .company-hero { padding: 3rem 1.25rem; }
   .lead { font-size: 1.0625rem; }
   .section { padding: 3rem 1.25rem; }
-  .focus-grid, .result-gallery, .outlook-layout, .contact-section { grid-template-columns: 1fr; }
+  .focus-grid, .result-gallery, .context-gallery, .outlook-layout, .contact-section { grid-template-columns: 1fr; }
   .focus-grid { gap: 1.8rem; }
   .section-heading { margin-bottom: 1.8rem; }
   .outlook-layout { gap: 1.5rem; }

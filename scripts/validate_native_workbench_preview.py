@@ -136,6 +136,142 @@ SOLVER_APPROVED = {
 SOLVER_PAGES = ["solver-development.html"] + [value["detail"] for value in SOLVER_APPROVED.values()]
 SOLVER_NOTICE = "These examples document selected internal numerical checks under defined test conditions. They do not represent external certification or a general accuracy guarantee."
 CURRENT_DIR = "assets/images/dad-fieldworks/application-2026-09-09"
+REFRESH_DIR = "assets/images/dad-fieldworks/application-2026-09-12"
+REFRESH_APPROVED = {
+    "hy-longitudinal": {
+        "original": "codex-clipboard-60dbf1bd-80e9-4128-b651-95eca28fb816.png",
+        "source_sha256": "ae655e5e2432fb24a81f8383a79d21efc432a1bb79e576c33800482527b44858",
+        "source_size": [
+            1440,
+            900
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "preview_crop": [
+            14,
+            321,
+            1426,
+            802
+        ],
+        "sha256": "820b8dec9e7254a0cec3e55b9a6c9a9e72f0a8adc33208ee0e4601197e0cdcc9",
+        "rgba_sha256": "56bad06c1388a11f1c8c49c646e13d9d63614e4e3abc4b98737ec9f99024bda6",
+        "width": 1440,
+        "height": 860,
+        "preview": {
+            "derivative": "hy-longitudinal-preview.png",
+            "width": 1412,
+            "height": 481,
+            "sha256": "c771bd91e0bebfbbb5364f97f41a44be2b8507f58e884d7b7ea7acf81ff369bb",
+            "rgba_sha256": "befbb33a1ea0c7bbbaac4f2a9e94397438b0d3466530efc40af5459af7d09cbd",
+            "bytes": 65316
+        }
+    },
+    "hy-transverse": {
+        "original": "codex-clipboard-24720fbb-25e7-4f79-8967-5ef8366672c8.png",
+        "source_sha256": "e2cdeb3531c9eef65bada96d7327e3cd4f3601f77655689b35aaf59bc8cd3192",
+        "source_size": [
+            1440,
+            900
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "preview_crop": [
+            14,
+            321,
+            1426,
+            802
+        ],
+        "sha256": "ac674d409380ca301dac561b56761ff6d35b88d1dc40df551f54df90bcc94ecd",
+        "rgba_sha256": "1ad363d0685388a4ffaa486d6a5754ff0aea0f57954e1b826225485c0bb4b84b",
+        "width": 1440,
+        "height": 860,
+        "preview": {
+            "derivative": "hy-transverse-preview.png",
+            "width": 1412,
+            "height": 481,
+            "sha256": "f398fe1fc5afa8613c74cd2915f89e5e3e29aaee191e1a357a0ac365e560d7d4",
+            "rgba_sha256": "735aed4879e5b7c5448677bc7205d59d3f89a4dbc036ccfe8c7f93cded61048b",
+            "bytes": 42624
+        }
+    },
+    "hy-contours": {
+        "original": "codex-clipboard-9034cd52-5804-48cd-b32c-ecbc6cbcc238.png",
+        "source_sha256": "0b348779c9c9fcaeecb5598a79300a1801758f53721968f83cf007658d573f9c",
+        "source_size": [
+            1440,
+            900
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "preview_crop": [
+            14,
+            321,
+            1426,
+            802
+        ],
+        "sha256": "3d00b042970a7883f976977efa78feffd30c44ca86d35fef492d8f796a896157",
+        "rgba_sha256": "99f8d456a40c03dc235ceb3389011be3d1e9d82e9f895cf424c4e978834652dc",
+        "width": 1440,
+        "height": 860,
+        "preview": {
+            "derivative": "hy-contours-preview.png",
+            "width": 1412,
+            "height": 481,
+            "sha256": "62c9c8e7b5ebf1690c93fc306c2da0c8dc21e0d0bdaf99411ab1f5ee4fa4e747",
+            "rgba_sha256": "e1fa8d1c436b580d835c2e12f1a527d5c98234014d2af7f57c31940a5b5be521",
+            "bytes": 48341
+        }
+    },
+    "reference-model": {
+        "original": "codex-clipboard-585f9d09-ee3b-4b96-8f49-ce0d874b1268.png",
+        "source_sha256": "6d4d724b32c796d26646f2785ed1c9d3e2874227ab4d3e9d87ade3c41f17d114",
+        "source_size": [
+            1440,
+            900
+        ],
+        "crop": [
+            307,
+            86,
+            1439,
+            836
+        ],
+        "sha256": "ece45a1759feb6dcf68042b037ceeb8f425778e3444fad99de64a2f4c02b70d2",
+        "rgba_sha256": "d4f5774f0f6612b2c44741834e79291c2a5c06d56aac268b12982aa89900cad0",
+        "width": 1132,
+        "height": 750
+    },
+    "smith-chart": {
+        "original": "Screenshot (63).png",
+        "source_sha256": "dabc7a1e5c02a69adda5c98dcaf9f7330a0667baa7b76a91f103a9ff75826340",
+        "source_size": [
+            1440,
+            900
+        ],
+        "crop": [
+            0,
+            0,
+            1440,
+            860
+        ],
+        "sha256": "8112f7b5c327978aa6e16b36660b356249ac4bf235cf074c6735259f9f28140c",
+        "rgba_sha256": "4aca21f63c370b9abb01629eeaf6001f054e9b8656fe8345ec6c3e31232a0a72",
+        "width": 1440,
+        "height": 860
+    }
+}
+REFRESH_PAGES = ["views/" + key + ".html" for key in REFRESH_APPROVED]
 PRODUCT_NOTICE = "DAD FieldWorks is in development. The images show the current application."
 BRAND_IMAGES = {
     "assets/brand/dad_fieldworks_blue_field_sculpture.png": "7b96ba79717d49f29df838e390e249c171511b4f0d912272c7cba50ddce2001d",
@@ -703,7 +839,9 @@ def copy_quality_audit(raw):
     check("Windows desktop workspace" in product and PRODUCT_NOTICE in product, "Product/status missing")
     check(visible.count(PRODUCT_NOTICE) == 1, "Expected one calm product status")
     check("Tuto example shows construction" in product and "different project" in product, "Examples conflated")
-    check("saved time-domain view, not a field at the frequency" in product and "linear magnitude, not dB" in product, "Scientific interpretation note missing")
+    check("saved time-domain views, not fields at the frequency" in product and "linear magnitude, not dB" in product, "Scientific interpretation note missing")
+    check("not a time sequence" in product and "not solver cell occupancy" in product and "signed H_y in A/m" in product,
+          "Field view context missing")
     check("We plan to extend" in outlook and "development goals, not a list of capabilities available today" in outlook, "Future direction not separated")
     current_sections = hero + section(raw,"focus") + product + section(raw,"contact")
     check(not re.search(r"\b(?:printed antennas|loss models|far[- ]fields?|antenna gain|optimization|coaxial)\b", current_sections, re.I), "Future capability promoted")
@@ -783,10 +921,94 @@ def validate_solver_development():
     return images, {"figures": len(images), "main_words": words, "original_png_bytes": sum(i["bytes"] for i in record["images"])}
 
 
+def validate_refresh():
+    """Pin originals, crop pixels, interpretation and the active Smith replacement."""
+    manifest = json.loads((ROOT / REFRESH_DIR / "manifest.json").read_text(encoding="utf-8"))
+    recipe = json.loads((ROOT / REFRESH_DIR / "source-selection.json").read_text(encoding="utf-8"))
+    check(manifest["date"] == recipe["date"] == "2026-09-13", "New screenshot selection date")
+    check(manifest["context"] == recipe["context"] and "not a time sequence" in manifest["context"]
+          and "not a field at a plot marker frequency" in manifest["context"], "Field timing context")
+    check("no resampling" in manifest["processing"], "Unchanged pixel boundary")
+    check([e["id"] for e in manifest["captures"]] == list(REFRESH_APPROVED), "New screenshot order")
+    check([e["id"] for e in recipe["sources"]] == list(REFRESH_APPROVED), "New recipe order")
+    home = Page((ROOT / "index.html").read_text(encoding="utf-8"))
+    images, copy = set(), {}
+    for entry, source in zip(manifest["captures"], recipe["sources"]):
+        key = entry["id"]
+        for name, value in REFRESH_APPROVED[key].items():
+            check(entry.get(name) == value, "New image identity changed: " + key + "/" + name)
+        check(all(entry.get(name) == value for name, value in source.items()), "New recipe/manifest mismatch")
+        check(entry.get("origin") == "user-supplied application screenshot", "Image origin")
+        check(entry.get("source_screen_date") == "2026-09-12" and entry.get("capture_date") is None,
+              "Screen date must not become an asserted capture date")
+        check(entry.get("group") == "Uniform Shielded TEM Reference Line", "Reference project changed")
+        check(entry.get("detail") == "views/" + key + ".html", "New detail route")
+        check(entry.get("derivative") == key + ".png", "New derivative name")
+        check(all(entry.get(k) for k in ["title", "caption", "alt", "use", "view_kind"]), "Missing screenshot copy")
+        for variant in [entry] + ([entry["preview"]] if "preview" in entry else []):
+            rel = REFRESH_DIR + "/" + variant["derivative"]
+            images.add(rel)
+            png = read_png(ROOT / rel)
+            check(sha(ROOT / rel) == variant["sha256"] and (ROOT / rel).stat().st_size == variant["bytes"],
+                  "New PNG byte identity: " + rel)
+            check(png["rgba_pixel_sha256"] == variant["rgba_sha256"], "New PNG pixels: " + rel)
+            check((png["width"], png["height"]) == (variant["width"], variant["height"]), "New PNG dimensions")
+            check(set(png["chunks"]) == {"IHDR", "IDAT", "IEND"}, "New PNG metadata")
+        raw = (ROOT / entry["detail"]).read_text(encoding="utf-8")
+        detail = Page(raw)
+        full = REFRESH_DIR + "/" + entry["derivative"]
+        check("../" + full in detail.hrefs and entry["detail"] in home.hrefs, "New image navigation")
+        check("../index.html#fieldworks" in detail.hrefs or "../index.html#geometry-fields" in detail.hrefs,
+              "New image gallery return")
+        check(NOTICE in detail.text and "User-supplied application screenshot" in detail.text, "New detail status/origin")
+        if key.startswith("hy-"):
+            check(entry["component"] == "H_y" and entry["unit"] == "A/m" and entry["saved_step"] == 4096
+                  and entry["saved_time_s"] == "1.023875e-09", "Saved component identity")
+            axis, index = ("Y", 10) if key == "hy-longitudinal" else ("X", 21)
+            mode = "Field with section contours" if key == "hy-contours" else "Field with transparent 3D geometry"
+            check((entry["slice_normal"], entry["slice_index"], entry["display_mode"]) == (axis, index, mode), "Slice/mode identity")
+            check(all(s in detail.text for s in ["H_y in A/m", "step 4096", "1.023875e-09 s",
+                  "not a time sequence", "not compiled solver cells"]), "Field meaning boundary")
+        elif key == "smith-chart":
+            check((entry["s_parameter"], entry["frequency_marker_ghz"], entry["reference_impedance_ohm"],
+                   entry["display_mode"]) == ("S(2,2)", "5.500", 50, "Smith: wavelength scales"), "Smith identity")
+            check(entry["replaces"] == CURRENT_DIR + "/smith-chart.png", "Historical Smith replacement reference")
+            check(all(s in detail.text for s in ["S(2,2)", "5.500 GHz", "50 ohm reference", "Gamma",
+                  "wavelength scales", "not a measurement", "graphical aids", "deembedding result"]), "Smith meaning")
+            check("Via Transition" not in raw and "2.800" not in raw and CURRENT_DIR not in raw, "Stale Smith copy/image")
+        else:
+            check("authoring geometry" in detail.text and "private project path" in detail.text
+                  and "not a solver cell or mesh image" in detail.text, "Model crop/context")
+        for page, prefix, variant in [(home, "", entry.get("preview", entry)), (detail, "../", entry)]:
+            src = prefix + REFRESH_DIR + "/" + variant["derivative"]
+            figures = [f for f in page.figures if any(i.get("src") == src for i in f["images"])]
+            check(len(figures) == 1, "New figure missing/duplicated: " + src)
+            if figures:
+                image = figures[0]["images"][0]
+                check(image.get("alt") == entry["alt"] and image.get("width") == str(variant["width"])
+                      and image.get("height") == str(variant["height"]), "New figure alt/proportions")
+                check(entry["caption"] in " ".join(figures[0]["data"]), "New figure caption/provenance")
+        check(detail.metas.get("og:image") == detail.metas.get("twitter:image") == "https://www.dadlabs.de/" + full, "New social image")
+        check(detail.metas.get("og:image:alt") == detail.metas.get("twitter:image:alt") == entry["alt"], "New social alt")
+        check(detail.metas.get("og:image:width") == str(entry["width"]) and
+              detail.metas.get("og:image:height") == str(entry["height"]), "New social image dimensions")
+        title = re.search(r"<title>(.*?)</title>", raw).group(1)
+        check(detail.metas.get("og:title") == detail.metas.get("twitter:title") == title, "New social title")
+        check(detail.metas.get("og:description") == detail.metas.get("twitter:description") == detail.metas["description"], "New social description")
+        check([a.get("href") for t, a in detail.tags if t == "link" and a.get("rel") == "canonical"] ==
+              ["https://www.dadlabs.de/" + entry["detail"]], "New canonical")
+        check(detail.metas.get("og:url") == "https://www.dadlabs.de/" + entry["detail"], "New social URL")
+        copy[key] = entry
+    check({p.relative_to(ROOT).as_posix() for p in (ROOT / REFRESH_DIR).iterdir()} ==
+          images | {REFRESH_DIR + "/manifest.json", REFRESH_DIR + "/source-selection.json"}, "Unexpected new publication asset")
+    return images, copy
+
+
 def validate():
     paths = public_files()
     historical = validate_historical()
     solver_images, solver_report = validate_solver_development()
+    refresh_images, refresh_copy = validate_refresh()
     brand_record = json.loads((ROOT/"assets/brand/blue_field_sculpture_manifest.json").read_text(encoding="utf-8"))
     check("Not scientific data" in brand_record["role"] and "Built-in image generation" in brand_record["method"], "Brand illustration classification missing")
     for rel, expected in BRAND_IMAGES.items():
@@ -839,7 +1061,7 @@ def validate():
         current_copy[item["id"]]=item
     check({p.relative_to(ROOT).as_posix() for p in (ROOT/CURRENT_DIR).glob("*.png")}==allowed_images, "Unapproved current PNG")
 
-    active = ACTIVE + SOLVER_PAGES + ["views/"+key+".html" for key in CURRENT_APPROVED] + ["docs/"+key+".html" for key in CURRENT_NOTES] + ["docs/index.html"]
+    active = ACTIVE + SOLVER_PAGES + REFRESH_PAGES + ["views/"+key+".html" for key in CURRENT_APPROVED] + ["docs/"+key+".html" for key in CURRENT_NOTES] + ["docs/index.html"]
     for rel in active:
         text=(ROOT/rel).read_text(encoding="utf-8")
         check(not re.search(r"[\u2013\u2014]|&(?:ndash|mdash);",text), "En/em dash: "+rel)
@@ -867,11 +1089,13 @@ def validate():
         "assets/brand/README.md","assets/brand/blue_field_sculpture_manifest.json", "favicon.ico", "assets/brand/legacy_kernel_wave_favicon.ico"
     ])|allowed_images|set(BRAND_IMAGES)|{"views/"+key+".html" for key in list(CURRENT_APPROVED)+LEGACY_VIEWS}|{"docs/"+key+".html" for key in CURRENT_NOTES}
     allowed_changes |= set(SOLVER_PAGES) | solver_images | {SOLVER_DIR + "/manifest.json"}
+    allowed_changes |= set(REFRESH_PAGES) | refresh_images | {REFRESH_DIR + "/manifest.json",
+        REFRESH_DIR + "/source-selection.json", "docs/company_screenshot_provenance_2026_09_09.md"}
     check(changed<=allowed_changes,"Changes outside website allowlist: "+str(sorted(changed-allowed_changes)))
     for rel in changed|set(git("diff","--cached","--name-only").splitlines()):
-        check(Path(rel).name not in {e["original"] for e in CURRENT_APPROVED.values()}, "Raw source published: "+rel)
+        check(Path(rel).name not in {e["original"] for e in list(CURRENT_APPROVED.values()) + list(REFRESH_APPROVED.values())}, "Raw source published: "+rel)
         if Path(rel).suffix.lower() in SCIENTIFIC_IMAGE_SUFFIXES:
-            check(rel in allowed_images or rel in BRAND_IMAGES or rel in solver_images,"Unapproved image change: "+rel)
+            check(rel in allowed_images or rel in BRAND_IMAGES or rel in solver_images or rel in refresh_images,"Unapproved image change: "+rel)
 
     html_count=image_count=0
     for rel in paths:
@@ -887,7 +1111,7 @@ def validate():
             check(a.get("width","").isdigit() and a.get("height","").isdigit(), "Missing image dimensions: "+rel)
             if "assets/brand/" not in a.get("src",""):
                 target,_=local_target(p,a["src"])
-                check(target.relative_to(ROOT).as_posix() in allowed_images | solver_images, "Old or unapproved active image: "+rel)
+                check(target.relative_to(ROOT).as_posix() in allowed_images | solver_images | refresh_images, "Old or unapproved active image: "+rel)
         check(sum(t=="h1" for t,_ in page.tags)==1,"Expected one H1: "+rel)
         lang="de" if rel in {"impressum.html","datenschutz.html"} else "en"
         check(any(t=="html" and a.get("lang")==lang for t,a in page.tags),"Language missing: "+rel)
@@ -907,12 +1131,14 @@ def validate():
     check(len(brand_views)==2 and all(a.get("src")=="assets/brand/dad_fieldworks_blue_field_sculpture-256.png" for a in brand_views), "Current header/product illustration missing")
     check(any("rather than simulation data" in a.get("alt","") for a in brand_views), "Brand artwork must be distinguished from data")
     check({"company","focus","fieldworks","outlook","contact","main-content"}<=home.ids,"Company anchors missing")
-    captures=[a for a in home.images if CURRENT_DIR in a["src"]]
-    check(len(captures)==5 and {a["src"] for a in captures}==allowed_images,"Exact current gallery missing")
+    captures=[a for a in home.images if CURRENT_DIR in a["src"] or REFRESH_DIR in a["src"]]
+    active_images = {CURRENT_DIR + "/" + key + ".png" for key in ["rf-sketcher", "cartesian-s-parameters"]}
+    active_images |= {REFRESH_DIR + "/" + e.get("preview", e)["derivative"] for e in refresh_copy.values()}
+    check(len(captures)==7 and {a["src"] for a in captures}==active_images,"Exact current gallery missing")
     check(all(a.get("loading")=="lazy" for a in captures),"Below-fold images should lazy-load")
-    social=current_copy["pcb-geometry"]
-    check(home.metas.get("og:image")==home.metas.get("twitter:image")=="https://www.dadlabs.de/"+CURRENT_DIR+"/pcb-geometry.png","Stale social image")
-    check(home.metas.get("og:image:width")=="1091" and home.metas.get("og:image:height")=="732","Social dimensions")
+    social=refresh_copy["hy-longitudinal"]
+    check(home.metas.get("og:image")==home.metas.get("twitter:image")=="https://www.dadlabs.de/"+REFRESH_DIR+"/hy-longitudinal-preview.png","Stale social image")
+    check(home.metas.get("og:image:width")=="1412" and home.metas.get("og:image:height")=="481","Social dimensions")
     check(home.metas.get("og:image:alt")==home.metas.get("twitter:image:alt")==social["alt"],"Social image description")
     title="DigitalArtDeco Labs | Electromagnetic Simulation Software"
     check(home.metas.get("og:title")==home.metas.get("twitter:title")==title and "<title>"+title+"</title>" in raw_home,"Company metadata title")
@@ -922,8 +1148,13 @@ def validate():
     check(home.metas.get("og:url")=="https://www.dadlabs.de/","OG domain")
     check(not any(h.endswith(".md") for h in home.hrefs),"Homepage should use styled documentation")
     for item in current_copy.values():
+        # The superseded Smith page is checked against its new image above.
+        # Other earlier detail pages retain their original content and assets.
+        if item["id"] == "smith-chart":
+            continue
         link=item["detail"]
-        check(link in home.hrefs,"Missing image detail: "+link)
+        retained = item["id"] in {"rf-sketcher", "cartesian-s-parameters"}
+        check((link in home.hrefs) == retained,"Incorrect current/historical image link: "+link)
         raw=(ROOT/link).read_text(encoding="utf-8"); detail=Page(raw)
         facts={
             "pcb-geometry": ["Tuto construction", "not a simulation result", "excludes the private project path"],
@@ -937,6 +1168,8 @@ def validate():
         check("../"+full in detail.hrefs,"Full-resolution link missing")
         check([a.get("href") for t,a in detail.tags if t=="link" and a.get("rel")=="canonical"]==["https://www.dadlabs.de/"+link],"Detail canonical")
         for name,page,prefix in [("home",home,""),("detail",detail,"../")]:
+            if name == "home" and not retained:
+                continue
             figures=[f for f in page.figures if any(a.get("src")==prefix+full for a in f["images"])]
             check(len(figures)==1,"Figure missing/duplicated: "+name+"/"+item["id"])
             if figures:
@@ -967,8 +1200,10 @@ def validate():
     diff=subprocess.run(["git","diff","--check"],cwd=ROOT,capture_output=True,text=True,env={**os.environ,"GIT_OPTIONAL_LOCKS":"0"})
     check(diff.returncode==0,"Whitespace check: "+diff.stdout)
     audit=copy_quality_audit(raw_home)
-    return {"status":"PASS" if not FAILURES else "FAIL","current_captures":len(current_copy),
-            "current_png_bytes":sum(e["bytes"] for e in current_copy.values()),"historical":historical,
+    return {"status":"PASS" if not FAILURES else "FAIL","current_captures":len(refresh_copy)+2,
+            "new_captures":len(refresh_copy), "new_pngs":len(refresh_images),
+            "new_png_bytes":sum((ROOT / p).stat().st_size for p in refresh_images),
+            "retained_september_9_png_bytes":sum(e["bytes"] for e in current_copy.values()),"historical":historical,
             "protected_files":len(PROTECTED),"legal_core_checks":len(LEGAL_CORE_HASHES),
             "solver_development":solver_report,
             "html_pages":html_count,"html_images":image_count,"public_files_scanned":len(paths),

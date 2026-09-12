@@ -6,7 +6,7 @@ The website presents DigitalArtDeco Labs and its scientific software work. These
 
 - [Current capabilities](current_public_status.md)
 - [Claim boundaries](claim_boundaries.md)
-- [Current screenshot provenance, 9 September 2026](company_screenshot_provenance.md)
+- [Current screenshot provenance, updated 13 September 2026](company_screenshot_provenance.md)
 - [Publication notes](publication_notes.md)
 
 ## Technical background
@@ -18,6 +18,7 @@ The website presents DigitalArtDeco Labs and its scientific software work. These
 These records and their assets retain their original dates, provenance, descriptions and hashes. Former publication-role wording describes an earlier site state, not the current company homepage.
 
 - [Workflow screenshot provenance, 5 September 2026](native_workflow_screenshot_provenance.md)
+- [Company screenshot provenance, 9 September 2026](company_screenshot_provenance_2026_09_09.md)
 - [September product showcase refresh review](showcase_refresh_2026_09.md)
 - [Product communication review, 6 September 2026](product_communication_review_2026_09.md)
 - [Legal site identity audit from the earlier publication](legal_site_identity_audit.md). The [current Impressum](../impressum.html) includes the subsequently supplied VAT identification number.
