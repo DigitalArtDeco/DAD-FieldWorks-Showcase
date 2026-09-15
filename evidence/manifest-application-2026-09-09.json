@@ -1,0 +1,143 @@
+{
+  "date": "2026-09-09",
+  "processing": "Rectangular crop and lossless PNG encoding only; no resampling, retouching or color changes.",
+  "coordinates": "left, top, right, bottom; right and bottom exclusive",
+  "context": "Tuto shows construction. Via Transition shows results from a different project. The field is a saved time-domain component, not a field at a plot marker frequency.",
+  "captures": [
+    {
+      "id": "pcb-geometry",
+      "original": "Screenshot (43).png",
+      "source_sha256": "db0f6b05ed09e9a31ee1e099164cbbebe55b4705482bfcf9c24bee42622d51e0",
+      "source_size": [
+        1440,
+        857
+      ],
+      "crop": [
+        347,
+        103,
+        1438,
+        835
+      ],
+      "group": "Tuto construction",
+      "title": "PCB geometry in 3D",
+      "caption": "Tuto: inspect the editable PCB structure in a 3D view.",
+      "alt": "Tuto PCB construction with a straight trace, substrate and layer geometry in the 3D viewer.",
+      "use": "Main product image and social preview",
+      "derivative": "pcb-geometry.png",
+      "width": 1091,
+      "height": 732,
+      "sha256": "eeb442d017e5b6095fcf71391380915cb2ebfebcd3ec98384664195548c25461",
+      "rgba_sha256": "f272d2549b72cf74b6ef79ca8d45b81f80cfccf0fe426ac04bcaecc952eb049d",
+      "bytes": 30201,
+      "detail": "views/pcb-geometry.html"
+    },
+    {
+      "id": "rf-sketcher",
+      "original": "Screenshot (42).png",
+      "source_sha256": "35d42cfadecbac3d2f66c3730ac9ba4283999e787fba2ea8f1744ff3eb1e4c85",
+      "source_size": [
+        1440,
+        859
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        859
+      ],
+      "group": "Tuto construction",
+      "title": "Dimensioned geometry",
+      "caption": "Tuto: define geometry and dimensional relations in the RF sketcher.",
+      "alt": "Tuto RF sketcher showing a 40 mm by 20 mm outline, a trace and dimensional relations. Constraints are not evaluated.",
+      "use": "Supporting gallery",
+      "derivative": "rf-sketcher.png",
+      "width": 1440,
+      "height": 859,
+      "sha256": "9c66d61f632c019b0ce0ff96d0fe63b248e18cbbe3febbad5a4aa20ec48a5e72",
+      "rgba_sha256": "f45f466b003f2a5f606047a7d6e0a6dc7899899c761a19a55bc84a01828e3107",
+      "bytes": 54516,
+      "detail": "views/rf-sketcher.html"
+    },
+    {
+      "id": "cartesian-s-parameters",
+      "original": "Screenshot (37).png",
+      "source_sha256": "2ec17eb66b08f038b5e97c472c99ee200116e3c5201a7748f03285ad5190f28a",
+      "source_size": [
+        1440,
+        859
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        859
+      ],
+      "group": "Via Transition results",
+      "title": "Reflection and transmission",
+      "caption": "Via Transition: compare reflection and transmission magnitudes at the available frequency samples.",
+      "alt": "Via Transition Cartesian plot of four S-parameter traces in linear magnitude, with a marker at 1.700 GHz.",
+      "use": "Supporting gallery",
+      "derivative": "cartesian-s-parameters.png",
+      "width": 1440,
+      "height": 859,
+      "sha256": "774611335baf1274b37fca57ba96d30a5d601510cd37ef7a73b27cad4921ebde",
+      "rgba_sha256": "eeab3ffc5714f8451c1a8ef703e168ec48bfe142cd3becca09f2eedf5a4511c5",
+      "bytes": 45622,
+      "detail": "views/cartesian-s-parameters.html"
+    },
+    {
+      "id": "smith-chart",
+      "original": "Screenshot (38).png",
+      "source_sha256": "3f23148ab4dc0888e1882807dee7b19247bbb2a4950e7eb6eb46565e384490f9",
+      "source_size": [
+        1440,
+        860
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        860
+      ],
+      "group": "Via Transition results",
+      "title": "Reflection and impedance",
+      "caption": "Via Transition: inspect S(2,2) reflection and impedance readouts on a Smith chart.",
+      "alt": "Via Transition Smith chart for S(2,2), with reflection and input impedance readouts at 2.800 GHz.",
+      "use": "Supporting gallery",
+      "derivative": "smith-chart.png",
+      "width": 1440,
+      "height": 860,
+      "sha256": "f9ab24ba81f98cb278dbf903d5957680ecc873df4d0c4af5163b2310e8593469",
+      "rgba_sha256": "c9890d38bff5c89b077dea06c5195c31e5e2588c46d26df62d1d56cbf8be2a27",
+      "bytes": 104640,
+      "detail": "views/smith-chart.html"
+    },
+    {
+      "id": "magnetic-field",
+      "original": "Screenshot (41).png",
+      "source_sha256": "86c70545710cb95664bce50a4e532d23321cfb8e6ac286b22b735a6133d434b9",
+      "source_size": [
+        1440,
+        859
+      ],
+      "crop": [
+        0,
+        0,
+        1440,
+        859
+      ],
+      "group": "Via Transition results",
+      "title": "A saved magnetic field",
+      "caption": "Via Transition: locate a signed magnetic field component at a saved time step.",
+      "alt": "Via Transition magnetic field component H_z in A/m at saved step 12288 on Z slice 16, with its signed color scale.",
+      "use": "Supporting gallery",
+      "derivative": "magnetic-field.png",
+      "width": 1440,
+      "height": 859,
+      "sha256": "edf54bf1f39bc9f0cf672c4fbc8d13064afb0db2040178e2502c20a2a4caf264",
+      "rgba_sha256": "fa88662a56ee5e0349c96ce33df389554c0f0892cd7a685d7f63bf59bd878b90",
+      "bytes": 80426,
+      "detail": "views/magnetic-field.html"
+    }
+  ]
+}

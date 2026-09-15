@@ -1,0 +1,73 @@
+{
+  "metadata": {
+    "source": "DAD FieldWorks Signal Integrity Kernel v0.3",
+    "dataStatus": "real",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "externalValidationClaimQ": false,
+    "productionClaimQ": false,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "forLayoutOnlyQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "dataSourceSummary": "Public-safe values from audited internal analytical reference records and exported public-safe evidence data."
+  },
+  "source_commit": "65d7b9b47f2558f7578b1471d2a0f089d717d05d",
+  "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/data/dad_signal_integrity_v0_3_examples.json",
+  "record": {
+    "title": "Differential Pair Spacing Sweep",
+    "dataAvailableQ": true,
+    "sampleDataQ": false,
+    "engineeringResultQ": true,
+    "sourceAuthority": "audited internal differential-pair analytical reference record using coupled-line modal outputs",
+    "trustStatus": "INTERNAL_SOURCE_BACKED_DIFFERENTIAL_PAIR_REFERENCE_MODEL_READY",
+    "externallyValidatedQ": false,
+    "productionAllowedQ": false,
+    "claimBoundary": "bounded internal alpha analytical reference evidence only; not external validation; no production readiness claim; not full wave EM simulation; not measurement validation",
+    "conceptualDrawingNote": "Mode drawings are conceptual illustrations, not full wave field simulations.",
+    "relationshipNotes": [
+      "Zdiff = 2 Z0o",
+      "Zcommon = Z0e / 2",
+      "K is inherited from the coupled-line model."
+    ],
+    "fixedInput": {
+      "geometryType": "edge_coupled_microstrip",
+      "relativePermittivity": 4.1,
+      "substrateHeightMm": 0.5,
+      "widthMm": 0.5,
+      "conductorThicknessMm": 0.0
+    },
+    "rows": [
+      {
+        "spacingMm": 0.1,
+        "normalizedGapG": 0.2,
+        "z0eOhm": 95.22545951500584,
+        "z0oOhm": 45.17560065033739,
+        "zdiffOhm": 90.35120130067477,
+        "zcommonOhm": 47.61272975750292,
+        "K": 0.3564777844677759,
+        "C": 2.8052238977332284
+      },
+      {
+        "spacingMm": 0.25,
+        "normalizedGapG": 0.5,
+        "z0eOhm": 89.4488123561128,
+        "z0oOhm": 54.809301792652754,
+        "zdiffOhm": 109.61860358530551,
+        "zcommonOhm": 44.7244061780564,
+        "K": 0.2401217482140256,
+        "C": 4.164554054090423
+      },
+      {
+        "spacingMm": 0.5,
+        "normalizedGapG": 1.0,
+        "z0eOhm": 83.43048128562239,
+        "z0oOhm": 62.47283387186192,
+        "zdiffOhm": 124.94566774372385,
+        "zcommonOhm": 41.715240642811196,
+        "K": 0.14364065265507722,
+        "C": 6.961817434798833
+      }
+    ]
+  }
+}
