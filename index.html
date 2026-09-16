@@ -1,74 +1,19 @@
 <!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-  <link rel="canonical" href="https://www.dadlabs.de/">
-  <meta name="description" content="Explore DAD FieldWorks: PCB and RF simulation, original results and traceable development evidence.">
-  <title>DAD FieldWorks | PCB and RF Simulation</title>
-  <link rel="icon" href="assets/favicon.ico"><link rel="stylesheet" href="style.css">
-  <script src="app.js" defer></script>
-</head>
-<body>
-<a class="skip" href="#main">Skip to content</a>
-<header class="header"><div class="container header-inner">
-  <a href="#" class="brand" aria-label="DAD FieldWorks home"><img src="assets/brand.png" alt="" width="44" height="44"><span>DAD <strong>FieldWorks</strong><small>DIGITALARTDECO LABS</small></span></a>
-  <nav aria-label="Main navigation"><a href="#overview">Overview</a><a href="#results">Results</a><a href="#evidence">Evidence</a></nav>
-  <span class="private"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>Development preview</span>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="DAD FieldWorks is native engineering software in development for PCB and RF modelling, electromagnetic simulation and result inspection."><title>DigitalArtDeco Labs | DAD FieldWorks</title><link rel="icon" href="assets/favicon.ico"><link rel="stylesheet" href="design.css"><link rel="preload" href="fonts/SourceSans3-Regular.woff2" as="font" type="font/woff2" crossorigin><link rel="canonical" href="https://www.dadlabs.de/"></head><body class="company-page"><a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><div class="wrap masthead">
+<a class="wordmark" href="index.html" aria-label="DigitalArtDeco Labs home">DigitalArtDeco<span>Labs</span></a>
+<nav aria-label="Main navigation"><a href="index.html#software">Software</a><a href="results.html">Results &amp; Validation</a><a href="index.html#company">Company</a><a href="mailto:info@dadlabs.de">Contact</a></nav>
 </div></header>
 <main id="main">
-<section id="overview" class="hero container">
-  <div class="hero-copy"><div class="eyebrow"><span class="dot"></span> RF ENGINEERING SOFTWARE</div>
-    <h1>Understand fields.<br>Trace every<br><em>result.</em></h1>
-    <p class="intro">From parametric PCB geometry to electromagnetic response. DAD FieldWorks brings modelling, simulation and result inspection into one native engineering workspace.</p>
-    <a class="button primary" href="#results">Explore the results <span>↗</span></a>
-    <p class="hero-status"><span class="status-dot"></span>In development <span>·</span> Native Windows application</p>
-  </div>
-  <div class="hero-visual">
-    <div class="visual-top"><span><span class="live-dot"></span> INSIDE THE APPLICATION</span><span>01 / TEM REFERENCE</span></div>
-    <div class="hero-image"><img src="assets/hy-longitudinal-preview.png" width="1412" height="481" alt="Actual saved H y field in a shielded TEM reference line with transparent geometry and its complete colour scale."><button class="hero-expand" data-open-image="hy-longitudinal" aria-label="Enlarge field view">↗</button></div>
-    <div class="visual-bottom"><div><strong>The field in its spatial context</strong><small>Saved component H<sub>y</sub> · A/m</small></div><span class="mono">t = 1.023875 ns</span></div>
-    <div class="visual-footnote">Original view of a computed time step. Not an illustration.</div>
-  </div>
-  <div class="capability-strip">
-    <div><span class="cap-num">01</span><div><strong>Build your structure</strong><p>Parametric sketches, layers and materials</p></div></div>
-    <div><span class="cap-num">02</span><div><strong>Inspect its response</strong><p>Complex S parameters and native fields</p></div></div>
-    <div><span class="cap-num">03</span><div><strong>Follow the evidence</strong><p>Case specific checks and traceable sources</p></div></div>
-  </div>
+<section class="intro-section wrap" aria-labelledby="intro-title">
+ <p class="kicker">DAD FieldWorks</p>
+ <div class="intro-grid"><h1 id="intro-title">Electromagnetic simulation for PCB and RF design.</h1><div class="intro-copy"><p>Geometry, simulation and results in one engineering workspace.</p><p class="secondary-copy">We are developing DAD FieldWorks to help engineers model supported structures, inspect their electromagnetic response and follow the evidence behind each result.</p><a class="action" href="results.html">Explore the results</a><p class="product-status">In development · Native Windows application</p></div></div>
+ <figure class="lead-figure"><a class="image-link" href="results.html?view=field" aria-label="Explore the saved field result"><img src="assets/hy-longitudinal-preview.png" width="1412" height="481" alt="Original saved H y field in the shielded TEM reference line, with transparent geometry and the complete colour scale."></a><figcaption><span>Inside DAD FieldWorks. A saved magnetic field in its spatial context.</span><span>Shielded TEM reference line</span></figcaption></figure>
 </section>
-<section id="results" class="results-section">
- <div class="container">
-  <div class="section-heading"><div><div class="eyebrow">RESULT EXPLORER</div><h2>Look inside the calculation.</h2></div><p>Original views from DAD FieldWorks.<br>Choose a perspective and explore its context.</p></div>
-  <div class="explorer">
-   <div class="explorer-tabs" role="tablist" aria-label="Result type"><button id="tab-field" role="tab" aria-selected="true" aria-controls="result-panel" data-tab="field"><span>◈</span> Field visualisation</button><button id="tab-smith" role="tab" aria-selected="false" aria-controls="result-panel" data-tab="smith" tabindex="-1"><span>◎</span> Smith Chart</button><button id="tab-cartesian" role="tab" aria-selected="false" aria-controls="result-panel" data-tab="cartesian" tabindex="-1"><span>⌁</span> S parameters</button><button id="tab-model" role="tab" aria-selected="false" aria-controls="result-panel" data-tab="model" tabindex="-1"><span>▧</span> Model &amp; geometry</button></div>
-   <div id="result-panel" role="tabpanel" aria-labelledby="tab-field" tabindex="0">
-    <div class="result-toolbar"><div class="project-name"><span class="dot"></span><span id="project-name">Uniform Shielded TEM Reference Line</span></div><span class="subtle">Original capture</span></div>
-    <div class="result-layout">
-     <div class="result-main"><div class="view-controls" id="view-controls" aria-label="Field view"></div><div id="result-visual" class="result-visual"></div><div class="image-bar"><span id="image-caption"></span><button class="text-button" id="expand-result">Full view <span>↗</span></button></div></div>
-     <aside class="result-context"><span class="label">WHAT THIS VIEW SHOWS</span><h3 id="result-title"></h3><p id="result-description"></p><dl id="result-facts"></dl><div class="context-note" id="result-note"></div><button class="evidence-link" id="result-source">Source &amp; evidence <span>↗</span></button></aside>
-    </div>
-   </div>
-  </div>
-  <p class="explorer-note"><span>ⓘ</span> Explore saved results. This website does not run a simulation. The Smith chart and Via Transition plot belong to different test cases.</p>
- </div>
+<section id="software" class="section wrap" aria-labelledby="software-title"><div class="section-intro"><p class="kicker">The software</p><h2 id="software-title">From structure to response.</h2><p>DAD FieldWorks brings the core stages of supported PCB and RF simulation into a native desktop application.</p></div>
+ <div class="workflow"><article><p class="step">01</p><h3>Define the geometry</h3><p>Create parametric sketches and supported PCB structures. Define layers, materials and ports as part of the model.</p></article><article><p class="step">02</p><h3>Set up the calculation</h3><p>Specify supported excitations and frequencies. Review setup diagnostics and resource requirements before starting a solver job.</p></article><article><p class="step">03</p><h3>Inspect the response</h3><p>Read complex S parameters, inspect a Smith chart and explore saved native fields. Export supported results in Touchstone format.</p></article></div>
 </section>
-<section id="evidence" class="evidence-section container">
- <div class="section-heading"><div><div class="eyebrow">DEVELOPMENT YOU CAN TRACE</div><h2>The evidence behind the image.</h2></div><p>Understand what each result establishes,<br>where it comes from and where its limits lie.</p></div>
- <div class="evidence-grid">
-  <div class="evidence-menu" role="tablist" aria-label="Choose evidence" aria-orientation="vertical">
-   <button id="ev-pulse" role="tab" aria-selected="true" aria-controls="evidence-panel" data-evidence="pulse"><span class="ev-index">01</span><span><strong>Pulse against reference</strong><small>Separately implemented numerical reference</small></span><b>↗</b></button>
-   <button id="ev-return" role="tab" aria-selected="false" aria-controls="evidence-panel" data-evidence="return" tabindex="-1"><span class="ev-index">02</span><span><strong>Returning wave</strong><small>Superposition at an active source</small></span><b>↗</b></button>
-   <button id="ev-spacing" role="tab" aria-selected="false" aria-controls="evidence-panel" data-evidence="spacing" tabindex="-1"><span class="ev-index">03</span><span><strong>Trace spacing &amp; impedance</strong><small>Explore analytical reference records</small></span><b>↗</b></button>
-   <button id="ev-development" role="tab" aria-selected="false" aria-controls="evidence-panel" data-evidence="development" tabindex="-1"><span class="ev-index">04</span><span><strong>Current development</strong><small>Repository review · 15 Sep 2026</small></span><b>↗</b></button>
-   <div class="evidence-boundary"><span class="mini-label">THE STATUS</span><strong>Internal development evidence.</strong><p>External validation is not complete. DAD FieldWorks is not released for production use.</p><button class="text-button" data-dialog="scope">Read the scope and limits <span>↗</span></button></div>
-  </div>
-  <div class="evidence-detail" id="evidence-panel" role="tabpanel" aria-labelledby="ev-pulse" tabindex="0"></div>
- </div>
- <div class="source-ledger"><div><span class="label">FOLLOW THE SOURCE</span><h3>Every view has a provenance.</h3><p>Original images, documented checks and file hashes remain accessible.</p></div><button class="button secondary" data-dialog="register">Open the source register <span>↗</span></button></div>
- <div class="status-line"><span><span class="status-dot"></span>Product repository reviewed: 15 Sep 2026</span><span>Public image selection: 13 Sep 2026</span><button class="text-button" data-dialog="development">Explore the current development scope ↗</button></div>
-</section>
-</main>
-<footer><div class="container footer-inner"><div><a class="footer-brand" href="#">DAD FieldWorks<span>by DigitalArtDeco Labs</span></a><p>© 2026 DigitalArtDeco Labs UG (haftungsbeschränkt)</p></div><div class="footer-links"><button data-dialog="scope">Development status</button><a href="https://www.dadlabs.de/legal-notice.html" target="_blank" rel="noopener noreferrer">Legal notice ↗</a><a href="https://www.dadlabs.de/impressum.html" target="_blank" rel="noopener noreferrer">Impressum (German) ↗</a><a href="https://www.dadlabs.de/datenschutz.html" target="_blank" rel="noopener noreferrer">Privacy (German) ↗</a><a href="https://www.dadlabs.de/docs/index.html" target="_blank" rel="noopener noreferrer">Documentation ↗</a><span class="private">Scientific software, independently developed</span></div></div></footer>
-<dialog id="image-dialog" aria-labelledby="image-dialog-title"><div class="dialog-head"><div><span class="label">ORIGINAL CAPTURE</span><h3 id="image-dialog-title"></h3></div><button class="close-button" data-close aria-label="Close image view">×</button></div><div class="zoom-toolbar"><label for="zoom">Zoom</label><input type="range" id="zoom" min="100" max="300" step="25" value="100"><output id="zoom-value" for="zoom">100 %</output><button class="text-button" id="zoom-reset">Fit to view</button><a class="text-button" id="image-download" download>Download PNG ↓</a></div><div class="zoom-viewport" id="zoom-viewport"><img id="dialog-image" alt=""></div><p class="dialog-image-caption" id="dialog-image-caption"></p></dialog>
-<dialog id="info-dialog" aria-labelledby="info-title"><div class="dialog-head"><div><span class="label" id="info-label">SOURCE &amp; CONTEXT</span><h3 id="info-title"></h3></div><button class="close-button" data-close aria-label="Close information">×</button></div><div class="info-body" id="info-body"></div></dialog>
-<noscript><div class="noscript">The interactive views require JavaScript. <a href="evidence/development-scope.md">Read the development scope directly.</a></div></noscript>
-</body></html>
+<section id="reference" class="reference-section"><div class="wrap section"><div class="section-intro"><p class="kicker">A closer look</p><h2>One model. Several ways to understand it.</h2></div><div class="reference-grid"><div class="reference-copy"><h3>The shielded TEM reference line</h3><p>The field view above and this Smith chart come from the same reference case. They show different aspects of its response.</p><p>The Smith chart records S(2,2) at 5.500 GHz with a 50 Ω reference. The field image is a saved time domain state at 1.023875 ns.</p><p class="supporting">The field state is not a field solution at the Smith chart’s selected frequency.</p><a class="inline-link" href="results.html?view=smith">Explore this reference case</a></div><figure class="reference-figure"><a class="image-link" href="results.html?view=smith" aria-label="Explore the original Smith chart"><img src="assets/smith-chart.png" width="1440" height="860" loading="lazy" alt="Original DAD FieldWorks Smith chart for S(2,2) of the shielded TEM reference line at 5.500 GHz, with a 50 ohm reference."></a><figcaption>Original application capture. Open the result to inspect and enlarge it.</figcaption></figure></div></div></section>
+<section class="section wrap development-section" aria-labelledby="development-title"><div><p class="kicker">Development status</p><h2 id="development-title">Progress with a clear scope.</h2></div><div class="development-copy"><p>Working geometry, solver and result workflows are supported by internal numerical checks and saved application results.</p><p>External validation is not complete. DAD FieldWorks is in development and is not released for production use.</p><p class="supporting">Product records reviewed on 15 September 2026. The latest integration checkpoint did not run new electromagnetic calculations.</p><a class="inline-link" href="results.html?evidence=development#evidence">Read the evidence and limitations</a></div></section>
+<section id="company" class="company-section"><div class="wrap section company-grid"><div><p class="kicker">DigitalArtDeco Labs</p><h2>Independent software development.<br>Based in Germany.</h2></div><div><p>We are an independent software company in Donauwörth. Our work on DAD FieldWorks focuses on PCB and RF modelling, electromagnetic simulation and the inspection of engineering results.</p><p>Have a technical question or want to discuss the development?</p><a class="contact-link" href="mailto:info@dadlabs.de">info@dadlabs.de</a></div></div></section>
+</main><footer class="site-footer"><div class="wrap"><div class="footer-top"><a class="wordmark" href="index.html">DigitalArtDeco<span>Labs</span></a><p>Engineering software, independently developed.<br>Donauwörth, Germany</p></div><div class="footer-bottom"><p>© 2026 DigitalArtDeco Labs UG (haftungsbeschränkt)</p><nav class="legal-links" aria-label="Legal information"><a href="impressum.html" lang="de" hreflang="de">Impressum (DE)</a><a href="datenschutz.html" lang="de" hreflang="de">Datenschutzerklärung (DE)</a><a href="legal-notice.html" lang="en" hreflang="en">Legal Notice (EN)</a><a href="privacy-policy.html" lang="en" hreflang="en">Privacy Policy (EN)</a><a href="licenses.html" lang="en" hreflang="en">Licenses &amp; sources</a></nav></div></div></footer></body></html>

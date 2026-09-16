@@ -1,3 +1,5 @@
+@font-face{font-family:"Source Sans 3";src:url("fonts/SourceSans3-Regular.woff2") format("woff2");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"Source Sans 3";src:url("fonts/SourceSans3-Semibold.woff2") format("woff2");font-weight:600;font-style:normal;font-display:swap}
 :root {
   color-scheme: light;
   --ink: #172b3b;
@@ -9,7 +11,7 @@
 }
 * { box-sizing: border-box; }
 html { scroll-behavior: auto; }
-body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Segoe UI", Arial, sans-serif; font-size: 1rem; line-height: 1.65; }
+body { margin: 0; background: var(--paper); color: var(--ink); font-family: "Source Sans 3", sans-serif; font-size: 1rem; line-height: 1.65; }
 h1, h2, h3, p, figure { margin: 0; }
 h1, h2, h3 { line-height: 1.18; font-weight: 600; overflow-wrap: anywhere; }
 h1 { max-width: 18ch; font-size: clamp(2.5rem, 4.8vw, 4.5rem); letter-spacing: -.035em; }
@@ -195,3 +197,5 @@ footer nav a { font-size: .875rem; }
   .document-content td, .document-content th { padding: .4rem; }
   .doc-card { padding: 1.25rem; }
 }
+
+footer nav{flex-wrap:wrap;row-gap:.25rem}footer nav a{font-size:1rem;padding-block:.5rem;min-height:2.625rem;overflow-wrap:anywhere}

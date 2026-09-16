@@ -39,3 +39,9 @@ The existing `main` branch and its configured upstream publish the repository ro
 The English Legal Notice translates the German Impressum. Keep both versions aligned when company details or legal text change. Both pages remain directly accessible from every website footer.
 
 Copyright © 2026 DigitalArtDeco Labs UG (haftungsbeschränkt). All rights reserved.
+
+## Company website update, 16 September 2026
+
+The owner-approved company homepage now separates the product introduction from the interactive Results & Validation page. All HTML pages have direct links to the German Impressum and Datenschutzerklärung and the English Legal Notice and Privacy Policy. Legal pages are local, with links between translations. The privacy text reflects the JavaScript used by this GitHub Pages website and the locally served fonts.
+
+Source Sans 3 regular and semibold are self hosted under SIL OFL 1.1; the original copyright and full license are included in fonts/LICENSE.txt. See licenses.html and licenses/materials.json. Scientific images and evidence data retain their original bytes and claim boundaries. The previous website remains available in Git history. Domain configuration and publication settings are unchanged.

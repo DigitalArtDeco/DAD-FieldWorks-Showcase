@@ -1,0 +1,174 @@
+{
+  "prepared": "2026-09-16",
+  "scope": "Materials included in this website. Source and license record, not a legal opinion.",
+  "font": {
+    "font": "Source Sans 3",
+    "source_repository": "https://github.com/adobe-fonts/source-sans",
+    "revision": "87b37a2daaed80fcb8e8ccb0085c4d72ddade12e",
+    "license": "SIL Open Font License 1.1",
+    "files": [
+      {
+        "file": "fonts/SourceSans3-Regular.woff2",
+        "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/OTF/SourceSans3-Regular.otf.woff2",
+        "sha256": "63de0da0cc05298e2e9c6e5cef506d8454ca665f6e668a99d94f51174b9256ed",
+        "bytes": 153800,
+        "modified": false
+      },
+      {
+        "file": "fonts/SourceSans3-Semibold.woff2",
+        "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/WOFF2/OTF/SourceSans3-Semibold.otf.woff2",
+        "sha256": "c248b0a178c362916db7c853ed640db77f184d19a0ed9fa5591fa707d3089635",
+        "bytes": 155624,
+        "modified": false
+      },
+      {
+        "file": "fonts/LICENSE.txt",
+        "source": "https://raw.githubusercontent.com/adobe-fonts/source-sans/87b37a2daaed80fcb8e8ccb0085c4d72ddade12e/LICENSE.md",
+        "sha256": "56af9b9c6715597e458284a474dc118a50a4150e9d547c70f7b4a33c3e6a9328",
+        "bytes": 4486,
+        "modified": false
+      }
+    ]
+  },
+  "company_assets": [
+    {
+      "file": "assets/hy-longitudinal.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal.png",
+      "sha256": "820b8dec9e7254a0cec3e55b9a6c9a9e72f0a8adc33208ee0e4601197e0cdcc9",
+      "bytes": 100544,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/hy-transverse.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/hy-transverse.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/hy-transverse.png",
+      "sha256": "ac674d409380ca301dac561b56761ff6d35b88d1dc40df551f54df90bcc94ecd",
+      "bytes": 78991,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/hy-contours.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/hy-contours.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/hy-contours.png",
+      "sha256": "3d00b042970a7883f976977efa78feffd30c44ca86d35fef492d8f796a896157",
+      "bytes": 84301,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/reference-model.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/reference-model.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/reference-model.png",
+      "sha256": "ece45a1759feb6dcf68042b037ceeb8f425778e3444fad99de64a2f4c02b70d2",
+      "bytes": 29079,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/smith-chart.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/smith-chart.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/smith-chart.png",
+      "sha256": "8112f7b5c327978aa6e16b36660b356249ac4bf235cf074c6735259f9f28140c",
+      "bytes": 100805,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/hy-longitudinal-preview.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal-preview.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/hy-longitudinal-preview.png",
+      "sha256": "c771bd91e0bebfbbb5364f97f41a44be2b8507f58e884d7b7ea7acf81ff369bb",
+      "bytes": 65316,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/hy-transverse-preview.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/hy-transverse-preview.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/hy-transverse-preview.png",
+      "sha256": "f398fe1fc5afa8613c74cd2915f89e5e3e29aaee191e1a357a0ac365e560d7d4",
+      "bytes": 42624,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/hy-contours-preview.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-12/hy-contours-preview.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-12/hy-contours-preview.png",
+      "sha256": "62c9c8e7b5ebf1690c93fc306c2da0c8dc21e0d0bdaf99411ab1f5ee4fa4e747",
+      "bytes": 48341,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/cartesian.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-09/cartesian-s-parameters.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-09/cartesian-s-parameters.png",
+      "sha256": "774611335baf1274b37fca57ba96d30a5d601510cd37ef7a73b27cad4921ebde",
+      "bytes": 45622,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/sketcher.png",
+      "source_path": "assets/images/dad-fieldworks/application-2026-09-09/rf-sketcher.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/dad-fieldworks/application-2026-09-09/rf-sketcher.png",
+      "sha256": "9c66d61f632c019b0ce0ff96d0fe63b248e18cbbe3febbad5a4aa20ec48a5e72",
+      "bytes": 54516,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/pulse-reference.png",
+      "source_path": "assets/images/solver-development/pulse-reference.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/solver-development/pulse-reference.png",
+      "sha256": "e74c69498a47209af4f3fd0bbc4104950605ba0e8616ceca65ce8a8d3cf4227e",
+      "bytes": 82343,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/returning-wave.png",
+      "source_path": "assets/images/solver-development/returning-wave-check.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/images/solver-development/returning-wave-check.png",
+      "sha256": "b1a21141272ed1dd0acd9e3e88e0dbc714dd55d879aaf82dde835cbbb0195d1a",
+      "bytes": 147497,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/brand.png",
+      "source_path": "assets/brand/dad_fieldworks_blue_field_sculpture-256.png",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/assets/brand/dad_fieldworks_blue_field_sculpture-256.png",
+      "sha256": "4a7ed4ec5892eb3bbc0b6e3c4e0ef78e19e99f89702edd80d40c353729c7224d",
+      "bytes": 66982,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    },
+    {
+      "file": "assets/favicon.ico",
+      "source_path": "favicon.ico",
+      "source_url": "https://github.com/DigitalArtDeco/DAD-FieldWorks-Showcase/blob/65d7b9b47f2558f7578b1471d2a0f089d717d05d/favicon.ico",
+      "sha256": "3e54457e7d6308c5688bf87d613952a461216d73be08264f1aa782e9defa6b6a",
+      "bytes": 7118,
+      "basis": "Existing owner-provided company material, reused at the owner's request. Not declared public domain or generally open licensed.",
+      "modified_for_this_draft": false
+    }
+  ],
+  "interface": {
+    "origin": "Original HTML, CSS and JavaScript prepared for DigitalArtDeco Labs in this project.",
+    "third_party_templates": false,
+    "third_party_icon_packs": false,
+    "third_party_runtime_libraries": false,
+    "external_font_requests": false,
+    "stock_images_added": false
+  },
+  "limitations": [
+    "Owner-provided application captures may contain existing application UI elements. Their upstream ownership was not independently legally audited.",
+    "Existing company and product names have not received independent trademark clearance.",
+    "Font copyright and license text are redistributed unchanged."
+  ]
+}
