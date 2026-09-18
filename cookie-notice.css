@@ -1,4 +1,4 @@
-/* Shared by the company site and retained documentation pages. */
+/* Shared consent controls, with equally prominent accept and decline actions. */
 .cookie-notice {
   background: #f4f7fa;
   color: #172b3b;
@@ -11,7 +11,7 @@
 .cookie-notice[hidden] { display: none; }
 .cookie-notice-inner {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-columns: minmax(0, 1fr) 230px;
   align-items: center;
   gap: 24px 48px;
   width: calc(100% - 96px);
@@ -28,6 +28,11 @@
   letter-spacing: 0;
 }
 .cookie-notice p { margin: 0; max-width: 80ch; }
+.cookie-notice .cookie-notice-hosting { margin-top: 12px; }
+.cookie-notice-details { margin-top: 12px; font-size: 16px; }
+.cookie-notice-details summary { cursor: pointer; padding: 6px 0; font-weight: 600; }
+.cookie-notice-details p { padding-top: 8px; overflow-wrap: anywhere; }
+.cookie-notice .cookie-notice-error { margin-top: 12px; color: #8a2618; }
 .cookie-notice .cookie-notice-explanation {
   margin-top: 8px;
   font-size: 16px;
@@ -49,7 +54,7 @@
   text-underline-offset: 4px;
   overflow-wrap: anywhere;
 }
-.cookie-notice-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+.cookie-notice-actions { display: flex; flex-direction: column; gap: 12px; }
 .cookie-notice-actions button {
   appearance: none;
   min-width: 112px;
