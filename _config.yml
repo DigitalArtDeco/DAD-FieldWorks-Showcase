@@ -1,0 +1,24 @@
+# Temporary redirect-only publication. Preserve source files in the repository.
+# The last complete published showcase is commit bd25f852a0d4c4c3a3051b5ef713e30bd93baf36.
+theme: null
+exclude:
+  - "COPYRIGHT.md"
+  - "LICENSE_NOTICE.md"
+  - "README.md"
+  - "app.js"
+  - "assets"
+  - "data"
+  - "design.css"
+  - "docs"
+  - "evidence"
+  - "favicon.ico"
+  - "fonts"
+  - "licenses"
+  - "licenses.html"
+  - "results.html"
+  - "scripts"
+  - "solver-development.html"
+  - "style.css"
+  - "styles.css"
+  - "views"
+  - "_paused"

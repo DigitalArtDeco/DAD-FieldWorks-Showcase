@@ -1,8 +1,8 @@
 """Render the current public Markdown notes as styled static HTML.
 
 Requires the existing markdown-it-py development dependency. No browser or
-runtime dependencies are added. The shared cookie preferences use
-local JavaScript and one optional cookie, set only after consent. Historical source records are not rewritten.
+runtime dependencies are added. The public website is temporarily paused;
+these retained pages are excluded from the GitHub Pages build. Historical source records are not rewritten.
 """
 import html
 import re
@@ -43,8 +43,6 @@ def shell(title, description, body, header, footer, filename):
     <meta name="description" content="{html.escape(description, quote=True)}">
     <link rel="canonical" href="https://www.dadlabs.de/docs/{filename}">
     <link rel="stylesheet" href="../styles.css">
-    <link rel="stylesheet" href="../cookie-notice.css?v=2">
-    <script src="../cookie-notice.js?v=2" defer></script>
     <link rel="icon" href="../favicon.ico?v=field-sculpture" sizes="16x16 32x32 48x48 64x64">
   </head>
   <body class="company-site">
